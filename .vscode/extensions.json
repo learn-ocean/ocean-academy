@@ -1,0 +1,31 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "msjsdiag.debugger-for-chrome",
+    "esbenp.prettier-vscode",
+    "bungcip.better-toml",
+    "Shan.code-settings-sync",
+    "raymondcamden.csslint",
+    "mikestead.dotenv",
+    "donjayamanne.githistory",
+    "eamodio.gitlens",
+    "christian-kohler.npm-intellisense",
+    "christian-kohler.path-intellisense",
+    "Gruntfuggly.todo-tree",
+    "alfnielsen.vsc-organize-imports",
+    "anseki.vscode-color",
+    "pranaygp.vscode-css-peek",
+    "Prisma.vscode-graphql",
+    "emmanuelbeziat.vscode-great-icons",
+    "ecmel.vscode-html-css",
+    "wix.vscode-import-cost",
+    "eg2.vscode-npm-script",
+    "jaspernorth.vscode-pigments",
+    "GitHub.vscode-pull-request-github",
+    "mrmlnc.vscode-scss",
+    "jpoissonnier.vscode-styled-components",
+    "cssho.vscode-svgviewer",
+    "akamud.vscode-theme-onedark",
+    "VisualStudioExptTeam.vscodeintellicode"
+  ]
+}

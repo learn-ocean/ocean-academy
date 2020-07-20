@@ -1,0 +1,22 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": { "name": "oceanacademy-frontend" },
+  "spec": {
+    "replicas": 3,
+    "selector": { "matchLabels": { "app": "oceanacademy-frontend" } },
+    "template": {
+      "metadata": { "labels": { "app": "oceanacademy-frontend" } },
+      "spec": {
+        "terminationGracePeriodSeconds": 30,
+        "containers": [
+          {
+            "name": "oceanacademy-frontend",
+            "image": "registry.digitalocean.com/neutrino/oceanacademy-frontend",
+            "imagePullPolicy": "Always"
+          }
+        ]
+      }
+    }
+  }
+}

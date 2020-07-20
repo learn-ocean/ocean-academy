@@ -1,0 +1,9 @@
+# package directories
+node_modules
+jspm_packages
+
+# Webpack directories
+.webpack
+
+# Env variables
+.env

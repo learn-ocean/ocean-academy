@@ -1,0 +1,60 @@
+({
+  // Hide files that are rarely edited for better folder arrangement
+  "files.exclude": {
+    "LICENSE": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.webpack": true,
+    "**/build": true,
+    "**/dist": true,
+    "**/coverage": true,
+    "**/node_modules": true,
+    // "**.prettier*": true,
+    // "**.travis*": true,
+    // "**/lerna.json": true,
+    // "**/.eslint*": true,
+    // "**/.gitignore*": true,
+    // "**/package-lock.json": true,
+    "**/yarn.lock": true
+    // "**/source-map-install.js": true,
+    // "**/tsconfig.json": true,
+    // "**/webpack.config.js": true
+  },
+  "javascript.validate.enable": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.codeLens.author.enabled": false,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    { "language": "typescript", "autoFix": true },
+    { "language": "typescriptreact", "autoFix": true }
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true
+  }
+},
+{
+  "ego.power-tools": {
+    "commands": {
+      "myCommand": {
+        "script": "my_command.js",
+        "button": {
+          "text": "Click here to start the command."
+        }
+      }
+    }
+  }
+})

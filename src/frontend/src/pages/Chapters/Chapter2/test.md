@@ -1,0 +1,1 @@
+const someOtherFile = 42;

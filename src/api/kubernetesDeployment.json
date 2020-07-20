@@ -1,0 +1,22 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": { "name": "oceanacademy-api" },
+  "spec": {
+    "replicas": 3,
+    "selector": { "matchLabels": { "app": "oceanacademy-api" } },
+    "template": {
+      "metadata": { "labels": { "app": "oceanacademy-api" } },
+      "spec": {
+        "terminationGracePeriodSeconds": 30,
+        "containers": [
+          {
+            "name": "oceanacademy-api",
+            "image": "registry.digitalocean.com/neutrino/oceanacademy-api",
+            "imagePullPolicy": "Always"
+          }
+        ]
+      }
+    }
+  }
+}

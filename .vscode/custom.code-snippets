@@ -1,0 +1,32 @@
+{
+  "Styled Componant": {
+    "prefix": "sc",
+    "body": ["export const $1 = styled.div``"],
+    "description": "styled componant"
+  },
+  "Ellipsis": {
+    "prefix": "ellipsis",
+    "body": ["white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"],
+    "description": "ellipsis"
+  },
+  "Flex": {
+    "prefix": "flex",
+    "body": ["display: flex; align-items: center; justify-content: space-around;"],
+    "description": "flex"
+  },
+  "Media": {
+    "prefix": "media",
+    "body": ["@media (max-width: 700px) { width: 100vw; }"],
+    "description": "media"
+  },
+  "Grid": {
+    "prefix": "grid",
+    "body": ["display: grid; grid-template-columns: auto auto; grid-gap: 10px;"],
+    "description": "grid"
+  },
+  "svg": {
+    "prefix": "svg",
+    "body": "<svg><use xlinkHref='/icons/sprites.svg#$1' /></svg>",
+    "description": "svg"
+  }
+}
