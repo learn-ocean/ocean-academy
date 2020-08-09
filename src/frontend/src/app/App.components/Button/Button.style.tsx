@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components/macro'
 
-import { primaryColor, secondaryColor, textColor, backgroundColorLight } from '../../../styles'
+import { backgroundColorLight, primaryColor, secondaryColor, textColor } from '../../../styles'
 
 export const clickWave = keyframes`
   from {

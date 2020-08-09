@@ -1,10 +1,10 @@
+import { Button } from 'app/App.components/Button/Button.controller'
 import { chapterData } from 'pages/Chapter/Chapter.data'
 import * as React from 'react'
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 import { FooterStyled } from './Footer.style'
-import { Button } from 'app/App.components/Button/Button.controller'
 
 export const FooterView = () => {
   const { pathname } = useLocation()

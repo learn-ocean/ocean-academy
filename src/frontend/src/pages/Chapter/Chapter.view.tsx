@@ -1,15 +1,16 @@
-import Editor, { monaco, ControlledEditor, DiffEditor } from '@monaco-editor/react'
+//prettier-ignore
+import Editor, { ControlledEditor, DiffEditor, monaco } from '@monaco-editor/react'
+import { Radio } from 'app/App.components/Radio/Radio.controller'
 import Markdown from 'markdown-to-jsx'
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
 import { useState } from 'react'
-import { useLocation } from 'react-router-dom'
-
-//prettier-ignore
-import { ChapterCourse, ChapterGrid, ChapterH1, ChapterH2, ChapterItalic, ChapterMonaco, ChapterStyled, ChapterTab, ChapterValidator, ChapterValidatorContent, ChapterValidatorContentWrapper, ChapterValidatorInside, ChapterValidatorTitle } from "./Chapter.style";
-import { RIGHT, PENDING, WRONG } from './Chapter.constants'
 import { backgroundColorLight } from 'styles'
-import { Button } from 'app/App.components/Button/Button.controller'
+
+import { PENDING, RIGHT, WRONG } from './Chapter.constants'
+import { Question } from './Chapter.controller'
+//prettier-ignore
+import { Button, ButtonBorder, ButtonText, ChapterCourse, ChapterGrid, ChapterH1, ChapterH2, ChapterItalic, ChapterMonaco, ChapterQuestions, ChapterStyled, ChapterTab, ChapterValidator, ChapterValidatorContent, ChapterValidatorContentWrapper, ChapterValidatorTitle } from './Chapter.style'
 
 monaco
   .init()
@@ -42,7 +43,7 @@ const MonacoReadOnly = ({ children }: any) => {
       <Editor
         height={height}
         value={children}
-        language="javascript"
+        language="rust"
         theme="myCustomTheme"
         options={{
           lineNumbers: false,
@@ -65,7 +66,7 @@ const MonacoEditorSupport = ({ support }: any) => {
       <Editor
         height="500px"
         value={support}
-        language="javascript"
+        language="rust"
         theme="myCustomTheme"
         options={{
           lineNumbers: true,
@@ -88,7 +89,7 @@ const MonacoEditor = ({ proposedSolution, proposedSolutionCallback }: any) => {
       <ControlledEditor
         height="500px"
         value={proposedSolution}
-        language="javascript"
+        language="rust"
         theme="myCustomTheme"
         onChange={(_, val) => proposedSolutionCallback(val)}
         options={{
@@ -113,7 +114,7 @@ const MonacoDiff = ({ solution, proposedSolution }: any) => {
         height="500px"
         original={proposedSolution}
         modified={solution}
-        language="javascript"
+        language="rust"
         // @ts-ignore
         theme="myCustomTheme"
         options={{
@@ -134,24 +135,32 @@ const MonacoDiff = ({ solution, proposedSolution }: any) => {
 
 const Validator = ({ validatorState, validateCallback }: any) => (
   <ChapterValidator className={validatorState === RIGHT ? 'ok' : 'no'}>
-    <ChapterValidatorInside className={validatorState === RIGHT ? 'ok' : 'no'}>
-      {validatorState === PENDING && (
-        <ChapterValidatorContentWrapper>
-          <Button text="Validate Exercice" onClick={() => validateCallback()} color="primary" />
-        </ChapterValidatorContentWrapper>
-      )}
-      {validatorState === RIGHT && (
-        <ChapterValidatorContentWrapper>
-          <ChapterValidatorTitle>SUCCESS</ChapterValidatorTitle>
-        </ChapterValidatorContentWrapper>
-      )}
-      {validatorState === WRONG && (
-        <ChapterValidatorContentWrapper>
-          <ChapterValidatorTitle>FAILED</ChapterValidatorTitle>
-          <Button text="Try Again" onClick={() => validateCallback()} color="primary" />
-        </ChapterValidatorContentWrapper>
-      )}
-    </ChapterValidatorInside>
+    {validatorState === PENDING && (
+      <ChapterValidatorContentWrapper>
+        <ChapterValidatorTitle>AWAITING VALIDATION</ChapterValidatorTitle>
+        <ChapterValidatorContent>Type your solution above and validate your answer</ChapterValidatorContent>
+        <Button>
+          <ButtonBorder />
+          <ButtonText onClick={() => validateCallback()}>VALIDATE MISSION</ButtonText>
+        </Button>
+      </ChapterValidatorContentWrapper>
+    )}
+    {validatorState === RIGHT && (
+      <ChapterValidatorContentWrapper>
+        <ChapterValidatorTitle>MISSION SUCCESSFUL</ChapterValidatorTitle>
+        <ChapterValidatorContent>Go on to the next mission</ChapterValidatorContent>
+      </ChapterValidatorContentWrapper>
+    )}
+    {validatorState === WRONG && (
+      <ChapterValidatorContentWrapper>
+        <ChapterValidatorTitle>MISSION FAILED</ChapterValidatorTitle>
+        <ChapterValidatorContent>Correct the mistakes and try again</ChapterValidatorContent>
+        <Button>
+          <ButtonBorder />
+          <ButtonText onClick={() => validateCallback()}>TRY AGAIN</ButtonText>
+        </Button>
+      </ChapterValidatorContentWrapper>
+    )}
   </ChapterValidator>
 )
 
@@ -187,6 +196,8 @@ type ChapterViewProps = {
   showDiff: boolean
   course?: string
   supports: Record<string, string | undefined>
+  questions: Question[]
+  proposedQuestionAnswerCallback: (e: Question[]) => void
 }
 
 export const ChapterView = ({
@@ -198,11 +209,12 @@ export const ChapterView = ({
   showDiff,
   course,
   supports,
+  questions,
+  proposedQuestionAnswerCallback,
 }: ChapterViewProps) => {
   const [display, setDisplay] = useState('solution')
-  const { pathname } = useLocation()
 
-  let extension = 'js'
+  let extension = '.rs'
 
   return (
     <ChapterStyled>
@@ -222,18 +234,41 @@ export const ChapterView = ({
             ))}
           </div>
         )}
-        {display === 'solution' ? (
-          <ChapterMonaco>
-            {showDiff ? (
-              <MonacoDiff solution={solution} proposedSolution={proposedSolution} />
-            ) : (
-              <MonacoEditor proposedSolution={proposedSolution} proposedSolutionCallback={proposedSolutionCallback} />
-            )}
-          </ChapterMonaco>
+        {questions.length > 0 ? (
+          <ChapterQuestions>
+            {questions.map((question, i) => (
+              <div key={question.question}>
+                <h2>{question.question}</h2>
+                <Radio
+                  items={question.answers}
+                  onUpdate={(value) => {
+                    const proposedQuestions = questions
+                    proposedQuestions[i].proposedResponse = value
+                    proposedQuestionAnswerCallback(proposedQuestions)
+                  }}
+                />
+              </div>
+            ))}
+          </ChapterQuestions>
         ) : (
-          <ChapterMonaco>
-            <MonacoEditorSupport support={supports[display]} />
-          </ChapterMonaco>
+          <div>
+            {display === 'solution' ? (
+              <ChapterMonaco>
+                {showDiff ? (
+                  <MonacoDiff solution={solution} proposedSolution={proposedSolution} />
+                ) : (
+                  <MonacoEditor
+                    proposedSolution={proposedSolution}
+                    proposedSolutionCallback={proposedSolutionCallback}
+                  />
+                )}
+              </ChapterMonaco>
+            ) : (
+              <ChapterMonaco>
+                <MonacoEditorSupport support={supports[display]} />
+              </ChapterMonaco>
+            )}
+          </div>
         )}
         <Validator validatorState={validatorState} validateCallback={validateCallback} />
       </ChapterGrid>
@@ -249,7 +284,8 @@ ChapterView.propTypes = {
   showDiff: PropTypes.bool.isRequired,
   proposedSolutionCallback: PropTypes.func.isRequired,
   course: PropTypes.string,
-  supports: PropTypes.array.isRequired,
+  supports: PropTypes.object.isRequired,
+  questions: PropTypes.array.isRequired,
 }
 
 ChapterView.defaultProps = {

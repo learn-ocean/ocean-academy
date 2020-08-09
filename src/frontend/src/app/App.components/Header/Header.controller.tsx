@@ -1,9 +1,9 @@
+import { logout } from 'pages/Login/Login.actions'
 import * as React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { State } from 'reducers'
 
 import { HeaderView } from './Header.view'
-import { State } from 'reducers'
-import { logout } from 'pages/Login/Login.actions'
 
 export const Header = () => {
   const dispatch = useDispatch()

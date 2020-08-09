@@ -11,7 +11,6 @@ export const Drawer = () => {
   const showing = useSelector((state: State) => state.drawer && state.drawer.showing)
   const user = useSelector((state: State) => state && state.auth && state.auth.user)
   const { pathname } = useLocation()
-  const history = useHistory()
 
   const hideCallback = () => {
     dispatch(hideDrawer())
