@@ -1,19 +1,18 @@
-# Chapter 1 : Test
+# Chapter 1 : About Ocean Academy
 
-## Title
+Learn how you can monetize your data and expertise on open marketplaces with Ocean Protocol, the blockchain for data economy.
+Ocean Academy provides a simple and practical introduction to anyone interested in monetizing data or analytic services on the blockchain, starting from zero.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet nisl purus in mollis nunc sed. Consectetur lorem donec massa sapien faucibus et molestie. Urna condimentum mattis pellentesque id nibh. Pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Aenean et tortor at risus viverra adipiscing at in. Semper risus in hendrerit gravida. Id nibh tortor id aliquet lectus proin nibh nisl condimentum. Quam pellentesque nec nam aliquam sem et. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Rhoncus dolor purus non enim praesent elementum facilisis leo. At imperdiet dui accumsan sit amet nulla. Dictumst quisque sagittis purus sit amet volutpat consequat. Nulla porttitor massa id neque aliquam.
+You’ll be set-up with your own Ethereum digital wallet in less than 10 minutes.
 
-```
-export const clone = (ctx: Context): Context => {
-  return JSON.parse(JSON.stringify(ctx))
-}
-```
+Through an interactive experience, you will gain a deep understanding of what is Ocean Protocol, how its technology stack works, and what it can do for you.
 
-## Title 2
+## GET STARTED
 
-Risus feugiat in ante metus. Consectetur a erat nam at lectus urna duis. Fames ac turpis egestas sed tempus urna. Pellentesque habitant morbi tristique senectus et netus et malesuada. Sem et tortor consequat id porta nibh venenatis cras. Ligula ullamcorper malesuada proin libero nunc consequat interdum varius. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Aliquet nibh praesent tristique magna. Tellus orci ac auctor augue mauris augue neque gravida. Sed libero enim sed faucibus turpis in eu. Gravida arcu ac tortor dignissim convallis aenean et tortor at. Enim facilisis gravida neque convallis a cras. In ornare quam viverra orci sagittis. At augue eget arcu dictum varius.
+Useful Links:
 
-## Exercice
+- <a href="https://oceanprotocol.com/about" target="_blank">About</a>
+- <a href="https://oceanprotocol.com/about" target="_blank">Resources</a>
+- <a href="https://oceanprotocol.com/about" target="_blank">Contribute </a>
 
-Eget mi proin sed libero. Duis ut diam quam nulla porttitor massa id. Sit amet risus nullam eget felis eget. Adipiscing elit ut aliquam purus sit amet. Lobortis mattis aliquam faucibus purus in massa tempor. Lorem sed risus ultricies tristique nulla. Risus nullam eget felis eget nunc. Accumsan sit amet nulla facilisi. Tristique risus nec feugiat in. Libero enim sed faucibus turpis in eu. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Aliquam etiam erat velit scelerisque in dictum non consectetur a. Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Bibendum neque egestas congue quisque egestas diam in. Est ullamcorper eget nulla facilisi etiam dignissim diam quis enim. Gravida cum sociis natoque penatibus.
+The Ocean 101 consists of 14 modules to guide data scientists through the realm of blockchain and data science. At the end of the 101, not only you will be familiar with the basic concepts of web3, but also regarding the architecture of Ocean Protocol and how it can be leveraged for the Open Data Economy. Through a gamified experience, you will be guided into the 3 different main chunks of the course. The first 3 chapters are about web3 and smart contracts. The following 4 chapters explore what is a data market and how a web3 data market differs from a traditional data market. Ultimately you will learn about Ocean infrastructure, features and use cases.

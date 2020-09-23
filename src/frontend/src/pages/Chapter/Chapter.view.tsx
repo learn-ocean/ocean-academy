@@ -1,5 +1,6 @@
 //prettier-ignore
 import Editor, { ControlledEditor, DiffEditor, monaco } from '@monaco-editor/react'
+import { Dialog } from 'app/App.components/Dialog/Dialog.controller'
 import { Radio } from 'app/App.components/Radio/Radio.controller'
 import Markdown from 'markdown-to-jsx'
 import * as PropTypes from 'prop-types'
@@ -10,7 +11,7 @@ import { backgroundColorLight } from 'styles'
 import { PENDING, RIGHT, WRONG } from './Chapter.constants'
 import { Question } from './Chapter.controller'
 //prettier-ignore
-import { Button, ButtonBorder, ButtonText, ChapterCourse, ChapterGrid, ChapterH1, ChapterH2, ChapterItalic, ChapterMonaco, ChapterQuestions, ChapterStyled, ChapterTab, ChapterValidator, ChapterValidatorContent, ChapterValidatorContentWrapper, ChapterValidatorTitle } from './Chapter.style'
+import { Button, ButtonBorder, ButtonText, ChapterCourse, ChapterGrid, ChapterH1, ChapterH2, ChapterH3, ChapterItalic, ChapterMonaco, ChapterQuestions, ChapterStyled, ChapterTab, ChapterValidator, ChapterValidatorContent, ChapterValidatorContentWrapper, ChapterValidatorTitle } from './Chapter.style'
 
 monaco
   .init()
@@ -176,11 +177,17 @@ const Content = ({ course }: any) => (
         h2: {
           component: ChapterH2,
         },
+        h3: {
+          component: ChapterH3,
+        },
         code: {
           component: MonacoReadOnly,
         },
         em: {
           component: ChapterItalic,
+        },
+        dialog: {
+          component: Dialog,
         },
       },
     }}

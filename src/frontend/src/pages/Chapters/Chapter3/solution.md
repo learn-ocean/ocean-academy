@@ -1,4 +1,2 @@
-export const clone = (ctx: Context): Context => {
-functionToAdd()
-return JSON.parse(JSON.stringify(ctx))
-}
+// Please enter your Public Ethereum Address below
+0x...

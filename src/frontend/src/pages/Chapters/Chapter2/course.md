@@ -1,19 +1,19 @@
-# Chapter 2 : Test
+# Chapter 2 : Why should you care?
 
-## Title
+<dialog character="squid">Are you ready to explore the ocean down to its depths? Take the dive and discover its amazing underworld. We’ll get to the bottom of it.</dialog>
 
-Risus feugiat in ante metus. Consectetur a erat nam at lectus urna duis. Fames ac turpis egestas sed tempus urna. Pellentesque habitant morbi tristique senectus et netus et malesuada. Sem et tortor consequat id porta nibh venenatis cras. Ligula ullamcorper malesuada proin libero nunc consequat interdum varius. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Aliquet nibh praesent tristique magna. Tellus orci ac auctor augue mauris augue neque gravida. Sed libero enim sed faucibus turpis in eu. Gravida arcu ac tortor dignissim convallis aenean et tortor at. Enim facilisis gravida neque convallis a cras. In ornare quam viverra orci sagittis. At augue eget arcu dictum varius.
+By the end of the Ocean 101 Academy, you will have earned the ‘Envoy’ title in the Ocean Ambassadors community.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet nisl purus in mollis nunc sed. Consectetur lorem donec massa sapien faucibus et molestie. Urna condimentum mattis pellentesque id nibh. Pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Aenean et tortor at risus viverra adipiscing at in. Semper risus in hendrerit gravida. Id nibh tortor id aliquet lectus proin nibh nisl condimentum. Quam pellentesque nec nam aliquam sem et. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Rhoncus dolor purus non enim praesent elementum facilisis leo. At imperdiet dui accumsan sit amet nulla. Dictumst quisque sagittis purus sit amet volutpat consequat. Nulla porttitor massa id neque aliquam.
+## But first things first, why should you care about Ocean Protocol?
 
-## Title 2
+You can look at the demand for data, or at the supply of data. Regardless of where you start there is a gap, because data supply and demand are currently not well connected.
 
-```
-export const clone = (ctx: Context): Context => {
-  return JSON.parse(JSON.stringify(ctx))
-}
-```
+Many data scientists are limited by their access to quality data to support decision making, build services or data products. And only they know how much data is needed to reach decent accuracy in data science, and particularly in AI.
 
-## Exercice
+Meanwhile, there is about 9’800 GB of data per person connected to the internet, most of which remains unused, or untouchable because data owners are afraid of losing exclusivity (i.e. data theft) or want to keep a dominant position to charge a premium for accessing the data.
 
-Eget mi proin sed libero. Duis ut diam quam nulla porttitor massa id. Sit amet risus nullam eget felis eget. Adipiscing elit ut aliquam purus sit amet. Lobortis mattis aliquam faucibus purus in massa tempor. Lorem sed risus ultricies tristique nulla. Risus nullam eget felis eget nunc. Accumsan sit amet nulla facilisi. Tristique risus nec feugiat in. Libero enim sed faucibus turpis in eu. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Aliquam etiam erat velit scelerisque in dictum non consectetur a. Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Bibendum neque egestas congue quisque egestas diam in. Est ullamcorper eget nulla facilisi etiam dignissim diam quis enim. Gravida cum sociis natoque penatibus.
+Ocean Protocol is set to bridge the gap. An open data economy will open the data ap on data scientists so they can create breakthrough data products. And it can grant data owners a revenue for safely letting their data flow.
+
+In fact Ocean Protocol is already being integrated by enterprises across verticals, from packaged goods sales data aggregation, freight & logistics collaboration, biotech research funding, and to data orchestration in the automobile industry.
+
+Don’t worry about the blockchain stuff, it’s much easier than you think!

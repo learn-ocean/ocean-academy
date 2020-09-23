@@ -1,24 +1,12 @@
 export const questions = [
     {
-        question: "Question 1",
+        question: "Who should take this course?",
         answers: [
-            "Wrong 1",
-            "Wrong 2",
-            "Correct",
-            "Wrong 3"
+            "Someone who wants to learn more about data marketplaces and Ocean protocol",
+            "Someone who wants to program smart contracts",
+            "Someone who wants to invest into the ocean token"
         ],
-        response: "Correct",
-        proposedResponse: ""
-    },
-    {
-        question: "Question 2",
-        answers: [
-            "Correct",
-            "Wrong 1",
-            "Wrong 2",
-            "Wrong 3"
-        ],
-        response: "Correct",
+        response: "Someone who wants to learn more about data marketplaces and Ocean protocol",
         proposedResponse: ""
     }
 ]

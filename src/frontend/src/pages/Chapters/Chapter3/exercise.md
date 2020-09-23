@@ -1,4 +1,1 @@
-// Type your solution below
-export const clone = (ctx: Context): Context => {
-  return JSON.parse(JSON.stringify(ctx))
-}
+// Please enter your Public Ethereum Address below

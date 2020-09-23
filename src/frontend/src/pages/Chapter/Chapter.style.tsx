@@ -41,6 +41,10 @@ export const ChapterCourse = styled.div`
   white-space: pre-wrap;
   overflow: auto;
   position: relative;
+
+  img {
+    max-width: 100%;
+  }
 `
 
 export const ChapterH1 = styled.div`
@@ -64,6 +68,12 @@ export const ChapterH2 = styled.div`
     font-size: 20px;
     line-height: 24px;
   }
+`
+
+export const ChapterH3 = styled.div`
+  font-size: 24px;
+  line-height: 28px;
+  margin-top: 20px;
 `
 
 export const ChapterValidator = styled.div`
@@ -148,10 +158,7 @@ export const ChapterMonaco = styled.div`
 `
 
 export const ChapterItalic = styled.em`
-  color: #42edf8 !important;
-  /* text-shadow: 0px 0px 25px rgba(11, 183, 226, 0.65), 0px 0px 15px rgba(0, 112, 202, 0.6); */
-  text-transform: none;
-  font-style: normal;
+  font-style: italic;
 `
 
 export const ChapterTab = styled.div<{ isSelected?: boolean }>`

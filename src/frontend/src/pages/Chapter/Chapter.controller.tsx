@@ -59,7 +59,9 @@ export const Chapter = () => {
     if (data.questions.length > 0) {
       let ok = true
       data.questions.forEach((question) => {
-        if (question.response !== question.proposedResponse) ok = false
+        if (question.response !== '') {
+          if (question.response !== question.proposedResponse) ok = false
+        }
       })
       if (ok) {
         setValidatorState(RIGHT)
@@ -79,6 +81,11 @@ export const Chapter = () => {
             // @ts-ignore
             data.solution.replace(/\s+|\/\/ Type your solution below/g, '')
           ) {
+            setValidatorState(RIGHT)
+            if (user) dispatch(addProgress({ chapterDone: pathname }))
+            else dispatch(showToaster(SUCCESS, 'Register to save progress', 'and get your completion certificate'))
+          } else if (data.exercise.indexOf('0x') > 0) {
+            setShowDiff(false)
             setValidatorState(RIGHT)
             if (user) dispatch(addProgress({ chapterDone: pathname }))
             else dispatch(showToaster(SUCCESS, 'Register to save progress', 'and get your completion certificate'))
