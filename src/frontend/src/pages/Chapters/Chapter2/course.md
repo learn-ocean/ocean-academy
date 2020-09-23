@@ -1,19 +1,20 @@
-# Chapter 2 : Why should you care?
+# Chapter 2: Key Concepts of Blockchain
 
-<dialog character="squid">Are you ready to explore the ocean down to its depths? Take the dive and discover its amazing underworld. We’ll get to the bottom of it.</dialog>
+<dialog character="jellyfish">You are now below water. This is a new environment. It feels like flying, it’s awesome. In fact most divers will tell you that they got hooked by the experience of moving freely in 3D from their very first dive. Same here. You will get a taste of a new universe enabled by collaborative technologies, in uncharted territories.</dialog>
 
-By the end of the Ocean 101 Academy, you will have earned the ‘Envoy’ title in the Ocean Ambassadors community.
+Understanding what is a blockchain and a smart contract will help fully grasp the value that Ocean Protocol can provide. If you are already familiar with these concepts, you can go directly to chapter 6.
 
-## But first things first, why should you care about Ocean Protocol?
+### A Blockchain
+is simply a ledger which chronologically records the facts that it is programmed to record. This ledger is duplicated across participants, and public, which allows everyone to check that its entries are correct. This removes the need for a central ‘validation authority’: you don’t need to trust, when you can verify. 
 
-You can look at the demand for data, or at the supply of data. Regardless of where you start there is a gap, because data supply and demand are currently not well connected.
+### Blockchains work like enhanced Google sheets. 
+You can think of a blockchain as a Google sheet with universal read and write access, but that can only accept new inputs, if those new inputs are compliant with what the sheet was programmed to accept. 
+- Only those with a valid input can change the document
+- Old entries cannot be altered or deleted
+- Everyone can see that no one provided an non-compliant input
 
-Many data scientists are limited by their access to quality data to support decision making, build services or data products. And only they know how much data is needed to reach decent accuracy in data science, and particularly in AI.
+**Bitcoin** was the first use case for blockchain technology. Bitcoin’s blockchain is used to record monetary transactions in a verifiable and trustable way. On that blockchain, you can write that you’re sending 0.01 Bitcoin to someone only if your account on record has a balance of at least 0.01 Bitcoin. This is a rule that was programmed in this blockchain.
 
-Meanwhile, there is about 9’800 GB of data per person connected to the internet, most of which remains unused, or untouchable because data owners are afraid of losing exclusivity (i.e. data theft) or want to keep a dominant position to charge a premium for accessing the data.
+**Ethereum** was the first ledger to allow the recording of not just transactions, but any kind of operation, making it essentially a distributed computer. This greatly extended the foundation that Bitcoin had established and propelled blockchain technology to all sorts of applications beyond just a ‘digital currency’.
 
-Ocean Protocol is set to bridge the gap. An open data economy will open the data ap on data scientists so they can create breakthrough data products. And it can grant data owners a revenue for safely letting their data flow.
-
-In fact Ocean Protocol is already being integrated by enterprises across verticals, from packaged goods sales data aggregation, freight & logistics collaboration, biotech research funding, and to data orchestration in the automobile industry.
-
-Don’t worry about the blockchain stuff, it’s much easier than you think!
+The Bitcoin and Ethereum blockchains are permissionless: anyone can operate or transact on these blockchains. Private blockchains exist, but they are limited in scope. And they wouldn’t be well suited to create an inclusive data economy: **Ocean Protocol** wants to be for anyone who has data or expertise, not just a select few. 
