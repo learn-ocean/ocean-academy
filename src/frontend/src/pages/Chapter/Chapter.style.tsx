@@ -45,6 +45,10 @@ export const ChapterCourse = styled.div`
   img {
     max-width: 100%;
   }
+
+  strong {
+    color: #ff4092;
+  }
 `
 
 export const ChapterH1 = styled.div`

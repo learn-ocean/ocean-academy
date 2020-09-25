@@ -15,7 +15,6 @@ body {
   padding: 0;
   background-color: ${backgroundColorDark};
   color: ${textColor};
-  font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -78,6 +77,7 @@ p {
     margin-block-end: 10px;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    font-size: 22px;
 }
 
 
