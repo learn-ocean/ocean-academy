@@ -1,6 +1,6 @@
 # Chapter 7: New Data Workflows for Enterprises 
 
-<dialog character="squid">Why are we doing all this, you may ask. Traditional data science workflows have been working fine for data scientists after all. Why transition to a new model? 
+<dialog character="squid">Why are we doing all this, you may ask. Traditional data science workflows have been working fine for data scientists after all. Why transition to a new model?
 Let’s explore the benefits of a diverse and flourishing data underworld.
 </dialog>
 

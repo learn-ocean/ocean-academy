@@ -1,10 +1,10 @@
 # Chapter 11: Smart Contract for Storing and Reading Data
 
-<dialog character="jellyfish">These new species have absolutely incredible behaviors. <span>They can do a lot of things, and more! </span></dialog>
+<dialog character="jellyfish">These new species have absolutely incredible behaviors. They can do a lot of things, and more!</dialog>
 
-**Public access.** Now when you know that every smart contract is available on the Ethereum network it must be clear that it’s available for everyone. It does not mean that everyone can execute the functions in the smart contract in a meaningful way. But everyone can read what was written on the blockchain, including the code of the smart contract.
+**Public access.** Now when you know that every smart contract is available on the Ethereum network it must be clear that it’s available for everyone. It does not mean that everyone can execute the functions in the smart contract in a meaningful way. But everyone can read what was written on the blockchain.
 
-**Selling your data**. So let’s walk through an example to explain the problems when we try to provide access to data using a public blockchain like Ethereum. Let's assume that we have a dataset of 1 GB with images of different fishes in the Antarctic ocean. 
+**Selling your data**. So let’s walk through an example to explain the problems when we try to provide access to data using a public blockchain like Ethereum. We assume that we have a dataset of 1 GB with images from different fish in the antarctic ocean. We learned that everything that is written on a public blockchain is readable for everyone.
 
 Now let's design a naive smart contract that allows us to get access to our fish dataset that we want to monetize. But first, we need to define our requirements and restrictions to find a suitable solution.
 

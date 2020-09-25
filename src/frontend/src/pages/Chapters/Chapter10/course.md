@@ -14,4 +14,4 @@
 
 <img src="/images/chapter10_0.png" />
 
-When you open the contract there is tab to read the actual Solidity code. If you look into the OCEAN Smart Contract can see that **the Ocean Token uses the ERC20 standard**; it is an "ERC20 token", which is a widely used and secure standard. Other apps and smart contracts know that the Ocean Token behaves like all other ERC20 tokens, which ensures compatibility and enables the Ocean Token to contribute to and benefit from the whole Ethereum ecosystem.
+When you open the contract there is a tab to read the actual Solidity code. If you look into the OCEAN Smart Contract can see that **the Ocean Token uses the ERC20 standard**; it is an "ERC20 token", which is a widely used and secure standard. Other apps and smart contracts know that the Ocean Token behaves like all other ERC20 tokens, which ensures compatibility and enables the Ocean Token to contribute to and benefit from the whole Ethereum ecosystem.
