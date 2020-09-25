@@ -14,4 +14,4 @@
 
 <img src="/images/chapter10_0.png" />
 
-When you open the contract you will see that Etherscan offers a tab to read the actual Solidity code. This is a feature that is offered by Etherscan though. The Ethereum Blockchain only knows the bytecode. When we have a quick look into the Smart Contract we can see that the Ocean Token uses the ERC20 standard. It is therefore an ERC20 token and other apps and smart contracts will assume that it behaves like any other ERC20 token. This further increases compatibility and enables the Ocean Token to benefit from the Ethereum ecosystem.
+When you open the contract there is tab to read the actual Solidity code. If you look into the OCEAN Smart Contract can see that **the Ocean Token uses the ERC20 standard**; it is an "ERC20 token", which is a widely used and secure standard. Other apps and smart contracts know that the Ocean Token behaves like all other ERC20 tokens, which ensures compatibility and enables the Ocean Token to contribute to and benefit from the whole Ethereum ecosystem.
