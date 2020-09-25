@@ -31,7 +31,7 @@ The Ocean Protocol toolbox offers:
 <li>**Web3 access control.** Traditional access control uses centralized intermediaries, where data owners risk losing control of their data. Ocean Protocol restores control and privacy by replacing the centralized intermediaries with a decentralized blockchain network. Web3 provides a seamless experience across services using the same key, their Ethereum wallet (e.g. MetaMask).</li>
 </ol> 
 
-**Visual of a Full Market Place
+**Visual of a Full Market Place**
 <img src="/images/chapter13_1.png" />
 
 Ocean Protocol technology stack provides high-level functionalities to facilitate data exchanges for users in an easy way:
