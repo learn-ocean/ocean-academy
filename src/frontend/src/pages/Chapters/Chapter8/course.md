@@ -2,7 +2,7 @@
 
 <dialog character="jellyfish">Why is diversity a key issue, in the oceans, and in data science?</dialog>
 
-**Centralized computing.** While current high-end computers for end consumers can be quite powerful they are not powerful enough to train a big AI model like GPT-3. Cloud computing provides a solution to this problem. It gives you access to a scalable computer system that is only limited by the speed of your internet connection and monetary resources. And this is true for most people reading this, but actually, we should not forget that you also need to live in a country that gives you (legal) access to these services.
+**Centralized computing.** While current high-end computers for end consumers can be quite powerful they are not powerful enough to train a big AI model like GPT-3. Cloud computing provides a solution to this problem. It gives you access to a scalable computer system that is only limited by the speed of your internet connection and monetary resources, and in some cases legal access to these services. 
 
 Additionally, these powerful cloud computers are owned by a handful of companies that effectively decide what kind of computations are supported. They report that they will support whatever the industry needs, but we can’t neglect the fact that they are highly incentivized to support systems that strengthen their competitive or financial performance. A user is an entity with a satisfaction value which needs to be high enough so that they keep using their systems.
 
