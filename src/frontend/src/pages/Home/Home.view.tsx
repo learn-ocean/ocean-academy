@@ -12,11 +12,10 @@ export const HomeView = () => {
       <HomePage>
         <HomeContainer>
           <h1>Learn How to Build Web3 Apps for the Data Economy</h1>
-          <p> Ocean 101 Academy provides a simple and practical introduction to anyone interested in monetizing data or analytic services using blockchain technology, starting from zero.
+          <p> Ocean 101 Academy provides a simple and practical introduction to anyone interested in monetizing data or analytic services using blockchain technology, starting from zero.</p>
           <span>You’ll be set-up with your own Ethereum digital wallet in less than 10 minutes.</span>
           <span>Through an interactive experience, you will get familiar with the main concepts of Web3, and gain deep understanding of Ocean Protocol; its inner workings and what it can do for you.</span> 
-            <span>At the end of the 24 modules, participants are handed a completion certificate which grants access to the Ocean Ambassador community.</span>
-          </p>
+          <span>At the end of the 24 modules, participants are handed a completion certificate which grants access to the Ocean Ambassador community.</span>
           <Link to="/chapter-1">
             <Button text="GET STARTED" color="primary" />
           </Link>
