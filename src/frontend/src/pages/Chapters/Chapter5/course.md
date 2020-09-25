@@ -6,7 +6,7 @@ You don’t need to understand how they work, but having a general idea will hel
 ## Smart Contract
 A program that runs on a distributed computer. When people agree to use a smart contract, the program will perform the given action it was programmed to do, if agreed conditions are met. This saves time, money and limits conflicts when doing business with others.
 
-<img src="/images/Chapter5_0.svg" />
+<img src="/images/chapter5_0.png" />
 
 A Smart Contract is a program that automatically performs transactions based on predetermined conditions, exactly as agreed. “If heads, you win our 5$ bet, if tails, I win”
 
