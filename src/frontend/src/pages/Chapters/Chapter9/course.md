@@ -23,7 +23,7 @@ You can simply copy the following code and paste it in a new file on Remix to do
 
 <img src="/images/chapter9_0.png" />
 
-**Life of a smart contract.** Once you are done with your implementation, you compile your Solidity code to bytecode and deploy it on the Ethereum network. Each contract has an address that is used to interact with the smart contract. A smart contract is not independent and can not execute code on its own but the very first call of a function must be done by an externally owned account (EOA). To call a function you need to know the ABI. The Contract Application Binary Interface (ABI) is the standard way to interact with contracts in the Ethereum ecosystem. It provides an overview of the given functions and how to call them. Now you can use libraries like Web3py to execute your functions.
+**Life of a smart contract.** Once you are done with your implementation, you compile your Solidity code to bytecode and deploy it on the Ethereum network. Each contract has an address that is used to interact with the smart contract. A smart contract is not independent and cannot execute code on its own but the very first call of a function must be done by an externally owned account (EOA). It provides an overview of the given functions and how to call them. Now you can use libraries like Web3py to execute your functions.
 
 **Immutability**. The smart contract itself can’t be modified anymore and it can’t be moved to another address. Any updates in the code need to be deployed to a new address and your users should be informed about the update.
 
