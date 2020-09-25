@@ -1,6 +1,6 @@
 # Chapter 10: Exploring the Ocean Token Contract
 
-<dialog character="jellyfish"></dialog>
+<dialog character="jellyfish">Let's now use your equipment to observe those beautiful new species we've discovered down here</dialog>
 
 **Tools and libraries.** Luckily, standards and libraries have been built by Ocean Protocol and other community members to make our life easier, so we don’t have to create new smart contracts in data pipelines. Imagine this infrastructure like a collection of tools and libraries like in the python ecosystem that allows you to build on top of existing solutions. You can focus on your specific problem and do not need to bother to reimplement known solutions.
 
