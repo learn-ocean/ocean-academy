@@ -20,8 +20,8 @@ The Ocean Protocol toolbox offers:
 2. **Standards to interact with data.** Standardization of data-related assets definitions in Web3, and standardization of metadata. This is key to enable large scale collaboration and the creation of an open and effective data market.
 
     1. **Definitions** An asset is the representation of different types of resources in Ocean Protocol. Typically an asset could be one of the following asset types:
-      - **Dataset.** An asset representing a dataset or data resource. It could be for example a CSV file or multiple JPG files.
-      - **Algorithm.** An asset representing a piece of software. It could be a python script using TensorFlow, a spark job, etc.
+        - **Dataset.** An asset representing a dataset or data resource. It could be for example a CSV file or multiple JPG files.
+        - **Algorithm.** An asset representing a piece of software. It could be a python script using TensorFlow, a spark job, etc.
     2. **Metadata** is stored in a blockchain context efficiently. Information encompasses the name of data asset, description, owner, price, and other details like category, tags, creation and update dates, etc. It can also provide a sample of the data.
 
 3. **Web3 access control.** Traditional access control uses centralized intermediaries, where data owners risk losing control of their data. Ocean Protocol restores control and privacy by replacing the centralized intermediaries with a decentralized blockchain network. Web3 provides a seamless experience across services using the same key, their Ethereum wallet (e.g. MetaMask).
