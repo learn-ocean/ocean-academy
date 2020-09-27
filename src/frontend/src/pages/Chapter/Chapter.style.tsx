@@ -49,6 +49,11 @@ export const ChapterCourse = styled.div`
   strong {
     color: #ff4092;
   }
+
+  a:visited {
+    color: #0f9ba4;
+  }
+
 `
 
 export const ChapterH1 = styled.div`
