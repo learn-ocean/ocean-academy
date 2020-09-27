@@ -5,8 +5,9 @@ export const questions = [
             "Smart contracts do not support data storage",
             "Everything that interacts with a blockchain becomes pseudo-anonymous, and is therefore not private",
             "Usage costs",
+            "All of these: data storage, privacy, and cost",
         ],
-        response: "",
+        response: "All of these: data storage, privacy, and cost",
         proposedResponse: ""
     }
 ]
