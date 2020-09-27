@@ -1,12 +1,13 @@
 export const questions = [
     {
-        question: "Why is it impractical to store and share data directly on the Ethereum main chain?",
+        question: "Why is it impractical to store and share data directly on the Ethereum blockchain?",
         answers: [
-            "Smart contracts does not support data storage",
-            "Everything that interacts with a blockchain become pseudo-anonymous, so not private",
-            "Execution costs",
+            "Smart contracts do not support storage of large datasets",
+            "Everything that interacts with a blockchain becomes pseudo-anonymous, and is therefore not private",
+            "Usage costs",
+            "All of these: data storage, privacy, and cost",
         ],
-        response: "",
+        response: "All of these: data storage, privacy, and cost",
         proposedResponse: ""
     }
 ]
