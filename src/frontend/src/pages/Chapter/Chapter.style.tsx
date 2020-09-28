@@ -45,6 +45,8 @@ export const ChapterCourse = styled.div`
 
   img {
     max-width: 100%;
+    margin: 0 auto;
+    display: block;
   }
 
   strong {
@@ -54,7 +56,6 @@ export const ChapterCourse = styled.div`
   a:visited {
     color: #0f9ba4;
   }
-
 `
 
 export const ChapterH1 = styled.div`
