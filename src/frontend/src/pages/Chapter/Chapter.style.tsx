@@ -54,6 +54,9 @@ export const ChapterCourse = styled.div`
     color: #0f9ba4;
   }
 
+  a {
+    font-size: 22px;
+  }
 `
 
 export const ChapterH1 = styled.div`
