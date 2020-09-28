@@ -16,6 +16,6 @@ is simply a ledger that chronologically records the facts that it is programmed 
 
 **Ethereum** was the first ledger to allow the recording of not just transactions, but any kind of operation, making it essentially a distributed computer. This greatly extended the foundation that Bitcoin had established and propelled blockchain technology to all sorts of applications beyond just a digital currency.
 
-The Bitcoin and Ethereum blockchains are permissionless: anyone can operate or transact on these blockchains. Private blockchains exist, but they are limited in scope. And they wouldn’t be well suited to create an inclusive data economy: **Ocean Protocol** wants to be for anyone who has data or expertise, not just a select few.
+The Bitcoin and Ethereum blockchains are permissionless: anyone can operate or transact on these blockchains. Private blockchains exist, but they are limited in scope. And they wouldn’t be well suited to create an inclusive data economy: **Ocean Protocol** wants to be accessible to anyone who has data or expertise, not just a select few.
 
 [1]: <https://oceanacademy.io/chapter-6> "chapter 6"

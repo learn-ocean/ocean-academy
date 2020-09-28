@@ -50,12 +50,12 @@ export const chapterData = [
   },
   {
     pathname: '/chapter-8',
-    name: '8 - Smart Contracts and an open source cloud computer',
+    name: '8 - Smart Contracts and an Open Source Cloud Computer',
     data: data8,
   },
   {
     pathname: '/chapter-9',
-    name: '9 - Smart Contracts: Hello world',
+    name: '9 - Hello World Smart Contract',
     data: data9,
   },
   {
