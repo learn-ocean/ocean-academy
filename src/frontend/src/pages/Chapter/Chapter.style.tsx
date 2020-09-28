@@ -41,6 +41,7 @@ export const ChapterCourse = styled.div`
   white-space: pre-wrap;
   overflow: auto;
   position: relative;
+  font-size: 22px;
 
   img {
     max-width: 100%;
@@ -54,9 +55,6 @@ export const ChapterCourse = styled.div`
     color: #0f9ba4;
   }
 
-  a {
-    font-size: 22px;
-  }
 `
 
 export const ChapterH1 = styled.div`
