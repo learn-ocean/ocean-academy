@@ -11,6 +11,9 @@ import { data as data10 } from '../Chapters/Chapter10'
 import { data as data11 } from '../Chapters/Chapter11'
 import { data as data12 } from '../Chapters/Chapter12'
 import { data as data13 } from '../Chapters/Chapter13'
+import { data as data14 } from '../Chapters/Chapter14'
+import { data as data15 } from '../Chapters/Chapter15'
+import { data as data16 } from '../Chapters/Chapter16'
 
 export const chapterData = [
   {
@@ -77,5 +80,20 @@ export const chapterData = [
     pathname: '/chapter-13',
     name: '13 - What is Ocean Protocol?',
     data: data13,
-  }
+  },
+  {
+    pathname: '/chapter-14',
+    name: '14 - Ocean Market and Ocean Protocol Infrastructure',
+    data: data14,
+  },
+  {
+    pathname: '/chapter-15',
+    name: '15 - Identity and Metadata',
+    data: data15,
+  },
+  {
+    pathname: '/chapter-16',
+    name: '16 - Who is a Data Provider?',
+    data: data16,
+  },
 ]
