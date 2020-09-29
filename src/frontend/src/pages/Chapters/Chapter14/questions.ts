@@ -1,11 +1,10 @@
 export const questions = [
   {
-    question: 'Which of this statement is false',
+    question: 'Which of these operations is not done by the Ocean Aquarius Proxy?',
     answers: [
-      'Every ocean asset has its own DID',
-      'DID is a JSON object with information about the Asset',
-      'DDO is a string representing the data attributes',
-      'There are different types of DDO Services',
+      'Decrypt URL',
+      'Compute on the data',
+      'Check On chain conditions for payment'
     ],
     response: '',
     proposedResponse: '',
