@@ -1,4 +1,5 @@
 # Chapter 9: Hello World Smart Contract
+#### Difficulty: **4/5** \| Estimated reading time: **10 min**
 
 <dialog character="jellyfish">OK, you’ve received a lot of equipment; let’s make use of it! In the depth of Web3, we call this activity “to buidl”. The etymology of the letter inversion is quite funny if you like to wander.</dialog>
 

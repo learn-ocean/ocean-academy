@@ -1,4 +1,5 @@
 # Chapter 5: Intro to Smart Contracts and Web3
+#### Difficulty: **3/5** \| Estimated reading time: **10 min**
 
 <dialog character="jellyfish">Have you heard about Smart Contracts and Web3? 
 You don’t need to understand how they work, but having a general idea will help. You can see without a mask in water, but things are blurry, so here is your next piece of equipment.</dialog>

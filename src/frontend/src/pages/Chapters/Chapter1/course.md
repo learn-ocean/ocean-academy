@@ -1,4 +1,5 @@
 # Chapter 1: Why should you Care?
+#### Difficulty: **1/5** \| Estimated reading time: **3 min**
 
 <dialog character="squid">Are you ready to explore the ocean down to its depths? Dive and discover its surprising underworld. We’ll get to the bottom of it.</dialog>
 

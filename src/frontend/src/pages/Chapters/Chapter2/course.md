@@ -1,4 +1,5 @@
 # Chapter 2: Key Concepts of Blockchain
+#### Difficulty: **2/5** \| Estimated reading time: **3 min**
 
 <dialog character="jellyfish">You are now below water. This is a new environment. It feels like flying, it’s awesome. Most divers will tell you that they got hooked by the experience of moving freely in 3D from their very first dive. Same here. You will get a taste of a new universe enabled by collaborative technologies, in uncharted territories.</dialog>
 

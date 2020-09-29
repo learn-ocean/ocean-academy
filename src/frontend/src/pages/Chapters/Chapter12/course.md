@@ -1,4 +1,5 @@
 # Chapter 12: Buying and Selling Data using Ocean Protocol
+#### Difficulty: **3/5** \| Estimated reading time: **5 min**
 
 <dialog character="jellyfish">Look how these marine creatures interact. Some stay still, some move around. They wander, they transact.</dialog>
 

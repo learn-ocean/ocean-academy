@@ -1,4 +1,5 @@
 # Chapter 8: Smart Contracts and an Open Source Cloud Computer
+#### Difficulty: **2/5** \| Estimated reading time: **5 min**
 
 <dialog character="jellyfish">Why is diversity a key issue, in the oceans, and in data science?</dialog>
 

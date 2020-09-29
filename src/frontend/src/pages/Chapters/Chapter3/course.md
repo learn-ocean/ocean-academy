@@ -1,4 +1,5 @@
 # Chapter 3: Install MetaMask
+#### Difficulty: **3/5** \| Estimated reading time: **15 min**
 
 <dialog character="squid">MetaMask is like flippers to move in the blockchain waters.</dialog>
 

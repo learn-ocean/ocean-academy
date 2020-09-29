@@ -1,4 +1,5 @@
 # Chapter 6: Data and Web3
+#### Difficulty: **2/5** \| Estimated reading time: **5 min**
 
 <dialog character="jellyfish">The Web3 space extends the field of possibilities, and by now we start to meet funky new creatures in our diving descent.</dialog>
 

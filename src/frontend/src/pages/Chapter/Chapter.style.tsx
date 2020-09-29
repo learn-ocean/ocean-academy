@@ -66,7 +66,6 @@ export const ChapterH1 = styled.div`
   @media (max-width: 900px) {
     font-size: 24px;
     line-height: 28px;
-    text-align: center;
   }
 `
 
@@ -85,6 +84,11 @@ export const ChapterH3 = styled.div`
   font-size: 24px;
   line-height: 28px;
   margin-top: 20px;
+`
+export const ChapterH4 = styled.div`
+  font-size: 15px;
+  line-height: 28px;
+  margin: 0;
 `
 
 export const ChapterValidator = styled.div`

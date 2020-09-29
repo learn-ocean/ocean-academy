@@ -1,4 +1,5 @@
 # Chapter 11: Smart Contract for Storing and Reading Data
+#### Difficulty: **4/5** \| Estimated reading time: **10 min**
 
 <dialog character="jellyfish">These new species have absolutely incredible behaviors. They can do a lot of things, and more!</dialog>
 

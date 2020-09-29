@@ -1,4 +1,5 @@
 # Chapter 13: What is Ocean Protocol?
+#### Difficulty: **2/5** \| Estimated reading time: **10 min**
 
 <dialog character="mantaray">It's an entire ecosystem that lies in the depths of the Ocean. It's dark and mystical, but the creatures here are warm and welcoming</dialog>
 

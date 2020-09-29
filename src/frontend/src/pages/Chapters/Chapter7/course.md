@@ -1,4 +1,5 @@
-# Chapter 7: New Data Workflows for Enterprises 
+# Chapter 7: New Data Workflows for Enterprises
+#### Difficulty: **2/5** \| Estimated reading time: **5 min**
 
 <dialog character="squid">Why are we doing all this, you may ask. Traditional data science workflows have been working fine for data scientists after all. Why transition to a new model?
 Let’s explore the benefits of a diverse and flourishing data underworld.
