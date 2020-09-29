@@ -1,12 +1,13 @@
 export const questions = [
   {
-    question: 'Which of these operations is not done by the Ocean Aquarius Proxy?',
+    question: 'What listed operations is not performed by the Ocean Aquarius Proxy?',
     answers: [
+      'Encrypt the URL',
       'Decrypt URL',
       'Compute on the data',
       'Check On chain conditions for payment'
     ],
-    response: '',
+    response: 'Seng algorithm to the database',
     proposedResponse: '',
   },
 ]
