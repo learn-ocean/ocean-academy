@@ -5,9 +5,10 @@ export const questions = [
       'Encrypt the URL',
       'Decrypt URL',
       'Compute on the data',
-      'Check On chain conditions for payment'
+      'Check On chain conditions for payment',
+      'Send algorithm to the database'
     ],
-    response: 'Seng algorithm to the database',
+    response: 'Send algorithm to the database',
     proposedResponse: '',
   },
 ]
