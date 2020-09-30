@@ -1,13 +1,13 @@
 export const questions = [
   {
-    question: 'What are the steps needed to register a data asset with Ocean Protocol',
+    question: 'When you select an image to run the algorithm, what are you selecting in this process?',
     answers: [
-      'Prepare Metdata, Provide URL to get data, Define the attributes of the compute, Register the asset on the Blockchain.',
-      'Define the attributes of the compute, Register the asset on the Blockchain, Prepare Metdata, Provide URL to get data.',
-      'Register the asset on the Blockchain, Prepare Metdata, Define the attributes of the compute, Provide URL to get data',
-      'Provide URL to get data, Define the attributes of the compute, Prepare Meta data, Register the asset on the Blockchain.',
+      'A cluster of data and pictures for sending them to compute.',
+      'The virtual environment framework where your data will be computed upon.',
+      'You are uploading the metadata of a picture to train an Image Recognition model.',
+      'You can only provide access to the database in a specific format such as .png or .psd.',
     ],
-    response: 'Prepare Metdata, Provide URL to get data, Define the attributes of the compute, Register the asset on the Blockchain.',
+    response: 'The virtual environment framework where your data will be computed upon.',
     proposedResponse: '',
   },
 ]
