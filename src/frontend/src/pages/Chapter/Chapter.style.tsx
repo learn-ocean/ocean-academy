@@ -41,6 +41,7 @@ export const ChapterCourse = styled.div`
   white-space: pre-wrap;
   overflow: auto;
   position: relative;
+  font-size: 22px;
 
   img {
     max-width: 100%;
@@ -85,7 +86,7 @@ export const ChapterH3 = styled.div`
   margin-top: 20px;
 `
 export const ChapterH4 = styled.div`
-  font-size: 14px;
+  font-size: 15px;
   line-height: 28px;
   margin: 0;
 `
