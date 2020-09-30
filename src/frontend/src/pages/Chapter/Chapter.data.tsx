@@ -14,6 +14,9 @@ import { data as data13 } from '../Chapters/Chapter13'
 import { data as data14 } from '../Chapters/Chapter14'
 import { data as data15 } from '../Chapters/Chapter15'
 import { data as data16 } from '../Chapters/Chapter16'
+import { data as data17 } from '../Chapters/Chapter17'
+import { data as data18 } from '../Chapters/Chapter18'
+import { data as data19 } from '../Chapters/Chapter19'
 
 export const chapterData = [
   {
@@ -95,5 +98,20 @@ export const chapterData = [
     pathname: '/chapter-16',
     name: '16 - Who is a Data Provider?',
     data: data16,
+  },
+  {
+    pathname: '/chapter-17',
+    name: '17 -  Who is an Algorithm Provider?',
+    data: data17,
+  },
+  {
+    pathname: '/chapter-18',
+    name: '18 - Who is a Data/Compute Consumer?',
+    data: data18,
+  },
+  {
+    pathname: '/chapter-19',
+    name: '19 - Access Control Flow',
+    data: data19,
   },
 ]
