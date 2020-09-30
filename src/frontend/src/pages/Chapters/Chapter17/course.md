@@ -9,11 +9,11 @@ Algorithm Providers are called Compute Providers in Ocean. They sell algorithms,
 
 **More accurate AI models.** AI practitioners & data scientists not only can access valuable, private data that was previously unavailable, but they can also leverage third party ML models available on the market. Data consumers can effectively train their algorithms using private data and a hosted model.
 
-Let’s say you are a crypto enthusiast and you want to forecast the BTC-EUR price for tomorrow. Via Ocean, you can buy the data features you need, buy a pre trained Deep learning model and you have your forecast. Data stays private because only AI algorithms see the data directly while computing in a safe virtual machine powered by Kubernetes.
+Let’s say you are a coffee farmer in Nicaragua, and you want to sell roasted beans at the local market. The prices at the market are subject to sharp changes depending on numerous factors, and you need to be able to sell at the best price possible to pay for expenses and develop your activity. Via Ocean Protocol, you can get the data you need (ex. historical price data, global meteorological data, ...etc.) and use it in a pre trained Deep learning model to and get a price forecast for the next 3 months (the same kind used by hedge-funds). You have never seen any data nor any algorithm, but now you know when to sell your beans to maximize your revenue.
 
 <img src="/images/chapter17_0.png" />
 
-Ocean Compute-to-Data solves the current tradeoff between the benefits of using the private data and the risks of exposing it. Compute-to-Data lets data stay on-premise, while allowing 3rd parties to run specific compute jobs on it.
+The Ocean Compute-to-Data functionality solves the current tradeoff between the benefits of using the private data and the risks of exposing it. Ocean Compute-to-Data provides a means to exchange data while preserving privacy by allowing the data to stay on-premise with the data provider, yet allowing data consumers to run compute jobs on data to train AI models. 
 
 Overall, a Compute Provider using Ocean Protocol Compute-to-Data functionality enjoys many benefits:
 
@@ -26,7 +26,7 @@ Overall, a Compute Provider using Ocean Protocol Compute-to-Data functionality e
 Once an algorithm is sold, that algorithm is sent to train or query some dataset in a Virtual Machine. The Algorithm and the data are both protected and cannot be seen by the algorithm consumer.
 
 Wait, but how can you trust an algorithm supplied by another data scientist ? 
-Ocean Protocol has built in financial incentives for every market participant to earn revenue by curating algorithms and reporting the best data assets. This is the main assumption in the Compute Quality Scoring Mechanism in Ocean Protocol.
+Ocean Protocol has built in financial incentives for curators to signal the quality of algorithms and datasets via a Quality Scoring Mechanism.
 
 The Compute Quality Scoring Mechanism in Ocean Protocol is designed in such a way that users lock OCEAN tokens into their algorithm, earning a cut of the transaction fees proportional to their share of the  total amount locked every time the algorithm is used. And anyone can lock OCEAN tokens into any asset to get a cut of the transaction fees of that asset.
 
