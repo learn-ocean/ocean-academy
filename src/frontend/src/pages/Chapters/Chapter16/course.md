@@ -36,4 +36,4 @@ When the dataset is registered, the publisher invokes **the Ocean Datatoken Fact
 
 <img src="/images/chapter16_1.png" />
 
-**Earn Ocean Tokens by providing data.** Data providers sitting on large sets of latent data can now publish data for sharing using a variety of pricing mechanisms, while maintaining full control over the data and complying with data privacy and compliance regulations.
+**Anyone is free to earn a revenue from their data.** Data providers sitting on large sets of latent data now have the tools to publish data while maintaining full control over the data and complying with data privacy and compliance regulations.
