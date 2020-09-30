@@ -26,6 +26,6 @@ export const DialogCharacter = styled.img`
 export const DialogText = styled.div`
   display: flex;
   align-items: center;
-  font-size: 18px;
+  font-size: 16px;
   justify-content: space-around;
 `
