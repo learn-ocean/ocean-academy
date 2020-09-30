@@ -1,13 +1,13 @@
 export const questions = [
   {
-    question: 'What are the steps needed to register a data asset with Ocean Protocol',
+    question: 'What is the difference between the Operator Service and the Operator Engine?',
     answers: [
-      'Prepare Metdata, Provide URL to get data, Define the attributes of the compute, Register the asset on the Blockchain.',
-      'Define the attributes of the compute, Register the asset on the Blockchain, Prepare Metdata, Provide URL to get data.',
-      'Register the asset on the Blockchain, Prepare Metdata, Define the attributes of the compute, Provide URL to get data',
-      'Provide URL to get data, Define the attributes of the compute, Prepare Meta data, Register the asset on the Blockchain.',
+      'Operator Service instruct the Operator engine on what to compute',
+      'Anyone with a ML pipeline, workflow or other script can make it available through the Operator Engine',
+      'Everyone can offer their computation power to become a Operator Service but only data to be a Operatoro Engine ',
+      'Operator engines based on the Operator Service workflow complete the data execution in the cluster.',
     ],
-    response: 'Prepare Metdata, Provide URL to get data, Define the attributes of the compute, Register the asset on the Blockchain.',
+    response: 'Operator engines based on the Operator Service workflow complete the data execution in the cluster.',
     proposedResponse: '',
   },
 ]
