@@ -77,7 +77,7 @@ p {
     margin-block-end: 10px;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    font-size: 22px;
+    font-size: 14px;
 }
 
 
