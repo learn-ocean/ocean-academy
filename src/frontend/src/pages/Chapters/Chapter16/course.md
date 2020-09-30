@@ -1,5 +1,5 @@
 # Chapter 16: Who is a Data Provider?
-#### Difficulty: **3/5** \| Estimated reading time: **10 min**
+#### Difficulty: **3/5** \| Estimated reading time: **5 min**
 
 <dialog character="mantaray">In the depths of the ocean, nobody knows you’re a fish. Meet the main characters in the Web3 data ecosystem that Ocean Protocol is buidling. First, data owners who look to monetize their data.</dialog>
 

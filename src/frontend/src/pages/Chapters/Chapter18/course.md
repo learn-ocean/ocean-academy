@@ -1,5 +1,5 @@
 # Chapter 18: Who is Data/Compute Consumer?
-#### Difficulty: **3/5** \| Estimated reading time: **10 min**
+#### Difficulty: **3/5** \| Estimated reading time: **5 min**
 
 <dialog character="mantaray">We’ve met the data fishes, let’s scrutinize now the species who look to acquire data to build models, the data consumers.</dialog>
 

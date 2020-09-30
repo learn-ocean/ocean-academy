@@ -1,5 +1,5 @@
 # Chapter 17: Who is an Algorithm Provider?
-#### Difficulty: **3/5** \| Estimated reading time: **10 min**
+#### Difficulty: **3/5** \| Estimated reading time: **5 min**
 
 <dialog character="mantaray">Not all fishes in the  Ocean are capable of coding their own algorithms. That’s why they need to rely on Algorithm Providers.</dialog>
 

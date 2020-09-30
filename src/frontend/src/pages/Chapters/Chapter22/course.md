@@ -1,5 +1,5 @@
 # Chapter 22: Vision of a New Data Economy
-#### Difficulty: **1/5** \| Estimated reading time: **5 min**
+#### Difficulty: **1/5** \| Estimated reading time: **3 min**
 
 <dialog character="mantaray">“The aim of Ocean Protocol is to equalize the opportunity to access data, so that a much broader range of AI practitioners can create value from it, and in turn spread the power of data. This network can be used as a foundational substrate to power a new ecosystem of data marketplaces, and more broadly, data sharing for the public good.” Trent McConaghy, Co-Founder, BigChainDB & Ocean Protocol
 </dialog>
