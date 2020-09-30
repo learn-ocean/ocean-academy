@@ -26,7 +26,7 @@ Overall, a Compute Provider using Ocean Protocol Compute-to-Data functionality e
 Once an algorithm is sold, that algorithm is sent to train or query some dataset in a Virtual Machine. The Algorithm and the data are both protected and cannot be seen by the algorithm consumer.
 
 Wait, but how can you trust an algorithm supplied by another data scientist ? 
-Ocean Protocol has built in financial incentives for every market participant to earn revenue by curating algorithms and reporting the best data assets. This is the main assumption in the Compute Quality Scoring Mechanism in Ocean Protocol.
+Ocean Protocol has built in financial incentives for curators to signal the quality of algorithms and datasets via a Quality Scoring Mechanism.
 
 The Compute Quality Scoring Mechanism in Ocean Protocol is designed in such a way that users lock OCEAN tokens into their algorithm, earning a cut of the transaction fees proportional to their share of the  total amount locked every time the algorithm is used. And anyone can lock OCEAN tokens into any asset to get a cut of the transaction fees of that asset.
 
