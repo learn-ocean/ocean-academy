@@ -1,5 +1,5 @@
 # Chapter 4: Get Play Money
-#### Difficulty: **3/5** \| Estimated reading time: **15 min**
+#### Difficulty: **3/5** \| Estimated reading time: **3 min**
 
 <dialog character="squid">Excellent, you have the first piece of equipment now. If you want to do anything in the blockchain waters rather than watching from the surface, you will need to dive into it, and you will need oxygen for that. ETH provides the gas you need to stay below the surface.</dialog>
 
