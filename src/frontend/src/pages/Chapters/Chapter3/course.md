@@ -18,7 +18,7 @@ MetaMask is available for Chrome, Firefox, Android, and iOS. Select the one you 
 <img src="/images/chapter3_0.png" />
 
 
-### Install MetaMask
+**Install MetaMask.**
 On a laptop, it will get added as a browser extension, in the top right corner of your browser.
 Click on the fox icon and get started. You can decide to provide anonymized information to MetaMask or not.
 
@@ -26,7 +26,7 @@ Click on the fox icon and get started. You can decide to provide anonymized info
 <img src="/images/chapter3_1.png" />
 
 
-### Create your Wallet
+**Create your Wallet.**
 Provide a secure password to secure access to your wallet. Read the T&C and agree.
 Now MetaMask will generate a secret backup phrase for you. This is called a seed. A seed is a collection of random words (in MetaMask it’s 12 words) used as a unique starting point to create your accounts. Consider and treat it like a root password.
 
