@@ -16,7 +16,7 @@ Go to the [Rikeby faucet](https://faucet.rinkeby.io/) and follow the instruction
 
 You will be asked to post your ETH address on Twitter or Facebook; the faucet providers do this to ensure that people can do this just once and don’t empty the faucet too quickly.
 
-Copy your ETH wallet address by clicking on ‘Account 1’, the default account created by Metamask. Clicking will automatically copy your wallet address to the clipboard. You can safely share this address with anyone.
+Copy your ETH wallet address by clicking on ‘Account 1’, the default account created by Metamask. Clicking will automatically copy your wallet address to the clipboard. You can safely share this address with anyone because it is public and it does not control your funds (with your set-up only your Metamask and your seed phrase can control your funds).
 
 <img src="/images/chapter4_1.png" />
 
