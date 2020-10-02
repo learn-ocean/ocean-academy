@@ -12,7 +12,7 @@ export const HomeView = () => {
       <HomePage>
         <HomeContainer>
           <h1>Learn to monetize data and analytic services using blockchain technology</h1>
-          <p> Ocean Academy 101 is a community initiative providing a simple and practical introduction to Ocean Protocol starting from zero. For free.</p>
+          <p>Ocean Academy 101 is a community initiative providing a simple and practical introduction to Ocean Protocol starting from zero. For free.</p>
           <span>You’ll be set-up with your own Ethereum digital wallet in less than 15 minutes.</span>
           <span>Through an interactive experience, you will get familiar with the main concepts of Web3, how data science fits in, and how you can use Ocean Protocol to create value in the New Data Economy.</span> 
           <span>At the end of the 23 modules, you will be handed a completion certificate which grants access to the Ocean Ambassador community. We look forward to see you there.</span>

@@ -10,7 +10,7 @@ Many people have not yet realized how blockchain technology will disrupt their i
 
 **Create new revenue streams**. Anyone who owns data, no matter how much and what kind, can earn revenue by granting access to those willing to pay. This applies to individuals and organizations.
 
-**Unlock data taps**. The ability to monetize data introduces an incentive to share data. This increases the amount of data breaking free from silos, ready to be blended and transformed to create value. 
+**Unlock data taps**. The ability to monetize data introduces an incentive to share data. This increases the amount of data breaking free from silos, ready to be blended and transformed to create value.
 
 **Make data available**. With more data available to use for Data and AI Scientists, data models will get more accurate, increasing the market value of data products. The ability to easily search and find data from a global corpus removes barriers and friction to match data supply and demand.
 

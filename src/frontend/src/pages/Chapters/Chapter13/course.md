@@ -1,9 +1,9 @@
 # Chapter 13: What is Ocean Protocol?
 #### Difficulty: **2/5** \| Estimated reading time: **10 min**
 
-<dialog character="mantaray">It's an entire ecosystem that lies in the depths of the Ocean. It's dark and mystical, but the creatures here are warm and welcoming</dialog>
+<dialog character="mantaray">It's an entire ecosystem that lies in the depths of the Ocean. It's dark and mystical, but the creatures here are warm and welcoming.</dialog>
 
-Ocean Protocol is a protocol that defines how communication between data providers and data consumers takes place in a decentralized way, either directly or via Apps, like marketplaces.
+Ocean Protocol is a protocol that defines how communication between data providers and data consumers takes place in a decentralized way, either directly or via apps, like marketplaces.
 
 Ocean Protocol provides a complete toolbox for data scientists and developers to securely publish, exchange, and use data.
 
@@ -32,6 +32,6 @@ The Ocean Protocol toolbox offers:
 
 Ocean Protocol technology stack provides high-level functionalities to facilitate data exchanges for users in an easy way:
 
-- **Publishing** - Allows the user to publish new assets to the network.
-- **Consuming** - Allows the user to list and consume published assets. 
-- **Marketplace** - Enables complex interactions and advanced capabilities.
+- **Publishing**. Allows the user to publish new assets to the network.
+- **Consuming**. Published assets can be listed and consumed by the user. 
+- **Marketplace**. Enables complex interactions and advanced capabilities.
