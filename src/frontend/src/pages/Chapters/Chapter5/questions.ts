@@ -6,9 +6,9 @@ export const questions = [
             "Transferring property rights automatically once financing is secured",
             "Getting paid to provide access to one’s data",
             "Buying access to a private dataset, instantly, when needed",
-            "None of these statements are true"
+            "All of these statements are true"
         ],
-        response: "",
+        response: "All of these statements are true",
         proposedResponse: ""
     }
 ]

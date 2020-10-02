@@ -11,16 +11,22 @@ You can simply copy the following code and paste it in a new file on Remix to do
 
 ```Solidity
 1 pragma solidity >=0.4.22 <0.7.0;
-2 contract helloWorld { 
-3    function sayHello (string memory message) public pure returns (string memory) { 
+2 contract helloWorld {
+3    function sayHello (string memory message) public pure returns (string memory) {
 4        return "hello world";
 5    }
 6 }
 ```
 
-**Explanation**. The *first line* of each solidity program defines the version of the compiler that should be run to compile the program to bytecode before it can be deployed to the blockchain. Determining the compiler version is important since newer versions of the compiler might lead to unintended behavior and losses of funds. *Line 2* defines the contract itself. Line *3* is the definition of the function. The first part says that it accepts a string as an argument. The second part declares the visibility and behaviour as ‘public and pure’. *Public* means it can be called internally or via messages. *Pure* indicates that the function will not alter the storage state. The last part defines the return value (string). *Line 4* contains the actual logic of the function. In this case, it only returns the string “hello world”.
+**Explanation**. The *first line* of each solidity program defines the version of the compiler that should be run to compile the program to bytecode before it can be deployed to the blockchain. Determining the compiler version is important since newer versions of the compiler might lead to unintended behavior and losses of funds. *Line 2* defines the contract itself. *Line 3* is the definition of the function.
+- The first part says that it accepts a string as an argument.
+- The second part declares the visibility and behavior as ‘public and pure’.
+- *Public* means it can be called internally or via messages.
+- *Pure* indicates that the function will not alter the storage state.
+- The last part defines the return value (string).
+*Line 4* contains the actual logic of the function. In this case, it only returns the string “hello world”.
 
-**Execution costs**. Since this is not considered to be a smart contract development course we will rather focus on explaining the concepts than trying to teach you to develop smart contracts. But always remember that each instruction has a price to be executed. This price is paid as a gas fee by the caller of the smart contract. Otherwise, there would be no incentive for an Ethereum node provider to execute any code. Transaction and execution fees keep the network running. It is therefore recommended to reduce the complexity of your smart contract to increase security and reduce the execution costs to run a function in the smart contract.
+**Execution costs**. Since this is not considered to be a smart contract development course we will rather focus on explaining the concepts than trying to teach you to develop smart contracts. But always remember that each instruction in the smart contract has a price to be executed. This price is paid as a gas fee by the caller of the smart contract. The fee is paid to the nodes processing those operations on the blockchain. So this provides an incentive for developers to make smart contracts as efficient as possible.
 
 <img src="/images/chapter9_0.png" />
 
