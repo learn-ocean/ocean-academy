@@ -1,4 +1,5 @@
 # Chapter 17: Who is an Algorithm Provider?
+
 #### Difficulty: **3/5** \| Estimated reading time: **5 min**
 
 <dialog character="mantaray">Not all fishes in the Ocean are capable of coding their own algorithms. That’s why they rely on Algorithm Providers.</dialog>
@@ -13,7 +14,7 @@ Let’s say you are a coffee farmer in Nicaragua, and you want to sell roasted b
 
 <img src="/images/chapter17_0.png" />
 
-The Ocean Compute-to-Data functionality solves the current tradeoff between the benefits of using the private data and the risks of exposing it. Compute-to-Data provides a means to exchange data while preserving privacy by allowing the data to stay on-premise with the data provider, yet allowing data consumers to run compute jobs on data to train AI models. 
+The Ocean Compute-to-Data functionality solves the current tradeoff between the benefits of using the private data and the risks of exposing it. Compute-to-Data provides a means to exchange data while preserving privacy by allowing the data to stay on-premise with the data provider, yet allowing data consumers to run compute jobs on data to train AI models.
 
 Overall, a Compute Provider using Compute-to-Data functionality enjoys many benefits:
 
@@ -31,3 +32,5 @@ Ocean Protocol has built-in financial incentives for curators to signal the qual
 The Compute Quality Scoring Mechanism in Ocean Protocol is designed in such a way that users lock OCEAN tokens into their algorithm, earning a cut of the transaction fees proportional to their share of the total amount locked every time the algorithm is used. And anyone can lock OCEAN tokens into any asset to get a cut of the transaction fees of that asset.
 
 This incentivizes participants in Ocean Protocol to invest in the data sets that they think will provide the most fee, and the total amount invested provides a signal on algorithm quality. You benefit from this market dynamic to judge the trustworthiness of an Ocean asset taking liquidity as reference (how much are participants betting on this particular algorithm or dataset).
+
+<iframe  title="Ocean Compute-to-Data | Run an Algorithm" width="2200" height="1300" src="https://www.youtube.com/watch?v=8cbb_0s1aCk&list=PL_dn0wVs9kWoREjqFATkzooH1GMF6C9b2&index=3" frameborder="0" allowfullscreen></iframe>

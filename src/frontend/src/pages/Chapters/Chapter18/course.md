@@ -1,4 +1,5 @@
 # Chapter 18: Who is Data/Compute Consumer?
+
 #### Difficulty: **3/5** \| Estimated reading time: **5 min**
 
 <dialog character="mantaray">We’ve met the data fishes. Now let’s scrutinize the species who look to acquire data to build models: the data consumers.</dialog>
@@ -26,3 +27,5 @@ First, you have to select the image to run an algorithm, using either Python or 
 You want to choose a python with pandas image if you have a .py script or if you are doing analysis in Javascript you can run a nodejs10 image.
 
 Secondly you have to drag and drop your python script and if that script type is allowed by the data owner, Ocean Protocol will take the algorithm and the data, and it will compute the output with the help of Kubernetes clusters.
+
+<iframe  title="Ocean Compute-to-Data | Publish a Compute-only asset" width="2200" height="1300" src="https://www.youtube.com/watch?v=dmvdARC6xxU" frameborder="0" allowfullscreen></iframe>

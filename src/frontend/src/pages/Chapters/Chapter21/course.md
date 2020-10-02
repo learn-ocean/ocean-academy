@@ -1,4 +1,5 @@
 # Chapter 21: Use cases by vertical
+
 #### Difficulty: **1/5** \| Estimated reading time: **5 min**
 
 <dialog character="mantaray">We’ve seen a lot of things in the depths of the Ocean. Let’s see how Ocean Protocol has been implemented to solve real problems above sea level.</dialog>
@@ -22,6 +23,8 @@ In the dexFreight omnichannel data marketplace, transportation and logistics com
 **Improve operational efficiency.**As a blockchain-based platform, dexFreight has immediate access to end-to-end operations, shipment, and payment data from logistics and transportation companies. The data can be used to build optimization models and enable effective decision-making. For example, shipping companies need short-term price predictions for hundreds of origin-destination pairs to correctly price freight, which is subject to fuel cost fluctuations, tariffs, market conditions, and other factors. In the omnichannel data marketplace, dexFreight will use machine learning to build and update these models and enable transportation and logistics companies to lease data that can be turned into actionable intelligence.
 
 **Facilitate industry wide improvement.** Creating a community repository of data will contribute to the good of the transportation and logistics industry by making aggregated and anonymous data publicly available for implementing operational best practices, forming industry-wide strategies, and supporting policy discussions. The new marketplace is federating a loose group into an industry force.
+
+<iframe  title="Roche Diagnostics and Ocean Protocol" width="2200" height="1300" src="https://www.youtube.com/watch?v=vaWudN75NRY" frameborder="0" allowfullscreen></iframe>
 
 ## Automotive - Daimler AG
 

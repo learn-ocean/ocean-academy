@@ -1,4 +1,5 @@
 # Chapter 20: Access Control Flow
+
 #### Difficulty: **3/5** \| Estimated reading time: **10 min**
 
 <dialog character="mantaray">Want to know how you can see in the dark?</dialog>
@@ -31,5 +32,7 @@ Let’s say a company uses Ocean Compute-to-Data to set up their compute infrast
 - **After necessary validations, the Operator Service instructs the Operator Engine to initiate compute**In this last step the Operator Service performs checks on all inputs and, once ready, instructs the Operator Engine to start the compute task. It will spin a Kubernetes cluster process within the given parameters of data and algorithm.
 - During data processing, The Data Consumer can inquire about the compute completion status anytime. If the buyer is not satisfied, he can choose to restart compute execution with the same or a different algorithm, until the compute access expires.
 - Once the computing is done, the Data Consumer gets informed. The Data Consumer can choose to download or move those results to their storage. The Compute Service produces two types of results: (1) output and (2) execution logs. Consumers can choose either or both to be delivered to them upon completion. These results are published to AWS S3 storage upon completion, and an AWS S3 URL is shared with the consumer.
+
+<iframe  title="Ocean Compute-to-Data | Technical Workshop" width="2200" height="1300" src="https://www.youtube.com/watch?v=qm8aZ9N5VgU" frameborder="0" allowfullscreen></iframe>
 
 Compute-to-Data is language agnostic and supports all types of compute platforms, environments, and programming languages. Since this whole process takes place on the data provider side, data remains private and is not revealed to the consumer. In this setup, **the Data Provider is also the Compute provider.**
