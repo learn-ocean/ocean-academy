@@ -7,11 +7,7 @@ Let’s explore the benefits of a diverse and flourishing data underworld.
 
 **Data as a liability.** Most companies consider data as an asset. But regulation is increasing the burden for companies to keep their data compliant. Processes, organization charts, and IT infrastructure are affected. For this reason, some companies try to avoid any ‘personally identifiable’ data given the legal risk such data may represent. Sometimes, data cannot be shared even within the same company between teams because of regulations like GDPR.
 
-<<<<<<< HEAD
-**Data as a locked good.** In the legacy data economy, there is no easy way to give an algorithm access to one’s data without revealing the data itself. This creates loopholes in control and security (the same problem of third party trust as for individuals). This explains why, despite many companies claim that data represents a competitive advantage, they prefer to keep it locked and unused. “Better safe than sorry”. Providing a way to share access to data easily and securely within and across organizations represents a major opportunity to create value from that data.
-=======
 **Data as a locked good.** In the legacy model, there is no easy way to give an algorithm access to one’s data without revealing the data itself. This creates loopholes in control and security (the same problem of third party trust as for individuals). This explains why, despite many companies claim that data represents a competitive advantage, they prefer to keep it locked and unused. "Better safe than sorry". Providing a way to share access to data easily and securely within and across organizations represents a major opportunity to create value from that data.
->>>>>>> 877507c6151aa9a1ead8ef79043ec68981699d0d
 
 **Efficiency opportunity.** Transacting on data and analytics has a cost, which can be reduced by using a unified technology stack. This results in better quality tools, service availability, and an increased number of experts.
 

@@ -9,15 +9,9 @@
 
 **Trust in third parties.** Selling personal private data nowadays requires to trust third parties to protect the data from abuse. Small companies may not have the will or the skills to secure data. But even big organizations have a history of data breaches, and cases of mishandling of user data are far too common, even today.
 
-<<<<<<< HEAD
 **User data ownership.** In the Web3 model, the control of the data is in the hands of the user. The data itself is not owned by the company providing a service anymore. Users provide access to their data while keeping full ownership. This opens the opportunity for individuals to control and monetize their data without worrying about losing ownership and privacy. Additionally, it gives individuals better visibility of how their data is accessed and used by analysts and companies.
 
 **Incentivized data sharing**. Data control offers users much greater incentives to share their data because it's safe to do so. They can earn a revenue from their data and decide exactly what data is shared, to whom, and how. It makes it difficult for companies to lock-in their users since the data is in the hands of the user. The user can switch to other service providers without losing any data, which can stir healthy competition and innovation across industries.
-=======
-**User data ownership.** In the Web3 model, the control of the data is in the hand of the user. The data itself is not owned by the company providing a service anymore, only accessed. Users provide access to their data while keeping full ownership. This opens the opportunity for individuals to control and therefore monetize their data without losing ownership and while maintaining privacy. The data could be saved on the user's device or fully encrypted on a third-party server. Additionally, it gives individuals better visibility of how their data is accessed and used by (web3) apps, services, analysts and companies.
-
-**Incentivized data sharing**. Data control offers users much greater incentives to share their data: it’s safe, they can earn a revenue from their data, and decide exactly what data is shared, to whom, and how. This makes it difficult for companies to lock-in their users since the data is in the hands of the user. The user can switch to other services without losing any data, which might ultimately lead to more specialized tools and interfaces.
->>>>>>> 877507c6151aa9a1ead8ef79043ec68981699d0d
 
 <img src="/images/chapter6_0.png" />
 
@@ -26,8 +20,4 @@
 **Monetizing your private data**. Chat users can sell their chat data if they want to. Imagine a company that wants to analyze the most used words in private chats over time. Chat users could sell a wordlist and/or occurrences of words and earn money. So it’s not the chat app that has a monopoly over this data but users are in control. This puts the chat app in competition with other analytics service providers. 
 A clever chat app provider would offer their users a payment or other kinds of advantages if users allow them to analyze their chats.
 
-<<<<<<< HEAD
 In summary, Web3 forces companies to offer these kinds of incentives, because there is finally an open market around user (produced) data.
-=======
-In summary Web3 forces companies to offer these kinds of incentives, because there is finally an open market around user (generated) data. 
->>>>>>> 877507c6151aa9a1ead8ef79043ec68981699d0d
