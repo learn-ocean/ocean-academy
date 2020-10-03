@@ -9,17 +9,14 @@
 
 <img src="/images/chapter10_0.png" />
 
-When you open the contract there is a tab to read the actual Solidity code. If you look into the OCEAN Smart Contract you can see that **the Ocean Token uses the ERC20 standard**; it is an "ERC20 token", which is a widely used and secure standard. It proposes a standard set of functions to interact with it and suggests naming conventions.
+When you open the contract there is a tab to read the actual Solidity code. If you look into the OCEAN Smart Contract you can see that **the Ocean Token uses the ERC20 standard**; it is an *ERC20 token*, which is a widely used and secure standard. It imposes a standard set of functions to interact with it as well as standard naming conventions.
 
-**In need of standards**. While everyone can write smart contract in their own style the community realized that it might be useful for the ecosystem and for security (many smart contracts deal with real monetary value after all) to introduce standard smart contracts. These smart contracts are simply best practices so you should use them to increase quality and speed up your development. But the Ethereum network does not enforce you to use them.
+**In need of standards**. While everyone can write smart contracts in their own style, the community realized that it might be useful for the ecosystem and for security (many smart contracts deal with real monetary value after all) to introduce standards. The Ethereum network does not enforce you to use these standards, but most developers use them as they increase quality and speed up your development.
 
-**ERC standards.** In the Ethereum ecosystem, you will often read about standard token contracts like [ERC20](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/IERC20.sol). ERC is an acronym that stands for Ethereum Request for Comments, which were proposals in Git, that then got tested and adopted by the community. ERCs are application-level standards for Ethereum and can include token standards, name registries, library/package formats, and more. These standards and libraries are open-source, free to copy/use, and well documented.
+**ERC standards.** [ERC20](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/IERC20.sol) is just one standard for tokens, but standards are also available for name registries, library/package formats, and more. These standards use *ERC* as suffix, as they all started as *Ethereum Request for Comments*. ERCs started as modification proposals by developers asking for feedback, got tested, and later adopted by the community. These standards and libraries are open-source, free to copy/use, and well documented.
 
-**Better user experience**. When all proposals are followed other apps and smart contracts expect that the Ocean Token behaves like all other ERC20 tokens. This increases compatibility and enables e.g. the Ocean Token to contribute to and benefit from the whole Ethereum ecosystem.
+**Better user experience**. Because the Ocean token is an ERC20 token, other apps and smart contracts know how to interact with it, just like they do with other ERC20 tokens. This increases compatibility and enables cross-pollination; the Ocean Token contributes to the Ethereum ecosystem, and it benefits from the whole Ethereum ecosystem.
 
-Since the Ocean Token Contract follows the ERC20 standard Etherscan can find the Smart Contract by searching for *OCEAN*. The user does not need to know the address.
+Since the Ocean Token Contract follows the ERC20 standard [Etherscan](https://etherscan.io) can be used to find the Smart Contract by searching for *OCEAN*. The user does not need to know the address.
 
-**Transparency**. Looking at the Ocean Contract you can see how many holders there are and you can inspect every single transaction. There is also a tab to directly call the functions of the Smart Contract. 
-All this information is on-chain and therefore available for everyone. Etherscan enriches this view with off-chain data like the price of the token and they allow to upload the correct source code of the Smart Contract. Now everyone can audit the Solidity code. 
-
-If you do not like Etherscan you can simply switch to another Explorer or build your own. This increases independency.
+**Transparency**. Looking at the Ocean token contract you can see how many people (addresses) hold the token, and you can inspect every single transaction of the token. This information is publicly written on the Ethereum blockchain, Etherscan is only a tool to access that information. If you do not like Etherscan you can simply switch to another Explorer or build your own. It's that simple.
