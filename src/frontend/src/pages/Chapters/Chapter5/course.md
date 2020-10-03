@@ -23,7 +23,7 @@ The Web3 is a mesh network of blockchains and smart contracts that interact with
 
 It’s called Web 3.0 because it’s an evolution of the internet since its beginning. The Web3 internet is built on fundamentally different infrastructure, utilizing blockchains and distributed peer-to-peer networks, compared to the current existing internet which relies on server-client relationships.
 
-<img src="/images/chapter5_1.png" />
+<img src="/images/Chapter5_1.png" />
 
 **Evolution of the web**. On its creation, the Web 1.0 was a network of relatively big entities like big universities offering access to static content. Service providers gave access to that content spread across hosts across the globe.
 
