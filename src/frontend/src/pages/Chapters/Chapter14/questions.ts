@@ -1,6 +1,6 @@
 export const questions = [
   {
-    question: 'What listed operations is not performed by the Ocean Aquarius Proxy?',
+    question: 'What listed operations is not performed by the Ocean Proxy (layer 2)?',
     answers: [
       'Encrypt the URL',
       'Decrypt URL',
