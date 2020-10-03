@@ -20,7 +20,7 @@ dexFreight and Ocean Protocol are building a marketplace to allow logistics comp
 
 In the dexFreight omnichannel data marketplace, transportation and logistics companies can efficiently aggregate and securely sell their data using standardized templates in smart contracts. This provides an extra revenue stream for them, and pushes standardization in the industry, which can enhance collaboration opportunities.
 
-**Improve operational efficiency.**As a blockchain-based platform, dexFreight has immediate access to end-to-end operations, shipment, and payment data from logistics and transportation companies. The data can be used to build optimization models and enable effective decision-making. For example, shipping companies need short-term price predictions for hundreds of origin-destination pairs to correctly price freight, which is subject to fuel cost fluctuations, tariffs, market conditions, and other factors. In the omnichannel data marketplace, dexFreight will use machine learning to build and update these models and enable transportation and logistics companies to lease data that can be turned into actionable intelligence.
+**Improve operational efficiency.** As a blockchain-based platform, dexFreight has immediate access to end-to-end operations, shipment, and payment data from logistics and transportation companies. The data can be used to build optimization models and enable effective decision-making. For example, shipping companies need short-term price predictions for hundreds of origin-destination pairs to correctly price freight, which is subject to fuel cost fluctuations, tariffs, market conditions, and other factors. In the omnichannel data marketplace, dexFreight will use machine learning to build and update these models and enable transportation and logistics companies to lease data that can be turned into actionable intelligence.
 
 **Facilitate industry wide improvement.** Creating a community repository of data will contribute to the good of the transportation and logistics industry by making aggregated and anonymous data publicly available for implementing operational best practices, forming industry-wide strategies, and supporting policy discussions. The new marketplace is federating a loose group into an industry force.
 
@@ -30,6 +30,6 @@ In the dexFreight omnichannel data marketplace, transportation and logistics com
 
 <img src="/images/chapter21_0.png" />
 
-Using Ocean Protocol solutions, Daimler is creating a decentralized sharing platform for its financial and sales data across several production hubs across the world as well as externally with some of its supply chain procurement partners.
+Using Ocean Protocol solutions, Daimler is creating a decentralized sharing platform for its financial and sales data across several production hubs and regions and with some of its supply chain partners.
 
-This will help the automobile giant access worldwide data transparently and securely. Using robust blockchain technology, Daimler aims to streamline its operations further and extract crucial insights from some undiscovered datasets. Moreover, it also helps to maintain transparency and keep a check on who’s looking at what.
+With this integration, Daimler aims to giant access worldwide data transparently and securely, streamline its operations further and extract crucial insights from some undiscovered datasets. Moreover, it also helps to maintain transparency and keep a check on who’s looking at what.

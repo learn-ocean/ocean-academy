@@ -6,7 +6,7 @@
 
 We saw in chapter 17 that Ocean Compute-to-Data (C2D) enables training models without actually seeing any data. But what does this mean exactly?
 
-**Bring computation to the data.** Compute Providers can supply or send algorithms and be sure that the computed returned results are sufficiently aggregated or anonymized that the data is fully obfuscated and the privacy risk is minimized.
+**Bring Compute-to-data.** Compute Providers can supply or send algorithms and be sure that the computed returned results are sufficiently aggregated or anonymized that the data is fully obfuscated and the privacy risk is minimized.
 
 This is not the first attempt done to develop remote execution technologies.
 
@@ -28,8 +28,8 @@ Let’s say a company uses Ocean Compute-to-Data to set up their compute infrast
 
 - **The Data Consumer sends compute access request to Ocean and publishes Algorithm to be used to compute on provider’s data.** Why? He/she believes the data asset could prove useful in their AV development, based on the description. They purchase access to train their AI model on that data via the compute service. The data buyer publishes their algorithm into Ocean and receives a DID (e.g. algoDID) for the algorithm.
 - **The Data Consumer signs the Service Agreement** and pays for access to the compute service. The data buyer signs a Service Agreement and pays the required amount of OCEAN to an escrow smart contract, which will also be used for the payment for the compute service.
-- **The Data Consumer sends a compute service request to provide and instructs the Operator Service to start compute**Once all actions are validated and completed, Aquarius, the metadata store, gets hold of datasets and algorithm (using dataDID and algorithmDID, respectively) and instructs the Operator Service to initiate the compute job using the given algorithm on given data.
-- **After necessary validations, the Operator Service instructs the Operator Engine to initiate compute**In this last step the Operator Service performs checks on all inputs and, once ready, instructs the Operator Engine to start the compute task. It will spin a Kubernetes cluster process within the given parameters of data and algorithm.
+- **The Data Consumer sends a compute service request to provide and instructs the Operator Service to start compute.** Once all actions are validated and completed, Aquarius, the metadata store, gets hold of datasets and algorithm (using dataDID and algorithmDID, respectively) and instructs the Operator Service to initiate the compute job using the given algorithm on given data.
+- **After necessary validations, the Operator Service instructs the Operator Engine to initiate compute on-premise.** In this last step the Operator Service performs checks on all inputs and, once ready, instructs the Operator Engine to start the compute task. It will spin a Kubernetes cluster process within the given parameters of data and algorithm.
 - During data processing, The Data Consumer can inquire about the compute completion status anytime. If the buyer is not satisfied, he can choose to restart compute execution with the same or a different algorithm, until the compute access expires.
 - Once the computing is done, the Data Consumer gets informed. The Data Consumer can choose to download or move those results to their storage. The Compute Service produces two types of results: (1) output and (2) execution logs. Consumers can choose either or both to be delivered to them upon completion. These results are published to AWS S3 storage upon completion, and an AWS S3 URL is shared with the consumer.
 
