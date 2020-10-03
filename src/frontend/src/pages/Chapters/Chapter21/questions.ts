@@ -1,6 +1,6 @@
 export const questions = [
   {
-    question: 'For which reason you could see Ocean Protocol applied to your industry?',
+    question: "For which benefit would you see Ocean Protocol applied to your industry? Don't lose sleep over that one, all answers are valid!",
     answers: [
       'Standard data communication protocol that can unify data silos among different companies and improve the overall forecasting accuracy.',
       'Companies can now monetize the data they have and the ones they will collect.',
