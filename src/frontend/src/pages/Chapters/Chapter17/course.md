@@ -33,4 +33,4 @@ The Compute Quality Scoring Mechanism in Ocean Protocol is designed in such a wa
 
 This incentivizes participants in Ocean Protocol to invest in the data sets that they think will provide the most fee, and the total amount invested provides a signal on algorithm quality. You benefit from this market dynamic to judge the trustworthiness of an Ocean asset taking liquidity as reference (how much are participants betting on this particular algorithm or dataset).
 
-<iframe  title="Ocean Compute-to-Data | Run an Algorithm" width="2200" height="1300" src="https://www.youtube.com/watch?v=8cbb_0s1aCk&list=PL_dn0wVs9kWoREjqFATkzooH1GMF6C9b2&index=3" frameborder="0" allowfullscreen></iframe>
+[![Run an Algorithm](http://img.youtube.com/vi/8cbb_0s1aCk/0.jpg)](https://www.youtube.com/watch?v=8cbb_0s1aCk "Run an Algorithm")
