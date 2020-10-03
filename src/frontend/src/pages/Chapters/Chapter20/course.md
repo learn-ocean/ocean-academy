@@ -33,6 +33,6 @@ Let’s say a company uses Ocean Compute-to-Data to set up their compute infrast
 - During data processing, The Data Consumer can inquire about the compute completion status anytime. If the buyer is not satisfied, he can choose to restart compute execution with the same or a different algorithm, until the compute access expires.
 - Once the computing is done, the Data Consumer gets informed. The Data Consumer can choose to download or move those results to their storage. The Compute Service produces two types of results: (1) output and (2) execution logs. Consumers can choose either or both to be delivered to them upon completion. These results are published to AWS S3 storage upon completion, and an AWS S3 URL is shared with the consumer.
 
-<iframe  title="Ocean Compute-to-Data | Technical Workshop" width="2200" height="1300" src="https://www.youtube.com/watch?v=qm8aZ9N5VgU" frameborder="0" allowfullscreen></iframe>
+[![C2D - Technical Workshop](http://img.youtube.com/vi/qm8aZ9N5VgU/0.jpg)](https://www.youtube.com/watch?v=qm8aZ9N5VgU "C2D - Technical Workshop")
 
 Compute-to-Data is language agnostic and supports all types of compute platforms, environments, and programming languages. Since this whole process takes place on the data provider side, data remains private and is not revealed to the consumer. In this setup, **the Data Provider is also the Compute provider.**

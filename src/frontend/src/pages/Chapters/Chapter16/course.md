@@ -41,4 +41,4 @@ When the dataset is registered, the publisher invokes **the Ocean Datatoken Fact
 
 **Anyone is free to earn a revenue from their data.** Data providers sitting on large sets of latent data have the tools to publish data now. They maintain full control over the data and comply with data privacy and compliance regulations.
 
-<iframe  title="Ocean Compute-to-Data | Publish an asset with both Access & Compute" width="2200" height="1300" src="https://www.youtube.com/watch?v=lr_EnTYK7AM" frameborder="0" allowfullscreen></iframe>
+[![Publish an asset with both Access & Compute](http://img.youtube.com/vi/lr_EnTYK7AM/0.jpg)](https://www.youtube.com/watch?v=lr_EnTYK7AM "Publish an asset with both Access & Compute")

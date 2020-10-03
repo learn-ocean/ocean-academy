@@ -7,7 +7,7 @@
 
 **RemixIDE**. But instead of talking let’s start to write our first smart contract. A classic *hello world* program. The easiest way to write a smart contract is on [RemixIDE](http://remix.ethereum.org). It’s a browser-based IDE to write, test, execute, and deploy smart contracts.
 
-You can simply copy the following code and paste it in a new file on Remix to do your tests. A simple hello world program in Solidity:
+You can simply copy the following code and paste it in a new file on Remix to play around. A simple hello world program in Solidity:
 
 ```Solidity
 1 pragma solidity >=0.4.22 <0.7.0;
@@ -18,20 +18,25 @@ You can simply copy the following code and paste it in a new file on Remix to do
 6 }
 ```
 
-**Explanation**. The *first line* of each solidity program defines the version of the compiler that should be run to compile the program to bytecode before it can be deployed to the blockchain. Determining the compiler version is important since newer versions of the compiler might lead to unintended behavior and losses of funds. *Line 2* defines the contract itself. *Line 3* is the definition of the function.
-- The first part says that it accepts a string as an argument.
-- The second part declares the visibility and behavior as ‘public and pure’.
-- *Public* means it can be called internally or via messages.
-- *Pure* indicates that the function will not alter the storage state.
-- The last part defines the return value (string).
-*Line 4* contains the actual logic of the function. In this case, it only returns the string “hello world”.
+**Explanation**. Let's look at each component of the smart contract.
+1. *Line 1* defines the version of the compiler that should be run to compile the program to bytecode before it can be deployed to the blockchain. Setting the compiler version is critical since newer versions of the compiler might lead to unintended behaviors and losses of funds.
+2. *Line 2* defines the contract itself.
+3. *Line 3* is the definition of the function.
+    - The first part says that it accepts a string as an argument
+    - The second part declares the visibility and behavior as ‘public and pure’
+    - *Public* means it can be called internally or via messages
+    - *Pure* indicates that the function will not alter the storage state
+    - The last part defines the return value (string)
+4. *Line 4* contains the actual logic of the function. This smart contract only returns the string “hello world” and it does not use the passed string argument at all.
 
 **Execution costs**. Since this is not considered to be a smart contract development course we will rather focus on explaining the concepts than trying to teach you to develop smart contracts. But always remember that each instruction in the smart contract has a price to be executed. This price is paid as a gas fee by the caller of the smart contract. The fee is paid to the nodes processing those operations on the blockchain. So this provides an incentive for developers to make smart contracts as efficient as possible.
 
 <img src="/images/chapter9_0.png" />
 
-**Life of a smart contract.** Once you are done with your implementation, you compile your Solidity code to bytecode and deploy it on the Ethereum network. Each contract has an address that is used to interact with the smart contract. A smart contract is not independent and cannot execute code on its own but the very first call of a function must be done by an externally owned account (EOA). It provides an overview of the given functions and how to call them. Now you can use libraries like Web3py to execute your functions.
+**Life of a smart contract.** Once done with an implementation, the Solidity code needs to be compiled to bytecode and deployed on the Ethereum blockchain. Each contract has a unique address that is used to interact with it. A smart contract is not independent and cannot execute code on its own but the very first call of a function must be done by an externally owned account (EOA). If you know the address of the smart contract you can use libraries like Web3py to call the *sayHello* function.
 
-**Immutability**. The smart contract itself can’t be modified anymore and it can’t be moved to another address. Any updates in the code need to be deployed to a new address and your users should be informed about the update.
+**Execution costs**. Since this is not considered to be a smart contract development course we will rather focus on explaining the concepts than trying to teach you to develop smart contracts. But you should know that each instruction has a price to be executed. This price is paid as a gas fee by the caller of the smart contract. Otherwise, there would be no incentive for an Ethereum node provider to execute any code. Transaction and execution fees keep the network running. It is therefore recommended to reduce the complexity of your smart contract to increase security and cut the execution costs to run a function.
 
-**Full control over contracts**. Also, note that a smart contract does not provide any logic on its own. If you only provide a function to receive money but none that allows you to spend the received money, there is no way to get the money back. Your contract will just do what you enable it to do there are no default functions.
+**Immutability**. The smart contract itself can’t be modified anymore and it can’t be moved to another address. Any code updates need to be deployed to a new address and your users should be informed about the update.
+
+**Full control over contracts**. Also, note that a smart contract does not provide any logic on its own. If you only provide a function to receive money but none that allows you to spend the received money, there is no way to get the money back. Your contract will just do what you enable it to do. There are no default functions.

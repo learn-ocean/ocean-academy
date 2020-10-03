@@ -24,7 +24,7 @@ In the dexFreight omnichannel data marketplace, transportation and logistics com
 
 **Facilitate industry wide improvement.** Creating a community repository of data will contribute to the good of the transportation and logistics industry by making aggregated and anonymous data publicly available for implementing operational best practices, forming industry-wide strategies, and supporting policy discussions. The new marketplace is federating a loose group into an industry force.
 
-<iframe  title="Roche Diagnostics and Ocean Protocol" width="2200" height="1300" src="https://www.youtube.com/watch?v=vaWudN75NRY" frameborder="0" allowfullscreen></iframe>
+[![Roche Diagnostics and Ocean Protocol](http://img.youtube.com/vi/vaWudN75NRY/0.jpg)](https://www.youtube.com/watch?v=vaWudN75NRY "Roche Diagnostics and Ocean Protocol")
 
 ## Automotive - Daimler AG
 
