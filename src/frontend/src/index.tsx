@@ -3,7 +3,7 @@ import * as React from 'react'
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router } from 'react-router-dom'
-
+import GA from './helpers/GoogleAnalytics.js'
 // import { App } from 'reducers/serviceWorker'
 
 import { App } from './app/App.controller'
@@ -21,6 +21,7 @@ export const Root = () => {
       <GlobalStyle />
       <Provider store={store}>
         <Router>
+          { GA.init() && <GA.RouteTracker /> }
           <App />
         </Router>
       </Provider>
