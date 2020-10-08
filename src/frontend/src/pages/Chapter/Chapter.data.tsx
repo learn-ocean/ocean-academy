@@ -70,7 +70,7 @@ export const chapterData = [
   },
   {
     pathname: '/chapter-10',
-    name: '10 - Exploring the Ocean Token Contract',
+    name: '10 - Exploring the OCEAN Token Contract',
     data: data10,
   },
   {
