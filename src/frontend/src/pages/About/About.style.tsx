@@ -40,5 +40,6 @@ export const AboutContainer = styled.div`
 
   ul > li > a {
     color: #ff4092;
+    text-decoration: underline !important;
   }
 `
