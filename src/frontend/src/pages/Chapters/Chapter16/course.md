@@ -31,7 +31,7 @@ The publisher can allow for the data to be downloaded, computed upon, or both. T
 
 Data *access* will follow the ERC20 token standard. For example, consider a datatoken granting **one single access to the dataset to somebody holding at least 1.0 token**.
 
-- Anyone with at least 1.0 of these datatokens has access the data once (in Ocean Protocol, the act of holding access to the data is called data custody).
+- Anyone with at least 1.0 of these datatokens has access to the data once (in Ocean Protocol, the act of holding access to the data is called data custody).
 - To access the dataset, one would have to send 1.0 datatoken to the data provider.
 - Access to the dataset can be ceded to someone else simply by sending  1.0 datatoken to their account.
 
@@ -40,5 +40,3 @@ When the dataset is registered, the publisher invokes **the Ocean Datatoken Fact
 <img src="/images/chapter16_1.png" />
 
 **Anyone is free to earn a revenue from their data.** Data providers sitting on large sets of latent data have the tools to publish data now. They maintain full control over the data and comply with data privacy and compliance regulations.
-
-[![Publish an asset with both Access & Compute](http://img.youtube.com/vi/lr_EnTYK7AM/0.jpg)](https://www.youtube.com/watch?v=lr_EnTYK7AM "Publish an asset with both Access & Compute")

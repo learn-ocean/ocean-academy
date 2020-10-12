@@ -27,5 +27,3 @@ First, select the image to run an algorithm, using either Python or Javascript, 
 You want to choose a python with pandas image if you have a .py script or if you are doing analysis in Javascript you can run a nodejs10 image.
 
 Secondly, drag and drop a script allowed by the data owner. Ocean Protocol will take the algorithm and the data, and it will orchestrate the computation of the output with the Kubernetes clusters of the Data Provider.
-
-[![Publish a Compute-only asset](http://img.youtube.com/vi/dmvdARC6xxU/0.jpg)](https://www.youtube.com/watch?v=dmvdARC6xxU "Publish a Compute-only asset")

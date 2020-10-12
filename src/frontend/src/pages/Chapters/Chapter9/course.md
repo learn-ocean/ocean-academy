@@ -19,7 +19,7 @@ You can simply copy the following code and paste it in a new file on Remix to pl
 ```
 **Explanation**. Let's look at each component of the smart contract.
 *Line 1* defines the version of the compiler that should be run to compile the program to bytecode before it can be deployed to the blockchain. Setting the compiler version is critical since newer versions of the compiler might lead to unintended behaviors and losses of funds.
-*Line 2* defines the contract itself.
+*Line 2* defines the contract itself and it's name.
 *Line 3* is the definition of the function.
     - The first part says that it accepts a string as an argument
     - The second part declares the visibility and behavior as ‘public and pure’

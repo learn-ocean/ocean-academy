@@ -1,5 +1,5 @@
 # Chapter 10: Exploring the OCEAN Token Contract
-#### Difficulty: **3/5** \| Estimated reading time: **10 min**
+#### Difficulty: **3/5** \| Estimated reading time: **5 min**
 
 <dialog character="jellyfish">Let's now use your equipment to observe those beautiful new species we've discovered down here</dialog>
 

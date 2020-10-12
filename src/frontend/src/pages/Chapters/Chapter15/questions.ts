@@ -1,6 +1,6 @@
 export const questions = [
   {
-    question: 'Which of this statement is false?',
+    question: 'Which one of these statements is false?',
     answers: [
      'Every asset on Ocean Protocol has its own DID',
      'A DID is a JSON object with information about the Asset',
