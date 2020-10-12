@@ -4,10 +4,13 @@ export const questions = [
         answers: [
             "Data is only accessed but not controlled by service providers",
             "User data can be used across multiple apps",
-            "The user can use services without sharing any data",
-            "Individuals can benefit from all the above"
+            "The user can use services without sharing any data"
         ],
-        response: "Individuals can benefit from all the above",
+        response: [
+            "Data is only accessed but not controlled by service providers",
+            "User data can be used across multiple apps",
+            "The user can use services without sharing any data"
+        ],
         proposedResponse: ""
     }
 ]
