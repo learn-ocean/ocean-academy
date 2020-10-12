@@ -138,24 +138,24 @@ const Validator = ({ validatorState, validateCallback }: any) => (
   <ChapterValidator className={validatorState === RIGHT ? 'ok' : 'no'}>
     {validatorState === PENDING && (
       <ChapterValidatorContentWrapper>
-        <ChapterValidatorTitle>AWAITING VALIDATION</ChapterValidatorTitle>
-        <ChapterValidatorContent>Type your solution above and validate your answer</ChapterValidatorContent>
+        <ChapterValidatorTitle>CHAPTER VALIDATION</ChapterValidatorTitle>
+        <ChapterValidatorContent>Provide your answer above and validate chapter</ChapterValidatorContent>
         <Button>
           <ButtonBorder />
-          <ButtonText onClick={() => validateCallback()}>VALIDATE MISSION</ButtonText>
+          <ButtonText onClick={() => validateCallback()}>SUBMIT ANSWER</ButtonText>
         </Button>
       </ChapterValidatorContentWrapper>
     )}
     {validatorState === RIGHT && (
       <ChapterValidatorContentWrapper>
-        <ChapterValidatorTitle>MISSION SUCCESSFUL</ChapterValidatorTitle>
-        <ChapterValidatorContent>Go on to the next mission</ChapterValidatorContent>
+        <ChapterValidatorTitle>EXPLORATION SUCCESSFUL</ChapterValidatorTitle>
+        <ChapterValidatorContent>Go on to the next chapter</ChapterValidatorContent>
       </ChapterValidatorContentWrapper>
     )}
     {validatorState === WRONG && (
       <ChapterValidatorContentWrapper>
-        <ChapterValidatorTitle>MISSION FAILED</ChapterValidatorTitle>
-        <ChapterValidatorContent>Correct the mistakes and try again</ChapterValidatorContent>
+        <ChapterValidatorTitle>EXPLORATION FAILED</ChapterValidatorTitle>
+        <ChapterValidatorContent>Correct your answer and try again</ChapterValidatorContent>
         <Button>
           <ButtonBorder />
           <ButtonText onClick={() => validateCallback()}>TRY AGAIN</ButtonText>

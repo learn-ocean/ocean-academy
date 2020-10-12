@@ -5,10 +5,14 @@ export const questions = [
             "Getting a soft drink delivered from a vending machine",
             "Transferring property rights automatically once financing is secured",
             "Getting paid to provide access to one’s data",
-            "Buying access to a private dataset, instantly, when needed",
-            "All of these statements are true"
+            "Buying access to a private dataset, instantly, when needed"
         ],
-        response: "All of these statements are true",
+        response: [
+            "Getting a soft drink delivered from a vending machine",
+            "Transferring property rights automatically once financing is secured",
+            "Getting paid to provide access to one’s data",
+            "Buying access to a private dataset, instantly, when needed"
+        ],
         proposedResponse: ""
     }
 ]
