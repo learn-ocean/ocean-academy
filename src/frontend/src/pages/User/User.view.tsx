@@ -1,3 +1,5 @@
+import { Button } from 'app/App.components/Button/Button.controller'
+import { Input } from 'app/App.components/Input/Input.controller'
 import { chapterData } from 'pages/Chapter/Chapter.data'
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
@@ -5,32 +7,59 @@ import { Link } from 'react-router-dom'
 import { PublicUser } from 'shared/user/PublicUser'
 
 // prettier-ignore
-import { UserBadge, UserCard, UserChapter, UserProgress, UserStyled, UserTitle, UserTitle2 } from './User.style'
+import { UserBadge, UserBadgeInput, UserCard, UserChapter, UserProgress, UserStyled, UserTitle, UserTitle2 } from './User.style'
 
 type UserViewProps = {
   loading: boolean
   user: PublicUser
+  downloadCallback: () => void
+  name: string
+  setName: (e: string) => void
 }
 
-export const UserView = ({ loading, user }: UserViewProps) => {
+export const UserView = ({ loading, user, downloadCallback, name, setName }: UserViewProps) => {
   let badgeUnlocked = false
   let counter = 0
   user.progress?.forEach((chapter) => {
     counter++
   })
-  if (counter >= 10) badgeUnlocked = true
+  if (counter >= 20) badgeUnlocked = true
 
   return (
     <UserStyled>
       <UserTitle>
-        <h1>Your badge</h1>
+        <h1>Your certificate</h1>
       </UserTitle>
       <UserCard>
         <UserBadge badgeUnlocked={badgeUnlocked}>
           {badgeUnlocked ? (
-            <h1>CONGRATS! YOU ARE NOW A OCEAN EXPERT!</h1>
+            <>
+              <h2>CONGRATS! YOU ARE NOW A OCEAN EXPERT!</h2>
+              <UserBadgeInput>
+                <Input
+                  icon="user"
+                  name="name"
+                  placeholder="Name on certificate"
+                  type="text"
+                  onChange={(e) => {
+                    setName(e.target.value)
+                  }}
+                  value={name}
+                  onBlur={() => {}}
+                  inputStatus={undefined}
+                  errorMessage={undefined}
+                />
+                <Button
+                  type="button"
+                  text="Download certificate"
+                  icon="download"
+                  loading={loading}
+                  onClick={() => downloadCallback()}
+                />
+              </UserBadgeInput>
+            </>
           ) : (
-            <p>To obtain the completion badge, you need to complete all chapters.</p>
+            <p>To obtain the completion certificate, you need to complete all chapters.</p>
           )}
         </UserBadge>
       </UserCard>
