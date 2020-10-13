@@ -364,9 +364,11 @@
     <symbol id="right-arrow" width="9" height="15" viewBox="0 0 9 15" fill="none" stroke="none">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M1.80606 14.7781L8.77856 7.80558L8.75121 7.77823L8.77881 7.75064L1.80631 0.778138L0.256864 2.32758L5.70726 7.77798L0.256614 13.2286L1.80606 14.7781Z" fill="white"/>
     </symbol>
-    <symbol id="XXXX" viewBox="0 0 24 24">
+    <symbol id="download" viewBox="0 0 24 24">
         <g id="Outline_Icons">
-
+            <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M22.5,17.718     v1.913c0,1.584-1.285,2.869-2.869,2.869H3.369c-1.585,0-2.869-1.285-2.869-2.869v-1.913"></path>
+            <line fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="11.5" y1="17.608" x2="11.5" y2="0.5"></line>
+            <polyline fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="     18.5,10.608 11.5,17.608 4.5,10.608    "></polyline>
         </g>
         <g id="Invisible_Shape">
             <rect fill="none" stroke="none" width="24" height="24"></rect>

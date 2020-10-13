@@ -16,8 +16,7 @@ import { Footer } from './Footer/Footer.controller'
 export type Question = {
   question: string
   answers: string[]
-  response: string
-  proposedResponse: string
+  responses: string[]
 }
 
 export interface Data {
@@ -59,8 +58,8 @@ export const Chapter = () => {
     if (data.questions.length > 0) {
       let ok = true
       data.questions.forEach((question) => {
-        if (question.response !== '') {
-          if (question.response !== question.proposedResponse) ok = false
+        if (question.responses.length > 0) {
+          if (question.responses[0]) ok = false //check responses
         }
       })
       if (ok) {

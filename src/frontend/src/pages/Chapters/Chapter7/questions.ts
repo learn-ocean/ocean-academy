@@ -8,7 +8,6 @@ export const questions = [
             "Well, it's very hip to be on the blockchain right now",
             "All of these"
         ],
-        response: "All of these",
-        proposedResponse: ""
+        responses: ["All of these"],
     }
 ]

@@ -7,18 +7,16 @@ export const questions = [
             "Correct",
             "Wrong 3"
         ],
-        response: "Correct",
-        proposedResponse: ""
+        responses: ["Correct"],
     },
     {
         question: "Question 2",
         answers: [
-            "Correct",
+            "Correct 1",
+            "Correct 2",
             "Wrong 1",
-            "Wrong 2",
-            "Wrong 3"
+            "Wrong 2"
         ],
-        response: "Correct",
-        proposedResponse: ""
+        responses: ["Correct 1", "Correct 2"],
     }
 ]

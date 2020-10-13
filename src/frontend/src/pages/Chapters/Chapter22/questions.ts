@@ -8,7 +8,6 @@ export const questions = [
       'Metadata standards, compute-to-data and secure access control',
       'Compute-to-data, private smart contracts and metadata standards'
     ],
-    response: 'Metadata standards, compute-to-data and secure access control',
-    proposedResponse: '',
+    responses: ['Metadata standards, compute-to-data and secure access control'],
   },
 ]

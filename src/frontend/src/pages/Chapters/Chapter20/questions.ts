@@ -7,11 +7,10 @@ export const questions = [
     	'By modelling an algorithm with some training set only C2D can see',
       'By transfering private data into their own repositories',
       'By monetizing pre developed algorithms in the Ocean Market'],
-    response: [
+    responses: [
     	'By selling and consuming private data',
     	'By obtaining model predictions trained on private data',
     	'By modelling an algorithm with some training set only C2D can see',
       'By monetizing pre developed algorithms in the Ocean Market'],
-    proposedResponse: '',
   },
 ]

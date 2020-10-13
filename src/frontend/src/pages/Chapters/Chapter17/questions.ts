@@ -7,7 +7,6 @@ export const questions = [
       'Everyone can offer their computation power to become an Operator Service, but only data can be an Operator Engine',
       'Operator Engines complete the data execution in the cluster based on the Operator Service workflow',
     ],
-    response: 'Operator Engines complete the data execution in the cluster based on the Operator Service workflow',
-    proposedResponse: '',
+    responses: ['Operator Engines complete the data execution in the cluster based on the Operator Service workflow'],
   },
 ]

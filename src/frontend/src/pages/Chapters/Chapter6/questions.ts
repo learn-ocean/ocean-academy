@@ -6,11 +6,10 @@ export const questions = [
             "User data can be used across multiple apps",
             "The user can use services without sharing any data"
         ],
-        response: [
+        responses: [
             "Data is only accessed but not controlled by service providers",
             "User data can be used across multiple apps",
             "The user can use services without sharing any data"
         ],
-        proposedResponse: ""
     }
 ]

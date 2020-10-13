@@ -7,7 +7,6 @@ export const questions = [
             ">12'000 accounts",
             ">36'000 accounts",
         ],
-        response: ">12'000 accounts",
-        proposedResponse: ""
+        responses: [">12'000 accounts"],
     }
 ]

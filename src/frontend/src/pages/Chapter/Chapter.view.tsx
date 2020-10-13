@@ -1,7 +1,7 @@
 //prettier-ignore
 import Editor, { ControlledEditor, DiffEditor, monaco } from '@monaco-editor/react'
 import { Dialog } from 'app/App.components/Dialog/Dialog.controller'
-import { Radio } from 'app/App.components/Radio/Radio.controller'
+import { Checkboxes } from 'app/App.components/Checkboxes/Checkboxes.controller'
 import Markdown from 'markdown-to-jsx'
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
@@ -249,11 +249,11 @@ export const ChapterView = ({
             {questions.map((question, i) => (
               <div key={question.question}>
                 <h2>{question.question}</h2>
-                <Radio
+                <Checkboxes
                   items={question.answers}
                   onUpdate={(value) => {
                     const proposedQuestions = questions
-                    proposedQuestions[i].proposedResponse = value
+                    //proposedQuestions[i].proposedResponse = value
                     proposedQuestionAnswerCallback(proposedQuestions)
                   }}
                 />

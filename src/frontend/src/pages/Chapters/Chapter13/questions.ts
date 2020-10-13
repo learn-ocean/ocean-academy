@@ -7,7 +7,6 @@ export const questions = [
             "Ocean Protocol is a collection of tools and libraries to enable decentralized data marketplaces",
             "Ocean Protocol smart contracts can only be used by registered companies"
         ],
-        response: "Ocean Protocol is a collection of tools and libraries to enable decentralized data marketplaces",
-        proposedResponse: ""
+        responses: ["Ocean Protocol is a collection of tools and libraries to enable decentralized data marketplaces"],
     }
 ]

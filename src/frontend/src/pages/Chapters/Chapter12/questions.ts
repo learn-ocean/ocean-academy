@@ -6,7 +6,6 @@ export const questions = [
             "It is a central database that collects all data sets in the world",
             "It introduces new algorithms to compress data to save bandwidth and storage",
         ],
-        response: "It provides a standard way to access, buy and sell data",
-        proposedResponse: ""
+        responses: ["It provides a standard way to access, buy and sell data"],
     }
 ]

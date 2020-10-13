@@ -7,7 +7,6 @@ export const questions = [
       'Register the asset on the Blockchain, Prepare Metdata, Define the attributes of the compute, Provide URL to get data',
       'Provide URL to get data, Define the attributes of the compute, Prepare Meta data, Register the asset on the Blockchain.',
     ],
-    response: 'Prepare Metdata, Provide URL to get data, Define the attributes of the compute, Register the asset on the Blockchain.',
-    proposedResponse: '',
+    responses: ['Prepare Metdata, Provide URL to get data, Define the attributes of the compute, Register the asset on the Blockchain.'],
   },
 ]
