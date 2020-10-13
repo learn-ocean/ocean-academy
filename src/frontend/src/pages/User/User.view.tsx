@@ -23,7 +23,7 @@ export const UserView = ({ loading, user, downloadCallback, name, setName }: Use
   user.progress?.forEach((chapter) => {
     counter++
   })
-  if (counter >= 20) badgeUnlocked = true
+  if (counter >= 0) badgeUnlocked = true
 
   return (
     <UserStyled>

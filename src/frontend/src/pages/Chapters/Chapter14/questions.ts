@@ -8,7 +8,6 @@ export const questions = [
       'Check On chain conditions for payment',
       'Send algorithm to the database'
     ],
-    response: 'Send algorithm to the database',
-    proposedResponse: '',
+    responses: ['Send algorithm to the database'],
   },
 ]

@@ -6,7 +6,6 @@ export const questions = [
             "An open cloud computer that is operated by a company",
             "A client to connect to a remote computer"
         ],
-        response: "A decentralized computer without a central owner",
-        proposedResponse: ""
+        responses: ["A decentralized computer without a central owner"],
     }
 ]

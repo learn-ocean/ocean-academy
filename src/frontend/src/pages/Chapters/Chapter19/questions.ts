@@ -7,7 +7,6 @@ export const questions = [
       'A SEA is invoked only to start an access control data job',
       'A SEA is signed every time a datatoken is consumed.'
     ],
-    response: 'A SEA is invoked only to start an access control data job',
-    proposedResponse: '',
+    responses: ['A SEA is invoked only to start an access control data job'],
   },
 ]

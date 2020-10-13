@@ -7,11 +7,10 @@ export const questions = [
             "Everything that interacts with a blockchain becomes pseudo-anonymous, and is therefore not private",
             "Usage costs"
         ],
-        response: [
+        responses: [
             "Smart contracts do not support storage of large datasets",
             "Everything that interacts with a blockchain becomes pseudo-anonymous, and is therefore not private",
             "Usage costs"
         ],
-        proposedResponse: ""
     }
 ]

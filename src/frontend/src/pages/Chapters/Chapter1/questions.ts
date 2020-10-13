@@ -7,7 +7,6 @@ export const questions = [
             "I have both inactive data, and some expertise, and I could monetize both with Ocean Protocol",
             "I can’t monetize data or expertise right now, but I will benefit from new data economy built on Ocean Protocol indirectly"
         ],
-        response: "",
-        proposedResponse: ""
+        responses: [],
     }
 ]

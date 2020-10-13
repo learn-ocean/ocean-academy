@@ -7,7 +7,6 @@ export const questions = [
      'A DDO is a string representing the data attributes',
      'There are different types of DDO Services'
     ],
-    response: 'A DDO is a string representing the data attributes',
-    proposedResponse: '',
+    responses: ['A DDO is a string representing the data attributes'],
   },
 ]

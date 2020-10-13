@@ -7,7 +7,6 @@ export const questions = [
       'You are uploading the metadata of a picture to train an Image Recognition model.',
       'You can only provide access to the database in a specific format such as .png or .psd.',
     ],
-    response: 'The virtual environment framework where your data will be computed upon.',
-    proposedResponse: '',
+    responses: ['The virtual environment framework where your data will be computed upon.'],
   },
 ]

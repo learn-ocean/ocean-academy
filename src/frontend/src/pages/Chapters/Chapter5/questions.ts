@@ -7,12 +7,11 @@ export const questions = [
             "Getting paid to provide access to one’s data",
             "Buying access to a private dataset, instantly, when needed"
         ],
-        response: [
+        responses: [
             "Getting a soft drink delivered from a vending machine",
             "Transferring property rights automatically once financing is secured",
             "Getting paid to provide access to one’s data",
             "Buying access to a private dataset, instantly, when needed"
         ],
-        proposedResponse: ""
     }
 ]
