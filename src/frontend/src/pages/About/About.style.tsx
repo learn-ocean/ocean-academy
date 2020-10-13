@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+
 import { FullPage } from 'styles'
 
 export const AboutStyled = styled.div`
@@ -42,4 +43,10 @@ export const AboutContainer = styled.div`
     color: #ff4092;
     text-decoration: underline !important;
   }
+`
+
+export const ButtonContainer = styled.div`
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 12px;
 `
