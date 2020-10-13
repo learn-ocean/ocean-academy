@@ -4,7 +4,7 @@
 <dialog character="mantaray">In the depths of the ocean, nobody knows you’re a fish. Meet the main characters in the Web3 data ecosystem that Ocean Protocol is buidling.</dialog>
 
 Now that you are familiar with the Ocean let’s explore the Marketplace from Ocean Protocol.
-As we’ve seen in earlier chapters, the current data marketplaces have three main issues: centralized control which requires the data publisher to trust the marketplace operator, loss of privacy and difficulty in determining price.
+As we’ve seen in earlier chapters, the current data marketplaces have three main issues: centralized control which requires the data publisher to trust the marketplace operator, loss of privacy, and difficulty in determining the price.
 
 <img src="/images/chapter14_0.png" />
 
@@ -18,7 +18,7 @@ Developers and entrepreneurs are free to fork Ocean Market to build their own da
 
 Everyone at Ocean Protocol hopes that there will be thousands of data marketplaces and that Ocean Market will be just one among many. Each Ocean-powered marketplace will have the same features as the reference implementation provided by Ocean Protocol, plus any feature they will want to add.
 
-**Let’s explore Ocean Marketplace to understand more in depth the Ocean Protocol 3 layers stack.**
+**Let’s explore Ocean Marketplace to understand more in-depth the Ocean Protocol 3 layers stack.**
 
 <img src="/images/chapter14_1.png" />
 
