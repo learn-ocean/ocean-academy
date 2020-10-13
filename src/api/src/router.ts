@@ -2,6 +2,7 @@ import * as Router from '@koa/router'
 import { Context } from 'koa'
 
 import { getPublicUser } from './resolvers/page/getPublicUser/getPublicUser'
+import { setName } from './resolvers/page/setName/setName'
 import { addProgress } from './resolvers/user/addProgress/addProgress'
 import { changePassword } from './resolvers/user/changePassword/changePassword'
 import { forgotPassword } from './resolvers/user/forgotPassword/forgotPassword'
@@ -27,5 +28,6 @@ router.post('/user/forgot-password', forgotPassword)
 router.post('/user/change-password', changePassword)
 
 router.post('/page/get-user', getPublicUser)
+router.post('/page/set-name', setName)
 
 export { router }

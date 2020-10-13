@@ -42,3 +42,10 @@ export const UserBadgeInput = styled.div`
     height: 40px;
   }
 `
+
+export const UserBadgeButtons = styled.div`
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+`

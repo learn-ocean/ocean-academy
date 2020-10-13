@@ -15,7 +15,7 @@ export const CheckboxesStyled = styled.div`
       vertical-align: -0.25em;
       height: 1em;
       width: 1em;
-      border-radius: 50%;
+      border-radius: 10%;
       border: 2px solid ${primaryColor};
       margin-right: 0.5em;
     }

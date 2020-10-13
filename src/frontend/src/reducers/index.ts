@@ -3,6 +3,7 @@ import { combineReducers } from 'redux'
 
 import { auth, AuthState } from './auth'
 import { drawer, DrawerState } from './drawer'
+import { gdpr, GdprState } from './gdpr'
 import { loading, LoadingState } from './loading'
 import { progressBar, ProgressBarState } from './progressBar'
 import { serviceWorker, ServiceWorkerState } from './serviceWorker'
@@ -19,6 +20,7 @@ export const reducers = (history: any) =>
     drawer,
     progressBar,
     serviceWorker,
+    gdpr
   })
 
 export interface State {
@@ -29,4 +31,5 @@ export interface State {
   drawer: DrawerState
   progressBar: ProgressBarState
   serviceWorker: ServiceWorkerState
+  gdpr: GdprState
 }

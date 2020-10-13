@@ -251,9 +251,9 @@ export const ChapterView = ({
                 <h2>{question.question}</h2>
                 <Checkboxes
                   items={question.answers}
-                  onUpdate={(value) => {
+                  onUpdate={(selected) => {
                     const proposedQuestions = questions
-                    //proposedQuestions[i].proposedResponse = value
+                    proposedQuestions[i].proposedResponses = selected
                     proposedQuestionAnswerCallback(proposedQuestions)
                   }}
                 />

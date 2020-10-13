@@ -13,6 +13,10 @@ export class User {
   @Matches(/^[a-zA-Z0-9_]*$/, { message: 'Username can only contain letters, numbers and underscores' })
   username!: string
 
+  @Property()
+  @Length(2, 40)
+  name!: string
+
   @Property({ required: true, unique: true, index: true })
   @IsEmail()
   email!: string

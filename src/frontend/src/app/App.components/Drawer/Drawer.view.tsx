@@ -25,6 +25,9 @@ export const DrawerView = ({ showing, hideCallback, pathname, user, removeAuthUs
           </Link>
         </DrawerItem>
       ))}
+      <DrawerItem className={pathname === 'about' ? 'current-path' : 'other-path'}>
+        <Link to="/about">About us</Link>
+      </DrawerItem>
     </DrawerStyled>
   </>
 )

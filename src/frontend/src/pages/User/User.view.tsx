@@ -7,23 +7,33 @@ import { Link } from 'react-router-dom'
 import { PublicUser } from 'shared/user/PublicUser'
 
 // prettier-ignore
-import { UserBadge, UserBadgeInput, UserCard, UserChapter, UserProgress, UserStyled, UserTitle, UserTitle2 } from './User.style'
+import { UserBadge, UserBadgeButtons, UserBadgeInput, UserCard, UserChapter, UserProgress, UserStyled, UserTitle, UserTitle2 } from './User.style'
 
 type UserViewProps = {
   loading: boolean
   user: PublicUser
+  authUser?: PublicUser
   downloadCallback: () => void
+  getCertificateCallback: () => void
   name: string
   setName: (e: string) => void
 }
 
-export const UserView = ({ loading, user, downloadCallback, name, setName }: UserViewProps) => {
+export const UserView = ({
+  loading,
+  user,
+  authUser,
+  downloadCallback,
+  name,
+  setName,
+  getCertificateCallback,
+}: UserViewProps) => {
   let badgeUnlocked = false
   let counter = 0
   user.progress?.forEach((chapter) => {
     counter++
   })
-  if (counter >= 0) badgeUnlocked = true
+  if (counter >= 20) badgeUnlocked = true
 
   return (
     <UserStyled>
@@ -35,28 +45,43 @@ export const UserView = ({ loading, user, downloadCallback, name, setName }: Use
           {badgeUnlocked ? (
             <>
               <h2>CONGRATS! YOU ARE NOW A OCEAN EXPERT!</h2>
-              <UserBadgeInput>
-                <Input
-                  icon="user"
-                  name="name"
-                  placeholder="Name on certificate"
-                  type="text"
-                  onChange={(e) => {
-                    setName(e.target.value)
-                  }}
-                  value={name}
-                  onBlur={() => {}}
-                  inputStatus={undefined}
-                  errorMessage={undefined}
-                />
-                <Button
-                  type="button"
-                  text="Download certificate"
-                  icon="download"
-                  loading={loading}
-                  onClick={() => downloadCallback()}
-                />
-              </UserBadgeInput>
+              {authUser?.name ? (
+                <UserBadgeButtons>
+                  <Button
+                    type="button"
+                    text="Download certificate"
+                    icon="download"
+                    loading={loading}
+                    onClick={() => downloadCallback()}
+                  />
+                  <Link to={`/certificate/${user.username}`}>
+                    <Button type="button" text="Certified URL" icon="link" loading={loading} onClick={() => {}} />
+                  </Link>
+                </UserBadgeButtons>
+              ) : (
+                <UserBadgeInput>
+                  <Input
+                    icon="user"
+                    name="name"
+                    placeholder="Name on certificate"
+                    type="text"
+                    onChange={(e) => {
+                      setName(e.target.value)
+                    }}
+                    value={name}
+                    onBlur={() => {}}
+                    inputStatus={undefined}
+                    errorMessage={undefined}
+                  />
+                  <Button
+                    type="button"
+                    text="Get certificate"
+                    icon="login"
+                    loading={loading}
+                    onClick={() => getCertificateCallback()}
+                  />
+                </UserBadgeInput>
+              )}
             </>
           ) : (
             <p>To obtain the completion certificate, you need to complete all chapters.</p>

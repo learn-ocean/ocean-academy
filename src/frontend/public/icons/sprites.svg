@@ -374,25 +374,27 @@
             <rect fill="none" stroke="none" width="24" height="24"></rect>
         </g>
     </symbol>
-    <symbol id="XXXX" viewBox="0 0 24 24">
+    <symbol id="link" viewBox="0 0 24 24">
         <g id="Outline_Icons">
-
+            <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M12.354,16.596     l-3.183,3.182c-1.171,1.172-3.071,1.172-4.243,0l-0.707-0.707C3.051,17.9,3.051,16,4.222,14.83l4.597-4.597     c1.172-1.172,3.071-1.172,4.243,0l0.707,0.708"></path>
+            <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M11.647,7.403     l3.182-3.181c1.172-1.171,3.07-1.171,4.242,0l0.707,0.707C20.95,6.1,20.95,8,19.778,9.171l-4.596,4.596     c-1.172,1.173-3.071,1.173-4.242,0"></path>
         </g>
         <g id="Invisible_Shape">
             <rect fill="none" stroke="none" width="24" height="24"></rect>
         </g>
     </symbol>
-    <symbol id="XXXX" viewBox="0 0 24 24">
+    <symbol id="close" viewBox="0 0 24 24">
         <g id="Outline_Icons">
-
+            <line fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="0.5" y1="0.5" x2="23.5" y2="23.5"></line>
+            <line fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="23.5" y1="0.5" x2="0.5" y2="23.5"></line>
         </g>
         <g id="Invisible_Shape">
             <rect fill="none" stroke="none" width="24" height="24"></rect>
         </g>
     </symbol>
-    <symbol id="XXXX" viewBox="0 0 24 24">
+    <symbol id="check" viewBox="0 0 24 24">
         <g id="Outline_Icons">
-
+            <polyline fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="     23.5,0.5 7,23.5 0.5,17    "></polyline>
         </g>
         <g id="Invisible_Shape">
             <rect fill="none" stroke="none" width="24" height="24"></rect>

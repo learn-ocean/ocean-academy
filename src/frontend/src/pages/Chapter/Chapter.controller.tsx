@@ -17,6 +17,7 @@ export type Question = {
   question: string
   answers: string[]
   responses: string[]
+  proposedResponses?: string[]
 }
 
 export interface Data {
@@ -58,9 +59,17 @@ export const Chapter = () => {
     if (data.questions.length > 0) {
       let ok = true
       data.questions.forEach((question) => {
-        if (question.responses.length > 0) {
-          if (question.responses[0]) ok = false //check responses
+        console.log(question)
+        if (!question.proposedResponses) ok = false
+        else {
+          question.responses.forEach((response) => {
+            if (!(question.proposedResponses && question.proposedResponses.indexOf(response) >= 0)) ok = false
+          })
+          question.proposedResponses.forEach((proposedResponse) => {
+            if (!(question.responses.indexOf(proposedResponse) >= 0)) ok = false
+          })
         }
+        if (question.responses.length === 0) ok = true
       })
       if (ok) {
         setValidatorState(RIGHT)
