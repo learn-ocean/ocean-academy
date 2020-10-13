@@ -18,11 +18,11 @@ dexFreight and Ocean Protocol are building a marketplace to allow logistics comp
 
 **Monetize data**. Actors in the logistics vertical have been reluctant to sell their data because of confidentiality issues. It’s also a fragmented industry where small companies had no way to monetize data due to a lack of technology, negotiation resources, and smaller individual data sets.
 
-In the dexFreight omnichannel data marketplace, transportation and logistics companies can efficiently aggregate and securely sell their data using standardized templates in smart contracts. This provides an extra revenue stream for them, and pushes standardization in the industry, which can enhance collaboration opportunities.
+In the dexFreight omnichannel data marketplace, transportation and logistics companies can efficiently aggregate and securely sell their data using standardized templates in smart contracts. This provides an extra revenue stream for them and pushes standardization in the industry, which can enhance collaboration opportunities.
 
 **Improve operational efficiency.** As a blockchain-based platform, dexFreight has immediate access to end-to-end operations, shipment, and payment data from logistics and transportation companies. The data can be used to build optimization models and enable effective decision-making. For example, shipping companies need short-term price predictions for hundreds of origin-destination pairs to correctly price freight, which is subject to fuel cost fluctuations, tariffs, market conditions, and other factors. In the omnichannel data marketplace, dexFreight will use machine learning to build and update these models and enable transportation and logistics companies to lease data that can be turned into actionable intelligence.
 
-**Facilitate industry wide improvement.** Creating a community repository of data will contribute to the good of the transportation and logistics industry by making aggregated and anonymous data publicly available for implementing operational best practices, forming industry-wide strategies, and supporting policy discussions. The new marketplace is federating a loose group into an industry force.
+**Facilitate industry-wide improvement.** Creating a community repository of data will contribute to the good of the transportation and logistics industry by making aggregated and anonymous data publicly available for implementing operational best practices, forming industry-wide strategies, and supporting policy discussions. The new marketplace is federating a loose group into an industry force.
 
 ## Automotive - Daimler AG
 

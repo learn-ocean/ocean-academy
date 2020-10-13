@@ -19,10 +19,10 @@ The **Ocean Compute-to-Data** is the functionality that solves the current trade
 Overall, a Compute Provider using the Compute-to-Data functionality enjoys many benefits:
 
 - **Privacy.** Compute Providers never see the data, so they cannot leak personal or sensitive information to the algorithm consumer.
-- **Control.** Compute owners retain control of their algorithms, since the algorithm is never fully shown to the algo consumer.
+- **Control.** Compute owners retain control of their algorithms since the algorithm is never fully shown to the algo consumer.
 - **Storage capacity.** Algorithm owners can share or sell their script without having to import any data, which is ideal for very large datasets that are slow or expensive to move.
 - **Compliance.** Having only one copy of the data and not moving it makes it easier to comply with data protection regulations like GDPR.
-- **Auditability.** Compute-to-Data gives proof that algorithms were properly executed, so that AI practitioners can be confident in the results.
+- **Auditability.** Compute-to-Data gives proof that algorithms were properly executed so that AI practitioners can be confident in the results.
 
 Once an algorithm is sold, that algorithm is sent to train or query some dataset in a Virtual Machine. The algorithm and the data are both protected and cannot be seen by the algorithm consumer.
 
