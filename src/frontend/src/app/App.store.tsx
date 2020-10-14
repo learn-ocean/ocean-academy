@@ -5,6 +5,7 @@ import { applyMiddleware, compose, createStore, Store } from 'redux'
 import thunk from 'redux-thunk'
 
 import { reducers, State } from '../reducers'
+import { googleAnalytics } from './App.analytics'
 import { reduxOfflineThunkMiddleware, storeOfflineConfig } from './App.offline'
 
 export const history = createBrowserHistory()
@@ -25,6 +26,7 @@ export function configureStore(preloadedState: any) {
     preloadedState,
     composeEnhancer(
       applyMiddleware(routerMiddleware(history)),
+      applyMiddleware(googleAnalytics),
       applyMiddleware(thunk),
       applyMiddleware(reduxOfflineThunkMiddleware()),
     ),

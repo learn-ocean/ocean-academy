@@ -34,7 +34,7 @@ export const HeaderLoggedIn = styled.div`
   top: 0;
   right: 0;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto;
   grid-gap: 10px;
   text-transform: uppercase;
 
