@@ -13,4 +13,10 @@ We made a list of the *Top 5* takeaway.
 
 Of course, there is much more to it, like how datatokens can be used in all the existing DeFi (Decentralized Finance) infrastructure on Ethereum, making advanced financial instruments available for use in data science and data valorization.
 
+# Next Steps
+
 We also saved the more technical aspects for Ocean Academy 201. This is an open-source project; join us and buidl the next chapters with us!
+
+- Become an [ambassador](https://oceanprotocol.com/community/#ambassadors)
+- Join Ocean Protocol on [Discord](https://discord.com/invite/TnXjkR5)
+- Contribute to the [Academy](https://github.com/learn-ocean/ocean-academy)
