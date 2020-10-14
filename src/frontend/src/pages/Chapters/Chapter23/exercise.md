@@ -1,5 +1,4 @@
-//You're about to receive your certificate. Well done!
-//Your mission is to start spreading the word, post this certificate on
-//your preferred social. 
+//You're about to receive your certificate. Well done! 
 
-// And join us [here](https://oceanprotocol.com/community#ambassadors)!
+//Your mission is to start spreading the word, post this certificate on 
+//your preferred social network.

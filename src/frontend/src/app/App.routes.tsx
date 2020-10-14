@@ -8,6 +8,7 @@ import { Home } from 'pages/Home/Home.controller'
 import { Login } from 'pages/Login/Login.controller'
 import { ResetPassword } from 'pages/ResetPassword/ResetPassword.controller'
 import { SignUp } from 'pages/SignUp/SignUp.controller'
+import { Terms } from 'pages/Terms/Terms.controller'
 import { User } from 'pages/User/User.controller'
 import { VerifyEmail } from 'pages/VerifyEmail/VerifyEmail.controller'
 import React from 'react'
@@ -47,6 +48,9 @@ export const AppRoutes = ({ location }: any) => (
     </Route>
     <Route exact path="/about">
       <About />
+    </Route>
+    <Route exact path="/terms">
+      <Terms />
     </Route>
     <Route>
       <Error404 />
