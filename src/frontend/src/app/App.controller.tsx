@@ -2,6 +2,7 @@ import { ConnectedRouter } from 'connected-react-router'
 import * as React from 'react'
 
 import { Drawer } from './App.components/Drawer/Drawer.controller'
+import { Gdpr } from './App.components/Gdpr/Gdpr.controller'
 // import { Hamburger } from './App.components/Footer/Footer.controller'
 import { Hamburger } from './App.components/Hamburger/Hamburger.controller'
 import { Header } from './App.components/Header/Header.controller'
@@ -20,6 +21,7 @@ export const App = () => (
       <AppView />
       <Toaster />
       <ProgressBar />
+      <Gdpr />
     </AppBg>
   </ConnectedRouter>
 )

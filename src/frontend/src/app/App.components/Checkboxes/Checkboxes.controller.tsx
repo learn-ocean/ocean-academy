@@ -6,19 +6,22 @@ import { CheckboxesView } from './Checkboxes.view'
 
 type CheckboxesProps = {
   items: string[]
-  onUpdate: (value: string) => void
+  onUpdate: (selected: string[]) => void
 }
 
 export const Checkboxes = ({ items, onUpdate }: CheckboxesProps) => {
-  const [value, setvalue] = useState<string | undefined>(undefined)
+  const [selected, setSelected] = useState<string[]>([])
 
   const clickCallback = (e: any) => {
     let value = e.target.value
-    setvalue(value)
-    onUpdate(value)
+    let newSelected = selected
+    if (newSelected.indexOf(value) >= 0) newSelected = newSelected.filter((item: string) => item !== value)
+    else newSelected.push(value)
+    setSelected(newSelected)
+    onUpdate(newSelected)
   }
 
-  return <CheckboxesView items={items} clickCallback={clickCallback} value={value} />
+  return <CheckboxesView items={items} clickCallback={clickCallback} selected={selected} />
 }
 
 Checkboxes.propTypes = {

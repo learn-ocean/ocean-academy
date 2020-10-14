@@ -8,7 +8,7 @@ import { useParams } from 'react-router-dom'
 import { State } from 'reducers'
 import { PublicUser } from 'shared/user/PublicUser'
 
-import { getUser } from './User.actions'
+import { getUser, sendName } from './User.actions'
 import { UserView } from './User.view'
 
 export const User = () => {
@@ -16,6 +16,7 @@ export const User = () => {
   const loading = useSelector((state: State) => state.loading)
   let { username } = useParams<{ username: string }>()
   const user = useSelector((state: State) => (state.users as Record<string, PublicUser | undefined>)[username])
+  const authUser = useSelector((state: State) => state.auth.user)
   const [name, setName] = useState<string>('')
 
   const downloadCallback = () => {
@@ -26,13 +27,27 @@ export const User = () => {
     })
     doc.addImage('/certificate.jpg', 'JPEG', 0, 0, 1100, 800)
     doc.setFontSize(50)
-    doc.text(name, 550, 400, { align: 'center' })
+    doc.text(authUser?.name || '', 550, 400, { align: 'center' })
     doc.save('a4.pdf')
+  }
+
+  const getCertificateCallback = () => {
+    dispatch(sendName({ name }))
   }
 
   useEffect(() => {
     dispatch(getUser({ username }))
   }, [dispatch, username])
 
-  return <UserView loading={loading} user={user} downloadCallback={downloadCallback} name={name} setName={setName} />
+  return (
+    <UserView
+      loading={loading}
+      user={user}
+      authUser={authUser}
+      downloadCallback={downloadCallback}
+      name={name}
+      setName={setName}
+      getCertificateCallback={getCertificateCallback}
+    />
+  )
 }

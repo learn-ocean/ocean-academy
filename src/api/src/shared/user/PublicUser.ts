@@ -9,6 +9,10 @@ export class PublicUser {
   @Matches(/^[a-zA-Z0-9_]*$/, { message: 'Username can only contain letters, numbers and underscores' })
   username!: string
 
+
+  @Length(2, 40)
+  name!: string
+
   @IsEmail()
   emailVerified?: boolean
 

@@ -1,4 +1,5 @@
 import { About } from 'pages/About/About.controller'
+import { Certificate } from 'pages/Certificate/Certificate.controller'
 import { ChangePassword } from 'pages/ChangePassword/ChangePassword.controller'
 import { Chapter } from 'pages/Chapter/Chapter.controller'
 import { Error404 } from 'pages/Error404/Error404.controller'
@@ -40,6 +41,9 @@ export const AppRoutes = ({ location }: any) => (
     </Route>
     <Route exact path="/user/:username">
       <User />
+    </Route>
+    <Route exact path="/certificate/:username">
+      <Certificate />
     </Route>
     <Route exact path="/about">
       <About />
