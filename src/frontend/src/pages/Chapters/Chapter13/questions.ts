@@ -1,6 +1,6 @@
 export const questions = [
     {
-        question: "Which of the following statements is true",
+        question: "Which one of the following statements is true",
         answers: [
             "Ocean Protocol makes it flexible to save metadata about your data in any way you want to enable data discoverability",
             "Ocean Protocol uses a single smart contract to register all metadata",
