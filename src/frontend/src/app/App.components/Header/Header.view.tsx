@@ -4,22 +4,24 @@ import { Link } from 'react-router-dom'
 
 import { PublicUser } from 'shared/user/PublicUser'
 
-import { Hamburger } from '../Hamburger/Hamburger.controller'
+import { HamburgerLeft, HamburgerRight } from '../Hamburger/Hamburger.controller'
 // prettier-ignore
-import { HeaderLoggedIn, HeaderLoggedOut, HeaderLogo, HeaderMenuItem, HeaderStyled } from "./Header.style";
+import { HeaderLoggedIn, HeaderLoggedOut, HeaderLogo, HeaderMenuItem, HeaderStyled, FillFlex } from "./Header.style";
 
 type HeaderViewProps = {
   user?: PublicUser
   removeAuthUserCallback: () => void
 }
 
+// Overall Navbar
 export const HeaderView = ({ user, removeAuthUserCallback }: HeaderViewProps) => {
   return (
     <HeaderStyled>
-      <Hamburger />
+      <HamburgerLeft />
       <Link to="/">
         <HeaderLogo alt="logo" src="/logo.svg" />
       </Link>
+      <FillFlex></FillFlex>
       {user ? loggedInHeader({ user, removeAuthUserCallback }) : loggedOutHeader()}
     </HeaderStyled>
   )
