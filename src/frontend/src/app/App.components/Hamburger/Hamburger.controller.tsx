@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { HamburgerView } from './Hamburger.view'
+import { HamburgerViewLeft, HamburgerViewRight } from './Hamburger.view'
 import { hideDrawer, showDrawer } from '../Drawer/Drawer.actions'
 import { State } from 'reducers'
 
-export const Hamburger = () => {
+export const HamburgerLeft = () => {
   const dispatch = useDispatch()
   const activated = useSelector((state: State) => state.drawer.showing)
 
@@ -13,5 +13,17 @@ export const Hamburger = () => {
     dispatch(activated ? hideDrawer() : showDrawer())
   }
 
-  return <HamburgerView activated={activated} activateCallback={activateCallback} />
+  return <HamburgerViewLeft activated={activated} activateCallback={activateCallback} />
 }
+
+export const HamburgerRight = () => {
+  const dispatch = useDispatch()
+  const activated = useSelector((state: State) => state.drawer.showing)
+
+  const activateCallback = () => {
+    dispatch(activated ? hideDrawer() : showDrawer())
+  }
+
+  return <HamburgerViewRight activated={activated} activateCallback={activateCallback} />
+}
+
