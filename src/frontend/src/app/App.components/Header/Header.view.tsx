@@ -6,7 +6,7 @@ import { PublicUser } from 'shared/user/PublicUser'
 
 import { HamburgerLeft, HamburgerRight } from '../Hamburger/Hamburger.controller'
 // prettier-ignore
-import { HeaderLoggedIn, HeaderLoggedOut, HeaderLogo, HeaderMenuItem, HeaderStyled, FillFlex } from "./Header.style";
+import { HeaderLoggedIn, HeaderLoggedOut, HeaderLogo, HeaderMenuItem, HeaderStyled } from "./Header.style";
 
 type HeaderViewProps = {
   user?: PublicUser
@@ -21,7 +21,6 @@ export const HeaderView = ({ user, removeAuthUserCallback }: HeaderViewProps) =>
       <Link to="/">
         <HeaderLogo alt="logo" src="/logo.svg" />
       </Link>
-      <FillFlex></FillFlex>
       {user ? loggedInHeader({ user, removeAuthUserCallback }) : loggedOutHeader()}
     </HeaderStyled>
   )
