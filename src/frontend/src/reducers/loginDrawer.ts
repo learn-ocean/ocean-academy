@@ -12,22 +12,22 @@ const loginDrawerDefaultState: LoginDrawerState = {
 export function loginDrawer(state = loginDrawerDefaultState, action: any): LoginDrawerState {
     switch (action.type) {
         case RESET: {
-        return loginDrawerDefaultState
+            return loginDrawerDefaultState
         }
         case RESTORE: {
-        return loginDrawerDefaultState
+            return loginDrawerDefaultState
         }
         case SHOW_MENU_DRAWER:
-        console.log("loginDrawer SHOW_DRAWER\nediting showingMenu...")
-        return {
-            showingMenu: true,
-        }
+            console.log("loginDrawer SHOW_DRAWER\nediting showingMenu...")
+            return {
+                showingMenu: true,
+            }
         case HIDE_MENU_DRAWER:
-        console.log("loginDrawer HIDE_DRAWER\nediting showingMenu...")
-        return {
-            showingMenu: false,
-        }
+            console.log("loginDrawer HIDE_DRAWER\nediting showingMenu...")
+            return {
+                showingMenu: false,
+            }
         default:
-        return state
+            return state
     }
 }
