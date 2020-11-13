@@ -24,21 +24,54 @@ Most of our work and communication uses GitHub, a collaborative tool for code-ba
 
 Ocean Academy can run locally on Linux. This short instruction manual is beginner-friendly. To run Ocean Academy:
 
-1. Open terminal.
-2. Download Ocean Academy.
+**1. Open terminal.**
+
+**2. Download Ocean Academy.**
 
 `> git clone https://github.com/learn-ocean/ocean-academy.git`
 
-3. Navigate to your Ocean Academy folder in the terminal. 
+**3. Navigate to your Ocean Academy folder in the terminal.**
 
 `> cd ocean-academy`
+
+Now you're ready to run the site. 
+
+You can choose between **npm** and **yarn** for compiling and running the development server.
+
+**4a. Running with Yarn**
+
+**i. Install packages.**
+
+Ensure you're in the base directory `ocean-academy`. 
+
 `> yarn install`
 
-5. Change to the frontend directory and yarn build. 
+**ii. Compile the code.**
 
-`> cd src/frontend`
-`> yarn build`
+Navigate to the front-end directory and build the code.
 
-6. Start the project on a local development server.
+```
+> cd src/frontend
+> yarn build
+```
+
+**iii. Start the project**
 
 `> yarn start`
+
+**4b. Running with NPM**
+
+**i. Install packages.**
+
+Ensure you're in the base directory `ocean-academy`.
+
+`> npm install`
+
+**ii. Compile the code & Start the project**
+
+Navigate to the front-end directory and start the code.
+
+```
+> cd src/frontend
+> npm start
+```
