@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useLocation } from 'react-router-dom'
 import { State } from 'reducers'
 
-import { hideDrawer } from './Drawer.actions'
+import { hideChapterDrawer, hideMenuDrawer } from './Drawer.actions'
 import { ChapterDrawerView, LoginDrawerView } from './Drawer.view'
 
 export const ChapterDrawer = () => {
@@ -13,7 +13,7 @@ export const ChapterDrawer = () => {
   const { pathname } = useLocation()
 
   const hideCallback = () => {
-    dispatch(hideDrawer())
+    dispatch(hideChapterDrawer())
   }
 
   function removeAuthUserCallback() { }
@@ -38,7 +38,7 @@ export const LoginDrawer = () => {
   const { pathname } = useLocation()
 
   const hideCallback = () => {
-    dispatch(hideDrawer())
+    dispatch(hideMenuDrawer())
   }
 
   function removeAuthUserCallback() { }
