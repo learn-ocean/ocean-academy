@@ -7,7 +7,7 @@ import { State } from 'reducers'
 
 export const HamburgerLeft = () => {
   const dispatch = useDispatch()
-  const activated = useSelector((state: State) => state.drawer.showing)
+  const activated = useSelector((state: State) => state.chapterDrawer.showingChapter)
 
   const activateCallback = () => {
     dispatch(activated ? hideDrawer() : showDrawer())
@@ -18,7 +18,7 @@ export const HamburgerLeft = () => {
 
 export const HamburgerRight = () => {
   const dispatch = useDispatch()
-  const activated = useSelector((state: State) => state.drawer.showing)
+  const activated = useSelector((state: State) => state.loginDrawer.showingMenu)
 
   const activateCallback = () => {
     dispatch(activated ? hideDrawer() : showDrawer())
