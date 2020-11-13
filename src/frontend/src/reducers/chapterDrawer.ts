@@ -1,5 +1,5 @@
 import { RESET, RESTORE } from 'app/App.actions'
-import { HIDE_DRAWER, SHOW_DRAWER } from '../app/App.components/Drawer/Drawer.actions'
+import { HIDE_CHAPTER_DRAWER, SHOW_CHAPTER_DRAWER } from '../app/App.components/Drawer/Drawer.actions'
 
 export interface ChapterDrawerState {
   showingChapter: boolean
@@ -17,12 +17,12 @@ export function chapterDrawer(state = chapterDrawerDefaultState, action: any): C
     case RESTORE: {
       return chapterDrawerDefaultState
     }
-    case SHOW_DRAWER:
+    case SHOW_CHAPTER_DRAWER:
       console.log("chapterDrawer SHOW_DRAWER\nediting showingChapter property...")
       return {
         showingChapter: true,
       }
-    case HIDE_DRAWER:
+    case HIDE_CHAPTER_DRAWER:
       console.log("chapterDrawer HIDE_DRAWER\nediting showingChapter property...")
       return {
         showingChapter: false,
