@@ -8,22 +8,20 @@ import { Link } from 'react-router-dom'
 import { DrawerItem, DrawerMask, DrawerStyled, DrawerStyledLogin } from './Drawer.style'
 
 type DrawerViewProps = {
-  showing: boolean
+  showingChapter: boolean
+  showingMenu: boolean
   hideCallback: () => void
   pathname: string
+  user: PublicUser
   user_drawer: any
-  removeAuthUserCallback_drawer: () => void
+  removeAuthUserCallback: () => void
 }
 
-type HeaderViewProps = {
-  user_header?: PublicUser
-  removeAuthUserCallback_header: () => void
-}
-
-export const ChapterDrawerView = ({ showing, hideCallback, pathname, user_drawer, removeAuthUserCallback_drawer }: DrawerViewProps) => (
+export const ChapterDrawerView = ({ showingChapter, showingMenu, hideCallback, pathname, user_drawer, removeAuthUserCallback }: DrawerViewProps) => (
   <>
-    <DrawerMask className={`${showing}`} onClick={() => hideCallback()} />
-    <DrawerStyled className={`${showing}`}>
+    {console.log("ChapterDrawerView showing = ", showingChapter)}
+    <DrawerMask className={`${showingChapter}`} onClick={() => hideCallback()} />
+    <DrawerStyled className={`${showingChapter}`}>
       <h1>Chapters</h1>
       {chapterData.map((chapter) => (
         <DrawerItem key={chapter.pathname} className={pathname === chapter.pathname ? 'current-path' : 'other-path'}>
@@ -36,18 +34,20 @@ export const ChapterDrawerView = ({ showing, hideCallback, pathname, user_drawer
   </>
 )
 
-export const LoginDrawerView = ({ user_header, removeAuthUserCallback_header }: HeaderViewProps,
-  { showing, hideCallback, pathname, user_drawer, removeAuthUserCallback_drawer }: DrawerViewProps) => (
-    <>
-      <DrawerMask className={`${showing}`} onClick={() => hideCallback()} />
-      {user_header ? loggedInDrawer({ user_header, removeAuthUserCallback_header }, { showing, hideCallback, pathname, user_drawer, removeAuthUserCallback_drawer }) : loggedOutDrawer({ showing, hideCallback, pathname, user_drawer, removeAuthUserCallback_drawer })}
-    </>
-  )
+export const LoginDrawerView = ({ showingChapter, showingMenu, hideCallback, pathname, user, user_drawer, removeAuthUserCallback }: DrawerViewProps) => (
+  <>
+    {console.log("LoginDrawerView showing = ", showingMenu)}
+    <DrawerMask className={`${showingMenu}`} onClick={() => hideCallback()} />
+    {user ?
+      loggedInDrawer({ showingChapter, showingMenu, hideCallback, pathname, user, user_drawer, removeAuthUserCallback }) :
+      loggedOutDrawer({ showingChapter, showingMenu, hideCallback, pathname, user, user_drawer, removeAuthUserCallback })}
+  </>
+)
 
-function loggedInDrawer({ user_header, removeAuthUserCallback_header }: HeaderViewProps,
-  { showing, hideCallback, pathname, user_drawer, removeAuthUserCallback_drawer }: DrawerViewProps) {
+function loggedInDrawer({ showingChapter, showingMenu, hideCallback, pathname, user, user_drawer, removeAuthUserCallback }: DrawerViewProps) {
+  console.log("loggedInDrawer showing = ", showingMenu)
   return (
-    <DrawerStyledLogin className={`${showing}`}>
+    <DrawerStyledLogin className={`${showingMenu}`}>
       <h1>Menu</h1>
       <DrawerItem>
         <Link to="/about">
@@ -62,8 +62,8 @@ function loggedInDrawer({ user_header, removeAuthUserCallback_header }: HeaderVi
       </DrawerItem>
 
       <DrawerItem>
-        <Link to={`/user/${user_header?.username}`}>
-          {user_header?.username}
+        <Link to={`/user/${user?.username}`}>
+          {user?.username}
         </Link>
       </DrawerItem>
 
@@ -71,7 +71,7 @@ function loggedInDrawer({ user_header, removeAuthUserCallback_header }: HeaderVi
         <Link
           to="/"
           onClick={() => {
-            removeAuthUserCallback_header()
+            removeAuthUserCallback()
           }}
         >
           LOGOUT
@@ -81,10 +81,11 @@ function loggedInDrawer({ user_header, removeAuthUserCallback_header }: HeaderVi
   )
 }
 
-function loggedOutDrawer({ showing, hideCallback, pathname, user_drawer, removeAuthUserCallback_drawer }: DrawerViewProps) {
+function loggedOutDrawer({ showingChapter, showingMenu, hideCallback, pathname, user, user_drawer, removeAuthUserCallback }: DrawerViewProps) {
+  console.log("loggedOutDrawer showing = ", showingMenu)
   return (
-    <DrawerStyledLogin className={`${showing}`}>
-      <h1>User Menu</h1>
+    <DrawerStyledLogin className={`${showingMenu}`}>
+      <h1>Menu</h1>
       <DrawerItem>
         <Link to="/about">
           ABOUT US
@@ -113,29 +114,31 @@ function loggedOutDrawer({ showing, hideCallback, pathname, user_drawer, removeA
 }
 
 ChapterDrawerView.propTypes = {
-  showing: PropTypes.bool,
+  showingChapter: PropTypes.bool,
+  showingMenu: PropTypes.bool,
   hideCallback: PropTypes.func.isRequired,
   pathname: PropTypes.string.isRequired,
+  user: PropTypes.object,
   user_drawer: PropTypes.object,
-  removeAuthUserCallback_drawer: PropTypes.func.isRequired,
+  removeAuthUserCallback: PropTypes.func.isRequired,
 }
 
 ChapterDrawerView.defaultProps = {
-  showing: false,
+  showingChapter: false,
   user: undefined,
 }
 
 LoginDrawerView.propTypes = {
-  user_header: PropTypes.object,
-  removeAuthUserCallback_header: PropTypes.func.isRequired,
-  showing: PropTypes.bool,
+  showingChapter: PropTypes.bool,
+  showingMenu: PropTypes.bool,
   hideCallback: PropTypes.func.isRequired,
   pathname: PropTypes.string.isRequired,
+  user: PropTypes.object,
   user_drawer: PropTypes.object,
-  removeAuthUserCallback_drawer: PropTypes.func.isRequired
+  removeAuthUserCallback: PropTypes.func.isRequired,
 }
 
 LoginDrawerView.defaultProps = {
-  showing: false,
+  showingMenu: false,
   user: undefined,
 }

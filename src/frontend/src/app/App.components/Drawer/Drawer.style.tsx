@@ -86,9 +86,7 @@ export const DrawerItem = styled.div`
   }
 `
 
-// remove display: none;
 export const DrawerStyledLogin = styled.div`
-  display: none;
   position: fixed;
   top: 0;
   right: -1px;
@@ -99,7 +97,7 @@ export const DrawerStyledLogin = styled.div`
   padding: 40px 20px 20px 30px;
   background-color: ${backgroundColorLight};
   box-shadow: 1px 7px 14px -5px rgba(0, 0, 0, 0.2);
-  transform: translate3d(0px, 0, 0);
+  transform: translate3d(300px, 0, 0);
   transition: 0.2s ease-in-out;
   will-change: transform;
   overflow: scroll;
@@ -109,11 +107,11 @@ export const DrawerStyledLogin = styled.div`
   }
 
   &.true {
-    transform: translate3d(-200px, 0, 0);
+    transform: translate3d(0px, 0, 0);
   }
 
   &.false {
-    transform: translate3d(-200px, 0, 0);
+    transform: translate3d(300px, 0, 0);
   }
 
   a {
