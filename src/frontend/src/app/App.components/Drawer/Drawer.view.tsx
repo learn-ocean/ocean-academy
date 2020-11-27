@@ -6,7 +6,7 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { IoIosArrowDropdownCircle, IoIosArrowDroprightCircle } from 'react-icons/io'
 
-import { ChapterWrapper, DrawerItem, DrawerMask, DrawerStyled, DrawerStyledLogin } from './Drawer.style'
+import { DrawerItem, DrawerMask, DrawerStyled, DrawerStyledLogin } from './Drawer.style'
 import { ChapterDrawer } from './ChapterDrawer.controller'
 
 type LoginDrawerViewProps = {

@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
+
 import { State } from 'reducers'
 
 import {
@@ -17,11 +18,6 @@ export const CourseDrawer = () => {
   const dispatch = useDispatch()
   const showingCourses = useSelector((state: State) => state.courseDrawer && state.courseDrawer.showingCourses)
   const { pathname } = useLocation()
-
-  // ts
-  const showingChapter = useSelector((state: State) => state.chapterDrawer.showingChapter)
-  const currentCourse = useSelector((state: State) => state.chapterDrawer.course)
-  console.log("Status: Showing ", currentCourse, ", ", showingChapter)
 
   const hideCallback = () => {
     dispatch(hideCourseDrawer())

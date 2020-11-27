@@ -5,7 +5,6 @@ import { auth, AuthState } from './auth'
 
 // Drawers
 import { courseDrawer, CourseDrawerState } from './courseDrawer'
-import { chapterDrawer, ChapterDrawerState } from './chapterDrawer'
 import { loginDrawer, LoginDrawerState } from './loginDrawer'
 
 import { gdpr, GdprState } from './gdpr'
@@ -23,11 +22,10 @@ export const reducers = (history: any) =>
     users,
     toaster,
     courseDrawer,
-    chapterDrawer,
     loginDrawer,
     progressBar,
     serviceWorker,
-    gdpr
+    gdpr,
   })
 
 export interface State {
@@ -36,7 +34,6 @@ export interface State {
   users: UsersState
   toaster: ToasterState
   courseDrawer: CourseDrawerState
-  chapterDrawer: ChapterDrawerState
   loginDrawer: LoginDrawerState
   progressBar: ProgressBarState
   serviceWorker: ServiceWorkerState

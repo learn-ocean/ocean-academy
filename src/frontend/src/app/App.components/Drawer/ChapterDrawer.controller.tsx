@@ -1,29 +1,26 @@
 import * as React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
-import { State } from 'reducers'
+
+import { ShowingChaptersState } from '../../../pages/Course/Course.controller'
 
 import {
-    hideCourseDrawer,
-    hideMenuDrawer,
     showOcean101Drawer,
     hideOcean101Drawer,
-    showBusinessDrawer,
     hideBusinessDrawer,
     showOutreachDrawer,
     hideOutreachDrawer,
     showC2DDrawer,
     hideC2DDrawer
 } from './Drawer.actions'
+
 import { ChapterDrawerView } from './ChapterDrawer.view'
 
-// Subdrawer of CourseDrawer
-// [1] IT'S CHANGING THE VIEW STATE CORRECTLY (BOOL, state.chapterDrawer.showingChapter) But ChapterDrawer isn't being called to show the chapters.
 export const ChapterDrawer = () => {
     const dispatch = useDispatch()
-    const showingChapter = useSelector((state: State) => state.chapterDrawer.showingChapter)
-    const currentCourse = useSelector((state: State) => state.chapterDrawer.course)
-    console.log("Status: Showing ", currentCourse, ", ", showingChapter)
+    const showingChapters = useSelector((state: ShowingChaptersState) => state.showingChapters)
+    const currentCourse = useSelector((state: ShowingChaptersState) => state.course)
+    console.log("Status: Showing ", currentCourse, ", ", showingChapters)
     const { pathname } = useLocation()
 
     const hideCallback = ((showingChapter: boolean, currentCourse: string) => {
@@ -72,7 +69,7 @@ export const ChapterDrawer = () => {
 
     return (
         <ChapterDrawerView
-            showingChapter={showingChapter}
+            showingChapter={showingChapters}
             currentCourse={currentCourse}
             hideCallback={hideCallback}
             pathname={pathname}

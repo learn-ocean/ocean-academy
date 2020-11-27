@@ -1,14 +1,6 @@
 import styled from 'styled-components/macro'
 import { primaryColor, textColor, backgroundColorLight } from 'styles'
 
-export const ChapterWrapper = styled.div`
-  display: none;
-
-  &.true {
-    display: block;
-  }
-`
-
 export const DrawerMask = styled.div`
   position: fixed;
   z-index: 9;
