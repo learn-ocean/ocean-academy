@@ -1,6 +1,9 @@
 import { Button } from 'app/App.components/Button/Button.controller'
 import { Input } from 'app/App.components/Input/Input.controller'
-import { chapterData } from 'pages/Chapter/Chapter.data'
+
+// band-aid hardcode import. fix later.
+import { chapterData } from 'pages/Courses/ocean101/Chapters/Chapters.data'
+
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
 import { Link } from 'react-router-dom'
@@ -44,7 +47,7 @@ export const UserView = ({
         <UserBadge badgeUnlocked={badgeUnlocked}>
           {badgeUnlocked ? (
             <>
-              <h2>CONGRATS! YOU ARE NOW A OCEAN EXPERT!</h2>
+              <h2>CONGRATS! YOU ARE NOW AN OCEAN EXPERT!</h2>
               {authUser?.name ? (
                 <UserBadgeButtons>
                   <Button
@@ -55,37 +58,37 @@ export const UserView = ({
                     onClick={() => downloadCallback()}
                   />
                   <Link to={`/certificate/${user.username}`}>
-                    <Button type="button" text="Certified URL" icon="link" loading={loading} onClick={() => {}} />
+                    <Button type="button" text="Certified URL" icon="link" loading={loading} onClick={() => { }} />
                   </Link>
                 </UserBadgeButtons>
               ) : (
-                <UserBadgeInput>
-                  <Input
-                    icon="user"
-                    name="name"
-                    placeholder="Name on certificate"
-                    type="text"
-                    onChange={(e) => {
-                      setName(e.target.value)
-                    }}
-                    value={name}
-                    onBlur={() => {}}
-                    inputStatus={undefined}
-                    errorMessage={undefined}
-                  />
-                  <Button
-                    type="button"
-                    text="Get certificate"
-                    icon="login"
-                    loading={loading}
-                    onClick={() => getCertificateCallback()}
-                  />
-                </UserBadgeInput>
-              )}
+                  <UserBadgeInput>
+                    <Input
+                      icon="user"
+                      name="name"
+                      placeholder="Name on certificate"
+                      type="text"
+                      onChange={(e) => {
+                        setName(e.target.value)
+                      }}
+                      value={name}
+                      onBlur={() => { }}
+                      inputStatus={undefined}
+                      errorMessage={undefined}
+                    />
+                    <Button
+                      type="button"
+                      text="Get certificate"
+                      icon="login"
+                      loading={loading}
+                      onClick={() => getCertificateCallback()}
+                    />
+                  </UserBadgeInput>
+                )}
             </>
           ) : (
-            <p>To obtain the completion certificate, you need to complete all chapters.</p>
-          )}
+              <p>To obtain the completion certificate, you need to complete all chapters.</p>
+            )}
         </UserBadge>
       </UserCard>
 

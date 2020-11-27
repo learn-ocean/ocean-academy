@@ -24,7 +24,7 @@ export const HeaderLoggedOut = styled.div`
   grid-template-columns: auto auto auto auto;
   grid-gap: 10px;
 
-  @media (max-width: 700px) {
+  @media (max-width: 1130px) {
     display: none;
   }
 `
@@ -38,7 +38,7 @@ export const HeaderLoggedIn = styled.div`
   grid-gap: 10px;
   text-transform: uppercase;
 
-  @media (max-width: 700px) {
+  @media (max-width: 1130px) {
     display: none;
   }
 `

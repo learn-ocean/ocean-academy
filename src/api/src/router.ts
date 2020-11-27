@@ -18,6 +18,8 @@ router.get('/', async (ctx: Context) => {
   ctx.body = 'You are not supposed to be here ;)'
 })
 
+// router.get(`/${course.pathname}`)
+
 router.post('/user/sign-up', signUp)
 router.post('/user/login', login)
 router.post('/user/verify-email', verifyEmail)

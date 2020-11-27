@@ -7,9 +7,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import { State } from 'reducers'
 
+// We need to find a new solution that generalizes over all the courses. 
+// import { ChapterData } only worked when there was one ChapterData.
+import { chapterData } from '../Courses/ocean101/Chapters/Chapters.data'
+import { courseData } from '../Course/Course.data'
+
 import { addProgress } from './Chapter.actions'
 import { PENDING, RIGHT, WRONG } from './Chapter.constants'
-import { chapterData } from './Chapter.data'
 import { ChapterView } from './Chapter.view'
 import { Footer } from './Footer/Footer.controller'
 
@@ -41,6 +45,8 @@ export const Chapter = () => {
   })
   const dispatch = useDispatch()
   const user = useSelector((state: State) => state.auth.user)
+
+  // courseData.forEach((course) => {
 
   useEffect(() => {
     chapterData.forEach((chapter) => {

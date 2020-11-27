@@ -15,6 +15,7 @@ type ToasterViewProps = {
 }
 
 export const ToasterView = ({ showing, status, title, message, closeCallback }: ToasterViewProps) => {
+  // eslint-disable-next-line
   const backgroundColorDark = status === 'success' ? upColor : downColor
 
   return (
@@ -24,8 +25,8 @@ export const ToasterView = ({ showing, status, title, message, closeCallback }: 
           {status === 'success' ? (
             <img alt={status} src={`/icons/success.svg`} />
           ) : (
-            <img alt={status} src={`/icons/error.svg`} />
-          )}
+              <img alt={status} src={`/icons/error.svg`} />
+            )}
         </ToasterIcon>
         <ToasterContent>
           <ToasterTitle>{title}</ToasterTitle>
