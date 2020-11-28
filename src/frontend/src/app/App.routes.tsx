@@ -2,6 +2,7 @@ import { About } from 'pages/About/About.controller'
 import { Certificate } from 'pages/Certificate/Certificate.controller'
 import { ChangePassword } from 'pages/ChangePassword/ChangePassword.controller'
 import { Chapter } from 'pages/Chapter/Chapter.controller'
+import { Course } from 'pages/Course/Course.controller'
 import { Error404 } from 'pages/Error404/Error404.controller'
 import { ForgotPassword } from 'pages/ForgotPassword/ForgotPassword.controller'
 import { Home } from 'pages/Home/Home.controller'
@@ -37,7 +38,10 @@ export const AppRoutes = ({ location }: any) => (
     <Route exact path="/change-password">
       <ChangePassword />
     </Route>
-    <Route path="/chapter-*">
+    <Route path="/*/info">
+      <Course />
+    </Route>
+    <Route path="/*/chapter-*">
       <Chapter />
     </Route>
     <Route exact path="/user/:username">

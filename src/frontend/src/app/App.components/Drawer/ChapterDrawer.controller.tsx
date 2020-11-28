@@ -15,11 +15,11 @@ import {
 import { ChapterDrawerView } from './ChapterDrawer.view'
 import { ShowingChaptersState } from 'reducers/chapterDrawer'
 
-type chapterDrawerProps = {
+type ChapterDrawerProps = {
     course: string
 }
 
-export const ChapterDrawer = ({ course }: chapterDrawerProps) => {
+export const ChapterDrawer = ({ course }: ChapterDrawerProps) => {
     const dispatch = useDispatch()
     const chapterStates = useSelector((state: State) => state.chapterDrawer)
     const { pathname } = useLocation()
