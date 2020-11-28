@@ -5,7 +5,7 @@
 
 **EVM.** A smart contract is a piece of software that can be executed on a blockchain-enabled computer, for example, the Ethereum Virtual Machine (EVM). In the EVM, a smart contract is an executable program that was deployed to the Ethereum blockchain. It’s usually written in a high-level language called Solidity and compiled into bytecode to be executed whenever someone calls it.
 
-**RemixIDE**. But instead of talking let’s start to write our first smart contract. A classic *hello world* program. The easiest way to write a smart contract is on [RemixIDE](http://remix.ethereum.org). It’s a browser-based IDE to write, test, execute, and deploy smart contracts.
+**RemixIDE**. But instead of talking let’s start to write our first smart contract. A classic *hello world* program. The easiest way to write a smart contract is on <a href="http://remix.ethereum.org" target="_blank" >RemixIDE</a>. It’s a browser-based IDE to write, test, execute, and deploy smart contracts.
 
 You can simply copy the following code and paste it in a new file on Remix to play around. A simple hello world program in Solidity:
 

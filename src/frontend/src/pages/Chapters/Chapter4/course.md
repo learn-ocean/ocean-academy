@@ -12,7 +12,7 @@ Go to MetaMask and select Rinkeby Test Network in the upper central dropdown lis
 
 <img src="/images/chapter4_0.png" />
 
-Go to the [Rikeby faucet](https://faucet.rinkeby.io/) and follow the instructions provided.
+Go to the <a href="https://faucet.rinkeby.io/" target="_blank" > Rikeby faucet </a> and follow the instructions provided.
 
 You will be asked to post your ETH address on Twitter or Facebook; the faucet providers do this to ensure that people can do this just once and don’t empty the faucet too quickly.
 
@@ -34,6 +34,6 @@ Wait a few seconds, refresh, and there you are: you have 3 ETH in your wallet.
 
 <img src="/images/chapter4_5.png" />
 
-**You can also view the transaction on the blockchain** if you search for your wallet address via a Blockchain explorer like [Etherscan](https://etherscan.io/).
+**You can also view the transaction on the blockchain** if you search for your wallet address via a Blockchain explorer like <a href="https://etherscan.io/" target="_blank" >Etherscan</a> .
 Blockchain explorers are public tools (usable by anyone) that allow people to search through the blockchain and check all transactions.
 If you have a spare minute go there and have a look, it’s nice to see ones’ transactions make history!
