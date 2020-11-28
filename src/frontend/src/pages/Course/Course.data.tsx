@@ -17,29 +17,36 @@ export const courseData = [
         pathname: `/${Ocean101.path}/chapter-1`,
         name: 'Ocean 101',
         data: Ocean101,
-        chapterData: Ocean101Chapters
     },
     {
         path: OceanOutreach.path,
         pathname: `/${OceanOutreach.path}/info`,
         name: 'Ocean Outreach',
         data: OceanOutreach,
-        chapterData: OceanOutreachChapters
     },
     {
         path: OceanBusiness.path,
         pathname: `/${OceanBusiness.path}/info`,
         name: 'Ocean Business',
         data: OceanBusiness,
-        chapterData: OceanBusinessChapters
     },
     {
         path: ComputeToData.path,
         pathname: `/${ComputeToData.path}/info`,
         name: 'Compute to Data',
         data: ComputeToData,
-        chapterData: ComputeToDataChapters
     }
 ]
+
+type ChapterDataDictionary = {
+    [key: string]: any,
+}
+
+export const chaptersByCourse: ChapterDataDictionary = {
+    "ocean101": Ocean101Chapters,
+    "oceanOutreach": OceanOutreachChapters,
+    "oceanBusiness": OceanBusinessChapters,
+    "computeToData": ComputeToDataChapters
+}
 
 

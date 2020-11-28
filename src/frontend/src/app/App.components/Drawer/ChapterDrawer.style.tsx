@@ -2,6 +2,8 @@ import styled from 'styled-components/macro'
 import { textColor, backgroundColorLight } from 'styles'
 
 export const ChaptersWrapper = styled.div`
+  display: none;
+  visibility: hidden;
   position: relative;
   top: 0;
   left: -1px;
@@ -23,10 +25,14 @@ export const ChaptersWrapper = styled.div`
 
   &.true {
     transform: translate3d(0px, 0, 0);
+    visibility: visible;
+    display: block;
   }
 
   &.false {
     transform: translate3d(-300px, 0, 0);
+    visibility: hidden;
+    display: none;
   }
 
   a {
