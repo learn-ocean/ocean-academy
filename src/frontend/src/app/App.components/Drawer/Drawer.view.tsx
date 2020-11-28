@@ -8,6 +8,7 @@ import { IoIosArrowDropdownCircle, IoIosArrowDroprightCircle } from 'react-icons
 
 import { DrawerItem, DrawerMask, DrawerStyled, DrawerStyledLogin } from './Drawer.style'
 import { ChapterDrawer } from './ChapterDrawer.controller'
+import { ShowingChaptersState } from 'reducers/chapterDrawer'
 
 type LoginDrawerViewProps = {
   showingMenu: boolean
@@ -19,14 +20,16 @@ type LoginDrawerViewProps = {
 
 type CourseDrawerViewProps = {
   showingCourses: boolean
+  chapterStates: ShowingChaptersState
   hideCallback: () => void
-  changeChapterState: (course: string) => void
+  changeChapterState: (chapterStates: ShowingChaptersState, course: string) => void
   pathname: string
 }
 
-export const CourseDrawerView = ({ showingCourses, hideCallback, changeChapterState, pathname }: CourseDrawerViewProps) => (
+// if currentCourse & showingChapter == true, show that specific chapter.
+// need an attribute on each chaptersWrapper to make it show or not
+export const CourseDrawerView = ({ showingCourses, chapterStates, hideCallback, changeChapterState, pathname }: CourseDrawerViewProps) => (
   <>
-    {console.log("CourseDrawerView showing = ", showingCourses)}
     <DrawerMask className={`${showingCourses}`} onClick={() => hideCallback()} />
     <DrawerStyled className={`${showingCourses}`}>
       <h1>Modules</h1>
@@ -35,15 +38,13 @@ export const CourseDrawerView = ({ showingCourses, hideCallback, changeChapterSt
           <Link to={unitModule.pathname} onClick={() => hideCallback()}>
             {unitModule.name}
           </Link>
-          <IoIosArrowDroprightCircle onClick={() => changeChapterState(unitModule.path!)} />
-          <ChapterDrawer />
+          <IoIosArrowDroprightCircle onClick={() => changeChapterState(chapterStates, unitModule.path!)} />
+          <ChapterDrawer course={unitModule.path!} />
         </DrawerItem>
       ))}
     </DrawerStyled>
   </>
 )
-
-// <IoIosArrowDropdownCircle /> onclick: show chapterDrawerView
 
 export const LoginDrawerView = ({ showingMenu, hideCallback, pathname, user, removeAuthUserCallback }: LoginDrawerViewProps) => (
   <>
@@ -127,6 +128,7 @@ function loggedOutDrawer({ showingMenu, hideCallback, pathname, user, removeAuth
 
 CourseDrawerView.propTypes = {
   showingCourses: PropTypes.bool,
+  chapterStates: PropTypes.object,
   hideCallback: PropTypes.func.isRequired,
   changeChapterState: PropTypes.func.isRequired,
   pathname: PropTypes.string.isRequired

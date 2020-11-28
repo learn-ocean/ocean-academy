@@ -1,65 +1,66 @@
 import * as React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
-
-import { ShowingChaptersState } from '../../../pages/Course/Course.controller'
-
+import { State } from 'reducers'
 import {
     showOcean101Drawer,
     hideOcean101Drawer,
+    showBusinessDrawer,
     hideBusinessDrawer,
     showOutreachDrawer,
     hideOutreachDrawer,
     showC2DDrawer,
     hideC2DDrawer
 } from './Drawer.actions'
-
 import { ChapterDrawerView } from './ChapterDrawer.view'
+import { ShowingChaptersState } from 'reducers/chapterDrawer'
 
-export const ChapterDrawer = () => {
+type chapterDrawerProps = {
+    course: string
+}
+
+export const ChapterDrawer = ({ course }: chapterDrawerProps) => {
     const dispatch = useDispatch()
-    const showingChapters = useSelector((state: ShowingChaptersState) => state.showingChapters)
-    const currentCourse = useSelector((state: ShowingChaptersState) => state.course)
-    console.log("Status: Showing ", currentCourse, ", ", showingChapters)
+    const chapterStates = useSelector((state: State) => state.chapterDrawer)
     const { pathname } = useLocation()
 
-    const hideCallback = ((showingChapter: boolean, currentCourse: string) => {
-        switch (currentCourse) {
-            case ``: {
-                break;
-            }
+    console.log(`[ChapterDrawer.controller] course = ${course}
+    \nchapterStates[ocean101]: ${chapterStates.ocean101}
+    \nchapterStates[oceanBusiness]: ${chapterStates.oceanBusiness}
+    \nchapterStates[oceanOutreach]: ${chapterStates.oceanOutreach}
+    \nchapterStates[computeToData]: ${chapterStates.computeToData}`)
+
+    const hideCallback = ((chapterStates: ShowingChaptersState, course: string) => {
+        console.log("[ChapterDrawer.controller hideCallback] Passing through...\n[changeChapterState] course: ", course)
+        switch (course) {
             case `ocean101`: {
-                if (showingChapter) {
+                if (chapterStates.ocean101) {
                     dispatch(showOcean101Drawer())
-                }
-                else {
+                } else {
                     dispatch(hideOcean101Drawer())
                 }
                 break;
             }
             case `oceanBusiness`: {
-                if (showingChapter) {
-                    dispatch(showOcean101Drawer())
-                }
-                else {
+                if (chapterStates.oceanBusiness) {
+                    dispatch(showBusinessDrawer())
+                } else {
                     dispatch(hideBusinessDrawer())
                 }
                 break;
             }
             case `oceanOutreach`: {
-                if (showingChapter) {
+                if (chapterStates.oceanOutreach) {
                     dispatch(showOutreachDrawer())
-                }
-                else {
+                } else {
                     dispatch(hideOutreachDrawer())
                 }
                 break;
             }
             case `computeToData`: {
-                if (showingChapter) {
+                if (chapterStates.computeToData) {
                     dispatch(showC2DDrawer())
-                }
-                else {
+                } else {
                     dispatch(hideC2DDrawer())
                 }
                 break;
@@ -67,10 +68,11 @@ export const ChapterDrawer = () => {
         }
     })
 
+    console.log("[ChapterDrawer.controller] Returning ChapterDrawerView... ")
     return (
         <ChapterDrawerView
-            showingChapter={showingChapters}
-            currentCourse={currentCourse}
+            course={course}
+            chapterStates={chapterStates}
             hideCallback={hideCallback}
             pathname={pathname}
         />

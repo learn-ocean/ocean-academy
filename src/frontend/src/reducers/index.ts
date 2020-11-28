@@ -6,6 +6,7 @@ import { auth, AuthState } from './auth'
 // Drawers
 import { courseDrawer, CourseDrawerState } from './courseDrawer'
 import { loginDrawer, LoginDrawerState } from './loginDrawer'
+import { chapterDrawer, ShowingChaptersState } from './chapterDrawer'
 
 import { gdpr, GdprState } from './gdpr'
 import { loading, LoadingState } from './loading'
@@ -22,6 +23,7 @@ export const reducers = (history: any) =>
     users,
     toaster,
     courseDrawer,
+    chapterDrawer,
     loginDrawer,
     progressBar,
     serviceWorker,
@@ -35,6 +37,7 @@ export interface State {
   toaster: ToasterState
   courseDrawer: CourseDrawerState
   loginDrawer: LoginDrawerState
+  chapterDrawer: ShowingChaptersState
   progressBar: ProgressBarState
   serviceWorker: ServiceWorkerState
   gdpr: GdprState
