@@ -3,7 +3,7 @@
 
 <dialog character="jellyfish">You are now below water. This is a new environment. It feels like flying, it’s awesome. Most divers will tell you that they got hooked by the experience of moving freely in 3D from their very first dive. Same here. You will get a taste of a new universe enabled by collaborative technologies, in uncharted territories.</dialog>
 
-Understanding what is a blockchain and a smart contract will help fully grasp the value that Ocean Protocol can provide. If you are already familiar with these concepts, you can go directly to <a href="https://oceanacademy.io/chapter-6" target="_blank">chapter 6</a>
+Understanding what is a blockchain and a smart contract will help fully grasp the value that Ocean Protocol can provide. If you are already familiar with these concepts, you can go directly to [chapter 6](https://oceanacademy.io/chapter-6).
 
 ### A Blockchain
 is simply a ledger that chronologically records the facts that it is programmed to record. This ledger is duplicated across participants, and public, which allows everyone to check that its entries are correct. This removes the need for a central ‘validation authority’: you don’t need to trust when you can verify.
