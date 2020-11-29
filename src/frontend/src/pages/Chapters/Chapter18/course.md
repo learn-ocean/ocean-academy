@@ -4,7 +4,7 @@
 
 <dialog character="mantaray">We’ve met the data fishes. Now let’s scrutinize the species who look to acquire data to build models: the data consumers.</dialog>
 
-Simply speaking, anyone who purchases priced data, free data, or an algorithm on Ocean Protocol is called a **Data Consumer**. A collection of free data samples to play with is made available in the [Ocean Commons](http://commons.oceanprotocol.com).
+Simply speaking, anyone who purchases priced data, free data, or an algorithm on Ocean Protocol is called a **Data Consumer**. A collection of free data samples to play with is made available in the <a href="http://commons.oceanprotocol.com" target="_blank" >Ocean Commons</a>.
 
 **Finding Data.** When someone is looking to find a specific algorithm or dataset relevant to their needs, they will use any of the market places available. It could be via Ocean Market, for example. The metadata and the quality score of the data (which works the exact same on data as on compute algorithms) will be used to assess if the data is worth purchasing or not.
 

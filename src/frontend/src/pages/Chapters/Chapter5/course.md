@@ -27,7 +27,7 @@ It’s called Web 3.0 because it’s an evolution of the internet since its begi
 
 **Evolution of the web**. On its creation, the Web 1.0 was a network of relatively big entities like big universities offering access to static content. Service providers gave access to that content spread across hosts across the globe.
 
-The Web 2.0 of the 00’s introduced the possibility for users to add their own content to a webpage in blog, then in social networks. Central entities monetize user data to provide ‘free’ accounts and services. This has evolved in what leading academics now describe as [surveillance capitalism](https://www.barnesandnoble.com/w/the-age-of-surveillance-capitalism-shoshana-zuboff/1127581387).
+The Web 2.0 of the 00’s introduced the possibility for users to add their own content to a webpage in blog, then in social networks. Central entities monetize user data to provide ‘free’ accounts and services. This has evolved in what leading academics now describe as <a href="https://www.barnesandnoble.com/w/the-age-of-surveillance-capitalism-shoshana-zuboff/1127581387" target="_blank" >surveillance capitalism</a>.
 
 The Web 3.0, or Web3, of the 20’s allows for full liberalization of networks, removing the need for central intermediaries. Just like TCP/IP are communication protocols that define how information is sent between clients and servers over the Web, Ocean Protocol is a protocol that defines how data assets are exchanged in Web3.
 
