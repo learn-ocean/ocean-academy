@@ -26,8 +26,6 @@ type CourseDrawerViewProps = {
   pathname: string
 }
 
-// if currentCourse & showingChapter == true, show that specific chapter.
-// need an attribute on each chaptersWrapper to make it show or not
 export const CourseDrawerView = ({ showingCourses, chapterStates, hideCallback, changeChapterState, pathname }: CourseDrawerViewProps) => (
   <>
     <DrawerMask className={`${showingCourses}`} onClick={() => hideCallback()} />
@@ -143,6 +141,7 @@ LoginDrawerView.propTypes = {
   hideCallback: PropTypes.func.isRequired,
   pathname: PropTypes.string.isRequired,
   user: PropTypes.object,
+  user_drawer: PropTypes.object,
   removeAuthUserCallback: PropTypes.func.isRequired,
 }
 

@@ -17,6 +17,6 @@ Of course, there is much more to it, like how datatokens can be used in all the 
 
 We also saved the more technical aspects for Ocean Academy 201. This is an open-source project; join us and buidl the next chapters with us!
 
-- Become an [ambassador](https://oceanprotocol.com/community/#ambassadors)
-- Join Ocean Protocol on [Discord](https://discord.com/invite/TnXjkR5)
-- Contribute to the [Academy](https://github.com/learn-ocean/ocean-academy)
+- Become an <a href="https://oceanprotocol.com/community/#ambassadors" target="_blank">ambassador</a>
+- Join Ocean Protocol on <a href="https://discord.com/invite/TnXjkR5" target="_blank">Discord</a>
+- Contribute to the <a href="https://github.com/learn-ocean/ocean-academy" target="_blank">Academy</a>
