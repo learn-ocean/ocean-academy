@@ -5,5 +5,5 @@ COPY . /app
 RUN cd /app
 RUN yarn install
 RUN yarn build
-EXPOSE 8080
+EXPOSE 3000
 CMD ["node", "dist/index.js"]

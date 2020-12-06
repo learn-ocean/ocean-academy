@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "PORT=8080 NODE_ENV=development nodemon --watch src -e ts,tsx --exec ts-node src/index.ts",
-    "build": "PORT=8080 NODE_ENV=production tsc",
+    "start": "PORT=3000 NODE_ENV=development nodemon --watch src -e ts,tsx --exec ts-node src/index.ts",
+    "build": "PORT=3000 NODE_ENV=production tsc",
     "docker-create": "doctl k8s cluster create --region fra1 oceanacademy-api --wait && doctl kubernetes cluster kubeconfig save oceanacademy-api",
     "docker-build": "docker build -t neutrino/oceanacademy-api . --no-cache",
     "docker-run": "docker run --rm -it -p 3000:3000 neutrino/oceanacademy-api",
