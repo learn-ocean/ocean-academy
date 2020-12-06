@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 1440 565" style="enable-background:new 0 0 1440 565; position: relative" xml:space="preserve">
+    <style type="text/css">
+        .st0{fill:none;stroke:#E2E2E2;stroke-width:2;}
+        .st1{fill:none;stroke:#8B98A9;stroke-width:2;}
+        .st2{fill:none;stroke:#E000CF;stroke-width:2;}
+        .st3{fill:none;stroke:#FF4092;stroke-width:2;}
+
+        .st0,.st1,.st2,.st3 {
+        -webkit-animation: move_wave 7s infinite  alternate;
+        animation: move_wave 7s infinite  alternate;
+        }
+
+        @keyframes move_wave {
+            0% {
+                transform: translateX(0) translateZ(0) scaleY(1)
+            }
+            50% {
+                transform: translateX(-15%) translateZ(0) scaleY(0.55)
+            }
+            100% {
+                transform: translateX(0) translateZ(0) scaleY(1)
+            }
+        }
+    </style>
+    <path class="st0" d="M2097.4-131.8c-24.8-3.1-95.3-0.7-192.1,33.5c-133.6,75.1-162.3,95.3-259.9,114.5  c-105.7,32.3-210,5.5-321.1,34.9c-176.6,78.7-181.8,191.3-306.4,207.2c-124.5,16-234.6-74.9-364.6-42.6  c-89,22.1-172.5,250.5-275.4,266.7c-81.5,12.8-128.8-7.8-188-26.6l-227.3-80.4"/>
+    <path class="st1" d="M1992-121.6c-20,3.2-81.3,16-117.1,32.5C1774.3-27.9,1683.5,7,1588.2,37.1c-80.2,25.4-252.8-2.2-321.1,34.9  c-169.8,92.4-181.8,191.3-306.4,207.2c-124.5,16-234.6-74.9-364.6-42.6c-89,22.1-172.5,250.5-275.4,266.7  c-81.5,12.8-128.8-7.8-188-26.6l-148.9-59.8"/>
+    <path class="st2" d="M2012.8-126.5c-57.8,14-93.4,14.7-182.4,57.4C1691.2-2.3,1623.5,31.1,1528,53.1C1446.1,72,1275.2,50.9,1207,88  c-169.8,92.4-181.8,191.3-306.4,207.2c-124.5,16-234.6-74.9-364.6-42.6c-89,22.1-172.5,250.5-275.4,266.7  c-81.5,12.8-128.8-7.8-188-26.6l-79.8-26.4"/>
+    <path class="st3" d="M-1.3,510.9c59.2,18.8,110.4,40.5,192,27.6C293.5,522.3,377,293.9,466,271.8c130.1-32.3,240.1,58.6,364.6,42.6  c124.5-16,136.5-114.9,306.4-207.2c68.2-37.1,239.2-16,321.1-34.9c95.5-22,163.2-55.4,302.4-122.3c88.9-42.7,172.5-58,230.3-72"/>
+</svg>

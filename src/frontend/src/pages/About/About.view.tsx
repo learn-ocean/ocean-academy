@@ -8,7 +8,7 @@ import { AboutContainer, AboutPage, AboutStyled, ButtonContainer } from './About
 export const AboutView = () => {
     return (
         <AboutStyled>
-            <img alt="waves" src="/waves.svg" />
+            <img alt="waves-animated" src="/waves-animated.svg" />
             <AboutPage>
                 <AboutContainer>
                     <h1>About Ocean Academy</h1>

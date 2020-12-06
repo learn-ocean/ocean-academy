@@ -6,7 +6,7 @@ import { TermsContainer, TermsPage, TermsStyled } from './Terms.style'
 export const TermsView = () => {
   return (
     <TermsStyled>
-      <img alt="waves" src="/waves.svg" />
+      <img alt="waves-animated" src="/waves-animated.svg" />
       <TermsPage>
         <TermsContainer>
           <h1>Ocean Academy Privacy Policy</h1>
