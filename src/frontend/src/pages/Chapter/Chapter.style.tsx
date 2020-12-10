@@ -17,13 +17,12 @@ export const ChapterStyled = styled.div`
 
 export const ChapterGrid = styled.div<{ hasTabs?: boolean }>`
   display: grid;
-  grid-template-rows: ${(props) => (props.hasTabs ? '30px 500px auto' : '500px auto')};
+  grid-template-rows: ${(props) => (props.hasTabs ? 'auto auto auto' : 'auto auto')};
   grid-gap: 0;
   overflow-y: scroll;
 
   @media (max-width: 900px) {
     overflow-y: initial;
-    grid-template-rows: ${(props) => (props.hasTabs ? 'auto auto auto' : 'auto auto')};
     margin-bottom: 20px;
   }
 `
