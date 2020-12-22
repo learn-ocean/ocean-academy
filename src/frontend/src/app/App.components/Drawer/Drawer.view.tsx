@@ -17,9 +17,16 @@ type DrawerViewProps = {
   removeAuthUserCallback: () => void
 }
 
-export const ChapterDrawerView = ({ showingChapter, showingMenu, hideCallback, pathname, user_drawer, removeAuthUserCallback }: DrawerViewProps) => (
+export const ChapterDrawerView = ({
+  showingChapter,
+  showingMenu,
+  hideCallback,
+  pathname,
+  user_drawer,
+  removeAuthUserCallback,
+}: DrawerViewProps) => (
   <>
-    {console.log("ChapterDrawerView showing = ", showingChapter)}
+    {console.log('ChapterDrawerView showing = ', showingChapter)}
     <DrawerMask className={`${showingChapter}`} onClick={() => hideCallback()} />
     <DrawerStyled className={`${showingChapter}`}>
       <h1>Chapters</h1>
@@ -34,37 +41,63 @@ export const ChapterDrawerView = ({ showingChapter, showingMenu, hideCallback, p
   </>
 )
 
-export const LoginDrawerView = ({ showingChapter, showingMenu, hideCallback, pathname, user, user_drawer, removeAuthUserCallback }: DrawerViewProps) => (
+export const LoginDrawerView = ({
+  showingChapter,
+  showingMenu,
+  hideCallback,
+  pathname,
+  user,
+  user_drawer,
+  removeAuthUserCallback,
+}: DrawerViewProps) => (
   <>
-    {console.log("LoginDrawerView showing = ", showingMenu)}
+    {console.log('LoginDrawerView showing = ', showingMenu)}
     <DrawerMask className={`${showingMenu}`} onClick={() => hideCallback()} />
-    {user ?
-      loggedInDrawer({ showingChapter, showingMenu, hideCallback, pathname, user, user_drawer, removeAuthUserCallback }) :
-      loggedOutDrawer({ showingChapter, showingMenu, hideCallback, pathname, user, user_drawer, removeAuthUserCallback })}
+    {user
+      ? loggedInDrawer({
+          showingChapter,
+          showingMenu,
+          hideCallback,
+          pathname,
+          user,
+          user_drawer,
+          removeAuthUserCallback,
+        })
+      : loggedOutDrawer({
+          showingChapter,
+          showingMenu,
+          hideCallback,
+          pathname,
+          user,
+          user_drawer,
+          removeAuthUserCallback,
+        })}
   </>
 )
 
-function loggedInDrawer({ showingChapter, showingMenu, hideCallback, pathname, user, user_drawer, removeAuthUserCallback }: DrawerViewProps) {
-  console.log("loggedInDrawer showing = ", showingMenu)
+function loggedInDrawer({
+  showingChapter,
+  showingMenu,
+  hideCallback,
+  pathname,
+  user,
+  user_drawer,
+  removeAuthUserCallback,
+}: DrawerViewProps) {
+  console.log('loggedInDrawer showing = ', showingMenu)
   return (
     <DrawerStyledLogin className={`${showingMenu}`}>
       <h1>Menu</h1>
       <DrawerItem>
-        <Link to="/about">
-          ABOUT US
-        </Link>
+        <Link to="/about">ABOUT US</Link>
       </DrawerItem>
 
       <DrawerItem>
-        <Link to="/terms">
-          TERMS
-        </Link>
+        <Link to="/terms">TERMS</Link>
       </DrawerItem>
 
       <DrawerItem>
-        <Link to={`/user/${user?.username}`}>
-          {user?.username}
-        </Link>
+        <Link to={`/user/${user?.username}`}>{user?.username}</Link>
       </DrawerItem>
 
       <DrawerItem>
@@ -81,33 +114,33 @@ function loggedInDrawer({ showingChapter, showingMenu, hideCallback, pathname, u
   )
 }
 
-function loggedOutDrawer({ showingChapter, showingMenu, hideCallback, pathname, user, user_drawer, removeAuthUserCallback }: DrawerViewProps) {
-  console.log("loggedOutDrawer showing = ", showingMenu)
+function loggedOutDrawer({
+  showingChapter,
+  showingMenu,
+  hideCallback,
+  pathname,
+  user,
+  user_drawer,
+  removeAuthUserCallback,
+}: DrawerViewProps) {
+  console.log('loggedOutDrawer showing = ', showingMenu)
   return (
     <DrawerStyledLogin className={`${showingMenu}`}>
       <h1>Menu</h1>
       <DrawerItem>
-        <Link to="/about">
-          ABOUT US
-        </Link>
+        <Link to="/about">ABOUT US</Link>
       </DrawerItem>
 
       <DrawerItem>
-        <Link to="/terms">
-          TERMS
-        </Link>
+        <Link to="/terms">TERMS</Link>
       </DrawerItem>
 
       <DrawerItem>
-        <Link to="/sign-up">
-          SIGN UP
-        </Link>
+        <Link to="/sign-up">SIGN UP</Link>
       </DrawerItem>
 
       <DrawerItem>
-        <Link to="/login">
-          LOGIN
-        </Link>
+        <Link to="/login">LOGIN</Link>
       </DrawerItem>
     </DrawerStyledLogin>
   )

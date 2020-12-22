@@ -5,24 +5,24 @@ export const HIDE_MENU_DRAWER = 'HIDE_MENU_DRAWER'
 
 export const showChapterDrawer = () => (dispatch: any) => {
   dispatch({
-    type: SHOW_CHAPTER_DRAWER
+    type: SHOW_CHAPTER_DRAWER,
   })
 }
 
 export const hideChapterDrawer = () => (dispatch: any) => {
   dispatch({
-    type: HIDE_CHAPTER_DRAWER
+    type: HIDE_CHAPTER_DRAWER,
   })
 }
 
 export const showMenuDrawer = () => (dispatch: any) => {
   dispatch({
-    type: SHOW_MENU_DRAWER
+    type: SHOW_MENU_DRAWER,
   })
 }
 
 export const hideMenuDrawer = () => (dispatch: any) => {
   dispatch({
-    type: HIDE_MENU_DRAWER
+    type: HIDE_MENU_DRAWER,
   })
 }

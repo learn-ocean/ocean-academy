@@ -16,7 +16,7 @@ export const ChapterDrawer = () => {
     dispatch(hideChapterDrawer())
   }
 
-  function removeAuthUserCallback() { }
+  function removeAuthUserCallback() {}
 
   return (
     <ChapterDrawerView
@@ -41,7 +41,7 @@ export const LoginDrawer = () => {
     dispatch(hideMenuDrawer())
   }
 
-  function removeAuthUserCallback() { }
+  function removeAuthUserCallback() {}
 
   return (
     <LoginDrawerView

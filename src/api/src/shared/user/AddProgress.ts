@@ -11,5 +11,6 @@ export class AddProgressInputs {
 }
 
 export class AddProgressOutputs {
+  @Expose()
   user!: PublicUser
 }

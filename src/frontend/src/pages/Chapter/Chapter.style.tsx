@@ -187,3 +187,8 @@ export const ChapterTab = styled.div<{ isSelected?: boolean }>`
   border-left: 1px solid #0a5688;
   background-color: ${(props) => (props.isSelected ? '#0a5688' : 'initial')};
 `
+
+export const ChapterLocked = styled.div`
+  height: calc(100vh - 130px);
+  margin: 70px 20px 0;
+`
