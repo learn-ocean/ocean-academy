@@ -8,11 +8,19 @@ import { Link } from 'react-router-dom'
 import { DrawerItem, DrawerMask, DrawerStyled, DrawerStyledLogin } from './Drawer.style'
 import { Select } from '../Select/Select.controller'
 
+// PLACEHOLDER.
+// Use Select menu to choose the  
+import { chapterData } from '../../../pages/Courses/ocean101/Chapters/Chapters.data'
+
+import { ChapterData } from '../../../pages/Course/Course.controller'
+import { chaptersByCourse } from '../../../pages/Course/Course.data'
 
 type ChapterDrawerViewProps = {
   showingChapters: boolean
   hideCallback: () => void
   pathname: string
+  changeCourseCallback: (e: string) => void
+  activeCourse: string
 }
 
 type LoginDrawerViewProps = {
@@ -28,35 +36,24 @@ type LoggedInDrawerViewProps = {
   removeAuthUserCallback: () => void
 }
 
-<<<<<<< Updated upstream
-export const ChapterDrawerView = ({
-  showingChapter,
-  showingMenu,
-  hideCallback,
-  pathname,
-  user_drawer,
-  removeAuthUserCallback,
-}: DrawerViewProps) => (
-  <>
-    {console.log('ChapterDrawerView showing = ', showingChapter)}
-    <DrawerMask className={`${showingChapter}`} onClick={() => hideCallback()} />
-    <DrawerStyled className={`${showingChapter}`}>
-=======
 type LoggedOutDrawerViewProps = {
   showingMenu: boolean
 }
 
-export const ChapterDrawerView = ({ showingChapters, hideCallback, pathname }: ChapterDrawerViewProps) => (
+export const ChapterDrawerView = ({ showingChapters, hideCallback, pathname, activeCourse, changeCourseCallback }: ChapterDrawerViewProps) => (
   <>
     {console.log("ChapterDrawerView showing = ", showingChapters)}
     <DrawerMask className={`${showingChapters}`} onClick={() => hideCallback()} />
     <DrawerStyled className={`${showingChapters}`}>
->>>>>>> Stashed changes
       <h1>Chapters</h1>
-      <Select
 
+      <Select
+        options={["ocean101", "introToDataDefi"]}
+        defaultOption={activeCourse}
+        selectCallback={(e) => changeCourseCallback(e)}
       />
-      {chapterData.map((chapter) => (
+
+      {chaptersByCourse[activeCourse].map((chapter: ChapterData) => (
         <DrawerItem key={chapter.pathname} className={pathname === chapter.pathname ? 'current-path' : 'other-path'}>
           <Link to={chapter.pathname} onClick={() => hideCallback()}>
             {chapter.name}
@@ -67,56 +64,10 @@ export const ChapterDrawerView = ({ showingChapters, hideCallback, pathname }: C
   </>
 )
 
-<<<<<<< Updated upstream
-export const LoginDrawerView = ({
-  showingChapter,
-  showingMenu,
-  hideCallback,
-  pathname,
-  user,
-  user_drawer,
-  removeAuthUserCallback,
-}: DrawerViewProps) => (
-=======
 export const LoginDrawerView = ({ showingMenu, user, hideCallback, removeAuthUserCallback }: LoginDrawerViewProps) => (
->>>>>>> Stashed changes
   <>
     {console.log('LoginDrawerView showing = ', showingMenu)}
     <DrawerMask className={`${showingMenu}`} onClick={() => hideCallback()} />
-<<<<<<< Updated upstream
-    {user
-      ? loggedInDrawer({
-          showingChapter,
-          showingMenu,
-          hideCallback,
-          pathname,
-          user,
-          user_drawer,
-          removeAuthUserCallback,
-        })
-      : loggedOutDrawer({
-          showingChapter,
-          showingMenu,
-          hideCallback,
-          pathname,
-          user,
-          user_drawer,
-          removeAuthUserCallback,
-        })}
-  </>
-)
-
-function loggedInDrawer({
-  showingChapter,
-  showingMenu,
-  hideCallback,
-  pathname,
-  user,
-  user_drawer,
-  removeAuthUserCallback,
-}: DrawerViewProps) {
-  console.log('loggedInDrawer showing = ', showingMenu)
-=======
     {user ?
       loggedInDrawer({ showingMenu, user, removeAuthUserCallback }) :
       loggedOutDrawer({ showingMenu })}
@@ -125,7 +76,6 @@ function loggedInDrawer({
 
 function loggedInDrawer({ showingMenu, user, removeAuthUserCallback }: LoggedInDrawerViewProps) {
   console.log("loggedInDrawer showing = ", showingMenu)
->>>>>>> Stashed changes
   return (
     <DrawerStyledLogin className={`${showingMenu}`}>
       <h1>Menu</h1>
@@ -155,21 +105,8 @@ function loggedInDrawer({ showingMenu, user, removeAuthUserCallback }: LoggedInD
   )
 }
 
-<<<<<<< Updated upstream
-function loggedOutDrawer({
-  showingChapter,
-  showingMenu,
-  hideCallback,
-  pathname,
-  user,
-  user_drawer,
-  removeAuthUserCallback,
-}: DrawerViewProps) {
-  console.log('loggedOutDrawer showing = ', showingMenu)
-=======
 function loggedOutDrawer({ showingMenu }: LoggedOutDrawerViewProps) {
   console.log("loggedOutDrawer showing = ", showingMenu)
->>>>>>> Stashed changes
   return (
     <DrawerStyledLogin className={`${showingMenu}`}>
       <h1>Menu</h1>
@@ -196,6 +133,8 @@ ChapterDrawerView.propTypes = {
   showingChapter: PropTypes.bool,
   hideCallback: PropTypes.func.isRequired,
   pathname: PropTypes.string.isRequired,
+  changeCourseCallback: PropTypes.func.isRequired,
+  activeCourse: PropTypes.string.isRequired
 }
 
 ChapterDrawerView.defaultProps = {

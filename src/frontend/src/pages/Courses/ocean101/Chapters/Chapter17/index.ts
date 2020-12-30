@@ -1,6 +1,6 @@
 /* eslint import/no-webpack-loader-syntax: off */
 // @ts-ignore
-import course from 'pages/Courses/ocean101/Chapters/Chapter17/node_modules/!raw-loader!./course.md'
+import course from '!raw-loader!./course.md'
 /* eslint import/no-webpack-loader-syntax: off */
 // @ts-ignore
 import exercise from '!raw-loader!./exercise.md'

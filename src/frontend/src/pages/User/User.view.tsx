@@ -7,6 +7,9 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { PublicUser } from 'shared/user/PublicUser'
 
+// placeholder
+import { chapterData } from '../Courses/ocean101/Chapters/Chapters.data'
+
 import {
   UserBadge,
   UserBadgeButtons,
@@ -103,22 +106,22 @@ export const UserView = ({
         <h1>Your progress</h1>
       </UserTitle2>
       <UserCard>
+
         <UserProgress>
-          {courseData.map((course) => {
-            const chapter = course.data
-            chapter.map((chapter: ChapterData) => {
-              const done = user.progress && user.progress.indexOf(chapter.pathname) >= 0
-              return (
-                <Link to={chapter.pathname}>
-                  <UserChapter key={chapter.pathname} done={done}>
-                    {chapter.name}
-                    {done && <img alt="done" src="/icons/check.svg" />}
-                  </UserChapter>
-                </Link>
-              )
-            })
-          })}
+          {chapterData.map((chapter: ChapterData) => {
+            const done = user.progress && user.progress.indexOf(chapter.pathname) >= 0
+            return (
+              <Link to={chapter.pathname}>
+                <UserChapter key={chapter.pathname} done={done}>
+                  {chapter.name}
+                  {done && <img alt="done" src="/icons/check.svg" />}
+                </UserChapter>
+              </Link>
+            )
+          })
+          })
         </UserProgress>
+
       </UserCard>
     </UserStyled>
   )

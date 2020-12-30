@@ -21,6 +21,8 @@ import { data as data20 } from '../Chapters/Chapter20'
 import { data as data21 } from '../Chapters/Chapter21'
 import { data as data22 } from '../Chapters/Chapter22'
 import { data as data23 } from '../Chapters/Chapter23'
+import { data as data24 } from '../Chapters/Chapter24'
+
 import { course } from '..'
 import { ChapterData } from 'pages/Course/Course.controller'
 
@@ -140,4 +142,9 @@ export const chapterData: ChapterData[] = [
         name: '23 - Recap',
         data: data23,
     },
+    {
+        pathname: `${course.path}/chapter-24`,
+        name: '24 - Coming Soon',
+        data: data24
+    }
 ]
