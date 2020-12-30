@@ -8,12 +8,16 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import { State } from 'reducers'
 
+// We need to find a new solution that generalizes over all the courses. 
+// import { ChapterData } only worked when there was one ChapterData.
+import { chapterData } from '../Courses/ocean101/Chapters/Chapters.data'
+import { courseData } from '../Course/Course.data'
+
 import { addProgress } from './Chapter.actions'
 import { PENDING, RIGHT, WRONG } from './Chapter.constants'
-import { chapterData } from './Chapter.data'
-import { ChapterLocked } from './Chapter.style'
 import { ChapterView } from './Chapter.view'
 import { Footer } from './Footer/Footer.controller'
+import { ChapterLocked } from './Chapter.style'
 
 export type Question = {
   question: string
@@ -125,22 +129,22 @@ export const Chapter = () => {
 
   return (
     <>
-      {pathname === '/chapter-24' && !badgeUnlocked ? (
+      {pathname === '../Courses/ocean101/Chapters/chapter-24' && !badgeUnlocked ? (
         <ChapterLocked>Chapter locked. Please complete all previous chapters to see this chapter.</ChapterLocked>
       ) : (
-        <ChapterView
-          validatorState={validatorState}
-          validateCallback={validateCallback}
-          solution={data.solution}
-          proposedSolution={data.exercise}
-          proposedSolutionCallback={proposedSolutionCallback}
-          showDiff={showDiff}
-          course={data.course}
-          supports={data.supports}
-          questions={data.questions}
-          proposedQuestionAnswerCallback={proposedQuestionAnswerCallback}
-        />
-      )}
+          <ChapterView
+            validatorState={validatorState}
+            validateCallback={validateCallback}
+            solution={data.solution}
+            proposedSolution={data.exercise}
+            proposedSolutionCallback={proposedSolutionCallback}
+            showDiff={showDiff}
+            course={data.course}
+            supports={data.supports}
+            questions={data.questions}
+            proposedQuestionAnswerCallback={proposedQuestionAnswerCallback}
+          />
+        )}
       <Footer />
     </>
   )

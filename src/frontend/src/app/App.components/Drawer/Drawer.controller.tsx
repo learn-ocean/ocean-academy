@@ -9,24 +9,22 @@ import { ChapterDrawerView, LoginDrawerView } from './Drawer.view'
 export const ChapterDrawer = () => {
   const dispatch = useDispatch()
   const showingChapter = useSelector((state: State) => state.chapterDrawer && state.chapterDrawer.showingChapter)
-  const user = useSelector((state: State) => state && state.auth && state.auth.user)
   const { pathname } = useLocation()
 
   const hideCallback = () => {
     dispatch(hideChapterDrawer())
   }
 
+<<<<<<< Updated upstream
   function removeAuthUserCallback() {}
 
+=======
+>>>>>>> Stashed changes
   return (
     <ChapterDrawerView
-      showingChapter={showingChapter}
-      showingMenu={showingChapter}
+      showingChapters={showingChapter}
       hideCallback={hideCallback}
       pathname={pathname}
-      user={user}
-      user_drawer={user}
-      removeAuthUserCallback={removeAuthUserCallback}
     />
   )
 }
@@ -35,7 +33,6 @@ export const LoginDrawer = () => {
   const dispatch = useDispatch()
   const showingMenu = useSelector((state: State) => state.loginDrawer && state.loginDrawer.showingMenu)
   const user = useSelector((state: State) => state && state.auth && state.auth.user)
-  const { pathname } = useLocation()
 
   const hideCallback = () => {
     dispatch(hideMenuDrawer())
@@ -45,12 +42,9 @@ export const LoginDrawer = () => {
 
   return (
     <LoginDrawerView
-      showingChapter={showingMenu}
       showingMenu={showingMenu}
-      hideCallback={hideCallback}
-      pathname={pathname}
       user={user}
-      user_drawer={user}
+      hideCallback={hideCallback}
       removeAuthUserCallback={removeAuthUserCallback}
     />
   )
