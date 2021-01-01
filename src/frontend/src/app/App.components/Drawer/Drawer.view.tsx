@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 
 import { DrawerItem, DrawerMask, DrawerStyled, DrawerStyledLogin } from './Drawer.style'
 import { Select } from '../Select/Select.controller'
+import { Option } from '../Select/Select.view'
 
 // PLACEHOLDER.
 // Use Select menu to choose the  
@@ -19,8 +20,8 @@ type ChapterDrawerViewProps = {
   showingChapters: boolean
   hideCallback: () => void
   pathname: string
-  changeCourseCallback: (e: string) => void
-  activeCourse: string
+  changeCourseCallback: (e: Option) => void
+  activeCourse: Option
 }
 
 type LoginDrawerViewProps = {
@@ -48,12 +49,15 @@ export const ChapterDrawerView = ({ showingChapters, hideCallback, pathname, act
       <h1>Chapters</h1>
 
       <Select
-        options={["ocean101", "introToDataDefi"]}
+        options={[
+          { name: "Ocean101", path: "ocean101" },
+          { name: "Intro to Data Defi", path: "introToDataDefi" }
+        ]}
         defaultOption={activeCourse}
         selectCallback={(e) => changeCourseCallback(e)}
       />
 
-      {chaptersByCourse[activeCourse].map((chapter: ChapterData) => (
+      {chaptersByCourse[activeCourse.path].map((chapter: ChapterData) => (
         <DrawerItem key={chapter.pathname} className={pathname === chapter.pathname ? 'current-path' : 'other-path'}>
           <Link to={chapter.pathname} onClick={() => hideCallback()}>
             {chapter.name}

@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocation, useHistory } from 'react-router-dom'
 import { State } from 'reducers'
+import { Option } from '../Select/Select.view'
 
 import { hideChapterDrawer, hideMenuDrawer } from './Drawer.actions'
 import { ChapterDrawerView, LoginDrawerView } from './Drawer.view'
@@ -11,24 +12,17 @@ export const ChapterDrawer = () => {
   const dispatch = useDispatch()
   const showingChapter = useSelector((state: State) => state.chapterDrawer && state.chapterDrawer.showingChapter)
   const { pathname } = useLocation()
-  // const history = useHistory()
 
-  let defaultCourse = "ocean101"
+  let defaultCourse: Option = { name: "Ocean 101", path: "ocean101" }
   const [activeCourse, setActiveCourse] = useState(defaultCourse)
 
-  // ts
-  console.log(`[Drawer.controller.tsx] pathname = ${pathname}`)
-  console.log(`[Drawer.controller.tsx] activeCourse = ${activeCourse}`)
-
-  function changeCourseCallback(e: string) {
-    console.log(e)
-    if (e === 'ocean101') {
-      // history.push(pathname.replace(new RegExp('camel|reason', 'i'), 'pascal'))
-      setActiveCourse('ocean101')
+  function changeCourseCallback(e: Option) {
+    console.log(e.path)
+    if (e.path === 'ocean101') {
+      setActiveCourse({ name: "Ocean 101", path: 'ocean101' })
     }
-    if (e === 'introToDataDefi') {
-      // history.push(pathname.replace(new RegExp('pascal|reason', 'i'), 'camel'))
-      setActiveCourse('introToDataDefi')
+    if (e.path === 'introToDataDefi') {
+      setActiveCourse({ name: 'Intro to Data Defi', path: 'introToDataDefi' })
     }
   }
 
