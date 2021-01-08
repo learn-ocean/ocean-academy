@@ -18,12 +18,10 @@ export function chapterDrawer(state = chapterDrawerDefaultState, action: any): C
       return chapterDrawerDefaultState
     }
     case SHOW_CHAPTER_DRAWER:
-      console.log("chapterDrawer SHOW_DRAWER\nediting showingChapter property...")
       return {
         showingChapter: true,
       }
     case HIDE_CHAPTER_DRAWER:
-      console.log("chapterDrawer HIDE_DRAWER\nediting showingChapter property...")
       return {
         showingChapter: false,
       }

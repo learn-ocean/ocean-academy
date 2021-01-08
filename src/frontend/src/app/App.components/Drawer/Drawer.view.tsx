@@ -1,20 +1,17 @@
-// import { courseData } from 'pages/Course/Course.data'
-import { PublicUser } from 'shared/user/PublicUser'
-
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
 import { Link } from 'react-router-dom'
+// import { PublicUser } from 'pages/Course/Course.data'
+import { PublicUser } from 'shared/user/PublicUser'
 
-import { DrawerItem, DrawerMask, DrawerStyled, DrawerStyledLogin } from './Drawer.style'
-import { Select } from '../Select/Select.controller'
-import { Option } from '../Select/Select.view'
-
+import { ChapterData } from '../../../pages/Chapter/Chapter.controller'
+import { chaptersByCourse } from '../../../pages/Course/Course.data'
 // PLACEHOLDER.
 // Use Select menu to choose the  
 import { chapterData } from '../../../pages/Courses/ocean101/Chapters/Chapters.data'
-
-import { ChapterData } from '../../../pages/Course/Course.controller'
-import { chaptersByCourse } from '../../../pages/Course/Course.data'
+import { Select } from '../Select/Select.controller'
+import { Option } from '../Select/Select.view'
+import { DrawerItem, DrawerMask, DrawerStyled, DrawerStyledLogin } from './Drawer.style'
 
 type ChapterDrawerViewProps = {
   showingChapters: boolean
@@ -43,7 +40,6 @@ type LoggedOutDrawerViewProps = {
 
 export const ChapterDrawerView = ({ showingChapters, hideCallback, pathname, activeCourse, changeCourseCallback }: ChapterDrawerViewProps) => (
   <>
-    {console.log("ChapterDrawerView showing = ", showingChapters)}
     <DrawerMask className={`${showingChapters}`} onClick={() => hideCallback()} />
     <DrawerStyled className={`${showingChapters}`}>
       <h1>Chapters</h1>
@@ -70,7 +66,6 @@ export const ChapterDrawerView = ({ showingChapters, hideCallback, pathname, act
 
 export const LoginDrawerView = ({ showingMenu, user, hideCallback, removeAuthUserCallback }: LoginDrawerViewProps) => (
   <>
-    {console.log('LoginDrawerView showing = ', showingMenu)}
     <DrawerMask className={`${showingMenu}`} onClick={() => hideCallback()} />
     {user ?
       loggedInDrawer({ showingMenu, user, removeAuthUserCallback }) :
@@ -79,7 +74,6 @@ export const LoginDrawerView = ({ showingMenu, user, hideCallback, removeAuthUse
 )
 
 function loggedInDrawer({ showingMenu, user, removeAuthUserCallback }: LoggedInDrawerViewProps) {
-  console.log("loggedInDrawer showing = ", showingMenu)
   return (
     <DrawerStyledLogin className={`${showingMenu}`}>
       <h1>Menu</h1>
@@ -110,7 +104,6 @@ function loggedInDrawer({ showingMenu, user, removeAuthUserCallback }: LoggedInD
 }
 
 function loggedOutDrawer({ showingMenu }: LoggedOutDrawerViewProps) {
-  console.log("loggedOutDrawer showing = ", showingMenu)
   return (
     <DrawerStyledLogin className={`${showingMenu}`}>
       <h1>Menu</h1>

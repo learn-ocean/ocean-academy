@@ -1,6 +1,6 @@
 /* eslint import/no-webpack-loader-syntax: off */
 // @ts-ignore
-import course from 'raw-loader!./course.md'
+import course from '!raw-loader!./course.md'
 
 import { Data } from '../../../../Chapter/Chapter.controller'
 import { questions } from './questions'

@@ -17,7 +17,6 @@ export const ChapterDrawer = () => {
   const [activeCourse, setActiveCourse] = useState(defaultCourse)
 
   function changeCourseCallback(e: Option) {
-    console.log(e.path)
     if (e.path === 'ocean101') {
       setActiveCourse({ name: "Ocean 101", path: 'ocean101' })
     }

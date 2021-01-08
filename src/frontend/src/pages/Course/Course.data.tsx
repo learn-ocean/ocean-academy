@@ -1,19 +1,8 @@
-
-import { course as Ocean101 } from '../Courses/ocean101'
-import { chapterData as Ocean101Chapters } from '../Courses/ocean101/Chapters/Chapters.data'
-
 import { course as IntroToDataDefi } from '../Courses/introToDataDefi'
 import { chapterData as IntroToDataDefiChapters } from '../Courses/introToDataDefi/Chapters/Chapters.data'
-
-import { Course } from 'pages/Course/Course.controller'
-
-// courseData: used to render general course details. 
-type CourseData = {
-    path: string | undefined;
-    pathname: string;
-    name: string;
-    data: Course;
-}
+import { course as Ocean101 } from '../Courses/ocean101'
+import { chapterData as Ocean101Chapters } from '../Courses/ocean101/Chapters/Chapters.data'
+import { CourseData } from './Course.controller'
 
 export const courseData: CourseData[] = [
     {
@@ -25,13 +14,14 @@ export const courseData: CourseData[] = [
     {
         path: IntroToDataDefi.path,
         pathname: `/${IntroToDataDefi.path}/info`,
-        name: 'Compute to Data',
+        name: 'Intro to Data Defi',
         data: IntroToDataDefi,
     }
 ]
 
 
 // chaptersByCourse: Used to render chapter data of each course.
+// the key in chaptersByCourse == the path in courseData
 type ChapterDataDictionary = {
     [key: string]: any,
 }

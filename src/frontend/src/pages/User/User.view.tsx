@@ -1,6 +1,6 @@
 import { Button } from 'app/App.components/Button/Button.controller'
 import { Input } from 'app/App.components/Input/Input.controller'
-import { ChapterData } from 'pages/Course/Course.controller'
+import { ChapterData } from 'pages/Chapter/Chapter.controller'
 import { courseData } from 'pages/Course/Course.data'
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
@@ -9,18 +9,7 @@ import { PublicUser } from 'shared/user/PublicUser'
 
 // placeholder
 import { chapterData } from '../Courses/ocean101/Chapters/Chapters.data'
-
-import {
-  UserBadge,
-  UserBadgeButtons,
-  UserBadgeInput,
-  UserCard,
-  UserChapter,
-  UserProgress,
-  UserStyled,
-  UserTitle,
-  UserTitle2
-} from './User.style'
+import { UserBadge, UserBadgeButtons, UserBadgeInput, UserCard, UserChapter, UserProgress, UserStyled, UserTitle, UserTitle2 } from './User.style'
 
 type UserViewProps = {
   loading: boolean

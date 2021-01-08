@@ -1,2 +1,3 @@
-# Compute to Data
-A course for learning to use Compute to Data
+# Introduction to Data Defi
+
+A course for learning about Data Defi
