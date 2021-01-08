@@ -2,7 +2,7 @@
   "name": "oceanacademy-frontend",
   "version": "1.0.0",
   "scripts": {
-    "start": "PORT=3000 NODE_ENV=development REACT_APP_BACKEND_URL=http://localhost:8080 react-scripts -r @cypress/instrument-cra start && open http://localhost:3000",
+    "start": "set PORT=3000 && set NODE_ENV=development && set REACT_APP_BACKEND_URL=http://localhost:8080 && react-scripts -r @cypress/instrument-cra start && \"open http://localhost:3000/\"",
     "build": "react-scripts build",
     "docker-create": "doctl k8s cluster create --region fra1 oceanacademy-frontend --wait && doctl kubernetes cluster kubeconfig save oceanacademy-frontend",
     "docker-build": "yarn build && docker build -t neutrino/oceanacademy-frontend . --no-cache",

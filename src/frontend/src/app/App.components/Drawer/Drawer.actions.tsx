@@ -79,11 +79,11 @@ export const hideC2DDrawer = () => (dispatch: any) => {
 // LOGIN
 export const showMenuDrawer = () => (dispatch: any) => {
   dispatch({
-    type: SHOW_MENU_DRAWER
+    type: SHOW_MENU_DRAWER,
   })
 }
 export const hideMenuDrawer = () => (dispatch: any) => {
   dispatch({
-    type: HIDE_MENU_DRAWER
+    type: HIDE_MENU_DRAWER,
   })
 }

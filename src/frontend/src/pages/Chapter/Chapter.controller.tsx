@@ -1,5 +1,6 @@
 import { showToaster } from 'app/App.components/Toaster/Toaster.actions'
 import { SUCCESS } from 'app/App.components/Toaster/Toaster.constants'
+import { getUser } from 'pages/User/User.actions'
 import * as React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
@@ -7,13 +8,15 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import { State } from 'reducers'
 
-// We need to find a new solution that generalizes over all the courses. 
+// We need to find a new solution that generalizes over all the courses.
 // import { ChapterData } only worked when there was one ChapterData.
 import { chapterData } from '../Courses/ocean101/Chapters/Chapters.data'
 import { courseData } from '../Course/Course.data'
 
 import { addProgress } from './Chapter.actions'
 import { PENDING, RIGHT, WRONG } from './Chapter.constants'
+import { chapterData } from './Chapter.data'
+import { ChapterLocked } from './Chapter.style'
 import { ChapterView } from './Chapter.view'
 import { Footer } from './Footer/Footer.controller'
 
@@ -46,9 +49,15 @@ export const Chapter = () => {
   const dispatch = useDispatch()
   const user = useSelector((state: State) => state.auth.user)
 
-  // courseData.forEach((course) => {
+  let badgeUnlocked = false
+  let counter = 0
+  user?.progress?.forEach((chapter) => {
+    counter++
+  })
+  if (counter >= 20) badgeUnlocked = true
 
   useEffect(() => {
+    if (user) dispatch(getUser({ username: user.username }))
     chapterData.forEach((chapter) => {
       if (pathname === chapter.pathname)
         setData({
@@ -121,18 +130,22 @@ export const Chapter = () => {
 
   return (
     <>
-      <ChapterView
-        validatorState={validatorState}
-        validateCallback={validateCallback}
-        solution={data.solution}
-        proposedSolution={data.exercise}
-        proposedSolutionCallback={proposedSolutionCallback}
-        showDiff={showDiff}
-        course={data.course}
-        supports={data.supports}
-        questions={data.questions}
-        proposedQuestionAnswerCallback={proposedQuestionAnswerCallback}
-      />
+      {pathname === '/chapter-24' && !badgeUnlocked ? (
+        <ChapterLocked>Chapter locked. Please complete all previous chapters to see this chapter.</ChapterLocked>
+      ) : (
+        <ChapterView
+          validatorState={validatorState}
+          validateCallback={validateCallback}
+          solution={data.solution}
+          proposedSolution={data.exercise}
+          proposedSolutionCallback={proposedSolutionCallback}
+          showDiff={showDiff}
+          course={data.course}
+          supports={data.supports}
+          questions={data.questions}
+          proposedQuestionAnswerCallback={proposedQuestionAnswerCallback}
+        />
+      )}
       <Footer />
     </>
   )

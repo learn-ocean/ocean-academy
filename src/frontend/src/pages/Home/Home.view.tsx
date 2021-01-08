@@ -8,7 +8,7 @@ import { Button } from 'app/App.components/Button/Button.controller'
 export const HomeView = () => {
   return (
     <HomeStyled>
-      <img alt="waves" src="/waves.svg" />
+      <img alt="waves-animated" src="/waves-animated.svg" />
       <HomePage>
         <HomeContainer>
           <h1>Learn to monetize data and analytic services using blockchain technology</h1>

@@ -44,9 +44,17 @@ export const CourseDrawerView = ({ showingCourses, chapterStates, hideCallback, 
   </>
 )
 
-export const LoginDrawerView = ({ showingMenu, hideCallback, pathname, user, removeAuthUserCallback }: LoginDrawerViewProps) => (
+export const LoginDrawerView = ({
+  showingChapter,
+  showingMenu,
+  hideCallback,
+  pathname,
+  user,
+  user_drawer,
+  removeAuthUserCallback,
+}: DrawerViewProps) => (
   <>
-    {console.log("LoginDrawerView showing = ", showingMenu)}
+    {console.log('LoginDrawerView showing = ', showingMenu)}
     <DrawerMask className={`${showingMenu}`} onClick={() => hideCallback()} />
     {user ?
       loggedInDrawer({ showingMenu, hideCallback, pathname, user, removeAuthUserCallback }) :
@@ -61,21 +69,15 @@ function loggedInDrawer({ showingMenu, hideCallback, pathname, user, removeAuthU
     <DrawerStyledLogin className={`${showingMenu}`}>
       <h1>Menu</h1>
       <DrawerItem>
-        <Link to="/about">
-          ABOUT US
-        </Link>
+        <Link to="/about">ABOUT US</Link>
       </DrawerItem>
 
       <DrawerItem>
-        <Link to="/terms">
-          TERMS
-        </Link>
+        <Link to="/terms">TERMS</Link>
       </DrawerItem>
 
       <DrawerItem>
-        <Link to={`/user/${user?.username}`}>
-          {user?.username}
-        </Link>
+        <Link to={`/user/${user?.username}`}>{user?.username}</Link>
       </DrawerItem>
 
       <DrawerItem>
@@ -98,27 +100,19 @@ function loggedOutDrawer({ showingMenu, hideCallback, pathname, user, removeAuth
     <DrawerStyledLogin className={`${showingMenu}`}>
       <h1>Menu</h1>
       <DrawerItem>
-        <Link to="/about">
-          ABOUT US
-        </Link>
+        <Link to="/about">ABOUT US</Link>
       </DrawerItem>
 
       <DrawerItem>
-        <Link to="/terms">
-          TERMS
-        </Link>
+        <Link to="/terms">TERMS</Link>
       </DrawerItem>
 
       <DrawerItem>
-        <Link to="/sign-up">
-          SIGN UP
-        </Link>
+        <Link to="/sign-up">SIGN UP</Link>
       </DrawerItem>
 
       <DrawerItem>
-        <Link to="/login">
-          LOGIN
-        </Link>
+        <Link to="/login">LOGIN</Link>
       </DrawerItem>
     </DrawerStyledLogin>
   )

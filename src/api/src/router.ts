@@ -6,6 +6,7 @@ import { setName } from './resolvers/page/setName/setName'
 import { addProgress } from './resolvers/user/addProgress/addProgress'
 import { changePassword } from './resolvers/user/changePassword/changePassword'
 import { forgotPassword } from './resolvers/user/forgotPassword/forgotPassword'
+import { isCertified } from './resolvers/user/isCertified/isCertified'
 import { login } from './resolvers/user/login/login'
 import { resendEmailVerification } from './resolvers/user/resendEmailVerification/resendEmailVerification'
 import { resetPassword } from './resolvers/user/resetPassword/resetPassword'
@@ -28,6 +29,7 @@ router.post('/user/add-progress', addProgress)
 router.post('/user/reset-password', resetPassword)
 router.post('/user/forgot-password', forgotPassword)
 router.post('/user/change-password', changePassword)
+router.get('/user/is-certified', isCertified)
 
 router.post('/page/get-user', getPublicUser)
 router.post('/page/set-name', setName)
