@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro'
-import { backgroundColorLight, borderColor, textColor } from 'styles'
+import { backgroundColorLight, borderColor, textColor, downColor, okColor } from 'styles'
 
 export const ChapterStyled = styled.div`
   display: grid;
@@ -101,8 +101,19 @@ export const ChapterValidator = styled.div`
   text-align: center;
 
   &.ok {
-    border-color: #12650a;
+    border-color: ${okColor};
   }
+  
+  .tryagain {
+    color: ${downColor};
+    animation: redtowhite 2s forwards;
+  }
+
+  @keyframes redtowhite {
+      from { color: ${downColor}; }
+      to   { color: ${textColor}; }
+  }
+  
 `
 
 export const ChapterValidatorTitle = styled.div`

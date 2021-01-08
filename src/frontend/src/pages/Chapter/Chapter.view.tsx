@@ -154,7 +154,7 @@ const Validator = ({ validatorState, validateCallback }: any) => (
     )}
     {validatorState === WRONG && (
       <ChapterValidatorContentWrapper>
-        <ChapterValidatorTitle>EXPLORATION FAILED</ChapterValidatorTitle>
+        <ChapterValidatorTitle className={'tryagain'}>EXPLORATION FAILED</ChapterValidatorTitle>
         <ChapterValidatorContent>Correct your answer and try again</ChapterValidatorContent>
         <Button>
           <ButtonBorder />
