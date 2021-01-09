@@ -144,7 +144,7 @@ export const chapterData: ChapterData[] = [
     },
     {
         pathname: `${course.path}/chapter-24`,
-        name: '24 - Coming Soon',
+        name: '24 - Join the Ecosystem Ambassadors',
         data: data24
     }
 ]
