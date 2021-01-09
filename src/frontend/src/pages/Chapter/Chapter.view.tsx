@@ -134,6 +134,14 @@ const MonacoDiff = ({ solution, proposedSolution }: any) => {
   )
 }
 
+// Provides user with feedback after incorrect exploration
+let triggerAnim = function () {
+  const myTry = document.getElementById('try')!;
+  myTry.classList.remove('tryagain');
+  void myTry.offsetWidth;
+  myTry.classList.add('tryagain');
+};
+
 const Validator = ({ validatorState, validateCallback }: any) => (
   <ChapterValidator className={validatorState === RIGHT ? 'ok' : 'no'}>
     {validatorState === PENDING && (
@@ -154,11 +162,11 @@ const Validator = ({ validatorState, validateCallback }: any) => (
     )}
     {validatorState === WRONG && (
       <ChapterValidatorContentWrapper>
-        <ChapterValidatorTitle className={'tryagain'}>EXPLORATION FAILED</ChapterValidatorTitle>
+        <ChapterValidatorTitle id={'try'} className={'tryagain'}>EXPLORATION FAILED</ChapterValidatorTitle>
         <ChapterValidatorContent>Correct your answer and try again</ChapterValidatorContent>
         <Button>
           <ButtonBorder />
-          <ButtonText onClick={() => validateCallback()}>TRY AGAIN</ButtonText>
+          <ButtonText onClick={() => {validateCallback(); triggerAnim();}}>TRY AGAIN</ButtonText>
         </Button>
       </ChapterValidatorContentWrapper>
     )}
