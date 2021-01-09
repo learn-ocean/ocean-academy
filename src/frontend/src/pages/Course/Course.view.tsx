@@ -8,7 +8,6 @@ type CourseViewProps = {
 
 export const CourseView = ({ course }: CourseViewProps) => (
     <>
-        {console.log(`[Course.view] course = ${course}`)}
         <CourseStyled>
             <h1>{course} LANDING PAGE: COMING SOON.</h1>
         </CourseStyled>

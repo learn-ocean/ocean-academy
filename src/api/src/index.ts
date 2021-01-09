@@ -17,7 +17,6 @@ const start = async (): Promise<void> => {
   try {
     // if (process.env.NODE_ENV === DEVELOPMENT)
     dotenv.config()
-    console.log(process.env.NODE_ENV)
     if (!process.env.JWT_PRIVATE_KEY) throw new Error('Env variables not set')
 
     await mongoose.connect(process.env.MONGO_URL as string, {
