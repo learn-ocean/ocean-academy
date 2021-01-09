@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { courseData } from 'pages/Course/Course.data'
 import { PublicUser } from 'shared/user/PublicUser'
 
@@ -5,19 +6,52 @@ import * as PropTypes from 'prop-types'
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { IoIosArrowDropdownCircle, IoIosArrowDroprightCircle } from 'react-icons/io'
+=======
+import * as PropTypes from 'prop-types'
+import * as React from 'react'
+import { Link } from 'react-router-dom'
+// import { PublicUser } from 'pages/Course/Course.data'
+import { PublicUser } from 'shared/user/PublicUser'
+>>>>>>> Add-ITDF
 
+import { ChapterData } from '../../../pages/Chapter/Chapter.controller'
+import { chaptersByCourse } from '../../../pages/Course/Course.data'
+// PLACEHOLDER.
+// Use Select menu to choose the  
+import { chapterData } from '../../../pages/Courses/ocean101/Chapters/Chapters.data'
+import { Select } from '../Select/Select.controller'
+import { Option } from '../Select/Select.view'
 import { DrawerItem, DrawerMask, DrawerStyled, DrawerStyledLogin } from './Drawer.style'
 import { ChapterDrawer } from './ChapterDrawer.controller'
 import { ShowingChaptersState } from 'reducers/chapterDrawer'
 
+<<<<<<< HEAD
 type LoginDrawerViewProps = {
   showingMenu: boolean
+=======
+type ChapterDrawerViewProps = {
+  showingChapters: boolean
+>>>>>>> Add-ITDF
   hideCallback: () => void
   pathname: string
+  changeCourseCallback: (e: Option) => void
+  activeCourse: Option
+}
+
+type LoginDrawerViewProps = {
+  showingMenu: boolean
+  user: PublicUser
+  hideCallback: () => void
+  removeAuthUserCallback: () => void
+}
+
+type LoggedInDrawerViewProps = {
+  showingMenu: boolean
   user: PublicUser
   removeAuthUserCallback: () => void
 }
 
+<<<<<<< HEAD
 type CourseDrawerViewProps = {
   showingCourses: boolean
   chapterStates: ShowingChaptersState
@@ -35,6 +69,31 @@ export const CourseDrawerView = ({ showingCourses, chapterStates, hideCallback, 
         <DrawerItem key={unitModule.pathname} className={pathname === unitModule.pathname ? 'current-path' : 'other-path'}>
           <Link to={unitModule.pathname} onClick={() => hideCallback()}>
             {unitModule.name}
+=======
+type LoggedOutDrawerViewProps = {
+  showingMenu: boolean
+}
+
+export const ChapterDrawerView = ({ showingChapters, hideCallback, pathname, activeCourse, changeCourseCallback }: ChapterDrawerViewProps) => (
+  <>
+    <DrawerMask className={`${showingChapters}`} onClick={() => hideCallback()} />
+    <DrawerStyled className={`${showingChapters}`}>
+      <h1>Chapters</h1>
+
+      <Select
+        options={[
+          { name: "Ocean101", path: "ocean101" },
+          { name: "Intro to Data Defi", path: "introToDataDefi" }
+        ]}
+        defaultOption={activeCourse}
+        selectCallback={(e) => changeCourseCallback(e)}
+      />
+
+      {chaptersByCourse[activeCourse.path].map((chapter: ChapterData) => (
+        <DrawerItem key={chapter.pathname} className={pathname === chapter.pathname ? 'current-path' : 'other-path'}>
+          <Link to={chapter.pathname} onClick={() => hideCallback()}>
+            {chapter.name}
+>>>>>>> Add-ITDF
           </Link>
           <IoIosArrowDroprightCircle onClick={() => changeChapterState(chapterStates, unitModule.path!)} />
           <ChapterDrawer course={unitModule.path!} />
@@ -44,19 +103,11 @@ export const CourseDrawerView = ({ showingCourses, chapterStates, hideCallback, 
   </>
 )
 
-export const LoginDrawerView = ({
-  showingChapter,
-  showingMenu,
-  hideCallback,
-  pathname,
-  user,
-  user_drawer,
-  removeAuthUserCallback,
-}: DrawerViewProps) => (
+export const LoginDrawerView = ({ showingMenu, user, hideCallback, removeAuthUserCallback }: LoginDrawerViewProps) => (
   <>
-    {console.log('LoginDrawerView showing = ', showingMenu)}
     <DrawerMask className={`${showingMenu}`} onClick={() => hideCallback()} />
     {user ?
+<<<<<<< HEAD
       loggedInDrawer({ showingMenu, hideCallback, pathname, user, removeAuthUserCallback }) :
       loggedOutDrawer({ showingMenu, hideCallback, pathname, user, removeAuthUserCallback })}
   </>
@@ -65,6 +116,14 @@ export const LoginDrawerView = ({
 // VIEW FUNCTIONS
 function loggedInDrawer({ showingMenu, hideCallback, pathname, user, removeAuthUserCallback }: LoginDrawerViewProps) {
   console.log("loggedInDrawer showing = ", showingMenu)
+=======
+      loggedInDrawer({ showingMenu, user, removeAuthUserCallback }) :
+      loggedOutDrawer({ showingMenu })}
+  </>
+)
+
+function loggedInDrawer({ showingMenu, user, removeAuthUserCallback }: LoggedInDrawerViewProps) {
+>>>>>>> Add-ITDF
   return (
     <DrawerStyledLogin className={`${showingMenu}`}>
       <h1>Menu</h1>
@@ -94,8 +153,12 @@ function loggedInDrawer({ showingMenu, hideCallback, pathname, user, removeAuthU
   )
 }
 
+<<<<<<< HEAD
 function loggedOutDrawer({ showingMenu, hideCallback, pathname, user, removeAuthUserCallback }: LoginDrawerViewProps) {
   console.log("loggedOutDrawer showing = ", showingMenu)
+=======
+function loggedOutDrawer({ showingMenu }: LoggedOutDrawerViewProps) {
+>>>>>>> Add-ITDF
   return (
     <DrawerStyledLogin className={`${showingMenu}`}>
       <h1>Menu</h1>
@@ -118,6 +181,7 @@ function loggedOutDrawer({ showingMenu, hideCallback, pathname, user, removeAuth
   )
 }
 
+<<<<<<< HEAD
 CourseDrawerView.propTypes = {
   showingCourses: PropTypes.bool,
   chapterStates: PropTypes.object,
@@ -128,14 +192,24 @@ CourseDrawerView.propTypes = {
 
 CourseDrawerView.defaultProps = {
   showingCourses: false,
+=======
+ChapterDrawerView.propTypes = {
+  showingChapter: PropTypes.bool,
+  hideCallback: PropTypes.func.isRequired,
+  pathname: PropTypes.string.isRequired,
+  changeCourseCallback: PropTypes.func.isRequired,
+  activeCourse: PropTypes.string.isRequired
+}
+
+ChapterDrawerView.defaultProps = {
+  showingChapter: false,
+>>>>>>> Add-ITDF
 }
 
 LoginDrawerView.propTypes = {
   showingMenu: PropTypes.bool,
-  hideCallback: PropTypes.func.isRequired,
-  pathname: PropTypes.string.isRequired,
   user: PropTypes.object,
-  user_drawer: PropTypes.object,
+  hideCallback: PropTypes.func.isRequired,
   removeAuthUserCallback: PropTypes.func.isRequired,
 }
 

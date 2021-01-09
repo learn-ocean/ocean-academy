@@ -226,6 +226,8 @@ export const ChapterView = ({
 
   let extension = '.rs'
 
+  console.log(`[Chapter.view] course = ${course}`)
+  
   return (
     <ChapterStyled>
       <ChapterCourse>

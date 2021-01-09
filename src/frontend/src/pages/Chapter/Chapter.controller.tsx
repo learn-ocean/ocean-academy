@@ -8,17 +8,27 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import { State } from 'reducers'
 
+<<<<<<< HEAD
 // We need to find a new solution that generalizes over all the courses.
 // import { ChapterData } only worked when there was one ChapterData.
 import { chapterData } from '../Courses/ocean101/Chapters/Chapters.data'
 import { courseData } from '../Course/Course.data'
 
+=======
+import { CourseData } from '../Course/Course.controller'
+import { chaptersByCourse, courseData } from '../Course/Course.data'
+>>>>>>> Add-ITDF
 import { addProgress } from './Chapter.actions'
 import { PENDING, RIGHT, WRONG } from './Chapter.constants'
-import { chapterData } from './Chapter.data'
 import { ChapterLocked } from './Chapter.style'
 import { ChapterView } from './Chapter.view'
 import { Footer } from './Footer/Footer.controller'
+
+export interface ChapterData {
+  pathname: string
+  name: string
+  data: Data
+}
 
 export type Question = {
   question: string
@@ -58,15 +68,19 @@ export const Chapter = () => {
 
   useEffect(() => {
     if (user) dispatch(getUser({ username: user.username }))
-    chapterData.forEach((chapter) => {
-      if (pathname === chapter.pathname)
-        setData({
-          course: chapter.data.course,
-          exercise: chapter.data.exercise,
-          solution: chapter.data.solution,
-          supports: chapter.data.supports,
-          questions: chapter.data.questions,
-        })
+
+    courseData.forEach((course: CourseData) => {
+      const index = course.path!
+      chaptersByCourse[index].forEach((chapter: ChapterData) => {
+        if (pathname === chapter.pathname)
+          setData({
+            course: chapter.data.course,
+            exercise: chapter.data.exercise,
+            solution: chapter.data.solution,
+            supports: chapter.data.supports,
+            questions: chapter.data.questions,
+          })
+      })
     })
   }, [pathname])
 
@@ -74,7 +88,6 @@ export const Chapter = () => {
     if (data.questions.length > 0) {
       let ok = true
       data.questions.forEach((question) => {
-        console.log(question)
         if (!question.proposedResponses) ok = false
         else {
           question.responses.forEach((response) => {
@@ -130,22 +143,22 @@ export const Chapter = () => {
 
   return (
     <>
-      {pathname === '/chapter-24' && !badgeUnlocked ? (
+      {pathname === '../Courses/ocean101/Chapters/chapter-24' && !badgeUnlocked ? (
         <ChapterLocked>Chapter locked. Please complete all previous chapters to see this chapter.</ChapterLocked>
       ) : (
-        <ChapterView
-          validatorState={validatorState}
-          validateCallback={validateCallback}
-          solution={data.solution}
-          proposedSolution={data.exercise}
-          proposedSolutionCallback={proposedSolutionCallback}
-          showDiff={showDiff}
-          course={data.course}
-          supports={data.supports}
-          questions={data.questions}
-          proposedQuestionAnswerCallback={proposedQuestionAnswerCallback}
-        />
-      )}
+          <ChapterView
+            validatorState={validatorState}
+            validateCallback={validateCallback}
+            solution={data.solution}
+            proposedSolution={data.exercise}
+            proposedSolutionCallback={proposedSolutionCallback}
+            showDiff={showDiff}
+            course={data.course}
+            supports={data.supports}
+            questions={data.questions}
+            proposedQuestionAnswerCallback={proposedQuestionAnswerCallback}
+          />
+        )}
       <Footer />
     </>
   )

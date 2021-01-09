@@ -18,26 +18,13 @@ export function loginDrawer(state = loginDrawerDefaultState, action: any): Login
             return loginDrawerDefaultState
         }
         case SHOW_MENU_DRAWER:
-            console.log("loginDrawer SHOW_DRAWER\nediting showingMenu...")
-<<<<<<< HEAD
-        return {
-            showingMenu: true,
-        }
-        case HIDE_MENU_DRAWER:
-            console.log("loginDrawer HIDE_DRAWER\nediting showingMenu...")
-        return {
-            showingMenu: false,
-        }
-=======
             return {
                 showingMenu: true,
             }
         case HIDE_MENU_DRAWER:
-            console.log("loginDrawer HIDE_DRAWER\nediting showingMenu...")
             return {
                 showingMenu: false,
             }
->>>>>>> upstream/development
         default:
             return state
     }
