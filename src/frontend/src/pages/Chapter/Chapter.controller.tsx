@@ -8,16 +8,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import { State } from 'reducers'
 
-<<<<<<< HEAD
-// We need to find a new solution that generalizes over all the courses.
-// import { ChapterData } only worked when there was one ChapterData.
-import { chapterData } from '../Courses/ocean101/Chapters/Chapters.data'
-import { courseData } from '../Course/Course.data'
-
-=======
 import { CourseData } from '../Course/Course.controller'
 import { chaptersByCourse, courseData } from '../Course/Course.data'
->>>>>>> Add-ITDF
 import { addProgress } from './Chapter.actions'
 import { PENDING, RIGHT, WRONG } from './Chapter.constants'
 import { ChapterLocked } from './Chapter.style'

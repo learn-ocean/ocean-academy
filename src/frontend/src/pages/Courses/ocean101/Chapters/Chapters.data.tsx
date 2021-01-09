@@ -1,4 +1,6 @@
-<<<<<<< HEAD
+import { ChapterData } from 'pages/Chapter/Chapter.controller'
+
+import { course } from '..'
 import { data as data1 } from '../Chapters/Chapter1'
 import { data as data2 } from '../Chapters/Chapter2'
 import { data as data3 } from '../Chapters/Chapter3'
@@ -8,12 +10,6 @@ import { data as data6 } from '../Chapters/Chapter6'
 import { data as data7 } from '../Chapters/Chapter7'
 import { data as data8 } from '../Chapters/Chapter8'
 import { data as data9 } from '../Chapters/Chapter9'
-=======
-import { ChapterData } from 'pages/Chapter/Chapter.controller'
-
-import { course } from '..'
-import { data as data1 } from '../Chapters/Chapter1'
->>>>>>> Add-ITDF
 import { data as data10 } from '../Chapters/Chapter10'
 import { data as data11 } from '../Chapters/Chapter11'
 import { data as data12 } from '../Chapters/Chapter12'
@@ -24,30 +20,13 @@ import { data as data16 } from '../Chapters/Chapter16'
 import { data as data17 } from '../Chapters/Chapter17'
 import { data as data18 } from '../Chapters/Chapter18'
 import { data as data19 } from '../Chapters/Chapter19'
-<<<<<<< HEAD
-=======
-import { data as data2 } from '../Chapters/Chapter2'
->>>>>>> Add-ITDF
 import { data as data20 } from '../Chapters/Chapter20'
 import { data as data21 } from '../Chapters/Chapter21'
 import { data as data22 } from '../Chapters/Chapter22'
 import { data as data23 } from '../Chapters/Chapter23'
-<<<<<<< HEAD
-import { course } from '..'
-
-export const chapterData = [
-=======
 import { data as data24 } from '../Chapters/Chapter24'
-import { data as data3 } from '../Chapters/Chapter3'
-import { data as data4 } from '../Chapters/Chapter4'
-import { data as data5 } from '../Chapters/Chapter5'
-import { data as data6 } from '../Chapters/Chapter6'
-import { data as data7 } from '../Chapters/Chapter7'
-import { data as data8 } from '../Chapters/Chapter8'
-import { data as data9 } from '../Chapters/Chapter9'
 
 export const chapterData: ChapterData[] = [
->>>>>>> Add-ITDF
     {
         pathname: `/${course.path}/chapter-1`,
         name: '1 - Why should you Care?',
@@ -163,12 +142,9 @@ export const chapterData: ChapterData[] = [
         name: '23 - Recap',
         data: data23,
     },
-<<<<<<< HEAD
-=======
     {
         pathname: `${course.path}/chapter-24`,
         name: '24 - Coming Soon',
         data: data24
     }
->>>>>>> Add-ITDF
 ]
