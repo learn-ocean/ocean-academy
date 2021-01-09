@@ -4,9 +4,8 @@ import { combineReducers } from 'redux'
 import { auth, AuthState } from './auth'
 
 // Drawers
-import { courseDrawer, CourseDrawerState } from './courseDrawer'
 import { loginDrawer, LoginDrawerState } from './loginDrawer'
-import { chapterDrawer, ShowingChaptersState } from './chapterDrawer'
+import { chapterDrawer, ChapterDrawerState } from './chapterDrawer'
 
 import { gdpr, GdprState } from './gdpr'
 import { loading, LoadingState } from './loading'
@@ -22,7 +21,6 @@ export const reducers = (history: any) =>
     loading,
     users,
     toaster,
-    courseDrawer,
     chapterDrawer,
     loginDrawer,
     progressBar,
@@ -35,9 +33,8 @@ export interface State {
   loading: LoadingState
   users: UsersState
   toaster: ToasterState
-  courseDrawer: CourseDrawerState
   loginDrawer: LoginDrawerState
-  chapterDrawer: ShowingChaptersState
+  chapterDrawer: ChapterDrawerState
   progressBar: ProgressBarState
   serviceWorker: ServiceWorkerState
   gdpr: GdprState
