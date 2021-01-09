@@ -1,7 +1,7 @@
 import { ConnectedRouter } from 'connected-react-router'
 import * as React from 'react'
 
-import { LoginDrawer } from './App.components/Drawer/Drawer.controller'
+import { ChapterDrawer, LoginDrawer } from './App.components/Drawer/Drawer.controller'
 import { Gdpr } from './App.components/Gdpr/Gdpr.controller'
 import { HamburgerLeft, HamburgerRight } from './App.components/Hamburger/Hamburger.controller'
 import { Header } from './App.components/Header/Header.controller'
@@ -15,7 +15,7 @@ export const App = () => (
   <ConnectedRouter history={history}>
     <AppBg>
       <Header />
-      <CourseDrawer />
+      <ChapterDrawer />
       <HamburgerLeft />
       <LoginDrawer />
       <HamburgerRight />
