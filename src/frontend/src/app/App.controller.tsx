@@ -1,7 +1,7 @@
 import { ConnectedRouter } from 'connected-react-router'
 import * as React from 'react'
 
-import { CourseDrawer, LoginDrawer } from './App.components/Drawer/Drawer.controller'
+import { LoginDrawer } from './App.components/Drawer/Drawer.controller'
 import { Gdpr } from './App.components/Gdpr/Gdpr.controller'
 import { HamburgerLeft, HamburgerRight } from './App.components/Hamburger/Hamburger.controller'
 import { Header } from './App.components/Header/Header.controller'

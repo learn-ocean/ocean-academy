@@ -1,14 +1,17 @@
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
 import { Link } from 'react-router-dom'
+// import { PublicUser } from 'pages/Course/Course.data'
 import { PublicUser } from 'shared/user/PublicUser'
 
 import { ChapterData } from '../../../pages/Chapter/Chapter.controller'
 import { chaptersByCourse } from '../../../pages/Course/Course.data'
+// PLACEHOLDER.
+// Use Select menu to choose the  
+import { chapterData } from '../../../pages/Courses/ocean101/Chapters/Chapters.data'
 import { Select } from '../Select/Select.controller'
 import { Option } from '../Select/Select.view'
 import { DrawerItem, DrawerMask, DrawerStyled, DrawerStyledLogin } from './Drawer.style'
-import { ChapterDrawer } from './ChapterDrawer.controller'
 
 type ChapterDrawerViewProps = {
   showingChapters: boolean
@@ -55,8 +58,6 @@ export const ChapterDrawerView = ({ showingChapters, hideCallback, pathname, act
           <Link to={chapter.pathname} onClick={() => hideCallback()}>
             {chapter.name}
           </Link>
-          <IoIosArrowDroprightCircle onClick={() => changeChapterState(chapterStates, unitModule.path!)} />
-          <ChapterDrawer course={unitModule.path!} />
         </DrawerItem>
       ))}
     </DrawerStyled>
