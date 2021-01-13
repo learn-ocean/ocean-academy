@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import { PublicUser } from 'shared/user/PublicUser'
 
-import { HamburgerLeft, HamburgerRight } from '../Hamburger/Hamburger.controller'
+import { HamburgerLeft } from '../Hamburger/Hamburger.controller'
 // prettier-ignore
 import { HeaderLoggedIn, HeaderLoggedOut, HeaderLogo, HeaderMenuItem, HeaderStyled } from "./Header.style";
 

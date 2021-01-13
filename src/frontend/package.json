@@ -27,6 +27,7 @@
     "@monaco-editor/react": "3.2.1",
     "@redux-offline/redux-offline": "^2.6.0",
     "axios": "^0.19.2",
+    "babel-loader": "8.1.0",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.12.2",
     "connected-react-router": "^6.8.0",
@@ -51,9 +52,11 @@
     "react-transition-group": "^4.4.1",
     "redux": "^4.0.5",
     "redux-persist": "^6.0.0",
+    "react-icons": "^4.1.0",
     "redux-thunk": "^2.3.0",
     "reflect-metadata": "^0.1.13",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "webpack": "4.42.0"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.8.1",

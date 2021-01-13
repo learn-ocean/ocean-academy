@@ -2,8 +2,11 @@ import { connectRouter } from 'connected-react-router'
 import { combineReducers } from 'redux'
 
 import { auth, AuthState } from './auth'
-import { chapterDrawer, ChapterDrawerState } from './chapterDrawer'
+
+// Drawers
 import { loginDrawer, LoginDrawerState } from './loginDrawer'
+import { chapterDrawer, ChapterDrawerState } from './chapterDrawer'
+
 import { gdpr, GdprState } from './gdpr'
 import { loading, LoadingState } from './loading'
 import { progressBar, ProgressBarState } from './progressBar'
@@ -22,7 +25,7 @@ export const reducers = (history: any) =>
     loginDrawer,
     progressBar,
     serviceWorker,
-    gdpr
+    gdpr,
   })
 
 export interface State {
@@ -30,8 +33,8 @@ export interface State {
   loading: LoadingState
   users: UsersState
   toaster: ToasterState
-  chapterDrawer: ChapterDrawerState
   loginDrawer: LoginDrawerState
+  chapterDrawer: ChapterDrawerState
   progressBar: ProgressBarState
   serviceWorker: ServiceWorkerState
   gdpr: GdprState

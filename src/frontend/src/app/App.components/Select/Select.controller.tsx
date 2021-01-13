@@ -1,12 +1,12 @@
 import * as PropTypes from "prop-types";
 import * as React from "react";
 
-import { SelectView } from "./Select.view";
+import { SelectView, Option } from "./Select.view";
 
 type SelectProps = {
-  options: string[];
-  defaultOption: string;
-  selectCallback: (e: string) => void;
+  options: Option[];
+  defaultOption: Option;
+  selectCallback: (e: Option) => void;
 };
 
 export const Select = ({ options, defaultOption, selectCallback }: SelectProps) => {
@@ -15,12 +15,12 @@ export const Select = ({ options, defaultOption, selectCallback }: SelectProps) 
 
 Select.propTypes = {
   options: PropTypes.array,
-  defaultOption: PropTypes.string,
+  defaultOption: PropTypes.object,
   selectCallback: PropTypes.func,
 };
 
 Select.defaultProps = {
   options: [],
   defaultOption: undefined,
-  selectCallback: () => {},
+  selectCallback: () => { },
 };

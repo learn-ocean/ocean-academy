@@ -4,10 +4,15 @@ import { useState, useEffect } from "react";
 
 import { SelectStyled } from "./Select.style";
 
+export type Option = {
+  name: string
+  path: string
+}
+
 type SelectViewProps = {
-  options: string[];
-  defaultOption: string;
-  selectCallback: (e: string) => void;
+  options: Option[];
+  defaultOption: Option;
+  selectCallback: (e: Option) => void;
 };
 
 export const SelectView = ({ options, defaultOption, selectCallback }: SelectViewProps) => {
@@ -37,31 +42,37 @@ export const SelectView = ({ options, defaultOption, selectCallback }: SelectVie
     <SelectStyled className={classes.join(" ")} onClick={() => handleClick()}>
       <select data-menu defaultValue={selectedIndex}>
         {options.map((option) => (
-          <option key={option}>{option}</option>
+          <option key={option.path}>{option.name}</option>
         ))}
       </select>
+
       <div className="selector">
+
         <em></em>
+
         <ul style={{ transform: `translateY(-${selectedIndex * 36}px)` }}>
           {options.map((option) => (
-            <li key={option}>{option}</li>
+            <li key={option.path}>{option.name}</li>
           ))}
         </ul>
+
       </div>
+
       <ul style={{ transform: `translateY(-${selectedIndex * 36}px)` }}>
         {options.map((option, i) => (
-          <li key={option} onClick={() => handleSelect(i)}>
-            {option}
+          <li key={option.path} onClick={() => handleSelect(i)}>
+            {option.name}
           </li>
         ))}
       </ul>
+
     </SelectStyled>
   );
 };
 
 SelectView.propTypes = {
   options: PropTypes.array,
-  defaultOption: PropTypes.string,
+  defaultOption: PropTypes.object,
   selectCallback: PropTypes.func.isRequired,
 };
 

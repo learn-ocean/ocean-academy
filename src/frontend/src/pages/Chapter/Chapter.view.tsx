@@ -269,25 +269,25 @@ export const ChapterView = ({
             ))}
           </ChapterQuestions>
         ) : (
-          <div>
-            {display === 'solution' ? (
-              <ChapterMonaco>
-                {showDiff ? (
-                  <MonacoDiff solution={solution} proposedSolution={proposedSolution} />
-                ) : (
-                  <MonacoEditor
-                    proposedSolution={proposedSolution}
-                    proposedSolutionCallback={proposedSolutionCallback}
-                  />
+            <div>
+              {display === 'solution' ? (
+                <ChapterMonaco>
+                  {showDiff ? (
+                    <MonacoDiff solution={solution} proposedSolution={proposedSolution} />
+                  ) : (
+                      <MonacoEditor
+                        proposedSolution={proposedSolution}
+                        proposedSolutionCallback={proposedSolutionCallback}
+                      />
+                    )}
+                </ChapterMonaco>
+              ) : (
+                  <ChapterMonaco>
+                    <MonacoEditorSupport support={supports[display]} />
+                  </ChapterMonaco>
                 )}
-              </ChapterMonaco>
-            ) : (
-              <ChapterMonaco>
-                <MonacoEditorSupport support={supports[display]} />
-              </ChapterMonaco>
-            )}
-          </div>
-        )}
+            </div>
+          )}
         <Validator validatorState={validatorState} validateCallback={validateCallback} />
       </ChapterGrid>
     </ChapterStyled>

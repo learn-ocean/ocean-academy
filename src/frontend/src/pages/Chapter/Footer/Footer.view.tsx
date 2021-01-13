@@ -1,5 +1,7 @@
 import { Button } from 'app/App.components/Button/Button.controller'
-import { chapterData } from 'pages/Chapter/Chapter.data'
+
+// band-aid hardcode import. fix later.
+import { chapterData } from 'pages/Courses/ocean101/Chapters/Chapters.data'
 import * as React from 'react'
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
