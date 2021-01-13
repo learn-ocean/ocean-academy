@@ -1,6 +1,6 @@
 # oceanacademy
 
-## What is Ocean101:
+## 🌊 What is Ocean101:
 
 1. Ocean Academy is a community initiative providing a simple and practical introduction to Ocean Protocol starting from zero. The Academy currently has 1 module: Ocean101, a web3/Ocean introduction for data scientists.
 
@@ -10,7 +10,7 @@
 
 ----
 
-## Contribute
+## 🧜 Contribute
 
 Whether you're an experienced DApp developer or a curious learner just getting started with decentralized web concepts, there are plenty of ways for you to pitch in.
 
@@ -20,58 +20,44 @@ Most of our work and communication uses GitHub, a collaborative tool for code-ba
 
 ----
 
-## (For developers) Running Ocean Academy Locally
+## 🖥️ Running Ocean Academy Locally
 
-Ocean Academy can run locally on Linux. This short instruction manual is beginner-friendly. To run Ocean Academy:
+Ocean Academy can run locally on Linux or Mac. To run Ocean Academy:
 
-**1. Open terminal.**
+- **1. Download Ocean Academy.**
 
-**2. Download Ocean Academy.**
+In terminal: 
+```
+> git clone https://github.com/learn-ocean/ocean-academy.git
+```
 
-`> git clone https://github.com/learn-ocean/ocean-academy.git`
+- **2. Navigate to your Ocean Academy folder in the terminal.**
 
-**3. Navigate to your Ocean Academy folder in the terminal.**
+```
+> cd ocean-academy
+```
 
-`> cd ocean-academy`
+Now you're ready to run the site. Choose between `**npm**` and `**yarn**` for compiling and running the development server.
 
-Now you're ready to run the site. 
-
-You can choose between **npm** and **yarn** for compiling and running the development server.
-
-**4a. Running with Yarn**
-
-**i. Install packages.**
+- **Running with Yarn**
 
 Ensure you're in the base directory `ocean-academy`. 
 
-`> yarn install`
-
-**ii. Compile the code.**
-
-Navigate to the front-end directory and build the code.
-
 ```
+> yarn install
 > cd src/frontend
 > yarn build
+> yarn start
 ```
 
-**iii. Start the project**
+***OR***
 
-`> yarn start`
-
-**4b. Running with NPM**
-
-**i. Install packages.**
+**Running with NPM**
 
 Ensure you're in the base directory `ocean-academy`.
 
-`> npm install`
-
-**ii. Compile the code & Start the project**
-
-Navigate to the front-end directory and start the code.
-
 ```
+> npm install
 > cd src/frontend
 > npm start
 ```
