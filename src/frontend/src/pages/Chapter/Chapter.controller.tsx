@@ -70,7 +70,9 @@ export const Chapter = () => {
             exercise: chapter.data.exercise,
             solution: chapter.data.solution,
             supports: chapter.data.supports,
-            questions: chapter.data.questions,
+            questions: chapter.data.questions.map((question) => {
+              return { ...question, proposedResponses: [] }
+            }),
           })
       })
     })
@@ -142,19 +144,19 @@ export const Chapter = () => {
       {pathname === '/ocean101/chapter-24' && !badgeUnlocked ? (
         <ChapterLocked>Chapter locked. Please complete all previous chapters to see this chapter.</ChapterLocked>
       ) : (
-          <ChapterView
-            validatorState={validatorState}
-            validateCallback={validateCallback}
-            solution={data.solution}
-            proposedSolution={data.exercise}
-            proposedSolutionCallback={proposedSolutionCallback}
-            showDiff={showDiff}
-            course={data.course}
-            supports={data.supports}
-            questions={data.questions}
-            proposedQuestionAnswerCallback={proposedQuestionAnswerCallback}
-          />
-        )}
+        <ChapterView
+          validatorState={validatorState}
+          validateCallback={validateCallback}
+          solution={data.solution}
+          proposedSolution={data.exercise}
+          proposedSolutionCallback={proposedSolutionCallback}
+          showDiff={showDiff}
+          course={data.course}
+          supports={data.supports}
+          questions={data.questions}
+          proposedQuestionAnswerCallback={proposedQuestionAnswerCallback}
+        />
+      )}
       <Footer />
     </>
   )
