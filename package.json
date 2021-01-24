@@ -44,5 +44,10 @@
       "eslint --fix",
       "git add"
     ]
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.3.0",
+    "@truffle/hdwallet-provider": "^1.2.1",
+    "dotenv": "^8.2.0"
   }
 }

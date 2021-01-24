@@ -1,6 +1,5 @@
-import * as React from 'react'
-
 import { Button } from 'app/App.components/Button/Button.controller'
+import * as React from 'react'
 
 //prettier-ignore
 import { AboutContainer, AboutPage, AboutStyled, ButtonContainer } from './About.style'
@@ -34,7 +33,6 @@ export const AboutView = () => {
               </a>
               . Full Stack Developer (Rust, Javascript, Solidity), Berlin, Germany. Novel author and lucid dreamer.
             </li>
-            {/* <li><a href="https://www.linkedin.com/in/aymeric-bethencourt-96665046/" target="_blank" rel='noopener noreferrer'>Aymeric Bethencourt</a>. Full stack Developer, Paris, France. I believe that one day everything will be tokenized.</li> */}
             <li>
               <a href="https://www.linkedin.com/in/laurentrochat/" target="_blank" rel="noopener noreferrer">
                 Laurent Rochat

@@ -12,7 +12,7 @@
         "containers": [
           {
             "name": "oceanacademy-api",
-            "image": "registry.digitalocean.com/neutrino/oceanacademy-api",
+            "image": "registry.digitalocean.com/labs101/oceanacademy-api",
             "imagePullPolicy": "Always"
           }
         ]

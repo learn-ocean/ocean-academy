@@ -11,6 +11,7 @@ import { login } from './resolvers/user/login/login'
 import { resendEmailVerification } from './resolvers/user/resendEmailVerification/resendEmailVerification'
 import { resetPassword } from './resolvers/user/resetPassword/resetPassword'
 import { signUp } from './resolvers/user/signUp/signUp'
+import { tokenUri } from './resolvers/user/tokenUri/tokenUri'
 import { verifyEmail } from './resolvers/user/verifyEmail/verifyEmail'
 
 const router = new Router()
@@ -30,6 +31,7 @@ router.post('/user/reset-password', resetPassword)
 router.post('/user/forgot-password', forgotPassword)
 router.post('/user/change-password', changePassword)
 router.get('/user/is-certified', isCertified)
+router.get('/user/token-uri/:id', tokenUri)
 
 router.post('/page/get-user', getPublicUser)
 router.post('/page/set-name', setName)

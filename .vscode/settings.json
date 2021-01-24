@@ -1,7 +1,7 @@
 ({
   // Hide files that are rarely edited for better folder arrangement
   "files.exclude": {
-    "LICENSE": true,
+    //"LICENSE": true,
     "**/.DS_Store": true,
     "**/.git": true,
     "**/.webpack": true,
