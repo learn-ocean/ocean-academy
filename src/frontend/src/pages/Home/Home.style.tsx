@@ -45,6 +45,15 @@ export const HomeCourseGrid = styled.div`
 export const HomeStyled = styled.div`
   position: relative;
   
+  .about {
+    a {
+      button {
+        width: 161px;
+        margin-top: 20px;
+      }
+    }
+  }
+  
   img.mantaray {
     position: absolute;
     top:0;

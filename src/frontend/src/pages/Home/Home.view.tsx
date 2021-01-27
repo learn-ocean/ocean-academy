@@ -24,13 +24,16 @@ export const HomeView = () => {
           </Link>
         </HomeContainer>
 
-        <HomeCourse>
+        <HomeCourse className={"about"}>
             <h1>About</h1>
             <p> Through an interactive experience, you will learn to use Ocean Protocol to create value from data science in
               the Web3 space.</p>
             <p>You will get your own Ethereum wallet in the first 10 minutes or so.
             At the end of the 23 modules, you will be handed a completion certificate which grants access to the Ocean
             Ambassador community.</p>
+            <Link to="/chapter-1">
+              <Button text="GET STARTED" color="primary" />
+            </Link>
         </HomeCourse>
 
         <HomeStyled className={"modules"}>
