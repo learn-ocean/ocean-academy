@@ -9,7 +9,7 @@ import { HomeContainer, HomeCourse, HomeCourseGrid, HomePage, HomeStyled } from 
 export const HomeView = () => {
   return (
     <HomeStyled>
-      <img alt="waves-animated" src="/waves-animated.svg" />
+      <img className={"mantaray"} alt="mantaray-animated" src="/mantaray-full.svg" />
       <HomePage>
         <HomeContainer>
           {/*Removed "and analytic services", analytics is also data. providing clear and concise header */}
@@ -18,19 +18,6 @@ export const HomeView = () => {
             Ocean Academy 101 is a community initiative providing a simple and practical introduction to Ocean Protocol
             starting from zero. For free.
           </p>
-          <span>
-            Through an interactive experience, you will learn to use Ocean Protocol to create value from data science in
-            the Web3 space.
-          </span>
-          <span>You will get your own Ethereum wallet in the first 10 minutes or so.</span>
-
-          <span>
-            At the end of the 23 modules, you will be handed a completion certificate which grants access to the Ocean
-            Ambassador community.
-          </span>
-          <Link to="/ocean101/chapter-1">
-          <span>At the end of the 23 modules, you will be handed a completion certificate which grants access to the Ocean Ambassador community.</span>
-          </Link>
 
           <Link to="/chapter-1">
             <Button text="GET STARTED" color="primary" />
@@ -38,6 +25,18 @@ export const HomeView = () => {
         </HomeContainer>
 
         <HomeCourse>
+            <h1>About</h1>
+            <p> Through an interactive experience, you will learn to use Ocean Protocol to create value from data science in
+              the Web3 space.</p>
+            <p>You will get your own Ethereum wallet in the first 10 minutes or so.
+            At the end of the 23 modules, you will be handed a completion certificate which grants access to the Ocean
+            Ambassador community.</p>
+
+        </HomeCourse>
+
+        <HomeStyled>
+          <img alt="waves-animated" src="/waves-animated.svg" />
+          <HomeCourse>
             <h1>Available Modules</h1>
             <p>Get started on the module you are interested in.</p>
             <HomeCourseGrid>
@@ -54,9 +53,6 @@ export const HomeView = () => {
 
             </HomeCourseGrid>
           </HomeCourse>
-
-        <HomeStyled>
-          <img alt="waves-animated" src="/waves-animated.svg" />
         </HomeStyled>
       </HomePage>
     </HomeStyled>

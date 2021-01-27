@@ -43,8 +43,17 @@ export const HomeCourseGrid = styled.div`
 
 export const HomeStyled = styled.div`
   position: relative;
+  
+  > img.mantaray {
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 55%;
+    z-index: -1;
+    margin-left: auto;
+  };
 
-  > img {
+  img {
     position: absolute;
     top: calc(33vh - 130px);
     left: 0;
