@@ -17,8 +17,6 @@ export const HomeCourse = styled.div`
   > p {
     font-size: 20px;
   }
-
-  
 `
 
 export const HomeCourseGrid = styled.div`
@@ -56,8 +54,8 @@ export const HomeStyled = styled.div`
   
   img.mantaray {
     position: absolute;
-    top:0;
-    right: 0;
+    top: -100px;
+    right: -100px;
     width: 55%;
     z-index: -1;
     margin-left: auto;
