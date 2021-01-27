@@ -7,8 +7,7 @@ export const HomeCourse = styled.div`
   padding: 50px;
   text-align: center;
   left: 0;
-
-  background:rgba(196, 196, 196, 0.14);
+ 
   border-top: 1px solid rgb(0, 0, 0);
   border-bottom: 1px solid rgb(0, 0, 0);
 
@@ -18,6 +17,8 @@ export const HomeCourse = styled.div`
   > p {
     font-size: 20px;
   }
+
+  
 `
 
 export const HomeCourseGrid = styled.div`
@@ -59,7 +60,14 @@ export const HomeStyled = styled.div`
     left: 0;
     width: 100%;
     z-index: -1;
+  };
+  
+  .modules {
+    background-image: url(../../../waves-animated.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
+  
 `
 
 export const HomePage = styled(FullPage)``

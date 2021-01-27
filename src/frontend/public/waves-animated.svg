@@ -6,8 +6,8 @@
     .st3{fill:none;stroke:#FF4092;stroke-width:2;}
 
     .st0,.st1,.st2,.st3 {
-     -webkit-animation: move_wave 7s infinite  alternate;
-    animation: move_wave 7s infinite  alternate;
+     -webkit-animation: move_wave 17s infinite  alternate;
+     animation: move_wave 17s infinite  alternate;
     }
 
     @keyframes move_wave {

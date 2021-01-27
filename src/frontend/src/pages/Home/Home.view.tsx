@@ -33,8 +33,7 @@ export const HomeView = () => {
             Ambassador community.</p>
         </HomeCourse>
 
-        <HomeStyled>
-          <img alt="waves-animated" src="/waves-animated.svg" />
+        <HomeStyled className={"modules"}>
           <HomeCourse>
             <h1>Available Modules</h1>
             <p>Get started on the module you are interested in.</p>
