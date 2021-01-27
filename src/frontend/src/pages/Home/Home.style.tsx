@@ -44,7 +44,7 @@ export const HomeCourseGrid = styled.div`
 export const HomeStyled = styled.div`
   position: relative;
   
-  > img.mantaray {
+  img.mantaray {
     position: absolute;
     top:0;
     right: 0;
@@ -65,10 +65,10 @@ export const HomeStyled = styled.div`
 export const HomePage = styled(FullPage)``
 
 export const HomeContainer = styled.div`
-  width: 590px;
+  width: 44vw;
   /* margin-top: calc(30vh - 130px);
   margin-bottom: calc(30vh - 200px); */
-  margin: 150px 100px 200px 100px;
+  margin: 15vw 5vw;
 
   > h1 {
     margin-bottom: 10px;
@@ -85,6 +85,6 @@ export const HomeContainer = styled.div`
   }
 
   @media (max-width: 700px) {
-    width: 100%;
+    width: 90vw;
   }
 `
