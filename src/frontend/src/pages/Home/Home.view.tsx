@@ -3,7 +3,6 @@ import { CourseBox } from 'app/App.components/CourseBox/CourseBox.controller'
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 
-
 import { HomeContainer, HomeCourse, HomeCourseGrid, HomePage, HomeStyled } from './Home.style'
 
 export const HomeView = () => {
@@ -44,11 +43,15 @@ export const HomeView = () => {
               <CourseBox
                 title={"Ocean 101"}
                 shortDescription={"[Someone write info about Ocean101 here]"}
+                noChapters={23}
+                completed={true}
               />
 
               <CourseBox
                 title={"Intro To Data Defi"}
-                shortDescription={"[Someone write info about intro to data defi here."}
+                shortDescription={"[Someone write info about intro to data defi here.]"}
+                noChapters={5}
+                completed={false}
               />
 
             </HomeCourseGrid>

@@ -56,12 +56,12 @@ export const HomeStyled = styled.div`
   
   img.mantaray {
     position: absolute;
-    top:0;
-    right: 0;
+    top: -120px;
+    right: -100px;
     width: 55%;
     z-index: -1;
     margin-left: auto;
-  };
+} 
 
   img {
     position: absolute;
