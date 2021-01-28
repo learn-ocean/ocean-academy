@@ -7,7 +7,7 @@ export const HomeCourse = styled.div`
   padding: 50px;
   text-align: center;
   left: 0;
- 
+
   border-top: 1px solid rgb(0, 0, 0);
   border-bottom: 1px solid rgb(0, 0, 0);
 
@@ -17,8 +17,6 @@ export const HomeCourse = styled.div`
   > p {
     font-size: 20px;
   }
-
-  
 `
 
 export const HomeCourseGrid = styled.div`
@@ -44,7 +42,7 @@ export const HomeCourseGrid = styled.div`
 
 export const HomeStyled = styled.div`
   position: relative;
-  
+
   .about {
     a {
       button {
@@ -53,15 +51,15 @@ export const HomeStyled = styled.div`
       }
     }
   }
-  
+
   img.mantaray {
     position: absolute;
-    top: -120px;
+    top: -100px;
     right: -100px;
     width: 55%;
     z-index: -1;
     margin-left: auto;
-} 
+}
 
   img {
     position: absolute;
@@ -70,13 +68,13 @@ export const HomeStyled = styled.div`
     width: 100%;
     z-index: -1;
   };
-  
+
   .modules {
     background-image: url(../../../waves-animated.svg);
     background-repeat: no-repeat;
     background-size: cover;
   }
-  
+
 `
 
 export const HomePage = styled(FullPage)``
