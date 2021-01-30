@@ -20,13 +20,9 @@ Ambassadors represent the Ocean Protocol Community and contribute through engagi
 
 # How do you become an Ocean Ambassador ?
 
-## Step 1: Download and sign the pledge
+## [Step 1: Download and sign the pledge](https://drive.google.com/open?id=1bOKkm_5A47OBiP4Gmz7mJIZoSX04LsON&authuser=sheridan%40bigchaindb.com&usp=drive_fs)
 
-https://drive.google.com/open?id=1bOKkm_5A47OBiP4Gmz7mJIZoSX04LsON&authuser=sheridan%40bigchaindb.com&usp=drive_fs
-
-## Step 2: Fill-out form & attach signed pledge & Ocean 101 certificate link
-
-https://forms.gle/wWGJYKJZnTZJoBJV7
+## [Step 2: Fill-out form, attach signed pledge and Ocean 101 certificate link](https://forms.gle/wWGJYKJZnTZJoBJV7)
 
 ## Step 3: Access to Ocean In Discord server will be granted if your registration of interest is successful
 
