@@ -1,18 +1,38 @@
 import styled from 'styled-components/macro'
 
 export const ChaptersIconStyled = styled.div`
-    img {
-        max-width: 100%;
-        max-height: 100%;
-        position: inherit;
-        width: auto;
-        left: auto;
-        top: auto;
-    }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
 `
 
 export const CourseBoxStyled = styled.div`
     margin: 20px;
     background-color: rgba(196,196,196,.14);
     border: 1px solid #c4c4c4;
+    h3 {
+      text-align: left;
+      padding-left: 1rem;
+      padding-top: 1rem;
+    }
+    p {
+      padding-right: 0.5rem;
+    }
+    .moduleContent {
+      text-align: left;
+      padding: 0 1rem 1rem 1rem;
+      display: flex;
+      flex-direction: row;
+      img {
+        position: relative;
+        top: 0;
+        width: 26px;
+        height: 18px;
+      }
+      &-icons {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+    }
 `

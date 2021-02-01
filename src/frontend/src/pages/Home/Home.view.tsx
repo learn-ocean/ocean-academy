@@ -42,14 +42,14 @@ export const HomeView = () => {
             <HomeCourseGrid>
               <CourseBox
                 title={"Ocean 101"}
-                shortDescription={"[Someone write info about Ocean101 here]"}
+                shortDescription={"Learn the fundamentals of Ocean, get your ETH wallet in 10 minutes!"}
                 noChapters={23}
                 completed={true}
               />
 
               <CourseBox
                 title={"Intro To Data Defi"}
-                shortDescription={"[Someone write info about intro to data defi here.]"}
+                shortDescription={"Introduction to Decentralized Finance with Data"}
                 noChapters={5}
                 completed={false}
               />

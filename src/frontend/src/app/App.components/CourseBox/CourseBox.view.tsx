@@ -45,15 +45,19 @@ export const CourseBoxView = ( {title, shortDescription, noChapters, completed}:
     return (
         <CourseBoxStyled>
             <h3>{title}</h3>
-            <p>{shortDescription}</p> 
-            <ChaptersIcon
-                chaptersImage={"./Chapters.svg"}
-                noChapters={noChapters}
-            />
-            <CompletedIcon
-                completedImage={"./Checkmark.svg"}
-                showing={completed}
-            />
+            <div className={"moduleContent"}>
+                <p>{shortDescription}</p>
+                <div className={"moduleContent-icons"}>
+                    <ChaptersIcon
+                        chaptersImage={"./Chapters.svg"}
+                        noChapters={noChapters}
+                    />
+                    <CompletedIcon
+                      completedImage={"./Checkmark.svg"}
+                      showing={completed}
+                    />
+                </div>
+            </div>
         </CourseBoxStyled>
     )
 }
@@ -65,5 +69,5 @@ CourseBoxView.propTypes = {
 
 CourseBoxView.defaultProps = {
     title: '[Please add a title]',
-    shortDescription: '[Please add a description]'    
+    shortDescription: '[Please add a description]'
 }
