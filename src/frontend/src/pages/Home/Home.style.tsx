@@ -54,8 +54,8 @@ export const HomeStyled = styled.div`
 
   img.mantaray {
     position: absolute;
-    top: -100px;
-    right: -100px;
+    top: -50px;
+    right: -50px;
     width: 55%;
     z-index: -1;
     margin-left: auto;
