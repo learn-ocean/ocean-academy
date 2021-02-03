@@ -2,11 +2,12 @@ export const questions = [
     {
         question: "Open etherescan.io, search for the OCEAN token and see how many accounts are holding the OCEAN token currently.",
         answers: [
-            "<2'000 accounts",
-            "<6'000 accounts",
-            ">12'000 accounts",
-            ">20'000 accounts",
+            "<4'500 accounts",
+            "Between 4'501 & 10'000 accounts",
+            "Between 10'001 & 20'000 accounts",
+            "Between 20'001 & 50'000 accounts",
+            ">50'000 accounts"
         ],
-        responses: [">12'000 accounts", ">20'000 accounts"],
+        responses: ["Between 20'001 & 50'000 accounts"],
     }
 ]
