@@ -22,7 +22,7 @@ export const signUp = ({ email, password, confirmPassword, username, recaptchaTo
         commit: {
           type: SIGN_UP_COMMIT,
           meta: {
-            thunks: [showToaster(SUCCESS, `Welcome ${username}!`, 'Happy to see you'), redirect('/verify-email')],
+            thunks: [showToaster(SUCCESS, `Welcome ${username}!`, 'Happy to see you'), redirect('/')],
           },
         },
         rollback: { type: SIGN_UP_ROLLBACK },

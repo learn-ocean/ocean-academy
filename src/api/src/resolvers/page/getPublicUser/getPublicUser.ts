@@ -8,7 +8,7 @@ import { GetPublicUserInputs, GetPublicUserOutputs } from '../../../shared/page/
 import { PublicUser } from '../../../shared/user/PublicUser'
 import { UserModel } from '../../../shared/user/User'
 
-export const PUBLIC_USER_MONGO_SELECTOR = '_id username name emailVerified progress createdAt'
+export const PUBLIC_USER_MONGO_SELECTOR = '_id username name tokenId progress createdAt'
 
 export const getPublicUser = async (ctx: Context, next: Next): Promise<void> => {
   const getPublicUserArgs = plainToClass(GetPublicUserInputs, ctx.request.body, { excludeExtraneousValues: true })
@@ -17,6 +17,15 @@ export const getPublicUser = async (ctx: Context, next: Next): Promise<void> => 
 
   const user: PublicUser = (await UserModel.findOne({ username }, PUBLIC_USER_MONGO_SELECTOR).lean()) as PublicUser
   if (!user) throw new ResponseError(404, 'User not found')
+
+  if (!user.tokenId) {
+    let count = await UserModel.countDocuments({ tokenId : { $exists: true }}).exec();
+    await UserModel.updateOne(
+      { _id: user._id },
+      { $set: { tokenId: count + 1 } },
+    ).exec()
+    user.tokenId = count + 1;
+  }
 
   const response: GetPublicUserOutputs = { user }
 

@@ -51,13 +51,22 @@ export const UserView = ({
                 <UserBadgeButtons>
                   <Button
                     type="button"
-                    text="Download certificate"
+                    text="Download PDF certificate"
                     icon="download"
                     loading={loading}
                     onClick={() => downloadCallback()}
                   />
                   <Link to={`/certificate/${user.username}`}>
                     <Button type="button" text="Certified URL" icon="link" loading={loading} onClick={() => {}} />
+                  </Link>
+                  <Link to={`/token/${user.username}`}>
+                    <Button
+                      type="button"
+                      text="Get NFT certificate"
+                      icon="wallet"
+                      loading={loading}
+                      onClick={() => {}}
+                    />
                   </Link>
                 </UserBadgeButtons>
               ) : (

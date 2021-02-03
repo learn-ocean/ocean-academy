@@ -46,6 +46,6 @@ export const UserBadgeInput = styled.div`
 export const UserBadgeButtons = styled.div`
   margin-top: 10px;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
 `

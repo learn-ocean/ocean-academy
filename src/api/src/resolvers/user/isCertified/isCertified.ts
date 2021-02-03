@@ -1,8 +1,8 @@
 import { plainToClass } from 'class-transformer'
 import { validateOrReject } from 'class-validator'
 import { Context, Next } from 'koa'
-import { firstError } from '../../../helpers/firstError'
 
+import { firstError } from '../../../helpers/firstError'
 import { IsCertifiedInputs, IsCertifiedOutputs } from '../../../shared/user/IsCertified'
 import { UserModel } from '../../../shared/user/User'
 

@@ -5,7 +5,7 @@
   "scripts": {
     "start": "PORT=8080 NODE_ENV=development nodemon --watch src -e ts,tsx --exec ts-node src/index.ts",
     "build": "PORT=3000 NODE_ENV=production tsc",
-    "docker-create": "doctl k8s cluster create --region fra1 oceanacademy-api --wait && doctl kubernetes cluster kubeconfig save oceanacademy-api",
+    "docker-create": "doctl k8s cluster create --region fra1 --node-pool \"name=oceanacademy-api;size=s-1vcpu-2gb;count=1;auto-scale=true;min-nodes=1;max-nodes=3\" oceanacademy-api --wait && doctl kubernetes cluster kubeconfig save oceanacademy-api",
     "docker-build": "docker build -t labs101/oceanacademy-api . --no-cache",
     "docker-run": "docker run --rm -it -p 3000:3000 labs101/oceanacademy-api",
     "docker-push": "doctl registry login && docker tag labs101/oceanacademy-api registry.digitalocean.com/labs101/oceanacademy-api && docker push registry.digitalocean.com/labs101/oceanacademy-api",
@@ -16,6 +16,7 @@
     "docker-restart": "kubectl --context do-fra1-oceanacademy-api delete pods -l app=oceanacademy-api",
     "docker-logs": "kubectl --context do-fra1-oceanacademy-api logs --timestamps -l app=oceanacademy-api",
     "docker-update": "yarn run docker-build && yarn run docker-push && yarn run docker-restart",
+    "docker-install": "yarn run docker-build && yarn run docker-push && yarn run docker-patch && yarn run docker-deploy && yarn run docker-serve",
     "test": "jest --runInBand --verbose",
     "coverage": "jest --runInBand --collectCoverage"
   },

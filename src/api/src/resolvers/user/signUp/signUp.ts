@@ -5,16 +5,12 @@ import { Context, Next } from 'koa'
 
 import { firstError } from '../../../helpers/firstError'
 import { toPublicUser } from '../../../helpers/toPublicUser'
-import { Captcha } from '../../../shared/captcha/Captcha'
-import { CaptchaFor } from '../../../shared/captcha/CaptchaFor'
 import { ResponseError } from '../../../shared/mongo/ResponseError'
 import { Jwt } from '../../../shared/user/Jwt'
 import { PublicUser } from '../../../shared/user/PublicUser'
 import { SignUpInputs, SignUpOutputs } from '../../../shared/user/SignUp'
 import { User, UserModel } from '../../../shared/user/User'
-import { createCaptcha } from '../../captcha/helpers/createCaptcha'
 import { getSignedJwt } from '../helpers/getSignedJwt'
-import { sendEmailVerifyEmail } from '../helpers/sendEmailVerifyEmail'
 import { verifyRecaptchaToken } from '../helpers/verifyRecaptchaToken'
 
 export const signUp = async (ctx: Context, next: Next): Promise<void> => {
@@ -38,10 +34,6 @@ export const signUp = async (ctx: Context, next: Next): Promise<void> => {
   const publicUser: PublicUser = toPublicUser(user)
 
   const jwt: Jwt = getSignedJwt(user._id.toHexString(), user.username)
-
-  const captcha: Captcha = await createCaptcha(user._id, CaptchaFor.CAPTCHA_FOR_VERIFY_EMAIL)
-
-  await sendEmailVerifyEmail(user.email, captcha.index)
 
   const response: SignUpOutputs = { jwt, user: publicUser }
 

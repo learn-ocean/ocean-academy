@@ -1,7 +1,6 @@
 import { Context, Next } from 'koa'
 
 import * as getRandomCaptchaPairObject from '../resolvers/captcha/helpers/getRandomCaptchaPair'
-import * as sendEmailVerifyEmailObject from '../resolvers/user/helpers/sendEmailVerifyEmail'
 import { signUp } from '../resolvers/user/signUp/signUp'
 import { CaptchaSolution } from '../shared/captcha/CaptchaSolution'
 import { Jwt } from '../shared/user/Jwt'
@@ -29,7 +28,6 @@ export const createTestUser: CreateTestUser = async (email, username, password) 
   const captchaSolution: CaptchaSolution = '0000'
 
   jest.spyOn(getRandomCaptchaPairObject, 'getRandomCaptchaPair').mockReturnValue({ captchaIndex, captchaSolution })
-  jest.spyOn(sendEmailVerifyEmailObject, 'sendEmailVerifyEmail').mockImplementation(async () => Promise.resolve())
 
   const signUpContext: Context = {
     request: {
