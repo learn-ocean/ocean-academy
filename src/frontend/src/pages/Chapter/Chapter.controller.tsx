@@ -135,10 +135,6 @@ export const Chapter = () => {
     setData({ ...data, questions: e })
   }
 
-  // ts
-  // console.log(`[Chapter.controller.tsx] pathname = ${pathname}`)
-  // console.log(`[Chapter.controller.tsx] !badgeUnlocked = ${!badgeUnlocked}`)
-  // console.log(`[Chapter.controller.tsx] Chapter locked? ${pathname === '/ocean101/chapter-24' && !badgeUnlocked}`)
   return (
     <>
       {pathname === '/ocean101/chapter-24' && !badgeUnlocked ? (
