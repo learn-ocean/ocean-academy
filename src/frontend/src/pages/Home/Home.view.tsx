@@ -18,7 +18,7 @@ export const HomeView = () => {
             starting from zero. For free.
           </p>
 
-          <Link to="/chapter-1">
+          <Link to="/ocean101/chapter-1">
             <Button text="GET STARTED" color="primary" />
           </Link>
         </HomeContainer>
@@ -30,7 +30,7 @@ export const HomeView = () => {
             <p>You will get your own Ethereum wallet in the first 10 minutes or so.
             At the end of the 23 modules, you will be handed a completion certificate which grants access to the Ocean
             Ambassador community.</p>
-            <Link to="/chapter-1">
+            <Link to="/ocean101/chapter-1">
               <Button text="GET STARTED" color="primary" />
             </Link>
         </HomeCourse>
