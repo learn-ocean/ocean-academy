@@ -4,6 +4,9 @@
 **/*.log
 **/node_modules
 **/dist
+**/build
+**/coverage
+
 **/downloads
 **/screenshots
 **/yarn-error.log
