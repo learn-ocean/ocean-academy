@@ -4,7 +4,7 @@ import { FullPage } from 'styles'
 
 export const TermsStyled = styled.div`
   position: relative;
-
+  
   > img {
     position: absolute;
     top: calc(33vh);
@@ -18,6 +18,7 @@ export const TermsStyled = styled.div`
 export const TermsPage = styled(FullPage)``
 
 export const TermsContainer = styled.div`
+  margin: calc(30vh - 130px);
   > h1 {
     margin-bottom: 10px;
   }
