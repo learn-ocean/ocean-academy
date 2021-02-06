@@ -1,5 +1,5 @@
 // prettier-ignore
-import { IsBoolean, IsDate, IsEmail, IsMongoId, IsOptional, Length, Matches } from 'class-validator'
+import { IsBoolean, IsDate, IsEmail, IsMongoId, IsNumber, IsOptional, Length, Matches, Min } from 'class-validator'
 import { ObjectId } from 'mongodb'
 
 import { getModel, Property } from '../../helpers/typegoose'
@@ -16,6 +16,11 @@ export class User {
   @Property()
   @Length(2, 40)
   name!: string
+
+  @Property()
+  @IsNumber()
+  @Min(0)
+  tokenId?: number
 
   @Property({ required: true, unique: true, index: true })
   @IsEmail()

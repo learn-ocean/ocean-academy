@@ -6,13 +6,13 @@ import { firstError } from '../../../helpers/firstError'
 import { Captcha } from '../../../shared/captcha/Captcha'
 import { CaptchaFor } from '../../../shared/captcha/CaptchaFor'
 import { ResponseError } from '../../../shared/mongo/ResponseError'
+import { QuotaType } from '../../../shared/quota/QuotaType'
 import { ForgotPasswordInputs, ForgotPasswordOutputs } from '../../../shared/user/ForgotPassword'
 import { User, UserModel } from '../../../shared/user/User'
 import { createCaptcha } from '../../captcha/helpers/createCaptcha'
+import { rateLimit } from '../../quota/rateLimit/rateLimit'
 import { sendEmailForgotPassword } from '../helpers/sendEmailForgotPassword'
 import { verifyRecaptchaToken } from '../helpers/verifyRecaptchaToken'
-import { rateLimit } from '../../quota/rateLimit/rateLimit'
-import { QuotaType } from '../../../shared/quota/QuotaType'
 
 export const forgotPassword = async (ctx: Context, next: Next): Promise<void> => {
   const forgotPasswordArgs = plainToClass(ForgotPasswordInputs, ctx.request.body, { excludeExtraneousValues: true })
@@ -31,7 +31,7 @@ export const forgotPassword = async (ctx: Context, next: Next): Promise<void> =>
 
   const captcha: Captcha = await createCaptcha(user._id, CaptchaFor.CAPTCHA_FOR_RESET_PASSWORD)
 
-  await sendEmailForgotPassword(user.email, captcha.index, captcha.token)
+  await sendEmailForgotPassword(user.email, captcha.solution, captcha.token)
 
   const response: ForgotPasswordOutputs = { token: captcha.token }
 

@@ -400,9 +400,12 @@
             <rect fill="none" stroke="none" width="24" height="24"></rect>
         </g>
     </symbol>
-    <symbol id="XXXX" viewBox="0 0 24 24">
+    <symbol id="wallet" viewBox="0 0 24 24">
         <g id="Outline_Icons">
-
+            <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M1.297,1.453    L14.59,4.772c1.601,0.4,2.91,2.077,2.91,3.728v12c0,1.65-1.314,2.69-2.92,2.312L3.42,20.188C1.814,19.809,0.5,18.15,0.5,16.5v-13    c0-1.651,1.35-3,3-3h17c1.65,0,3,1.349,3,3v11c0,1.65-1.35,3-3,3h-3"></path>
+            <line fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="9.5" y1="3.5" x2="19.5" y2="3.5"></line>
+            <circle fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="13" cy="13.5" r="2"></circle>
+            <line fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="17.5" y1="8.5" x2="19.5" y2="8.5"></line>
         </g>
         <g id="Invisible_Shape">
             <rect fill="none" stroke="none" width="24" height="24"></rect>

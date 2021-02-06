@@ -10,8 +10,8 @@ contract Certificate is ERC721 {
         uint256 _tokenId,
         string memory _tokenURI
     ) public {
-        // super._mint(_to, _tokenId);
-        // super._setTokenURI(_tokenId, _tokenURI);
-        super.mintWithTokenURI(_to, _tokenId, _tokenURI);
+        super._mint(_to, _tokenId);
+        super._setTokenURI(_tokenId, _tokenURI);
+        //super.mintWithTokenURI(_to, _tokenId, _tokenURI);
     }
 }
