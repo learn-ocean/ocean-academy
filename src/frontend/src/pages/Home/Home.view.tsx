@@ -40,23 +40,23 @@ export const HomeView = () => {
             <h1>Available Modules</h1>
             <p>Get started on the module you are interested in.</p>
             <HomeCourseGrid>
-              <a href="ocean101/chapter-1">
+              <Link to={'ocean101/chapter-1'}>
                 <CourseBox
                   title={"Ocean 101"}
                   shortDescription={"Learn the fundamentals of Ocean, get your ETH wallet in 10 minutes!"}
                   noChapters={23}
                   completed={false}
                 />
-              </a>
+              </Link>
 
-              <a href="introToDataDefi/chapter-1">
+              <Link to={'introToDataDefi/chapter-1'}>
                 <CourseBox
                   title={"Intro To Data Defi"}
                   shortDescription={"Introduction to Decentralized Finance with Data"}
                   noChapters={6}
                   completed={false}
                 />
-              </a>
+              </Link>
 
             </HomeCourseGrid>
           </HomeCourse>
