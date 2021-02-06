@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useLocation, useHistory } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { State } from 'reducers'
 import { Option } from '../Select/Select.view'
 

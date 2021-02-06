@@ -8,7 +8,7 @@ import { ChapterData } from '../../../pages/Chapter/Chapter.controller'
 import { chaptersByCourse } from '../../../pages/Course/Course.data'
 // PLACEHOLDER.
 // Use Select menu to choose the  
-import { chapterData } from '../../../pages/Courses/ocean101/Chapters/Chapters.data'
+// import { chapterData } from '../../../pages/Courses/ocean101/Chapters/Chapters.data'
 import { Select } from '../Select/Select.controller'
 import { Option } from '../Select/Select.view'
 import { DrawerItem, DrawerMask, DrawerStyled, DrawerStyledLogin } from './Drawer.style'

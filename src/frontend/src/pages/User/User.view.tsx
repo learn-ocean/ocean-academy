@@ -1,7 +1,7 @@
 import { Button } from 'app/App.components/Button/Button.controller'
 import { Input } from 'app/App.components/Input/Input.controller'
 import { ChapterData } from 'pages/Chapter/Chapter.controller'
-import { courseData } from 'pages/Course/Course.data'
+// import { courseData } from 'pages/Course/Course.data'
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
 import { Link } from 'react-router-dom'
