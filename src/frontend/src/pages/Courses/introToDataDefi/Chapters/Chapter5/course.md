@@ -32,13 +32,14 @@ There are two ways to earn from staking:
 
 The creator of the OCEAN-datatoken pool sets the transaction fee going to stakers. This fee is a percentage of transaction volume. The default fee is 0.1%, but it could be 1% or 5% or more. Staking rewards from transaction fees flow immediately into the pool. The higher the fee, the more OCEAN pool stakers collectively get with each transaction. Stakers get paid proportional to how much liquidity they have provided compared to other stakers, so staking early and/or on undervalued datasets is rewarded.
 
-**How to find datasets to stake on?**Remember, you earn as more stakers join a liquidity pool and you earn staking rewards from transaction fees in OCEAN-datatoken pools. Every time a datatoken is bought, sold, swapped, and every time liquidity providers join or exit a pool, stakers of the respective pool collectively get more OCEAN liquidity. And, as a pool gets more valuable, your share in the pool increases in value. So you’ll want to stake on undervalued data assets where you anticipate high future sales and transaction volume. A tactic to increase transaction fees is to choose liquidity pools to maximize 
+**How to find datasets to stake on?**
+Remember, you earn as more stakers join a liquidity pool and you earn staking rewards from transaction fees in OCEAN-datatoken pools. Every time a datatoken is bought, sold, swapped, and every time liquidity providers join or exit a pool, stakers of the respective pool collectively get more OCEAN liquidity. And, as a pool gets more valuable, your share in the pool increases in value. So you’ll want to stake on undervalued data assets where you anticipate high future sales and transaction volume. A tactic to increase transaction fees is to choose liquidity pools to maximize 
 
 (# transactions) * (% fee in pool)
 
 In addition, “undiscovered gems” are especially interesting, because with little stake so far by others you get a greater cut of the pool share and a greater cut of the rewards. In the next chapter, you will learn more about how to assess datasets and respective liquidity pools to stake on.
 
-Please familiarize yourself with the risks before staking your OCEAN tokens. More information is available <a href=" https://blog.oceanprotocol.com/on-staking-on-data-in-ocean-market-3d8e09eb0a13" target="_blank"><here></a>
+Please familiarize yourself with the risks before staking your OCEAN tokens. More information is available <a href=" https://blog.oceanprotocol.com/on-staking-on-data-in-ocean-market-3d8e09eb0a13" target="_blank">(here)</a>
 
 **How do I stake in Ocean Market?**
 
@@ -52,7 +53,7 @@ Please familiarize yourself with the risks before staking your OCEAN tokens. Mor
 - Wait a few seconds and approve the amount of OCEAN to stake with your wallet
 - Wait a few seconds and approve the transaction to join the pool with your wallet
 
-<img src="/images/defi_chapter_5_0.png" />
+<img src="/images/defi/chapter_5_0.jpg" />
 
 You can always increase or decrease the total amount you have staked in a pool, via the “add liquidity” and “remove liquidity” actions. You can un-stake anytime. The funds enter your wallet immediately. A withdrawal includes your portion of staking rewards.
 
@@ -69,7 +70,7 @@ You should look for undervalued datasets and “hidden gems”. Hodling a datato
 **How do I hodl datatokens?**
 You can hodl datatokens like any other ERC-20 tokens in your Ethereum wallet. Connect your wallet, browse to the dataset of your choice, navigate to the TRADE tab and buy the amount you like.
 
-<img src="/images/defi_chapter_5_1.png" />
+<img src="/images/defi/chapter_5_1.jpg" />
 
 **Should I stake or hodl a datatoken?**
 There is no definite answer. When staking on a dataset, you earn staking rewards from transaction fees. When hodling a datatoken you don’t earn from transaction fees, but you participate in the price movement of the datatoken. It gives you more upside when the price goes up and more downside when the price goes down. So what option to choose depends on your personal willingness to take risks.

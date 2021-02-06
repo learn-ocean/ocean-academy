@@ -27,7 +27,7 @@ First of all, you can start by evaluating the publisher. The risk of rug pulls a
 
 The Ocean Market is designed for you to be able to conveniently find information about a publisher. If a publisher uses 3Box and you hover your cursor over the profile information, a box appears that shows the publishers website, social media and Github links. 3Box is a service that links all of them to the publisher's verified Ethereum address.
 
-<img src="/images/defi_chapter_6_0.png" />
+<img src="/images/defi/chapter_6_0.jpg" />
 
 Online resources, such as Twitter, LinkedIn, Github, websites and blogs can be helpful to learn more about a data publisher. You can also check the publishers’ transaction history on an Ethereum blockchain explorer, such as Etherscan, which is linked in the dataset description header as well.
 
@@ -45,7 +45,7 @@ No matter how good the data is, if a dataset succeeds (which means it is frequen
 
 Another criteria to pay attention to is the distribution of liquidity pool shares. The shares of the pool creator are displayed in the POOL tab. Note that data providers always start with 100% pool share at launch. You can check the pool share of other liquidity providers as well by following the “Pool” link to Etherscan.
 
-<img src="/images/defi_chapter_6_1.png" />
+<img src="/images/defi/chapter_6_1.jpg" />
 
 **Price**
 The price of a datatoken depends on the supply of tokens in the liquidity pool and the number of OCEAN tokens staked. But how does this relate to the real value of the data?
@@ -71,4 +71,4 @@ In addition to the criteria above, rugpullindex.com can be a useful source of in
 
 Now you know what to mind when assessing datasets on Ocean Market. All in all, you finally need to trust a data provider. So it is recommended to carefully assess the providers reputation, trustworthiness and intent before taking action. The decision depends on your personal willingness to take risks. In any case, you can always start experimenting on Rinkeby for free.
 
-Now you may familiarize yourself with the excellent guide made by fellow community member Agent K <a href="https://agentk.medium.com/ocean-market-staking-guide-5b36294a86c0" target="_blank">Ocean Market Staking Guide</a>
+Now you may familiarize yourself with the excellent guide made by fellow community member Agent K <a href="https://agentk.medium.com/ocean-market-staking-guide-5b36294a86c0" target="_blank">Ocean Market Staking Guide</a>.

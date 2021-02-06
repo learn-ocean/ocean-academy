@@ -18,7 +18,7 @@ Liquidity pools are at the core of the Ocean Market and allow for automated pric
 
 **Visual of liquidity pool mechanics**
 
-<img src="/images/defi_chapter_4_0.png" />
+<img src="/images/defi/chapter_4_0.jpg" />
 
 (1) **Pool initialization.** A liquidity pool allows users to swap their tokens. At creation, a pool needs to be initialized with the following parameters:
 
@@ -34,7 +34,7 @@ Then, as users (including LPs) interact with the liquidity pool, the AMM will st
 
 **Visual of OCEAN-datatoken AMM pool mechanics**
 
-<img src="/images/defi_chapter_4_1.png" />
+<img src="/images/defi/chapter_4_1.jpg" />
 
 The liquidity pools implementation in Ocean Protocol differs slightly from implementations mentioned earlier. Ocean Protocol uses a technology stack (Balancer) which makes it possible to provide liquidity in only one token rather than two. In addition, the OCEAN-datatoken AMM pool has a fixed ratio of 70% OCEAN and 30% datatoken.
 Let’s use an example to illustrate this new concept.
