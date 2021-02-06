@@ -1,8 +1,6 @@
-# oceanacademy
+# 🌊 Ocean Academy
 
-## 🌊 What is Ocean101:
-
-1. Ocean Academy is a community initiative providing a simple and practical introduction to Ocean Protocol starting from zero. The Academy currently has 1 module: Ocean101, a web3/Ocean introduction for data scientists.
+Ocean Academy is a community initiative providing a simple and practical introduction to Ocean Protocol starting from zero. The Academy currently has 2 modules: *Ocean101* and *Intro to Defi*.
 
 2. This repository is for the main Ocean Academy website, hosted at https://oceanacademy.io/ , where you can explore our interactive modules.
 
@@ -22,42 +20,13 @@ Most of our work and communication uses GitHub, a collaborative tool for code-ba
 
 ## 🖥️ Running Ocean Academy Locally
 
-Ocean Academy can run locally on Linux or Mac. To run Ocean Academy:
+Ocean Academy can run on any device that supports Nodejs. 
 
-- **1. Download Ocean Academy.**
-
-In terminal: 
-```
-> git clone https://github.com/learn-ocean/ocean-academy.git
-```
-
-- **2. Navigate to your Ocean Academy folder in the terminal.**
-
-```
-> cd ocean-academy
+```bash
+git clone https://github.com/learn-ocean/ocean-academy.git && cd ocean-academy
+yarn install # npm install
+cd src/frontend
+yarn install # npm install
+yarn start # npm run start 
 ```
 
-Now you're ready to run the site. Choose between `**npm**` and `**yarn**` for compiling and running the development server.
-
-- **Running with Yarn**
-
-Ensure you're in the base directory `ocean-academy`. 
-
-```
-> yarn install
-> cd src/frontend
-> yarn build
-> yarn start
-```
-
-***OR***
-
-**Running with NPM**
-
-Ensure you're in the base directory `ocean-academy`.
-
-```
-> npm install
-> cd src/frontend
-> npm start
-```
