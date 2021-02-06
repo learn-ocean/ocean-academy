@@ -3,6 +3,7 @@ import { FullPage } from 'styles'
 
 export const HomeCourse = styled.div`
   width: 100%;
+  max-width: 850px;
   margin: auto;
   padding: 50px;
   text-align: center;

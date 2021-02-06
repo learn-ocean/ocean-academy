@@ -3,8 +3,7 @@ import styled from 'styled-components/macro'
 export const ChaptersIconStyled = styled.div`
     display: flex;
     flex-direction: row;
-    align-items: center;
-    
+    align-items: center;    
 `
 
 export const CourseBoxStyled = styled.div`
@@ -18,6 +17,11 @@ export const CourseBoxStyled = styled.div`
     }
     p {
       padding-right: 0.5rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color:  rgba(196,196,196,.27);
     }
     .moduleContent {
       text-align: left;

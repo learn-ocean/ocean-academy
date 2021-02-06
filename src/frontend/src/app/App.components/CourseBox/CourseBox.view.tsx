@@ -21,7 +21,7 @@ export type CourseBoxViewProps = {
 }
 
 
-const ChaptersIcon = ( { chaptersImage, noChapters } : ChaptersIconProps) => {
+const ChaptersIcon = ({ chaptersImage, noChapters }: ChaptersIconProps) => {
     return (
         <ChaptersIconStyled>
             <img alt="chapters" src={chaptersImage} />
@@ -30,18 +30,18 @@ const ChaptersIcon = ( { chaptersImage, noChapters } : ChaptersIconProps) => {
     )
 }
 
-const CompletedIcon = ( { completedImage, showing }: CompletedIconProps ) => {
+const CompletedIcon = ({ completedImage, showing }: CompletedIconProps) => {
     return (
         <>
-        {showing && (
-            <img alt="completedIcon" src={completedImage} />
-        )}
+            {showing && (
+                <img alt="completedIcon" src={completedImage} />
+            )}
         </>
     )
 }
 
 
-export const CourseBoxView = ( {title, shortDescription, noChapters, completed}: CourseBoxViewProps) => {
+export const CourseBoxView = ({ title, shortDescription, noChapters, completed }: CourseBoxViewProps) => {
     return (
         <CourseBoxStyled>
             <h3>{title}</h3>
@@ -53,8 +53,8 @@ export const CourseBoxView = ( {title, shortDescription, noChapters, completed}:
                         noChapters={noChapters}
                     />
                     <CompletedIcon
-                      completedImage={"./Checkmark.svg"}
-                      showing={completed}
+                        completedImage={"./Checkmark.svg"}
+                        showing={completed}
                     />
                 </div>
             </div>

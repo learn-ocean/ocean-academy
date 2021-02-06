@@ -24,15 +24,15 @@ export const HomeView = () => {
         </HomeContainer>
 
         <HomeCourse className={"about"}>
-            <h1>About</h1>
-            <p> Through an interactive experience, you will learn to use Ocean Protocol to create value from data science in
+          <h1>About</h1>
+          <p> Through an interactive experience, you will learn to use Ocean Protocol to create value from data science in
               the Web3 space.</p>
-            <p>You will get your own Ethereum wallet in the first 10 minutes or so.
-            At the end of the 23 modules, you will be handed a completion certificate which grants access to the Ocean
+          <p>You will get your own Ethereum wallet in the first 10 minutes or so.
+          At the end of the 23 modules, you will be handed a completion certificate which grants access to the Ocean
             Ambassador community.</p>
-            <Link to="/ocean101/chapter-1">
-              <Button text="GET STARTED" color="primary" />
-            </Link>
+          <Link to="/ocean101/chapter-1">
+            <Button text="GET STARTED" color="primary" />
+          </Link>
         </HomeCourse>
 
         <HomeStyled className={"modules"}>
@@ -40,19 +40,23 @@ export const HomeView = () => {
             <h1>Available Modules</h1>
             <p>Get started on the module you are interested in.</p>
             <HomeCourseGrid>
-              <CourseBox
-                title={"Ocean 101"}
-                shortDescription={"Learn the fundamentals of Ocean, get your ETH wallet in 10 minutes!"}
-                noChapters={23}
-                completed={true}
-              />
+              <a href="ocean101/chapter-1">
+                <CourseBox
+                  title={"Ocean 101"}
+                  shortDescription={"Learn the fundamentals of Ocean, get your ETH wallet in 10 minutes!"}
+                  noChapters={23}
+                  completed={false}
+                />
+              </a>
 
-              <CourseBox
-                title={"Intro To Data Defi"}
-                shortDescription={"Introduction to Decentralized Finance with Data"}
-                noChapters={5}
-                completed={false}
-              />
+              <a href="introToDataDefi/chapter-1">
+                <CourseBox
+                  title={"Intro To Data Defi"}
+                  shortDescription={"Introduction to Decentralized Finance with Data"}
+                  noChapters={6}
+                  completed={false}
+                />
+              </a>
 
             </HomeCourseGrid>
           </HomeCourse>
