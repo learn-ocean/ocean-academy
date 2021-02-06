@@ -10,32 +10,32 @@ import { course } from '..'
 export const chapterData = [
     {
         pathname: `/${course.path}/chapter-1`,
-        name: '1 - [Insert Name Here]',
+        name: '1 - What is data DeFi?',
         data: data1,
     },
     {
         pathname: `/${course.path}/chapter-2`,
-        name: '2 - [Insert Name Here]',
+        name: '2 - Introduction to Ocean Market',
         data: data2,
     },
     {
         pathname: `/${course.path}/chapter-3`,
-        name: '3 - [Insert Name Here]',
+        name: '3 - Creation of a datatoken on Ocean Market',
         data: data3,
     },
     {
         pathname: `/${course.path}/chapter-4`,
-        name: '4 - [Insert Name Here]',
+        name: '4 - Zooming into Liquidity Pools',
         data: data4,
     },
     {
         pathname: `/${course.path}/chapter-5`,
-        name: '5 - [Insert Name Here]',
+        name: '5 - How to earn on Ocean Market',
         data: data5,
     },
     {
         pathname: `/${course.path}/chapter-6`,
-        name: '6 - [Insert Name Here]',
+        name: '6 - Due diligence for liquidity providers',
         data: data6,
     }
 ]
