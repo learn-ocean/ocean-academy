@@ -1,4 +1,4 @@
-import { Console } from 'console'
+// import { Console } from 'console'
 import { jsPDF } from 'jspdf'
 import * as React from 'react'
 import { useEffect } from 'react'

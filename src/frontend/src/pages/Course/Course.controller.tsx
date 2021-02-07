@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Data } from '../Chapter/Chapter.controller'
+// import { Data } from '../Chapter/Chapter.controller'
 import { CourseView } from './Course.view'
 
 export interface Course {
