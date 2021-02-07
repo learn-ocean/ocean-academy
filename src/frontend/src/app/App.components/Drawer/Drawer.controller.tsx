@@ -14,14 +14,22 @@ export const ChapterDrawer = () => {
   const { pathname } = useLocation()
 
   let defaultCourse: Option = { name: "Ocean 101", path: "ocean101" }
-  const [activeCourse, setActiveCourse] = useState(defaultCourse)
+  const [activeCourse, setActiveCourse] = useState<Option>(defaultCourse)
 
   function changeCourseCallback(e: Option) {
     if (e.path === 'ocean101') {
-      setActiveCourse({ name: "Ocean 101", path: 'ocean101' })
+      const ocean101: Option = {
+        name: "Ocean 101",
+        path: "ocean101"
+      }
+      setActiveCourse(ocean101)
     }
     if (e.path === 'introToDataDefi') {
-      setActiveCourse({ name: 'Intro to Data Defi', path: 'introToDataDefi' })
+      const introToDataDefi: Option = {
+        name: "Intro to Data Defi",
+        path: "introToDataDefi"
+      }
+      setActiveCourse(introToDataDefi)
     }
   }
 

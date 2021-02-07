@@ -3,7 +3,6 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 // import { PublicUser } from 'pages/Course/Course.data'
 import { PublicUser } from 'shared/user/PublicUser'
-
 import { ChapterData } from '../../../pages/Chapter/Chapter.controller'
 import { chaptersByCourse } from '../../../pages/Course/Course.data'
 // PLACEHOLDER.
@@ -38,7 +37,7 @@ type LoggedOutDrawerViewProps = {
   showingMenu: boolean
 }
 
-export const ChapterDrawerView = ({ showingChapters, hideCallback, pathname, activeCourse, changeCourseCallback }: ChapterDrawerViewProps) => (
+export const ChapterDrawerView = ({ showingChapters, hideCallback, pathname, changeCourseCallback, activeCourse }: ChapterDrawerViewProps) => (
   <>
     <DrawerMask className={`${showingChapters}`} onClick={() => hideCallback()} />
     <DrawerStyled className={`${showingChapters}`}>
@@ -131,7 +130,7 @@ ChapterDrawerView.propTypes = {
   hideCallback: PropTypes.func.isRequired,
   pathname: PropTypes.string.isRequired,
   changeCourseCallback: PropTypes.func.isRequired,
-  activeCourse: PropTypes.string.isRequired
+  activeCourse: PropTypes.object.isRequired
 }
 
 ChapterDrawerView.defaultProps = {
