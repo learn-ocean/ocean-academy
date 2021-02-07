@@ -12,28 +12,28 @@ There are several ways to earn on Ocean Market:
 - Buying data or algorithms to solve a problem or commercialize a data product
 - Contribute to a project that issues rewards for your data
 - Staking
-- Hodl datatokens
+- *Hodl* datatokens
 
-**1. Selling data or algorithms** If you or your company have latent but potentially valuable data, consider selling it on Ocean Market. After a price was discovered through market forces, you can treat your data as a financial asset with all its advantages, such as putting it on your balance sheet. 
+**1. Selling data or algorithms** If you or your company have latent but potentially valuable data, consider selling it on Ocean Market. After a price was discovered through market forces, you can treat your data as a financial asset with all its advantages, such as putting it on your balance sheet.
 
 **2. Buying data or algorithms to solve a problem or commercialize a data product** If you are looking for data or algorithms to solve a problem or to commercialize a product, you can browse Ocean Market, pick a suitable asset, navigate to the USE tab and buy access.
 
 **3. Contribute to a project that issues rewards for your data** There are several projects on the Ocean Market that collect data from individuals, with the goal to form large crowdsourced datasets. You can, for example, participate by sharing your data in exchange for token rewards and hereby contribute to the vision of decentralized data unions.
 
-**4. Staking** You can earn by staking OCEAN tokens on datasets in Ocean Market. 
-OCEAN staking is the act of adding liquidity to an OCEAN-datatoken AMM pool. By staking, you become a liquidity provider (LP). 
+**4. Staking** You can earn by staking OCEAN tokens on datasets in Ocean Market.
+OCEAN staking is the act of adding liquidity to an OCEAN-datatoken AMM pool. By staking, you become a liquidity provider (LP).
 
 **Staking in Ocean Market**
 
-There are two ways to earn from staking: 
+There are two ways to earn from staking:
 
-- The price of a datatoken rises as more stakers join a liquidity pool. If the price rises, the value of your share in the pool rises too. 
+- The price of a datatoken rises as more stakers join a liquidity pool. If the price rises, the value of your share in the pool rises too.
 - You earn staking rewards from transaction fees in OCEAN-datatoken liquidity pools. Transaction fees apply to datatoken sales and swaps, as well as staking/un-staking operations from other stakers.
 
 The creator of the OCEAN-datatoken pool sets the transaction fee going to stakers. This fee is a percentage of transaction volume. The default fee is 0.1%, but it could be 1% or 5% or more. Staking rewards from transaction fees flow immediately into the pool. The higher the fee, the more OCEAN pool stakers collectively get with each transaction. Stakers get paid proportional to how much liquidity they have provided compared to other stakers, so staking early and/or on undervalued datasets is rewarded.
 
 **How to find datasets to stake on?**
-Remember, you earn as more stakers join a liquidity pool and you earn staking rewards from transaction fees in OCEAN-datatoken pools. Every time a datatoken is bought, sold, swapped, and every time liquidity providers join or exit a pool, stakers of the respective pool collectively get more OCEAN liquidity. And, as a pool gets more valuable, your share in the pool increases in value. So you’ll want to stake on undervalued data assets where you anticipate high future sales and transaction volume. A tactic to increase transaction fees is to choose liquidity pools to maximize 
+Remember, you earn as more stakers join a liquidity pool and you earn staking rewards from transaction fees in OCEAN-datatoken pools. Every time a datatoken is bought, sold, swapped, and every time liquidity providers join or exit a pool, stakers of the respective pool collectively get more OCEAN liquidity. And, as a pool gets more valuable, your share in the pool increases in value. So you’ll want to stake on undervalued data assets where you anticipate high future sales and transaction volume. A tactic to increase transaction fees is to choose liquidity pools to maximize
 
 (# transactions) * (% fee in pool)
 
@@ -62,7 +62,7 @@ You can always increase or decrease the total amount you have staked in a pool, 
 You can invest in datasets on Ocean Market by directly hodling their datatokens.
 
 **Hodling datatokens**
-You can swap OCEAN tokens for datatokens and vice versa. When hodling a datatoken you are directly exposed to its price movements. So it is only worth considering if you think a dataset is undervalued. As datatokens are ERC-20 tokens, you can hodl them in the same wallet as your OCEAN tokens. 
+You can swap OCEAN tokens for datatokens and vice versa. When hodling a datatoken you are directly exposed to its price movements. So it is only worth considering if you think a dataset is undervalued. As datatokens are ERC-20 tokens, you can hodl them in the same wallet as your OCEAN tokens.
 
 **How to find datasets to hodl?**
 You should look for undervalued datasets and “hidden gems”. Hodling a datatoken makes sense when you anticipate the price to go up, as you are directly exposed to its movements. In the next chapter, you will learn more about how to assess datasets, prices and respective datatokens.

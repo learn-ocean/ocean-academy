@@ -4,7 +4,9 @@
 
 <dialog character="mantaray">“Datatokens are like the plankton, they sustain the entire Ocean Protocol ecosystem.”</dialog>
 
-Creating a datatoken is much easier than one may think; in fact, monetizing a dataset in the Ocean ecosystem will always require a datatoken, even if it is not made explicit to data publishers (e.g. in the case of fixed data pricing). The entire tooling is provided by Ocean Market, making it straightforward for anyone to deploy their own datatoken. Optimizing one’s datatoken is, however, more challenging, as we will see.
+Creating a datatoken is much easier than one may think. In fact, data publishers may be using one even if it is not made explicit to them (e.g. in the case of fixed data pricing, where the datatoken is abstracted away), as monetizing a dataset in the Ocean ecosystem will always require a datatoken.
+
+The entire tooling is provided by Ocean Market, making it straightforward for anyone to deploy their own datatoken. Optimizing one’s datatoken is, however, more challenging, as we will see.
 
 Data publishers creating a datatoken should consider the following before getting started:
 
@@ -17,17 +19,17 @@ Data publishers creating a datatoken should consider the following before gettin
    3. Swap fee
 5. Testing before deploying
 
-**Metadata helps potential buyers find your dataset.** The more complete you make the description and specifications of your dataset, the more likely potential buyers will find the data and ultimately buy it. Ocean Market enables markdown language to make your description look great, and a preview is provided if need be <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">(markdown cheatsheet)</a>. Markdown allows to add style and pictures to make it professional; this is an important signal of quality for the dataset.
+**Metadata helps potential buyers find your dataset.** The more complete you make the description and specifications of your dataset, the more likely potential buyers will find the data, and eventually buy it. Ocean Market enables markdown language to make your description look great, and a preview is provided if need be <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">(markdown cheatsheet)</a>. Markdown allows to add style and pictures to make it look professional; this is an important signal of quality for the dataset.
 
 <img src="/images/defi/chapter_3_0.jpg" />
 
-**Make your data accessible.** The data should be accessible through a URL. Files can be hosted anywhere as long as no extra authentication is needed on the host platform; it could be on AWS, Google Drive, IPFS, your own website, etc. The data is never stored on the blockchain, only the metadata is and the encrypted URL are. As you can see in this example of token creation, no personally identifiable information is stored on the blockchain
+**Make your data accessible.** The data should be accessible through a URL. Files can be hosted anywhere as long as no extra authentication is needed on the host platform; it could be on AWS, Google Drive, IPFS, your own website, etc. The data is never stored on the blockchain, only the metadata and the encrypted URL are. As you can see in this example of token creation, no personally identifiable information is stored on the blockchain
 
 In addition to the full dataset, it is strongly encouraged to provide a separate URL pointing to sample data, so that anyone can preview the data and its structure before making a purchase decision. Watch-out: the URL provided can not be changed later on, so you need to get it right if you ever want to update your data in the future.
 
 <img src="/images/defi/chapter_3_1.jpg" />
 
-In its current form, only direct data download is deployed on Ocean Protocol, but there will be an opportunity to opt for Compute-to-data (a refresher is available in Ocean 101 chapters [17](https://oceanacademy.io/chapter-17)and [20](https://oceanacademy.io/chapter-20)) when this is implemented in the Ocean Market.
+In its current form, only direct data download is deployed on Ocean Protocol, but there will be an opportunity to opt for Compute-to-data when this is implemented in the Ocean Market (a refresher is available in Ocean 101 chapters [17](https://oceanacademy.io/chapter-17) and [20](https://oceanacademy.io/chapter-20)).
 
 A timeout can be set, which represents the amount of time the access is valid for, once the data was purchased.
 
@@ -40,7 +42,7 @@ Tags will help prospective buyers find relevant datasets. Just like with metadat
 
 <img src="/images/defi/chapter_3_2.jpg" />
 
-Once you have filled-in the entire page and reviewed and signed the Terms & Conditions, you are ready to create your datatoken. Connect your Web3 wallet and submit, you will need to approve some operations with your wallet as Ocean smart contracts are deploying your datatoken to Ethereum.
+Once you have filled-in the entire page and signed the Terms & Conditions, you are ready to create your datatoken. Connect your Web3 wallet and submit, you will need to approve some operations with your wallet as Ocean smart contracts are deploying your datatoken to Ethereum.
 
 <img src="/images/defi/chapter_3_3.jpg" />
 
@@ -66,12 +68,12 @@ Selling data with dynamic pricing requires careful parameter choices.
 
 - _Starting price_: what one thinks would be the minimum price for the dataset. It can be totally off, as market forces will drive the price (upward) to an equilibrium.
 - _Ocean token locked_: the amount of OCEAN token that the data publisher needs to provide to the liquidity pool that is created. The higher the starting price for the dataset, the more OCEAN has to be added by data sellers. This is to avoid abuses in Ocean Market. But locking more OCEAN tokens offers other advantages:
-  - It makes liquidity pools larger and more stable, which makes the price less volatile.
+  - It makes liquidity pools larger and more stable, which makes the price for the dataset less volatile.
   - It ensures that there is enough datatoken supply in the market in the case that many buyers want to purchase your dataset.
-- _Swap fee_: the fee collected by the liquidity pool with each transaction. A low fee will encourage data usage but may lead to volatility due to quick speculation, a high fee will encourage long term liquidity provision, as pool shareholders will be rewarded, but may artificially inflate the price paid for the dataset.
+- _Swap fee_: the fee collected by the liquidity pool with each transaction. A low fee will encourage data usage but may lead to volatility due to quick speculation, a high fee will encourage long term liquidity provision, as pool shareholders will be rewarded, but may artificially inflate the price of the dataset (fees are added to the pool in OCEAN).
 
 <img src="/images/defi/chapter_3_6.jpg" />
 
 Once the token is created, the entire supply of the datatoken resides in the market. Users will have to buy the datatoken from the market in order to access the data or data service.
 
-You have it all now. Don’t forget to test your deployment on the Rinkeby network first just to be sure. You can ask for some OCEAN token from <a href="https://faucet.rinkeby.oceanprotocol.com/" target="_blank">Ocean Protocol faucet</a> to that end. Note that the Token address for the Rinkeby Token is different from the mainnet address. For Rinkeby add 0x8967bcf84170c91b0d24d4302c2376283b0b3a07 as a custom token to your wallet.
+You have it all now. Don’t forget to test your deployment on the Rinkeby network first just to be sure. You can ask for some OCEAN token from <a href="https://faucet.rinkeby.oceanprotocol.com/" target="_blank">Ocean Protocol faucet</a> to that end. Note that the Token address for the Rinkeby Token is different from the mainnet address. In Rinkeby, add 0x8967bcf84170c91b0d24d4302c2376283b0b3a07 as a custom token to your wallet.
