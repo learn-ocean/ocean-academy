@@ -2,7 +2,7 @@
 
 #### Difficulty: **4/5** \| Estimated reading time: **10 min**
 
-<dialog character="squid">“There is plenty of food to go around in the Ocean, but finding a sustainable food source is not an easy task.”</dialog>
+<dialog character="jellyfish">“There is plenty of food to go around in the Ocean, but finding a sustainable food source is not an easy task.”</dialog>
 
 **How do I earn on Ocean Market?**
 

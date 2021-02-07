@@ -2,7 +2,7 @@
 
 #### Difficulty: **3/5** \| Estimated reading time: **10 min**
 
-<dialog character="squid">“With so many species cohabiting in the Ocean, distinguishing friend from foe is of utmost importance.”</dialog>
+<dialog character="mantaray">“With so many species cohabiting in the Ocean, distinguishing friend from foe is of utmost importance.”</dialog>
 
 As the Ocean ecosystem grows, datatoken **liquidity providers (LP)** may find it difficult to navigate these uncharted waters. While you should do your own research (DYOR), some indicators can be helpful in assessing the viability of a given data pool or data token.
 

@@ -2,7 +2,7 @@
 
 #### Difficulty: **2/5** \| Estimated reading time: **10 min**
 
-<dialog character="squid">“Learn how to navigate these uncharted waters.”</dialog>
+<dialog character="jellyfish">“Learn how to navigate these uncharted waters.”</dialog>
 
 A data marketplace can be thought of as a directory of data services, where individuals and corporations alike can buy and sell data assets. Let us explore <a href="https://market.oceanprotocol.com" target="_blank">Ocean Market</a>, **the first implementation of a Web3 data marketplace**.
 

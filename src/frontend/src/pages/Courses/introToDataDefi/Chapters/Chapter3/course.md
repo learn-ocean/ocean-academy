@@ -2,7 +2,7 @@
 
 #### Difficulty: **4/5** \| Estimated reading time: **10 min**
 
-<dialog character="squid">“Datatokens are like the plankton, they sustain the entire Ocean Protocol ecosystem.”</dialog>
+<dialog character="mantaray">“Datatokens are like the plankton, they sustain the entire Ocean Protocol ecosystem.”</dialog>
 
 Creating a datatoken is much easier than one may think; in fact, monetizing a dataset in the Ocean ecosystem will always require a datatoken, even if it is not made explicit to data publishers (e.g. in the case of fixed data pricing). The entire tooling is provided by Ocean Market, making it straightforward for anyone to deploy their own datatoken. Optimizing one’s datatoken is, however, more challenging, as we will see.
 
