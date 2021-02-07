@@ -1,7 +1,7 @@
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
 
-import { downColor, upColor, backgroundColorDark } from '../../../styles'
+import { downColor, upColor} from '../../../styles'
 // prettier-ignore
 import { ToasterClose, ToasterContent, ToasterCountdown, ToasterGrid, ToasterIcon, ToasterMessage, ToasterStyled, ToasterTitle } from './Toaster.style'
 import { ERROR } from './Toaster.constants'

@@ -14,10 +14,23 @@ export const AboutView = () => {
           <p>
             Ocean Academy is a community initiative started by Ocean Ambassadors to help with the onboarding of new
             ambassadors. Many people, including data owners and data scientists, are not familiar with blockchain and
-            smart contracts yet. And we wanted to have the broadest reach possible, not only address Web3 natives. As we
-            started working on the project, we realized it could serve as an outreach platform for Web3 and Ocean
+            smart contracts yet. And we wanted to have the broadest reach possible, not only address Web3 natives.
+          </p>
+          <p>
+            As we started working on the project, we realized it could serve as an outreach platform for Web3 and Ocean
             Protocol. So was born Ocean Academy.
           </p>
+          <ButtonContainer>
+          <a href="https://discord.gg/6DkV4jVy">
+              <Button text="JOIN US ON DISCORD" color="primary" />
+            </a>
+            <a href="https://github.com/learn-ocean/ocean-academy" target="_blank" rel="noopener noreferrer">
+              <Button text="VIEW CODE ON GITHUB" color="primary" />
+            </a>
+            <a href="https://oceanprotocol.com/" target="_blank" rel="noopener noreferrer">
+              <Button text="READ ABOUT OCEAN PROTOCOL" color="primary" />
+            </a>
+          </ButtonContainer>
           <h1>Who we are</h1>
           <ul>
             <li>
@@ -31,7 +44,7 @@ export const AboutView = () => {
               <a href="https://www.linkedin.com/in/albert-peci-65932413b/" target="_blank" rel="noopener noreferrer">
                 Albert Peci
               </a>
-              . Full Stack Developer (Rust, Javascript, Solidity), Berlin, Germany. Novel author and lucid dreamer.
+              . Full Stack Web3 Developer (Rust, Javascript, Solidity), Berlin, Germany. Novel author and lucid dreamer.
             </li>
             <li>
               <a href="https://www.linkedin.com/in/laurentrochat/" target="_blank" rel="noopener noreferrer">
@@ -39,18 +52,25 @@ export const AboutView = () => {
               </a>
               . Analytics and Insights Director, Geneva, Switzerland. Off-piste snowboarder and fine wine lover.
             </li>
+            <li>
+              <a href="https://www.linkedin.com/in/ludovicgrandclement/" target="_blank" rel="noopener noreferrer">
+              Ludovic Grandclement
+              </a>
+              . Data Engineer/Technical Project Manager. Hong Kong. Avid lifelong learner and part-time baker.
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/kaimeinke/" target="_blank" rel="noopener noreferrer">
+               Kai Meinke
+              </a>
+              . Product Owner. Kiel, Germany.
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/frederic-schwill" target="_blank" rel="noopener noreferrer">
+               Frederic Schwill
+              </a>
+              . Security & Privacy Engineer. Freiburg, Germany.
+            </li>
           </ul>
-          <ButtonContainer>
-            <a href="mailto:oceanacademy@protonmail.com">
-              <Button text="CONTACT US" color="primary" />
-            </a>
-            <a href="https://github.com/learn-ocean/ocean-academy" target="_blank" rel="noopener noreferrer">
-              <Button text="VIEW CODE ON GITHUB" color="primary" />
-            </a>
-            <a href="https://oceanprotocol.com/" target="_blank" rel="noopener noreferrer">
-              <Button text="READ ABOUT OCEAN PROTOCOL" color="primary" />
-            </a>
-          </ButtonContainer>
         </AboutContainer>
       </AboutPage>
     </AboutStyled>

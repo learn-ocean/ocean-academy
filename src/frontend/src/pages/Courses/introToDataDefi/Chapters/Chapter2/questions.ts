@@ -1,12 +1,17 @@
 export const questions = [
     {
-        question: "How do you use Compute to Data?",
+        question: "What can you do on the Ocean Market?",
         answers: [
-            "Content needed",
-            "Content needed",
-            "Content needed",
-            "Pls write content here"
+	        "Get paid to provide access to your own data and data services",
+	        "Buy access to a private dataset instantly",
+	        "Browse the market and potentially evaluate datasets for free",
+	        "Participate in the data economy by investing in datasets"
         ],
-        responses: [],
+        responses: [
+	        "Get paid to provide access to your own data and data services",
+	        "Buy access to a private dataset instantly",
+	        "Browse the market and potentially evaluate datasets for free",
+	        "Participate in the data economy by investing in datasets"
+        ],
     }
 ]

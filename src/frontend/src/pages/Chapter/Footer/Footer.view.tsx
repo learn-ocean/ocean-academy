@@ -1,12 +1,16 @@
-import { Button } from 'app/App.components/Button/Button.controller'
-
-// band-aid hardcode import. fix later.
-import { chapterData } from 'pages/Courses/ocean101/Chapters/Chapters.data'
 import * as React from 'react'
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
+import { Button } from 'app/App.components/Button/Button.controller'
+// band-aid hardcode import. fix later.
+import { chapterData as chapterDataOcean101 } from 'pages/Courses/introToDataDefi/Chapters/Chapters.data'
+// band-aid hardcode import. fix later.
+import { chapterData as chapterDataDefi } from 'pages/Courses/ocean101/Chapters/Chapters.data'
+
 import { FooterStyled } from './Footer.style'
+
+const chapterData = chapterDataOcean101.concat(chapterDataDefi);
 
 export const FooterView = () => {
   const { pathname } = useLocation()

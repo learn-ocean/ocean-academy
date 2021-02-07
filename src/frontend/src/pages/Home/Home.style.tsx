@@ -1,8 +1,10 @@
 import styled from 'styled-components/macro'
+
 import { FullPage } from 'styles'
 
 export const HomeCourse = styled.div`
   width: 100%;
+  max-width: 850px;
   margin: auto;
   padding: 50px;
   text-align: center;
@@ -59,6 +61,19 @@ export const HomeStyled = styled.div`
     width: 55%;
     z-index: -1;
     margin-left: auto;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+	0% {
+		transform: translate(0px, 0px);
+	}
+	50% {
+		transform: translate(10px, -10px);
+	}
+	100% {
+		transform: translate(0px, 0px);
+	}
 }
 
   img {
@@ -83,7 +98,7 @@ export const HomeContainer = styled.div`
   width: 44vw;
   /* margin-top: calc(30vh - 130px);
   margin-bottom: calc(30vh - 200px); */
-  margin: 15vw 5vw;
+  margin: 15vw 10vw;
 
   > h1 {
     margin-bottom: 10px;

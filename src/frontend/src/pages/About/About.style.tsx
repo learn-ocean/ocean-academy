@@ -19,7 +19,7 @@ export const AboutPage = styled(FullPage)``
 
 export const AboutContainer = styled.div`
   width: 590px;
-  margin-top: calc(30vh - 130px);
+  margin: calc(30vh - 130px);
 
   > h1 {
     margin-bottom: 10px;

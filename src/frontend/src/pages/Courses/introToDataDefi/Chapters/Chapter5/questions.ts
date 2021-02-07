@@ -1,12 +1,19 @@
 export const questions = [
     {
-        question: "How do you use Compute to Data?",
+        question: "Which of the following statements are true?",
         answers: [
-            "Content needed",
-            "Content needed",
-            "Content needed",
-            "Pls write content here"
+            "Selling data or algorithms is a way to earn on Ocean Market",
+            "You can hodl datatokens like any other ERC-20 token in your Ethereum wallet",
+            "Hodling a datatoken makes sense when you anticipate the price to go down",
+            "OCEAN staking is the act of adding liquidity to an OCEAN-datatoken AMM pool"
         ],
-        responses: [],
+        responses: [
+            "Selling data or algorithms is a way to earn on Ocean Market",
+            "You can hodl datatokens like any other ERC-20 token in your Ethereum wallet",
+            "OCEAN staking is the act of adding liquidity to an OCEAN-datatoken AMM pool"
+        ],
     }
 ]
+
+
+

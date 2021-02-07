@@ -1,12 +1,17 @@
 export const questions = [
     {
-        question: "How do you use Compute to Data?",
+        question: "What are the benefits of OCEAN-datatoken AMM pools?",
         answers: [
-            "Content needed",
-            "Content needed",
-            "Content needed",
-            "Pls write content here"
+            "Datasets can be dynamically priced by the market",
+			"Liquidity providers staking on a dataset are the equivalent of data curators",
+			"Staking in OCEAN-datatoken AMM pools is risk free"
         ],
-        responses: [],
+        responses: [
+            "Datasets can be dynamically priced by the market",
+            "Liquidity providers staking on a dataset are the equivalent of data curators"
+        ],
     }
 ]
+
+
+
