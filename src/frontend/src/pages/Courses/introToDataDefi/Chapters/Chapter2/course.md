@@ -19,9 +19,9 @@ In addition to a description, you can also download a sample if the publisher ha
 
 <img src="/images/defi/chapter_2_2.jpg" />
 
-**Investing in data**. If you don’t have any data to buy or sell, you can still participate in the data economy. How? Stay tuned, we will be exploring these concepts and more in later chapters.
+**Investing in data**. If you don’t have any data to buy or sell, you can still participate in the data economy. How? By investing in data. We will be exploring this in detail in later chapters.
 
-**Consuming a dataset.** First, you need to connect your Web3 Wallet to the Ocean Market, otherwise you won’t be able to interact with the blockchain, and make sure you have enough OCEAN in your wallet. Then, simply head over to the dataset you are interested in, and under the “USE” tab, press the buy button (you will be asked to approve and validate the transaction which requires some ETH). Congratulations, you can now download the data!
+**Consuming a dataset.** First, you need to connect your Web3 Wallet to the Ocean Market, otherwise you won’t be able to interact with the blockchain. Then, simply head over to the dataset you are interested in, and under the “USE” tab, press the buy button (you will be asked to approve and validate the transaction which requires some ETH, and some OCEAN). Congratulations, you can now download the data!
 
 <img src="/images/defi/chapter_2_3.jpg" />
 
