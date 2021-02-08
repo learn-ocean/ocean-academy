@@ -70,7 +70,7 @@ You should look for undervalued datasets and “hidden gems”. Hodling a datato
 **How do I hodl datatokens?**
 You can hodl datatokens like any other ERC-20 tokens in your Ethereum wallet. Connect your wallet, browse to the dataset of your choice, navigate to the TRADE tab and buy the amount you like.
 
-<img src="/images/defi/chapter_5_1.jpg" />
+<img  src="/images/defi/chapter_5_1.jpg" alt="image-20210208105704984" width="500" />
 
 **Should I stake or hodl a datatoken?**
 There is no definite answer. When staking on a dataset, you earn staking rewards from transaction fees. When hodling a datatoken you don’t earn from transaction fees, but you participate in the price movement of the datatoken. It gives you more upside when the price goes up and more downside when the price goes down. So what option to choose depends on your personal willingness to take risks.

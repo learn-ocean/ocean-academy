@@ -19,6 +19,11 @@ export const TermsPage = styled(FullPage)``
 
 export const TermsContainer = styled.div`
   margin: calc(30vh - 130px);
+  @media (max-width: 800px) {
+    padding: 50px;
+    margin: 0;
+  }
+  
   > h1 {
     margin-bottom: 10px;
   }
