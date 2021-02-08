@@ -21,7 +21,7 @@ export const HomeCourse = styled.div`
   }
 
   @media (max-width: 600px) {
-    padding: 0px 25px 0px 25px
+    padding: 0px 25px 0px 25px;
   }
 `
 
