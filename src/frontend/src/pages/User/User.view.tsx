@@ -107,7 +107,7 @@ export const UserView = ({
       <UserCard>
         <UserProgress>
           {chapterData.map((chapter: ChapterData) => {
-            const done = user.progress && user.progress.indexOf(chapter.pathname) >= 0
+            const done = user.progress && user.progress.indexOf(chapter.pathname.replace("/ocean101", "")) >= 0
             return (
               <Link to={chapter.pathname}>
                 <UserChapter key={chapter.pathname} done={done}>
