@@ -10,7 +10,7 @@ import { chapterData as chapterDataDefi } from 'pages/Courses/ocean101/Chapters/
 
 import { FooterStyled } from './Footer.style'
 
-const chapterData = chapterDataOcean101.concat(chapterDataDefi);
+const chapterData = chapterDataDefi.concat(chapterDataOcean101);
 
 export const FooterView = () => {
   const { pathname } = useLocation()

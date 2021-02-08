@@ -21,7 +21,7 @@ export const AboutView = () => {
             Protocol. So was born Ocean Academy.
           </p>
           <ButtonContainer>
-          <a href="https://discord.gg/6DkV4jVy">
+          <a href="https://discord.gg/BPPHQksyPd">
               <Button text="JOIN US ON DISCORD" color="primary" />
             </a>
             <a href="https://github.com/learn-ocean/ocean-academy" target="_blank" rel="noopener noreferrer">
