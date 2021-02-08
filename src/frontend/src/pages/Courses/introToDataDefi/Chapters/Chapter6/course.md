@@ -29,7 +29,7 @@ First of all, you can start by evaluating the publisher. The risk of rug pulls a
 
 The Ocean Market is designed for you to be able to conveniently find information about a publisher. If a publisher uses 3Box and you hover your cursor over the profile information, a box appears that shows the publishers website, social media and Github links. 3Box is a service that links all of them to the publisher's verified Ethereum address.
 
-<img src="/images/defi/chapter_6_0.jpg" />
+<img src="/images/defi/chapter_6_0.jpg" width="500" />
 
 Online resources, such as Twitter, LinkedIn, Github, websites and blogs can be helpful to learn more about a data publisher. You can also check the publishers’ transaction history on an Ethereum blockchain explorer, such as Etherscan, which is linked in the dataset description header as well.
 
@@ -49,7 +49,7 @@ No matter how good the data is, the dataset tokenomics will largely impact its p
 
 Another criteria to pay attention to is the distribution of liquidity pool shares. The shares of the pool creator are displayed in the POOL tab. Note that data providers always start with 100% pool share at launch. You can check the pool share of other liquidity providers as well by following the “Pool” link to Etherscan.
 
-<img src="/images/defi/chapter_6_1.jpg" />
+<img src="/images/defi/chapter_6_1.jpg" width="500" />
 
 **Price**
 The price of a datatoken depends on the supply of tokens in the liquidity pool and the number of OCEAN tokens staked. But how does this relate to the real value of the data?
