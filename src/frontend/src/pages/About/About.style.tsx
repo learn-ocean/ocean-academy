@@ -20,7 +20,12 @@ export const AboutPage = styled(FullPage)``
 export const AboutContainer = styled.div`
   width: 590px;
   margin: calc(30vh - 130px);
-
+  
+  @media (max-width: 800px) {
+    padding: 50px;
+    margin: 0;
+  }
+  
   > h1 {
     margin-bottom: 10px;
   }
