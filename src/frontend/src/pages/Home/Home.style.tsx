@@ -19,6 +19,10 @@ export const HomeCourse = styled.div`
   > p {
     font-size: 20px;
   }
+
+  @media (max-width: 600px) {
+    padding: 0px 25px 0px 25px
+  }
 `
 
 export const HomeCourseGridWrapper = styled.div`
