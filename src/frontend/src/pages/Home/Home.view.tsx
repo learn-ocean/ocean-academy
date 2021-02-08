@@ -3,13 +3,12 @@ import { CourseBox } from 'app/App.components/CourseBox/CourseBox.controller'
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 
-import { HomeContainer, HomeCourse, HomeCourseGridWrapper, HomeCourseGrid, HomePage, HomeStyled } from './Home.style'
+import { HomeContainer, HomeCourse, HomeCourseGridWrapper, HomeCourseGrid, HomeStyled } from './Home.style'
 
 export const HomeView = () => {
   return (
     <HomeStyled>
       <img className={"mantaray"} alt="mantaray-animated" src="/mantaray-full.svg" />
-      <HomePage>
         <HomeContainer>
           {/*Removed "and analytic services", analytics is also data. providing clear and concise header */}
           <h1>Learn to monetize data using blockchain technology</h1>
@@ -46,9 +45,9 @@ export const HomeView = () => {
                 />
               </Link>
 
-              <Link to={'introToDataDefi/chapter-1'}>
+              <Link to={'introToDataDefi/chapter-1'} >
                 <CourseBox
-                  title={"Intro To Data Defi"}
+                  title={"Intro To Data DeFi"}
                   shortDescription={"Introduction to Decentralized Finance with Data"}
                   noChapters={6}
                   completed={false}
@@ -58,7 +57,6 @@ export const HomeView = () => {
             </HomeCourseGrid>
           </HomeCourseGridWrapper>
         </HomeStyled>
-      </HomePage>
     </HomeStyled>
   )
 }

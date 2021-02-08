@@ -25,9 +25,8 @@ export const HomeCourseGridWrapper = styled.div`
   width: 100%;
   max-width: 850px;
   margin: auto;
-  padding: 50px 50px 50px 50px;
+ // padding: 50px 50px 50px 50px;
   text-align: center;
-  left: 0;
 
   border-top: 1px solid rgb(0, 0, 0);
   border-bottom: 1px solid rgb(0, 0, 0);
@@ -55,22 +54,18 @@ export const HomeCourseGrid = styled.div`
   }
   @media (max-width: 600px) {
     grid-template-columns: auto;
-  }
-  @media (max-width: 600px) {
-    margin: 0;
+    grid-gap: 10px;
   }
 `
 
 export const HomeStyled = styled.div`
   position: relative;
+  margin: 0;
+  padding: 0;
 
   .about {
-    a {
-      button {
-        width: 161px;
-        margin-top: 20px;
-      }
-    }
+    padding: 0px;
+    max-width: 550px;
   }
 
   img.mantaray {
@@ -81,19 +76,35 @@ export const HomeStyled = styled.div`
     z-index: -1;
     margin-left: auto;
     animation: float 6s ease-in-out infinite;
-}
+  }
 
-@keyframes float {
-	0% {
-		transform: translate(0px, 0px);
-	}
-	50% {
-		transform: translate(10px, -10px);
-	}
-	100% {
-		transform: translate(0px, 0px);
-	}
-}
+  img.mantaray {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 55%;
+    z-index: -1;
+    margin-left: auto;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @media (max-width: 400px) {
+    img.mantaray {
+      display: none;
+    }
+  }
+
+  @keyframes float {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    50% {
+      transform: translate(10px, -10px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
 
   img {
     position: absolute;
@@ -108,7 +119,6 @@ export const HomeStyled = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
   }
-
 `
 
 export const HomePage = styled(FullPage)``
@@ -134,6 +144,6 @@ export const HomeContainer = styled.div`
   }
 
   @media (max-width: 700px) {
-    width: 90vw;
+    width: 82vw;
   }
 `
