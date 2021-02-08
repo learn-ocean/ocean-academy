@@ -136,10 +136,23 @@ export const HomeContainer = styled.div`
     margin-bottom: 10px;
   }
 
-  > a > button {
-    margin-top: 20px;
+  > div > a > button {
     width: 160px;
   }
+
+  .communityButton {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 375px) {
+    .communityButton {
+      flex-direction: column;
+    }
+  }
+
+
 
   span {
     font-size: 16px;

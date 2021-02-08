@@ -1,9 +1,10 @@
-import { Button } from 'app/App.components/Button/Button.controller'
-import { CourseBox } from 'app/App.components/CourseBox/CourseBox.controller'
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 
-import { HomeContainer, HomeCourse, HomeCourseGridWrapper, HomeCourseGrid, HomeStyled } from './Home.style'
+import { Button } from 'app/App.components/Button/Button.controller'
+import { CourseBox } from 'app/App.components/CourseBox/CourseBox.controller'
+
+import { HomeContainer, HomeCourse, HomeCourseGrid, HomeCourseGridWrapper, HomeStyled } from './Home.style'
 
 export const HomeView = () => {
   return (
@@ -16,19 +17,20 @@ export const HomeView = () => {
             Ocean Academy 101 is a community initiative providing a simple and practical introduction to Ocean Protocol
             starting from zero. For free.
           </p>
-
-          <Link to="/ocean101/chapter-1">
-            <Button text="GET STARTED" color="primary" />
-          </Link>
+          <div className={"communityButton"}>
+            <Link to="/ocean101/chapter-1">
+              <Button text="GET STARTED" color="primary" />
+            </Link>
+            <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/P264XprdJy">
+              <Button text="JOIN THE COMMUNITY" color="primary" />
+            </a>
+          </div>
         </HomeContainer>
 
         <HomeCourse className={"about"}>
           <p>Through an interactive experience, you will learn to use Ocean Protocol to create value from data science in the Web3 space.</p>
           <p><b>Ocean101</b> provides a 23-modules introduction and gives an official completion certificate writable on the blockchain (NFT).</p>
           <p><b>Data DeFi</b> is a 6-modules overview of Decentralized Finance with tokenized data assets.</p>
-          {/* <Link to="/ocean101/chapter-1">
-            <Button text="GET STARTED" color="primary" />
-          </Link> */}
         </HomeCourse>
 
         <HomeStyled className={"modules"}>
