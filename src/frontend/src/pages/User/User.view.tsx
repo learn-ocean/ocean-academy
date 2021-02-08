@@ -7,8 +7,8 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { PublicUser } from 'shared/user/PublicUser'
 
+import { chapterData as chapterDataDefi } from '../Courses/introToDataDefi/Chapters/Chapters.data'
 import { chapterData } from '../Courses/ocean101/Chapters/Chapters.data'
-import { chapterData as chapterDataDefi } from '../Courses/ocean101/Chapters/Chapters.data'
 // prettier-ignore
 import { UserBadge, UserBadgeButtons, UserBadgeInput, UserCard, UserChapter, UserProgress, UserStyled, UserTitle, UserTitle2 } from './User.style'
 
