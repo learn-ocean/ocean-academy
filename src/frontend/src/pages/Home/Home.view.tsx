@@ -3,7 +3,7 @@ import { CourseBox } from 'app/App.components/CourseBox/CourseBox.controller'
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 
-import { HomeContainer, HomeCourse, HomeCourseGrid, HomePage, HomeStyled } from './Home.style'
+import { HomeContainer, HomeCourse, HomeCourseGridWrapper, HomeCourseGrid, HomePage, HomeStyled } from './Home.style'
 
 export const HomeView = () => {
   return (
@@ -24,19 +24,16 @@ export const HomeView = () => {
         </HomeContainer>
 
         <HomeCourse className={"about"}>
-          <h1>About</h1>
-          <p> Through an interactive experience, you will learn to use Ocean Protocol to create value from data science in
-              the Web3 space.</p>
-          <p>You will get your own Ethereum wallet in the first 10 minutes or so.
-          At the end of the 23 modules, you will be handed a completion certificate which grants access to the Ocean
-            Ambassador community.</p>
-          <Link to="/ocean101/chapter-1">
+          <p>Through an interactive experience, you will learn to use Ocean Protocol to create value from data science in the Web3 space.</p>
+          <p><b>Ocean101</b> provides a 23-modules introduction and gives an official completion certificate writable on the blockchain (NFT).</p>
+          <p><b>Data DeFi</b> is a 6-modules overview of Decentralized Finance with tokenized data assets.</p>
+          {/* <Link to="/ocean101/chapter-1">
             <Button text="GET STARTED" color="primary" />
-          </Link>
+          </Link> */}
         </HomeCourse>
 
         <HomeStyled className={"modules"}>
-          <HomeCourse>
+          <HomeCourseGridWrapper>
             <h1>Available Modules</h1>
             <p>Get started on the module you are interested in.</p>
             <HomeCourseGrid>
@@ -59,7 +56,7 @@ export const HomeView = () => {
               </Link>
 
             </HomeCourseGrid>
-          </HomeCourse>
+          </HomeCourseGridWrapper>
         </HomeStyled>
       </HomePage>
     </HomeStyled>

@@ -6,7 +6,26 @@ export const HomeCourse = styled.div`
   width: 100%;
   max-width: 850px;
   margin: auto;
-  padding: 50px;
+  padding: 50px 130px 50px 130px;
+  text-align: center;
+  left: 0;
+
+  border-top: 1px solid rgb(0, 0, 0);
+  border-bottom: 1px solid rgb(0, 0, 0);
+
+  > h1 {
+    margin-bottom: 0;
+  }
+  > p {
+    font-size: 20px;
+  }
+`
+
+export const HomeCourseGridWrapper = styled.div`
+  width: 100%;
+  max-width: 850px;
+  margin: auto;
+  padding: 50px 50px 50px 50px;
   text-align: center;
   left: 0;
 
