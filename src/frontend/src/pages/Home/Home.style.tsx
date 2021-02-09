@@ -137,7 +137,7 @@ export const HomeContainer = styled.div`
   }
 
   > div > a > button {
-    width: 160px;
+    width: 166px;
   }
 
   .communityButton {
