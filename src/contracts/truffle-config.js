@@ -1,8 +1,13 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider')
 require('dotenv').config()
 
+const Web3 = require('web3');
+const web3 = new Web3();
+console.log(web3.utils.toWei('250', 'gwei'));
+
 module.exports = {
   contracts_build_directory: '../frontend/src/abis',
+  // gasPrice: 250000000000,
   compilers: {
     solc: {
       version: '^0.6.0',
@@ -30,6 +35,7 @@ module.exports = {
         return new HDWalletProvider(process.env.MNEMONIC, `https://mainnet.infura.io/v3/${process.env.INFURA_ID}`)
       },
       network_id: 1,
+      gasPrice: web3.utils.toWei('250', 'gwei'),
     },
   },
 }
