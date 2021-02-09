@@ -12,8 +12,8 @@ export const sendEmailForgotPassword: SendEmailForgotPassword = async (email, ca
     to: email,
     from: { name: 'OceanAcademy', email: process.env.FROM_EMAIL as string },
     subject: 'Password reset',
-    text: `Please enter the following : ${captchaIndex} on https://oceanacademy.io/reset-password?key=${token}`,
-    html: `Please enter the following : ${captchaIndex} on <a href="https://oceanacademy.io/reset-password?key=${token}">https://oceanacademy.io/reset-password?key=${token}</a>`,
+    text: `Please enter the following : ${captchaIndex} on https://oceanacademy.io/reset-password/${token}`,
+    html: `Please enter the following : ${captchaIndex} on <a href="https://oceanacademy.io/reset-password/${token}">https://oceanacademy.io/reset-password/${token}</a>`,
   }
 
   await sendgrid.send(message)

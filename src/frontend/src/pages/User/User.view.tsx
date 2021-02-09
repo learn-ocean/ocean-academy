@@ -7,8 +7,8 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { PublicUser } from 'shared/user/PublicUser'
 
+import { chapterData as chapterDataDefi } from '../Courses/introToDataDefi/Chapters/Chapters.data'
 import { chapterData } from '../Courses/ocean101/Chapters/Chapters.data'
-import { chapterData as chapterDataDefi } from '../Courses/ocean101/Chapters/Chapters.data'
 // prettier-ignore
 import { UserBadge, UserBadgeButtons, UserBadgeInput, UserCard, UserChapter, UserProgress, UserStyled, UserTitle, UserTitle2 } from './User.style'
 
@@ -107,7 +107,7 @@ export const UserView = ({
       <UserCard>
         <UserProgress>
           {chapterData.map((chapter: ChapterData) => {
-            const done = user.progress && user.progress.indexOf(chapter.pathname) >= 0
+            const done = user.progress && user.progress.indexOf(chapter.pathname.replace("/ocean101", "")) >= 0
             return (
               <Link to={chapter.pathname}>
                 <UserChapter key={chapter.pathname} done={done}>
