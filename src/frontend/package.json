@@ -25,7 +25,7 @@
     "import-shared": "rm -Rf src/shared && cp -R ../api/src/shared src/shared"
   },
   "dependencies": {
-    "@monaco-editor/react": "3.2.1",
+    "@monaco-editor/react": "3.4.1",
     "@redux-offline/redux-offline": "^2.6.0",
     "axios": "^0.21.1",
     "babel-loader": "8.1.0",

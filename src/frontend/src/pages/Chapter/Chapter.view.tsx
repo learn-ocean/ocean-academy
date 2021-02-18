@@ -1,7 +1,7 @@
 //prettier-ignore
 import Editor, { ControlledEditor, DiffEditor, monaco } from '@monaco-editor/react'
-import { Dialog } from 'app/App.components/Dialog/Dialog.controller'
 import { Checkboxes } from 'app/App.components/Checkboxes/Checkboxes.controller'
+import { Dialog } from 'app/App.components/Dialog/Dialog.controller'
 import Markdown from 'markdown-to-jsx'
 import * as PropTypes from 'prop-types'
 import * as React from 'react'

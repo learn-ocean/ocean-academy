@@ -1966,10 +1966,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^3.0.0"
 
-"@monaco-editor/react@3.2.1":
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/@monaco-editor/react/-/react-3.2.1.tgz#3482636873c4739a8e7e9a5e09dd0718920f2c6b"
-  integrity sha512-x9ae9fnX9J3zqyB4Df2+hSBzc9xLL6V0LQ6VZP0gqGJw+KnJeNA+/3vHwUGqcVrcKRK3HrEM3TT/tRguJfyjEA==
+"@monaco-editor/react@3.4.1":
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/@monaco-editor/react/-/react-3.4.1.tgz#2a37dc29340657569048762ae6b7ebf82b46a152"
+  integrity sha512-72W+Lv2UVgv8oNTyJKurSSCYf9WIw0Kg9/ZZ4b7E8HPNMge7Fj0SLiCtaEbyaCq2zfy/sWzA5JWkDq5jIOJtsQ==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
