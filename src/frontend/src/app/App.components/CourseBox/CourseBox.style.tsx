@@ -8,6 +8,7 @@ export const ChaptersIconStyled = styled.div`
 
 export const CourseBoxStyled = styled.div`
     margin: 20px;
+    height: 80%;
     background-color: rgba(196,196,196,.14);
     color: white;
     border: 1px solid #c4c4c4;
