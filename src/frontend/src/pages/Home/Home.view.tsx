@@ -13,8 +13,7 @@ export const HomeView = () => {
           {/*Removed "and analytic services", analytics is also data. providing clear and concise header */}
           <h1>Learn to monetize data using blockchain technology</h1>
           <p>
-            Ocean Academy 101 is a community initiative providing a simple and practical introduction to Ocean Protocol
-            starting from zero. For free.
+          Ocean Academy 101 is a community initiative providing a simple and practical introduction to Ocean Protocol starting from zero. For free. Anyone who successfully completes Ocean 101 can go on to become and Ocean Ambassador. 
           </p>
           <div className={"communityButton"}>
             <Link to="/ocean101/chapter-1">
@@ -40,7 +39,7 @@ export const HomeView = () => {
               <Link to={'ocean101/chapter-1'}>
                 <CourseBox
                   title={"Ocean 101"}
-                  shortDescription={"Community initiative providing a simple and practical introduction to Ocean Protocol. Anyone who successfully completes Ocean 101 can become an Ocean Ambassador"}
+                  shortDescription={"Learn the fundamentals of Ocean, get your ETH wallet in 10 minutes!"}
                   noChapters={23}
                   completed={false}
                 />
@@ -49,7 +48,7 @@ export const HomeView = () => {
               <Link to={'introToDataDefi/chapter-1'} >
                 <CourseBox
                   title={"Intro To Data DeFi"}
-                  shortDescription={"Short course introducing the general concepts of Decentralized Finance and Data Economics."}
+                  shortDescription={"Introduction to Decentralized Finance with Data"}
                   noChapters={6}
                   completed={false}
                 />
