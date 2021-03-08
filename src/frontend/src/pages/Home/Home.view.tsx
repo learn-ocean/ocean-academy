@@ -1,8 +1,7 @@
-import * as React from 'react'
-import { Link } from 'react-router-dom'
-
 import { Button } from 'app/App.components/Button/Button.controller'
 import { CourseBox } from 'app/App.components/CourseBox/CourseBox.controller'
+import * as React from 'react'
+import { Link } from 'react-router-dom'
 
 import { HomeContainer, HomeCourse, HomeCourseGrid, HomeCourseGridWrapper, HomeStyled } from './Home.style'
 
@@ -28,9 +27,9 @@ export const HomeView = () => {
         </HomeContainer>
 
         <HomeCourse className={"about"}>
-          <p>Through an interactive experience, you will learn to use Ocean Protocol to create value from data science in the Web3 space.</p>
-          <p><b>Ocean101</b> provides a 23-modules introduction and gives an official completion certificate writable on the blockchain (NFT).</p>
-          <p><b>Data DeFi</b> is a 6-modules overview of Decentralized Finance with tokenized data assets.</p>
+          <p>Through a free, interactive experience, you will learn to use Ocean Protocol to create value from data science in the Web3 space.</p>
+          <p><b>Ocean101</b> provides a 23-module introduction and gives an official completion certificate writable on the blockchain (NFT).</p>
+          <p><b>Data DeFi</b> is a 6-module overview of Decentralized Finance with tokenized data assets.</p>
         </HomeCourse>
 
         <HomeStyled className={"modules"}>
@@ -41,7 +40,7 @@ export const HomeView = () => {
               <Link to={'ocean101/chapter-1'}>
                 <CourseBox
                   title={"Ocean 101"}
-                  shortDescription={"Learn the fundamentals of Ocean, get your ETH wallet in 10 minutes!"}
+                  shortDescription={"Community initiative providing a simple and practical introduction to Ocean Protocol. Anyone who successfully completes Ocean 101 can become an Ocean Ambassador"}
                   noChapters={23}
                   completed={false}
                 />
@@ -50,7 +49,7 @@ export const HomeView = () => {
               <Link to={'introToDataDefi/chapter-1'} >
                 <CourseBox
                   title={"Intro To Data DeFi"}
-                  shortDescription={"Introduction to Decentralized Finance with Data"}
+                  shortDescription={"Short course introducing the general concepts of Decentralized Finance and Data Economics."}
                   noChapters={6}
                   completed={false}
                 />
