@@ -1,8 +1,7 @@
-import * as React from 'react'
-import { Link } from 'react-router-dom'
-
 import { Button } from 'app/App.components/Button/Button.controller'
 import { CourseBox } from 'app/App.components/CourseBox/CourseBox.controller'
+import * as React from 'react'
+import { Link } from 'react-router-dom'
 
 import { HomeContainer, HomeCourse, HomeCourseGrid, HomeCourseGridWrapper, HomeStyled } from './Home.style'
 
@@ -14,8 +13,7 @@ export const HomeView = () => {
           {/*Removed "and analytic services", analytics is also data. providing clear and concise header */}
           <h1>Learn to monetize data using blockchain technology</h1>
           <p>
-            Ocean Academy 101 is a community initiative providing a simple and practical introduction to Ocean Protocol
-            starting from zero. For free.
+          Ocean Academy 101 is a community initiative providing a simple and practical introduction to Ocean Protocol starting from zero. For free. Anyone who successfully completes Ocean 101 can go on to become and Ocean Ambassador. 
           </p>
           <div className={"communityButton"}>
             <Link to="/ocean101/chapter-1">
@@ -28,9 +26,9 @@ export const HomeView = () => {
         </HomeContainer>
 
         <HomeCourse className={"about"}>
-          <p>Through an interactive experience, you will learn to use Ocean Protocol to create value from data science in the Web3 space.</p>
-          <p><b>Ocean101</b> provides a 23-modules introduction and gives an official completion certificate writable on the blockchain (NFT).</p>
-          <p><b>Data DeFi</b> is a 6-modules overview of Decentralized Finance with tokenized data assets.</p>
+          <p>Through a free, interactive experience, you will learn to use Ocean Protocol to create value from data science in the Web3 space.</p>
+          <p><b>Ocean101</b> provides a 23-module introduction and gives an official completion certificate writable on the blockchain (NFT).</p>
+          <p><b>Data DeFi</b> is a 6-module overview of Decentralized Finance with tokenized data assets.</p>
         </HomeCourse>
 
         <HomeStyled className={"modules"}>
