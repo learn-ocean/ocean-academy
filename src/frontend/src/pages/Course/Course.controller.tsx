@@ -10,7 +10,9 @@ export interface Course {
 export type CourseData = {
     path: string;
     pathname: string;
-    name: string;
+    title: string;
+    description: string;
+    noChapters: number;
     data: Course;
 }
 
