@@ -1,1 +1,1 @@
-// For any problems or contributions contact us oceanacademy@protonmail.com
+// For any problem or for contributions contact us at oceanacademy@protonmail.com
