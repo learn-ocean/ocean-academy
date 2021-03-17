@@ -1,13 +1,13 @@
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
-import { Input } from '../Input/Input.controller'
 
+import { Input } from '../Input/Input.controller'
 import { SearchBoxStyled } from './SearchBar.style'
 
 type SearchBarViewProps = {
     placeholder: string
     filterItems: (e: string, searchFor: string) => void
-    searchFor: string
+    searchFor: 'Courses'
 }
 
 export const SearchBarView = ({ placeholder, filterItems, searchFor }: SearchBarViewProps) => {

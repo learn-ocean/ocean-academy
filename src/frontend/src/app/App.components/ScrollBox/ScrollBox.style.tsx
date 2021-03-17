@@ -1,6 +1,8 @@
 import styled from 'styled-components/macro'
 
 export const ScrollBoxStyled = styled.div`
+    overflow: scroll;
+    
     #scrollBoxContainer::-webkit-scrollbar {
         width: 10px;
     }

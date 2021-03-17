@@ -1,4 +1,5 @@
 import * as React from 'react'
+
 import { SearchBarView } from './SearchBar.view'
 
 type SearchBarProps = {
@@ -6,8 +7,15 @@ type SearchBarProps = {
 }
 
 export const SearchBar = ({ searchFor }: SearchBarProps) => {
+
+    const filterItems = (e: string, searchFor: string) => {
+        // change the Courses shown. Add to state.
+    }
+    
     return (
-        <SearchBar
+        <SearchBarView
+            placeholder={'Search'}
+            filterItems={filterItems}
             searchFor={searchFor}
         />
     )

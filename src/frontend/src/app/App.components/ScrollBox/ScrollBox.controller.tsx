@@ -1,4 +1,6 @@
+import * as PropTypes from 'prop-types'
 import * as React from 'react'
+
 import { ScrollBoxView } from './ScrollBox.view'
 
 type ScrollBoxProps = {
@@ -12,3 +14,9 @@ export const ScrollBox = ({ children }: ScrollBoxProps) => {
         />
     )
 }
+
+ScrollBoxView.propTypes = {
+    component: PropTypes.oneOfType([PropTypes.func.isRequired, PropTypes.object.isRequired]),
+}
+
+ScrollBoxView.defaultProps = {}

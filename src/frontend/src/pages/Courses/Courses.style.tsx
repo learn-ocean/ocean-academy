@@ -1,9 +1,7 @@
 import styled from 'styled-components'
 
 export const CoursesContainer = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
+    display: relative;
     height: calc(100vh - 130px);
     margin: 70px 20px 0;
 
