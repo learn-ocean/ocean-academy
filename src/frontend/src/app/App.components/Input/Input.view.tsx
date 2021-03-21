@@ -113,3 +113,25 @@ InputView.defaultProps = {
   inputStatus: undefined,
   type: 'text',
 }
+
+SearchInputView.propTypes = {
+  icon: PropTypes.string,
+  placeholder: PropTypes.string,
+  name: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+  onBlur: PropTypes.func.isRequired,
+  inputStatus: PropTypes.string,
+  type: PropTypes.string,
+  errorMessage: PropTypes.string,
+}
+
+SearchInputView.defaultProps = {
+  icon: undefined,
+  placeholder: undefined,
+  name: undefined,
+  value: undefined,
+  inputStatus: undefined,
+  type: 'text',
+}
+
