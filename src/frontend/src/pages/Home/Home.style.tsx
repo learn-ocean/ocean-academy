@@ -1,5 +1,4 @@
 import styled from 'styled-components/macro'
-
 import { FullPage } from 'styles'
 
 export const HomeCourse = styled.div`
@@ -25,7 +24,7 @@ export const HomeCourseGridWrapper = styled.div`
   width: 100%;
   max-width: 850px;
   margin: auto;
- // padding: 50px 50px 50px 50px;
+  // padding: 50px 50px 50px 50px;
   text-align: center;
 
   border-top: 1px solid rgb(0, 0, 0);

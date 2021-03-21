@@ -1,7 +1,7 @@
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
 
-import { InputView } from './Input.view'
+import { InputView, SearchInputView } from './Input.view'
 
 type InputProps = {
   icon?: string
@@ -41,6 +41,32 @@ export const Input = ({
   )
 }
 
+export const SearchInput = ({
+  icon,
+  placeholder,
+  name,
+  value,
+  onChange,
+  onBlur,
+  inputStatus,
+  type,
+  errorMessage,
+}: InputProps) => {
+  return (
+    <SearchInputView 
+      type={type}
+      icon={icon}
+      name={name}
+      placeholder={placeholder}
+      value={value}
+      onChange={onChange}
+      onBlur={onBlur}
+      inputStatus={inputStatus}
+      errorMessage={errorMessage}
+    />
+  )
+}
+
 Input.propTypes = {
   icon: PropTypes.string,
   placeholder: PropTypes.string,
@@ -54,6 +80,27 @@ Input.propTypes = {
 }
 
 Input.defaultProps = {
+  icon: undefined,
+  placeholder: undefined,
+  name: undefined,
+  value: undefined,
+  inputStatus: undefined,
+  type: 'text',
+}
+
+SearchInput.propTypes = {
+  icon: PropTypes.string,
+  placeholder: PropTypes.string,
+  name: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+  onBlur: PropTypes.func.isRequired,
+  inputStatus: PropTypes.string,
+  type: PropTypes.string,
+  errorMessage: PropTypes.string,
+}
+
+SearchInput.defaultProps = {
   icon: undefined,
   placeholder: undefined,
   name: undefined,

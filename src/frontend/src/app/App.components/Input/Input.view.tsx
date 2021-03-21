@@ -1,7 +1,7 @@
-import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import * as React from 'react'
 
-import { InputStyled, InputComponent, InputStatus, InputIcon, InputErrorMessage } from './Input.style'
+import { InputComponent, InputErrorMessage, InputIcon, InputStatus, InputStyled, SearchInputStyled } from './Input.style'
 
 type InputViewProps = {
   icon?: string
@@ -14,6 +14,19 @@ type InputViewProps = {
   type: string
   errorMessage?: string
 }
+
+type SearchInputViewProps = {
+  icon?: string
+  placeholder: string
+  name?: string
+  value?: string
+  onChange: any
+  onBlur: any
+  inputStatus?: 'success' | 'error'
+  type: string
+  errorMessage?: string
+}
+
 
 export const InputView = ({
   icon,
@@ -45,6 +58,39 @@ export const InputView = ({
     <InputStatus className={inputStatus} />
     {errorMessage && <InputErrorMessage>{errorMessage}</InputErrorMessage>}
   </InputStyled>
+)
+
+
+export const SearchInputView = ({
+  icon,
+  placeholder,
+  name,
+  value,
+  onChange,
+  onBlur,
+  inputStatus,
+  type,
+  errorMessage,
+}: SearchInputViewProps) => (
+  <SearchInputStyled>
+    {icon && (
+      <InputIcon>
+        <use xlinkHref={`/icons/sprites.svg#${icon}`} />
+      </InputIcon>
+    )}
+    <InputComponent
+      type={type}
+      name={name}
+      className={inputStatus}
+      placeholder={placeholder}
+      value={value}
+      onChange={onChange}
+      onBlur={onBlur}
+      autoComplete={name}
+    />
+    <InputStatus className={inputStatus} />
+    {errorMessage && <InputErrorMessage>{errorMessage}</InputErrorMessage>}
+  </SearchInputStyled>
 )
 
 InputView.propTypes = {
