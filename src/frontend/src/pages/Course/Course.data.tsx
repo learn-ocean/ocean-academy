@@ -7,14 +7,34 @@ import { CourseData } from './Course.controller'
 export const courseData: CourseData[] = [
     {
         path: Ocean101.path,
-        pathname: `/${Ocean101.path}/info`,
-        name: 'Ocean 101',
+        infoPath: `/${Ocean101.path}/info`,
+        title: 'Ocean 101',
+        description: 'Learn the fundamentals of Ocean, get your ETH wallet in 10 minutes!',
+        noChapters: 23,
         data: Ocean101,
     },
+    // {
+    //     path: Ocean101Part2.path,
+    //     infoPath: `/${Ocean101Part2.path}/info`,
+    //     title: 'Ocean 101 Part 2',
+    //     description: '',
+    //     noChapters: 8,
+    //     data: Ocean101Part2,
+    // },
+    // {
+    //     path: Ocean101Part3.path,
+    //     infoPath: `/${Ocean101Part3.path}/info`,
+    //     title: 'Ocean 101 Part 3',
+    //     description: '',
+    //     noChapters: 7,
+    //     data: Ocean101Part3,
+    // },
     {
         path: IntroToDataDefi.path,
-        pathname: `/${IntroToDataDefi.path}/info`,
-        name: 'Intro to Data Defi',
+        infoPath: `/${IntroToDataDefi.path}/info`,
+        title: 'Intro to Data Defi',
+        description: 'Introduction to Decentralized Finance with Data',
+        noChapters: 6,
         data: IntroToDataDefi,
     }
 ]

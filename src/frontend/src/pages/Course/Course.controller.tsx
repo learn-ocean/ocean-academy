@@ -1,5 +1,6 @@
 import * as React from 'react'
-// import { Data } from '../Chapter/Chapter.controller'
+
+// import { CourseView } from '../Chapter/Chapter.controller'
 import { CourseView } from './Course.view'
 
 export interface Course {
@@ -9,8 +10,10 @@ export interface Course {
 
 export type CourseData = {
     path: string;
-    pathname: string;
-    name: string;
+    infoPath: string;
+    title: string;
+    description: string;
+    noChapters: number;
     data: Course;
 }
 

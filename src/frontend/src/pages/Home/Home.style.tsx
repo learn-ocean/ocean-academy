@@ -10,9 +10,6 @@ export const HomeCourse = styled.div`
   text-align: center;
   left: 0;
 
-  border-top: 1px solid rgb(0, 0, 0);
-  border-bottom: 1px solid rgb(0, 0, 0);
-
   > h1 {
     margin-bottom: 0;
   }
@@ -25,7 +22,7 @@ export const HomeCourseGridWrapper = styled.div`
   width: 100%;
   max-width: 850px;
   margin: auto;
- // padding: 50px 50px 50px 50px;
+  // padding: 50px 50px 50px 50px;
   text-align: center;
 
   border-top: 1px solid rgb(0, 0, 0);
@@ -64,10 +61,11 @@ export const HomeStyled = styled.div`
   padding: 0;
 
   .about {
-    padding: 0px;
-    max-width: 550px;
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    max-width: 540px;
     @media (max-width: 600px) {
-      padding: 0px 25px 0px 25px;
+      padding: 20px 25px;
     }
   }
 
@@ -162,4 +160,142 @@ export const HomeContainer = styled.div`
   @media (max-width: 700px) {
     width: 82vw;
   }
+`
+
+export const HomeDescription = styled.div`
+  margin: 50px 10vw;
+  
+ .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
+
+  &:hover {
+    background: rgba(255,255,255,0.1);
+  }
+}
+
+.column {
+  margin: 50px 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+
+  img {
+    padding: 0 10px;
+  }
+  
+  p {
+    max-width: 550px;
+  }
+}
+
+ img {
+    position: relative;
+    padding: 0 10px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  };
+
+  .top-animation {
+    animation: float-top 8s ease-in-out infinite;
+  }
+
+  .bottom-animation {
+    animation: float-bottom 10s ease-in-out infinite;
+  }
+
+  @keyframes float-bottom {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    50% {
+      transform: translate(-8px, 8px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+
+  @keyframes float-top {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    50% {
+      transform: translate(-5px, -4px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+`
+
+
+export const HomeTestimonials = styled.div`
+  margin: 50px 10vw;
+
+  h2 {
+    color: #ff4092;
+    font-weight: bold;
+  }
+  
+ .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
+}
+
+.column {
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  
+  flex: 1;
+
+  a {
+    color: #ffa5cc;
+  }
+
+  .quote {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 50px;
+  height: 100%;
+  border: 1px solid rgba(255, 64, 146, 0.2);
+
+    background: rgba(255, 64, 146, .02);
+  }
+
+  @media (max-width: 500px) {
+    padding: 50px;
+    margin: 15px 0 0 0;
+  }
+
+  img {
+    padding: 0 10px;
+  }
+  
+  p {
+    max-width: 550px;
+  }
+}
 `

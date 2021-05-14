@@ -1,17 +1,16 @@
 import styled, { keyframes } from 'styled-components/macro'
 
-import {
-  backgroundColorDark,
-  borderColor,
-  downColor,
-  primaryColor,
-  upColor,
-  backgroundTextColor,
-} from '../../../styles'
+import { backgroundColorDark, backgroundTextColor, borderColor, downColor, primaryColor, upColor } from '../../../styles'
 
 export const InputStyled = styled.div`
   position: relative;
   margin-bottom: 5px;
+`
+
+export const SearchInputStyled = styled.div`
+  float: right;
+  margin: 20px 0px;
+  position: relative;
 `
 
 export const InputComponent = styled.input`
