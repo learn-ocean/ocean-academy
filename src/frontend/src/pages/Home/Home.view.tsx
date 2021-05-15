@@ -1,8 +1,7 @@
-import * as React from 'react'
-import { Link } from 'react-router-dom'
-
 import { Button } from 'app/App.components/Button/Button.controller'
 import { CourseBox } from 'app/App.components/CourseBox/CourseBox.controller'
+import * as React from 'react'
+import { Link } from 'react-router-dom'
 
 import { HomeContainer, HomeCourseGrid, HomeCourseGridWrapper, HomeDescription, HomeStyled, HomeTestimonials } from './Home.style'
 
@@ -42,7 +41,8 @@ export const HomeView = () => {
             <img className={"bottom-animation"} src="/squid.svg" alt="ocean_mantis" height="250" />
           </div>
           <div className={"column"}>
-            <p>Our interactive modules cover a range of topics and difficulties. Whether you're a web3 expert or someone completely new to crypto, there is something for you.</p>
+            <p>Anyone can join the Ocean Academy community, but becoming a contributor to the academy requires slightly more commitment. Ultimately, you control your path to growth in the web3 data economy.</p>
+            <p>An Ocean Academy Sailor is a proactive self-employed team player who is eager to demonstrate their dedication to the project. We will support your growth and development by helping you with the tools and training to succeed.</p>
           </div>
         </div>
       </HomeDescription>
