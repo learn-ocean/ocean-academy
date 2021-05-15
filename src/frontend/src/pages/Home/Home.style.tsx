@@ -249,7 +249,8 @@ export const HomeTestimonials = styled.div`
     color: #ff4092;
     font-weight: bold;
   }
-  
+
+
  .row {
   display: flex;
   flex-direction: row;
@@ -286,7 +287,9 @@ export const HomeTestimonials = styled.div`
   }
 
   @media (max-width: 500px) {
-    padding: 50px;
+    p {
+      font-size: 16px;
+    }
     margin: 15px 0 0 0;
   }
 
