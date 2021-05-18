@@ -1,6 +1,7 @@
 import { Button } from 'app/App.components/Button/Button.controller'
 import { CourseBox } from 'app/App.components/CourseBox/CourseBox.controller'
 import { SearchInput } from 'app/App.components/Input/Input.controller'
+import { courseData } from 'pages/Course/Course.data'
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 
@@ -11,9 +12,13 @@ export const HomeView = () => {
   // const searchFor = useSelector()
   const filterItems = (
     filter: string, 
-    // searchFor: 'courseName' | 'description'
+    searchFor: 'courseName' | 'description'='courseName'
   ) => {
-
+    console.log(`e = `)
+    console.log(filter)
+    if (searchFor === 'courseName') {
+      courseData.filter(item => item.title.toLocaleLowerCase().includes(filterText))
+    }
   }
 
   return (
@@ -74,7 +79,7 @@ export const HomeView = () => {
               <Link to={'introToDataDefi/chapter-1'} >
                 <CourseBox
                   title={"Intro To Data DeFi"}
-                  shortDescription={"Introduction to Decentralized Finance with Data"}
+                  shortDescription={"Introduction to Decentralized Finance with Data."}
                   noChapters={6}
                   completed={false}
                 />

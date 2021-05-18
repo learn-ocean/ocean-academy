@@ -9,12 +9,14 @@ export const courseData: CourseData[] = [
         path: Ocean101.path,
         pathname: `/${Ocean101.path}/info`,
         name: 'Ocean 101',
+        description: 'Learn the fundamentals of Ocean, get your ETH wallet in 10 minutes!',
         data: Ocean101,
     },
     {
         path: IntroToDataDefi.path,
         pathname: `/${IntroToDataDefi.path}/info`,
         name: 'Intro to Data Defi',
+        description: 'Introduction to Decentralized Finance with Data.',
         data: IntroToDataDefi,
     }
 ]
