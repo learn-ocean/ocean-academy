@@ -14,6 +14,12 @@ export const InputStyled = styled.div`
   margin-bottom: 5px;
 `
 
+export const SearchInputStyled = styled.div`
+  float: right;
+  margin: 20px 0px;
+  position: relative;
+`
+
 export const InputComponent = styled.input`
   width: 100%;
   display: block;
