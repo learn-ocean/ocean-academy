@@ -64,6 +64,7 @@ export const HomeView = () => {
                 inputStatus={undefined}
                 errorMessage={undefined}
             />
+            
             <HomeCourseGrid>
               <Link to={'ocean101/chapter-1'}>
                 <CourseBox
