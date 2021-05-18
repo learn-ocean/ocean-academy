@@ -14,10 +14,8 @@ export const HomeView = () => {
     filter: string, 
     searchFor: 'courseName' | 'description'='courseName'
   ) => {
-    console.log(`e = `)
-    console.log(filter)
     if (searchFor === 'courseName') {
-      courseData.filter(item => item.title.toLocaleLowerCase().includes(filterText))
+      courseData.filter(item => item.name.toLocaleLowerCase().includes(filter))
     }
   }
 
