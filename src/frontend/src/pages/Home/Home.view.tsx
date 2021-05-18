@@ -7,6 +7,15 @@ import { Link } from 'react-router-dom'
 import { HomeContainer, HomeCourse, HomeCourseGrid, HomeCourseGridWrapper, HomeStyled } from './Home.style'
 
 export const HomeView = () => {
+  
+  // const searchFor = useSelector()
+  const filterItems = (
+    filter: string, 
+    // searchFor: 'courseName' | 'description'
+  ) => {
+
+  }
+
   return (
     <HomeStyled>
       <img className={"mantaray"} alt="mantaray-animated" src="/mantaray-full.svg" />
@@ -43,9 +52,12 @@ export const HomeView = () => {
                 placeholder={"Search for a course"}
                 onBlur={() => { }}
                 type="text"
-                // onChange={(e) => {
-                //  filterItems(e.target.value, searchFor)
-                // }} 
+                onChange={(e) => {
+                  filterItems(
+                    e.target.value, 
+                    // searchFor
+                  )
+                }} 
                 inputStatus={undefined}
                 errorMessage={undefined}
             />
