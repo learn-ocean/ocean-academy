@@ -1,13 +1,6 @@
 import styled, { keyframes } from 'styled-components/macro'
 
-import {
-  backgroundColorDark,
-  borderColor,
-  downColor,
-  primaryColor,
-  upColor,
-  backgroundTextColor,
-} from '../../../styles'
+import { backgroundColorDark, backgroundTextColor, borderColor, downColor, primaryColor, upColor } from '../../../styles'
 
 export const InputStyled = styled.div`
   position: relative;
