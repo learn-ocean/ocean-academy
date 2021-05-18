@@ -13,15 +13,11 @@ export const HomeView = () => {
   
   const [courses, setCourses] = useState<CourseData[]>(courseData)
 
-  // const searchFor = useSelector()
   const filterItems = (
     filter: string, 
-    searchFor: 'courseName' | 'description'='courseName'
   ) => {
-    if (searchFor === 'courseName') {
-      const courses = courseData.filter(item => item.name.toLocaleLowerCase().includes(filter.toLocaleLowerCase()))
-      setCourses(courses)
-    }
+    const courses = courseData.filter(item => item.name.toLocaleLowerCase().includes(filter.toLocaleLowerCase()) || item.description.toLocaleLowerCase().includes(filter.toLocaleLowerCase()))
+    setCourses(courses)
   }
 
   return (
