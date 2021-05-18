@@ -1,8 +1,7 @@
-import * as React from 'react'
-import { Link } from 'react-router-dom'
-
 import { Button } from 'app/App.components/Button/Button.controller'
 import { CourseBox } from 'app/App.components/CourseBox/CourseBox.controller'
+import * as React from 'react'
+import { Link } from 'react-router-dom'
 
 import { HomeContainer, HomeCourse, HomeCourseGrid, HomeCourseGridWrapper, HomeStyled } from './Home.style'
 
@@ -37,6 +36,18 @@ export const HomeView = () => {
           <HomeCourseGridWrapper>
             <h1>Available Modules</h1>
             <p>Get started on the module you are interested in.</p>
+            {/* <SearchInput
+                icon="search"
+                name="Course Search"
+                placeholder={"Search for a course"}
+                onBlur={() => { }}
+                type="text"
+                onChange={(e) => {
+                    filterItems(e.target.value, searchFor)
+                }}
+                inputStatus={undefined}
+                errorMessage={undefined}
+            /> */}
             <HomeCourseGrid>
               <Link to={'ocean101/chapter-1'}>
                 <CourseBox
