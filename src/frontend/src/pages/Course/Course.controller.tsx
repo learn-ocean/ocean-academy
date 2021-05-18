@@ -13,6 +13,7 @@ export type CourseData = {
     pathname: string;
     name: string;
     description: string;
+    noChapters: number;
     data: Course;
 }
 
