@@ -1,12 +1,25 @@
-import * as React from 'react'
-import { Link } from 'react-router-dom'
-
 import { Button } from 'app/App.components/Button/Button.controller'
 import { CourseBox } from 'app/App.components/CourseBox/CourseBox.controller'
+import { SearchInput } from 'app/App.components/Input/Input.controller'
+import { CourseData } from 'pages/Course/Course.controller'
+import { courseData } from 'pages/Course/Course.data'
+import * as React from 'react'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import { HomeContainer, HomeCourse, HomeCourseGrid, HomeCourseGridWrapper, HomeStyled } from './Home.style'
 
 export const HomeView = () => {
+  
+  const [courses, setCourses] = useState<CourseData[]>(courseData)
+
+  const filterItems = (
+    filter: string, 
+  ) => {
+    const courses = courseData.filter(item => item.name.toLocaleLowerCase().includes(filter.toLocaleLowerCase()) || item.description.toLocaleLowerCase().includes(filter.toLocaleLowerCase()))
+    setCourses(courses)
+  }
+
   return (
     <HomeStyled>
       <img className={"mantaray"} alt="mantaray-animated" src="/mantaray-full.svg" />
@@ -37,24 +50,35 @@ export const HomeView = () => {
           <HomeCourseGridWrapper>
             <h1>Available Modules</h1>
             <p>Get started on the module you are interested in.</p>
+            <SearchInput
+                icon="search"
+                name="Course Search"
+                placeholder={"Search for a course"}
+                onBlur={() => { }}
+                type="text"
+                onChange={(e) => {
+                  filterItems(
+                    e.target.value, 
+                    // searchFor
+                  )
+                }} 
+                inputStatus={undefined}
+                errorMessage={undefined}
+            />
+            
             <HomeCourseGrid>
-              <Link to={'ocean101/chapter-1'}>
-                <CourseBox
-                  title={"Ocean 101"}
-                  shortDescription={"Learn the fundamentals of Ocean, get your ETH wallet in 10 minutes!"}
-                  noChapters={23}
-                  completed={false}
-                />
-              </Link>
-
-              <Link to={'introToDataDefi/chapter-1'} >
-                <CourseBox
-                  title={"Intro To Data DeFi"}
-                  shortDescription={"Introduction to Decentralized Finance with Data"}
-                  noChapters={6}
-                  completed={false}
-                />
-              </Link>
+              {courses.map((course) => {
+                return (
+                  <Link key={course.path} to={`${course.path}/chapter-1`}>
+                    <CourseBox
+                      title={course.name}
+                      shortDescription={course.description}
+                      noChapters={course.noChapters}
+                      completed={false}
+                    />
+                  </Link>
+                )
+              })}
 
             </HomeCourseGrid>
           </HomeCourseGridWrapper>
