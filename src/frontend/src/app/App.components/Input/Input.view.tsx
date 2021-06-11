@@ -134,4 +134,3 @@ SearchInputView.defaultProps = {
   inputStatus: undefined,
   type: 'text',
 }
-

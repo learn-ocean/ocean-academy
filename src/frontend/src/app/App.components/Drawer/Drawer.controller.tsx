@@ -3,33 +3,52 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import { State } from 'reducers'
-import { Option } from '../Select/Select.view'
 
-import { hideChapterDrawer, hideMenuDrawer } from './Drawer.actions'
+import { Option } from '../Select/Select.view'
+import { hideChapterDrawer, hideCourseDrawer, hideDataDefiDrawer, hideMenuDrawer, hideOcean101Drawer, showDataDefiDrawer, showOcean101Drawer } from './Drawer.actions'
 import { ChapterDrawerView, LoginDrawerView } from './Drawer.view'
 
 export const ChapterDrawer = () => {
   const dispatch = useDispatch()
-  const showingChapter = useSelector((state: State) => state.chapterDrawer && state.chapterDrawer.showingChapter)
+  const showingChapter = useSelector((state: State) => state.chapterDrawer && state.chapterDrawer.showingChapterDrawer)
+  const currentCourseSelector = useSelector((state: State) => state.individualChapterDrawers.currentCourse)
+
   const { pathname } = useLocation()
 
-  let defaultCourse: Option = { name: "Ocean 101", path: "ocean101" }
-  const [activeCourse, setActiveCourse] = useState<Option>(defaultCourse)
+  let defaultCourseCategory: Option = { name: "category 1", path: "category 1" }
+  const [activeCourseCategory, setActiveCourseCategory] = useState<Option>(defaultCourseCategory)
 
-  function changeCourseCallback(e: Option) {
-    if (e.path === 'ocean101') {
-      const ocean101: Option = {
-        name: "Ocean 101",
-        path: "ocean101"
+
+  function changeCourseCategoryCallback(e: Option) {
+    if (e.path === 'category1') {
+      const category1: Option = {
+        name: "category 1",
+        path: "category1"
       }
-      setActiveCourse(ocean101)
+      setActiveCourseCategory(category1)
     }
-    if (e.path === 'introToDataDefi') {
-      const introToDataDefi: Option = {
-        name: "Intro to Data Defi",
-        path: "introToDataDefi"
+    if (e.path === 'category2') {
+      const category2: Option = {
+        name: "category 2",
+        path: "category2"
       }
-      setActiveCourse(introToDataDefi)
+      setActiveCourseCategory(category2)
+    }
+  }
+
+  function changeChapterState(currentCourse: string) {
+    if (currentCourse === `ocean101`) {
+      if (currentCourseSelector === `ocean101`) {
+        dispatch(hideOcean101Drawer())
+      } else {
+        dispatch(showOcean101Drawer())
+      }
+    } else if (currentCourse === `introToDataDefi`) {
+      if (currentCourseSelector === `introToDataDefi`) {
+        dispatch(hideDataDefiDrawer())
+      } else {
+        dispatch(showDataDefiDrawer())
+      }
     }
   }
 
@@ -40,13 +59,16 @@ export const ChapterDrawer = () => {
   return (
     <ChapterDrawerView
       showingChapters={showingChapter}
-      hideCallback={hideCallback}
+      currentCourse={currentCourseSelector}
       pathname={pathname}
-      activeCourse={activeCourse}
-      changeCourseCallback={changeCourseCallback}
+      activeCourseCategory={activeCourseCategory}
+      hideCallback={hideCallback}
+      changeCategoryCallback={changeCourseCategoryCallback}
+      changeChapterState={changeChapterState}
     />
   )
 }
+
 
 export const LoginDrawer = () => {
   const dispatch = useDispatch()

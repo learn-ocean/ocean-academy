@@ -1,11 +1,24 @@
 import { Button } from 'app/App.components/Button/Button.controller'
 import { CourseBox } from 'app/App.components/CourseBox/CourseBox.controller'
+import { CourseData } from 'pages/Course/Course.controller'
+import { courseData } from 'pages/Course/Course.data'
 import * as React from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { HomeContainer, HomeCourseGrid, HomeCourseGridWrapper, HomeDescription, HomeStyled, HomeTestimonials } from './Home.style'
 
 export const HomeView = () => {
+  
+  const [courses, setCourses] = useState<CourseData[]>(courseData)
+
+  const filterItems = (
+    filter: string, 
+  ) => {
+    const courses = courseData.filter(item => item.title.toLocaleLowerCase().includes(filter.toLocaleLowerCase()) || item.description.toLocaleLowerCase().includes(filter.toLocaleLowerCase()))
+    setCourses(courses)
+  }
+
   return (
     <HomeStyled>
       <img className={"mantaray"} alt="mantaray-animated" src="/mantaray-full.svg" />

@@ -1,23 +1,22 @@
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
+import { IoIosArrowDropdownCircle, IoIosArrowDroprightCircle } from 'react-icons/io'
 import { Link } from 'react-router-dom'
-// import { PublicUser } from 'pages/Course/Course.data'
 import { PublicUser } from 'shared/user/PublicUser'
-import { ChapterData } from '../../../pages/Chapter/Chapter.controller'
-import { chaptersByCourse } from '../../../pages/Course/Course.data'
-// PLACEHOLDER.
-// Use Select menu to choose the  
-// import { chapterData } from '../../../pages/Courses/ocean101/Chapters/Chapters.data'
+
+import { CategoryArray, categoryOptions, ChapterDataDictionary, chaptersByCourse, courseCategoriesData, courseCategoriesDictionaries } from '../../../pages/Course/Course.data'
 import { Select } from '../Select/Select.controller'
 import { Option } from '../Select/Select.view'
-import { DrawerItem, DrawerMask, DrawerStyled, DrawerStyledLogin } from './Drawer.style'
+import { DrawerChapter, DrawerChapters, DrawerCourseTitle, DrawerItem, DrawerMask, DrawerStyled, DrawerStyledLogin, OpenedIcon } from './Drawer.style'
 
 type ChapterDrawerViewProps = {
   showingChapters: boolean
-  hideCallback: () => void
+  currentCourse: string
   pathname: string
-  changeCourseCallback: (e: Option) => void
-  activeCourse: Option
+  activeCourseCategory: Option
+  hideCallback: () => void
+  changeCategoryCallback: (e: Option) => void
+  changeChapterState: (course: string) => void
 }
 
 type LoginDrawerViewProps = {
@@ -37,31 +36,55 @@ type LoggedOutDrawerViewProps = {
   showingMenu: boolean
 }
 
-export const ChapterDrawerView = ({ showingChapters, hideCallback, pathname, changeCourseCallback, activeCourse }: ChapterDrawerViewProps) => (
+
+export const ChapterDrawerView = ({ showingChapters, currentCourse, pathname, activeCourseCategory, hideCallback, changeCategoryCallback, changeChapterState }: ChapterDrawerViewProps) => (
   <>
     <DrawerMask className={`${showingChapters}`} onClick={() => hideCallback()} />
     <DrawerStyled className={`${showingChapters}`}>
       <h1>Chapters</h1>
 
       <Select
-        options={[
-          { name: "Ocean101", path: "ocean101" },
-          { name: "Intro to Data Defi", path: "introToDataDefi" }
-        ]}
-        defaultOption={activeCourse}
-        selectCallback={(e) => changeCourseCallback(e)}
+        options={categoryOptions}
+        defaultOption={activeCourseCategory}
+        selectCallback={(e) => changeCategoryCallback(e)}
       />
 
-      {chaptersByCourse[activeCourse.path].map((chapter: ChapterData) => (
-        <DrawerItem key={chapter.pathname} className={pathname === chapter.pathname ? 'current-path' : 'other-path'}>
-          <Link to={chapter.pathname} onClick={() => hideCallback()}>
-            {chapter.name}
-          </Link>
-        </DrawerItem>
-      ))}
+      {courseCategoriesDictionaries[activeCourseCategory.name].map((course: ChapterDataDictionary) => {
+        return (
+          <>
+          <DrawerCourseTitle>
+            <p>{courseCategoriesData[activeCourseCategory.name][course.name].title}</p>
+            <OpenedIcon>
+              {currentCourse === courseCategoriesData[activeCourseCategory.name][course.name].path ? (
+                  <IoIosArrowDropdownCircle onClick={() => changeChapterState(courseCategoriesData[activeCourseCategory.name][course.name].path)} /> 
+                ) : (
+                  <IoIosArrowDroprightCircle onClick={() => changeChapterState(courseCategoriesData[activeCourseCategory.name][course.name].path)} /> 
+                )
+              }
+            </OpenedIcon>
+          </DrawerCourseTitle>
+
+          <DrawerChapters>
+            {currentCourse === courseCategoriesData[activeCourseCategory.name][course.name].path && (
+              <DrawerChapter>
+                {course.data.map((chapter: any) => (
+                  <DrawerItem key={chapter.pathname} className={pathname === chapter.pathname ? 'current-path' : 'other-path'}>
+                    <Link to={chapter.pathname} onClick={() => hideCallback()}>
+                      {chapter.name}
+                    </Link>
+                  </DrawerItem>
+                ))}
+              </DrawerChapter>
+            )}
+          </DrawerChapters>
+          </>
+        )
+      })}
+
     </DrawerStyled>
   </>
 )
+
 
 export const LoginDrawerView = ({ showingMenu, user, hideCallback, removeAuthUserCallback }: LoginDrawerViewProps) => (
   <>
@@ -127,14 +150,17 @@ function loggedOutDrawer({ showingMenu }: LoggedOutDrawerViewProps) {
 
 ChapterDrawerView.propTypes = {
   showingChapter: PropTypes.bool,
+  currentCourse: PropTypes.string,
   hideCallback: PropTypes.func.isRequired,
   pathname: PropTypes.string.isRequired,
-  changeCourseCallback: PropTypes.func.isRequired,
-  activeCourse: PropTypes.object.isRequired
+  changeCategoryCallback: PropTypes.func.isRequired,
+  activeCourseCategory: PropTypes.object.isRequired,
+  changeChapterState: PropTypes.object.isRequired
 }
 
 ChapterDrawerView.defaultProps = {
   showingChapter: false,
+  currentCourse: 'none'
 }
 
 LoginDrawerView.propTypes = {

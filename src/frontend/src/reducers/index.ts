@@ -2,13 +2,12 @@ import { connectRouter } from 'connected-react-router'
 import { combineReducers } from 'redux'
 
 import { auth, AuthState } from './auth'
-
+import { chapterDrawer, ChapterDrawerState } from './chapterDrawer'
+import { gdpr, GdprState } from './gdpr'
+import { individualChapterDrawers, IndividualChapterDrawerState } from './individualChapterDrawers'
+import { loading, LoadingState } from './loading'
 // Drawers
 import { loginDrawer, LoginDrawerState } from './loginDrawer'
-import { chapterDrawer, ChapterDrawerState } from './chapterDrawer'
-
-import { gdpr, GdprState } from './gdpr'
-import { loading, LoadingState } from './loading'
 import { progressBar, ProgressBarState } from './progressBar'
 import { serviceWorker, ServiceWorkerState } from './serviceWorker'
 import { toaster, ToasterState } from './toaster'
@@ -21,6 +20,7 @@ export const reducers = (history: any) =>
     loading,
     users,
     toaster,
+    individualChapterDrawers,
     chapterDrawer,
     loginDrawer,
     progressBar,
@@ -35,6 +35,7 @@ export interface State {
   toaster: ToasterState
   loginDrawer: LoginDrawerState
   chapterDrawer: ChapterDrawerState
+  individualChapterDrawers: IndividualChapterDrawerState
   progressBar: ProgressBarState
   serviceWorker: ServiceWorkerState
   gdpr: GdprState
