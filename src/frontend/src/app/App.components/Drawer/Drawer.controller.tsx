@@ -52,11 +52,6 @@ export const ChapterDrawer = () => {
     }
   }
 
-  // ts
-  // React.useEffect(() => {
-  //   console.log(`activeCourseCategory = ${activeCourseCategory}`)
-  // }, [activeCourseCategory])
-
   const hideCallback = () => {
     dispatch(hideChapterDrawer())
   }
