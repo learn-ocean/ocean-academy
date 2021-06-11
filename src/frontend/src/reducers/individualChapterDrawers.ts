@@ -3,13 +3,11 @@ import { RESET, RESTORE } from 'app/App.actions'
 import { HIDE_DATADEFI_DRAWER, HIDE_OCEAN101_DRAWER, SHOW_DATADEFI_DRAWER, SHOW_OCEAN101_DRAWER } from '../app/App.components/Drawer/Drawer.actions'
 
 export interface IndividualChapterDrawerState {
-  course: string,
-  showingChapter: boolean
+  currentCourse: string
 }
   
 const chapterDrawerDefaultState: IndividualChapterDrawerState = {
-  course: 'ocean101',
-  showingChapter: false,
+  currentCourse: 'none',
 }
 
 
@@ -25,30 +23,26 @@ export function individualChapterDrawers(state = chapterDrawerDefaultState, acti
     case SHOW_OCEAN101_DRAWER: {
       console.log("OCEAN101 SHOW_DRAWER\nediting showingChapter property...")
       return {
-        course: "ocean101",
-        showingChapter: true,
+        currentCourse: 'ocean101'
       }
     }
     case HIDE_OCEAN101_DRAWER: {
       console.log("OCEAN101 HIDE_DRAWER\nediting showingChapter property...")
       return {
-        course: "ocean101",
-        showingChapter: false,
+        currentCourse: 'none',
       }
     }
 
     case SHOW_DATADEFI_DRAWER: {
       console.log("DATADEFI SHOW_DRAWER\nediting showingChapter property...")
       return {
-        course: "introToDataDefi",
-        showingChapter: true,
+        currentCourse: 'introToDataDefi'
       }
     }
     case HIDE_DATADEFI_DRAWER: {
       console.log("OCEANBUSINESS HIDE_DRAWER\nediting showingChapter property...")
       return {
-        course: "introToDataDefi",
-        showingChapter: false,
+        currentCourse: 'none'
       }
     }
 

@@ -4,27 +4,19 @@ import { IoIosArrowDropdownCircle, IoIosArrowDroprightCircle } from 'react-icons
 import { Link } from 'react-router-dom'
 import { PublicUser } from 'shared/user/PublicUser'
 
-import { ChapterData } from '../../../pages/Chapter/Chapter.controller'
-import { chaptersByCourse, courseCategoriesData, categoryOptions, courseCategoriesDictionaries, CategoryArray } from '../../../pages/Course/Course.data'
+import { CategoryArray, categoryOptions, ChapterDataDictionary, chaptersByCourse, courseCategoriesData, courseCategoriesDictionaries } from '../../../pages/Course/Course.data'
 import { Select } from '../Select/Select.controller'
 import { Option } from '../Select/Select.view'
-import { ChapterDrawer } from './Drawer.controller'
-import { DrawerItem, DrawerMask, DrawerStyled, DrawerStyledLogin } from './Drawer.style'
+import { DrawerChapter, DrawerChapters, DrawerCourseTitle, DrawerItem, DrawerMask, DrawerStyled, DrawerStyledLogin, OpenedIcon } from './Drawer.style'
 
 type ChapterDrawerViewProps = {
   showingChapters: boolean
-  hideCallback: () => void
+  currentCourse: string
   pathname: string
-  changeCategoryCallback: (e: Option) => void
   activeCourseCategory: Option
-}
-
-type CourseDrawerViewProps = {
-  currentCategory: string
-  showingCourses: boolean
   hideCallback: () => void
+  changeCategoryCallback: (e: Option) => void
   changeChapterState: (course: string) => void
-  pathname: string
 }
 
 type LoginDrawerViewProps = {
@@ -45,7 +37,7 @@ type LoggedOutDrawerViewProps = {
 }
 
 
-export const ChapterDrawerView = ({ showingChapters, hideCallback, pathname, changeCategoryCallback, activeCourseCategory }: ChapterDrawerViewProps) => (
+export const ChapterDrawerView = ({ showingChapters, currentCourse, pathname, activeCourseCategory, hideCallback, changeCategoryCallback, changeChapterState }: ChapterDrawerViewProps) => (
   <>
     <DrawerMask className={`${showingChapters}`} onClick={() => hideCallback()} />
     <DrawerStyled className={`${showingChapters}`}>
@@ -57,20 +49,42 @@ export const ChapterDrawerView = ({ showingChapters, hideCallback, pathname, cha
         selectCallback={(e) => changeCategoryCallback(e)}
       />
 
-      {courseCategoriesDictionaries[activeCourseCategory.name].map((course: CategoryArray) => {
+      {courseCategoriesDictionaries[activeCourseCategory.name].map((course: ChapterDataDictionary) => {
         return (
-          course.data.map((chapter: any) => (
-            <DrawerItem key={chapter.pathname} className={pathname === chapter.pathname ? 'current-path' : 'other-path'}>
-              <Link to={chapter.pathname} onClick={() => hideCallback()}>
-                {chapter.name}
-              </Link>
-            </DrawerItem>
-          )
-        ))
+          <>
+          <DrawerCourseTitle>
+            <p>{courseCategoriesData[activeCourseCategory.name][course.name].title}</p>
+            <OpenedIcon>
+              {currentCourse === courseCategoriesData[activeCourseCategory.name][course.name].path ? (
+                  <IoIosArrowDropdownCircle onClick={() => changeChapterState(courseCategoriesData[activeCourseCategory.name][course.name].path)} /> 
+                ) : (
+                  <IoIosArrowDroprightCircle onClick={() => changeChapterState(courseCategoriesData[activeCourseCategory.name][course.name].path)} /> 
+                )
+              }
+            </OpenedIcon>
+          </DrawerCourseTitle>
+
+          <DrawerChapters>
+            {currentCourse === courseCategoriesData[activeCourseCategory.name][course.name].path && (
+              <DrawerChapter>
+                {course.data.map((chapter: any) => (
+                  <DrawerItem key={chapter.pathname} className={pathname === chapter.pathname ? 'current-path' : 'other-path'}>
+                    <Link to={chapter.pathname} onClick={() => hideCallback()}>
+                      {chapter.name}
+                    </Link>
+                  </DrawerItem>
+                ))}
+              </DrawerChapter>
+            )}
+          </DrawerChapters>
+          </>
+        )
       })}
+
     </DrawerStyled>
   </>
 )
+
 
 export const LoginDrawerView = ({ showingMenu, user, hideCallback, removeAuthUserCallback }: LoginDrawerViewProps) => (
   <>
@@ -78,25 +92,6 @@ export const LoginDrawerView = ({ showingMenu, user, hideCallback, removeAuthUse
     {user ?
       loggedInDrawer({ showingMenu, user, removeAuthUserCallback }) :
       loggedOutDrawer({ showingMenu })}
-  </>
-)
-
-export const CourseDrawerView = ({ currentCategory, showingCourses, hideCallback, changeChapterState, pathname }: CourseDrawerViewProps) => (
-  <>
-    {console.log("CourseDrawerView showing = ", showingCourses)}
-    <DrawerMask className={`${showingCourses}`} onClick={() => hideCallback()} />
-    <DrawerStyled className={`${showingCourses}`}>
-      <h1>Modules</h1>
-      {courseCategoriesData[currentCategory].map((unitModule) => (
-        <DrawerItem key={unitModule.pathname} className={pathname === unitModule.pathname ? 'current-path' : 'other-path'}>
-          <Link to={unitModule.pathname} onClick={() => hideCallback()}>
-            {unitModule.name}
-          </Link>
-          <IoIosArrowDroprightCircle onClick={() => changeChapterState(unitModule.path!)} />
-          <ChapterDrawer />
-        </DrawerItem>
-      ))}
-    </DrawerStyled>
   </>
 )
 
@@ -155,27 +150,17 @@ function loggedOutDrawer({ showingMenu }: LoggedOutDrawerViewProps) {
 
 ChapterDrawerView.propTypes = {
   showingChapter: PropTypes.bool,
+  currentCourse: PropTypes.string,
   hideCallback: PropTypes.func.isRequired,
   pathname: PropTypes.string.isRequired,
   changeCategoryCallback: PropTypes.func.isRequired,
-  activeCourseCategory: PropTypes.object.isRequired
+  activeCourseCategory: PropTypes.object.isRequired,
+  changeChapterState: PropTypes.object.isRequired
 }
 
 ChapterDrawerView.defaultProps = {
   showingChapter: false,
-}
-
-CourseDrawerView.propTypes = {
-  currentCategory: PropTypes.string.isRequired,
-  showingCourses: PropTypes.bool,
-  hideCallback: PropTypes.func.isRequired,
-  changeChapterState: PropTypes.func.isRequired,
-  pathname: PropTypes.string.isRequired
-}
-
-CourseDrawerView.defaultProps = {
-  currentCategory: 'category 1',
-  showingCourses: false,
+  currentCourse: 'none'
 }
 
 LoginDrawerView.propTypes = {

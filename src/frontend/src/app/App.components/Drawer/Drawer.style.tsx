@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro'
-import { primaryColor, textColor, backgroundColorLight } from 'styles'
+import { backgroundColorLight, primaryColor, textColor } from 'styles'
 
 export const DrawerMask = styled.div`
   position: fixed;
@@ -16,6 +16,25 @@ export const DrawerMask = styled.div`
     opacity: 0.5;
     background-color: black;
   }
+`
+
+export const DrawerChapter = styled.div`
+  
+`
+
+export const OpenedIcon = styled.div`
+  margin-top: 1.6vh;
+  margin-left: 2vw;
+`
+
+export const DrawerCourseTitle = styled.div`
+  margin-top: 1.3vh;
+  float: left;
+  display: inline-flex;
+`
+
+export const DrawerChapters = styled.div`
+  display: inline-block;
 `
 
 export const DrawerStyled = styled.div`
