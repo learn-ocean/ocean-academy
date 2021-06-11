@@ -1,12 +1,15 @@
 import { RESET, RESTORE } from 'app/App.actions'
+
 import { HIDE_CHAPTER_DRAWER, SHOW_CHAPTER_DRAWER } from '../app/App.components/Drawer/Drawer.actions'
 
 export interface ChapterDrawerState {
-  showingChapter: boolean
+  courseCategory: string
+  showingChapterDrawer: boolean
 }
 
 const chapterDrawerDefaultState: ChapterDrawerState = {
-  showingChapter: false,
+  courseCategory: 'Course Category 1',
+  showingChapterDrawer: false,
 }
 
 export function chapterDrawer(state = chapterDrawerDefaultState, action: any): ChapterDrawerState {
@@ -19,13 +22,17 @@ export function chapterDrawer(state = chapterDrawerDefaultState, action: any): C
     }
     case SHOW_CHAPTER_DRAWER:
       return {
-        showingChapter: true,
+        courseCategory: 'Course Category 1',
+        showingChapterDrawer: true,
       }
     case HIDE_CHAPTER_DRAWER:
       return {
-        showingChapter: false,
+        courseCategory: 'Course Category 1',
+        showingChapterDrawer: false,
       }
     default:
       return state
   }
 }
+
+

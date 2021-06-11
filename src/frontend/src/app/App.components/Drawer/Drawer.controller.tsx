@@ -3,35 +3,43 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import { State } from 'reducers'
-import { Option } from '../Select/Select.view'
 
-import { hideChapterDrawer, hideMenuDrawer } from './Drawer.actions'
-import { ChapterDrawerView, LoginDrawerView } from './Drawer.view'
+import { Option } from '../Select/Select.view'
+import { hideChapterDrawer, hideCourseDrawer, hideMenuDrawer, showDataDefiDrawer, showOcean101Drawer } from './Drawer.actions'
+import { ChapterDrawerView, CourseDrawerView, LoginDrawerView } from './Drawer.view'
 
 export const ChapterDrawer = () => {
   const dispatch = useDispatch()
-  const showingChapter = useSelector((state: State) => state.chapterDrawer && state.chapterDrawer.showingChapter)
+  const showingChapter = useSelector((state: State) => state.chapterDrawer && state.chapterDrawer.showingChapterDrawer)
+  const currentCourseCategory = useSelector((state: State) => state.chapterDrawer.courseCategory)
+
   const { pathname } = useLocation()
 
-  let defaultCourse: Option = { name: "Ocean 101", path: "ocean101" }
-  const [activeCourse, setActiveCourse] = useState<Option>(defaultCourse)
+  let defaultCourseCategory: Option = { name: "category 1", path: "category 1" }
+  const [activeCourseCategory, setActiveCourseCategory] = useState<Option>(defaultCourseCategory)
+  
 
-  function changeCourseCallback(e: Option) {
-    if (e.path === 'ocean101') {
-      const ocean101: Option = {
-        name: "Ocean 101",
-        path: "ocean101"
+  function changeCourseCategoryCallback(e: Option) {
+    if (e.path === 'category1') {
+      const category1: Option = {
+        name: "category 1",
+        path: "category1"
       }
-      setActiveCourse(ocean101)
+      setActiveCourseCategory(category1)
     }
-    if (e.path === 'introToDataDefi') {
-      const introToDataDefi: Option = {
-        name: "Intro to Data Defi",
-        path: "introToDataDefi"
+    if (e.path === 'category2') {
+      const category2: Option = {
+        name: "category 2",
+        path: "category2"
       }
-      setActiveCourse(introToDataDefi)
+      setActiveCourseCategory(category2)
     }
   }
+
+  // ts
+  React.useEffect(() => {
+    console.log(`activeCourseCategory = ${activeCourseCategory}`)
+  }, [activeCourseCategory])
 
   const hideCallback = () => {
     dispatch(hideChapterDrawer())
@@ -42,11 +50,49 @@ export const ChapterDrawer = () => {
       showingChapters={showingChapter}
       hideCallback={hideCallback}
       pathname={pathname}
-      activeCourse={activeCourse}
-      changeCourseCallback={changeCourseCallback}
+      activeCourseCategory={activeCourseCategory}
+      changeCategoryCallback={changeCourseCategoryCallback}
     />
   )
 }
+
+
+export const CourseDrawer = () => {
+  const dispatch = useDispatch()
+  const showingCourses = useSelector((state: State) => state.chapterDrawer && state.chapterDrawer.showingChapterDrawer)
+  const { pathname } = useLocation()
+
+  const hideCallback = () => {
+    dispatch(hideCourseDrawer())
+  }
+
+  const changeChapterState = ((currentCourse: string) => {
+    { console.log("currentCourse inside callback = ", currentCourse) }
+    switch (currentCourse) {
+      case ``: {
+        break;
+      }
+      case `ocean101`: {
+        dispatch(showOcean101Drawer())
+        break;
+      }
+      case `introToDataDefi`: {
+        dispatch(showDataDefiDrawer())
+        break;
+      }
+    }
+  })
+
+  return (
+    <CourseDrawerView
+      showingCourses={showingCourses}
+      hideCallback={hideCallback}
+      changeChapterState={changeChapterState}
+      pathname={pathname}
+    />
+  )
+}
+
 
 export const LoginDrawer = () => {
   const dispatch = useDispatch()

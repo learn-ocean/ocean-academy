@@ -1,13 +1,13 @@
 import * as React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
-import { HamburgerViewLeft, HamburgerViewRight } from './Hamburger.view'
-import { showChapterDrawer, hideChapterDrawer, hideMenuDrawer, showMenuDrawer } from '../Drawer/Drawer.actions'
 import { State } from 'reducers'
+
+import { hideChapterDrawer, hideMenuDrawer, showChapterDrawer, showMenuDrawer } from '../Drawer/Drawer.actions'
+import { HamburgerViewLeft, HamburgerViewRight } from './Hamburger.view'
 
 export const HamburgerLeft = () => {
   const dispatch = useDispatch()
-  const activated = useSelector((state: State) => state.chapterDrawer.showingChapter)
+  const activated = useSelector((state: State) => state.chapterDrawer.showingChapterDrawer)
 
   const activateCallback = () => {
     dispatch(activated ? hideChapterDrawer() : showChapterDrawer())
