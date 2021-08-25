@@ -2,7 +2,7 @@
 
 #### Difficulty: **4/5** \| Estimated reading time: **10 min**
 
-<dialog character="whale">“It takes a village...”</dialog>
+<dialog character="dolphin">“It takes a village...”</dialog>
 
 Compute-to-Data adds a new role to the data marketplace, the “Compute Provider”. Compute Providers provide computation on data instead of the data itself. For the sake of simplicity we assume that the Compute Provider is the same entity as the Data Owner, even if this task could be delegated to a trusted partner.
 
