@@ -1,76 +1,69 @@
-# Chapter 6: Due diligence for liquidity providers
+# Chapter 6: Use Cases & Vision
 
 #### Difficulty: **3/5** \| Estimated reading time: **10 min**
 
-<dialog character="mantaray">“With so many species cohabiting in the Ocean, distinguishing friend from foe is of utmost importance.”</dialog>
+<dialog character="whale">“Just like with any deep research, it takes quite a bit of mental agility, and time, to harness the possibilities unlocked by new discoveries.”</dialog>
 
-As the Ocean ecosystem grows, datatoken liquidity providers may find it difficult to navigate these uncharted waters. While you should do your own research (DYOR), some indicators can be helpful in assessing the viability of a given data pool or datatoken.
+Nowadays many AI models are open source and research thrives from sharing algorithms in between companies and research facilities. Compute-to-Data is unlocking this, and practical applications span across many different fields.
 
-**Risks**
-Staking and hodling datatokens incurs risks. But we got you covered; we prepared a practical checklist to mitigate them.
+Consider cancer research. AI could provide break-through discoveries, but the data is lacking to build solid models, because it sits across a multitude of local medical centers, and is highly sensitive. With CtD, it is possible to pool data across a multitude of local medical centers, with the data never leaving their own premises.
 
-- *Full exposure:* If you hodl a datatoken, you are 100% exposed to the price movements of the datatoken. Price movements can be brutal. Illiquid datatokens, in particular, are highly volatile. But all datatoken will be volatile, based on the pool tokenomics, amount of staking and swapping, all of which influence the price.
+Established players are harnessing the new capability first to gain a competitive advantage in their industry, from health, energy, to freight or automotive. But CtD also enables new possibilities entirely; let’s have a look.
 
-- *Impermanent loss (IL):* Impermanent loss happens when your ratio of OCEAN to datatokens in the pool changes compared to when you started staking in the pool. For example, if many new LPs add OCEAN after you staked on the pool, the price of the datatoken will go up, and the ratio *OCEAN/datatoken* will go up to keep the 70/30 pool split. By holding a share of the liquidity pool, you will have less datatoken than if you had just been hodling the datatoken at that point, hence reducing your exposure to the asset. The larger the price change, either up or down, the bigger the impermanent loss.
+**Private AI**
 
-  Why *impermanent*? Because as long as the relative prices of OCEAN/datatoken in the AMM return to their original state when you staked your OCEAN, the loss disappears. The impermanent loss becomes permanent only when you exit the pool, leaving you with negative returns.
+Private AI has become more of a topic as [Openmined](https://www.openmined.org/) has started to heavily advocate and educate the world about it. Their [Udacity course](https://www.udacity.com/course/secure-and-private-ai--ud185) as well as their [own course series](https://courses.openmined.org/) are highly recommended for people interested in the current frontier of private AI.
 
-- *Malicious data providers:* There exists the risk that a malicious data provider creates an AMM liquidity pool and then lures market participants to provide OCEAN liquidity. Afterwards they remove a significant portion of OCEAN liquidity from the pool, leaving datatokens behind. This is referred to as a *rug pull*. In this case, OCEAN holdings in the pool drop significantly, causing honest liquidity providers to lose OCEAN tokens.
+One of the core conclusions of the course is that “information must not be shared to an extent that reveals too much private information contained in the data”.
 
-Another risk is posed by *minting attacks*. If a data provider mints and injects new tokens into a liquidity pool, which s/he can do at any time, it will penalize liquidity providers. Their pool share decreases because of the increased supply of datatokens. Hence, it is important to research the publisher and his or her intentions. Reputable publishers will pledge to not remove or add tokens to the pool, provide a vesting schedule, or pledge to publish their plans in advance.
+With Compute-to-Data only the algorithms actually interact with the data and the algorithm selection is in the hands of the data seller. Algorithms can be audited to prevent data leaks; in fact, public as well as private algorithms sold on Ocean Protocol are testable by everyone.
 
-Finally, there is no protection against malicious sample files which one would download to check the dataset in Ocean Market. A malicious data publisher may try to sneak in an executable file (i.e. a virus or trojan).
+**Data and Algorithms Auditing**
 
-- *Bugs and smart contract vulnerabilities:* Ocean Market and the underlying contracts are currently in beta. Although it was tested and audited thoroughly, there is always a slight risk that things go wrong in the early days.
+With Compute-to-Data, Data Owners will need to ensure that algorithms can be trusted, and would welcome a vetting process on algorithms.
 
-**Based on my own risk profile, what can I look for when investing in a datatoken?**
+Conversely, AI researchers may want to get a signal on dataset quality (and trustful execution of Compute jobs), so data auditing would greatly help them select datasets on which to train their models.
 
-First of all, you can start by evaluating the publisher. The risk of rug pulls and minting attacks always exists, so it might be a good idea to research the data providers’ reputation, trustworthiness and intent. When in doubt, you can try to get in contact with a publisher directly or consult the Ocean community.
+This opens a completely new field of data science: data auditing. Auditors generate information for Data Owners and Consumers without having to risk any data at all (dataset or algorithms).
 
-The Ocean Market is designed for you to be able to conveniently find information about a publisher. If a publisher uses 3Box and you hover your cursor over the profile information, a box appears that shows the publishers website, social media and Github links. 3Box is a service that links all of them to the publisher's verified Ethereum address.
+**Blockchain-powered Federated Learning**
 
-<img src="/images/defi/chapter_6_0.jpg" width="500" />
+Federated learning was first published by [Google in 2017](https://ai.googleblog.com/2017/04/federated-learning-collaborative.html) and was first used to train auto completion models on individual smartphones. This allows a model to be trained with the data that a user produces while they are using the smartphone without having to send the data to Google. This has been picked up by several other companies e.g. Apple is also using it to [adapt models for language understanding to users](https://arxiv.org/pdf/2102.08503.pdf) in their homes instead of training models in the cloud - with intention to preserve privacy.
 
-Online resources, such as Twitter, LinkedIn, Github, websites and blogs can be helpful to learn more about a data publisher. You can also check the publishers’ transaction history on an Ethereum blockchain explorer, such as Etherscan, which is linked in the dataset description header as well.
+Compute-to-Data makes it theoretically possible to do federated learning on any kind of data as the model can be sent to the data to be trained there e.g. via transfer learning and the improved model can then be sent to the next piece of data to be improved there.
 
-If you have questions, you can try to get in direct contact with the publishers. Most of them are active community members that will by happy to give you information about their projects and datasets.
+This reduces the need for bandwidth in the case of “big” datasets, and it respects privacy in the case of personal “small” data. A lot of data is too big to be transferred to algorithms or the transfer could make it not worth it to use the data.
 
-**Best practices to evaluate datasets**
-If you have a good impression of a data providers’ reputation and trustworthiness, you can continue to assess their datasets. An important question to ask is how the dataset can be used by entrepreneurs, data scientists or researchers to develop a product or solve a problem. What are potential use cases? Is the data in a usable format? How unique is the data and how difficult is it to obtain similar data elsewhere? Do you expect it to be in high demand?
+**Remote aggregation of obfuscated data**
 
-If you find a convincing dataset, there are a few more characteristics to keep an eye on. You can, for example, check if the publisher promises to deliver regular updates, which would likely contribute to value accrual for the dataset.
+Aggregation of relevant information out of the remote data lakes is another promising new field enabled by CtD. Data in data lakes is not available to download but insights can be generated indirectly by applying algorithms to probe and investigate the datasets in a privacy-preserving way.
 
-If you are a data scientist or AI expert, you may scrutinize the sample data provided to assess what one could do with it, and get a sense of its market value.
+This is an iterative process where the analyst or data scientist has to gain insights into the data without actually seeing it, and without revealing anything proprietary. As the amount of data available will grow exponentially the need to aggregate the relevant data across different data lakes is gaining in importance.
 
-There are also rating agency datasets available on the marketplace that track datasets and give an evaluation of their reliability and profitability. Moreover, you can take a look at the tokenomics, price and pool activity.
+These new tools, as well as the aggregated data, are valuable assets that can be sold to other ecosystem participants.
 
-**Tokenomics**
-No matter how good the data is, the dataset tokenomics will largely impact its potential for revenue (purchase). The price of a datatoken depends on the supply of datatokens in the liquidity pool and the number of OCEAN tokens staked. Therefore it might be a good idea to assess the total supply of tokens. If only few tokens are in the liquidity pool, the price of the dataset will be highly volatile.
+**Data stewardship**
 
-Another criteria to pay attention to is the distribution of liquidity pool shares. The shares of the pool creator are displayed in the POOL tab. Note that data providers always start with 100% pool share at launch. You can check the pool share of other liquidity providers as well by following the “Pool” link to Etherscan.
+Data Owners may wish to outsource the technical aspects of the Compute-to-Data infrastructure as well as the monetization of the data. Thanks to CtD, handing over the responsibility over the data for a share of the rewards is relatively safe because everything is tracked and logged on the blockchain.
 
-<img src="/images/defi/chapter_6_1.jpg" width="500" />
+This enables the creation of new datasets composed of other datasets, all accessed via Compute-to-Data. Data composability can be a major driver of more powerful AI models and completely new business models.
 
-**Price**
-The price of a datatoken depends on the supply of tokens in the liquidity pool and the number of OCEAN tokens staked. But how does this relate to the real value of the data?
+For example, car manufacturers can pool their data together to train more powerful autonomous driving AI, while never sending any of their own company driving data anywhere.  Pooling data allows to capture more scenarios and edge cases, limiting bias and error in AI models, increasing compliance and meeting legal requirements for technology classified as critical.
 
-Valuing data is hard. You can try to assess a fair price by:
+**Data unions**
 
-- thinking about how much it would cost the provider to gather the data and maintain it. Then you can add a margin on top of that and use this as a guide
-- estimating the usability of the data. Is the data in a usable format? Are there use cases where this particular data can cater to a consumers’ needs?comparing the data with other assets on the market
-- comparing the data with other assets outside the market
-- consulting a professional data scientist or analytics company		
+Data unions are another form of data stewardship for regular people with the aim of pooling data together, monetizing and governing the Data Asset together. Browser history, image gallery or location data of a single person is not very relevant for machine learning but the power is in the numbers - a million users can generate a relevant amount of data quickly.
 
-More information about pricing is available <a href="https://blog.oceanprotocol.com/value-of-data-part-two-pricing-bc6c5127e338&sa=D&ust=1612204558036000&usg=AOvVaw0V_hOsQQFsMgtH5Yd3UKzd" target="_blank">here</a>
+A data union can earn enough revenue to cover the developing cleaning, aggregation, annotation, and verification services on top of the data and reward users for their data on top. A data union may also train models on the data and sell them.
 
-How does the price of the dataset in Ocean Market compare with your value estimation?
+The pooling of more and more diverse inputs into datasets for AI will yield the most powerful machine learning models in human history as their dataset and annotations exceed the amount and quality of all other datasets that ever existed ([see the long tail problem](https://a16z.com/2020/07/24/long-tail-problem-in-a-i/) described by a16z, a leading VC fund).
 
-**Pool activity**
-Pool activity, such as adding or removing liquidity and swapping datatokens, contributes to the staking rewards from transaction fees. Consequently, stakers collectively profit from pool activity, which is a metric to consider when searching for suitable datasets. You can check the pool activity on Etherscan by following the link on the POOL tab.
+For the first time in human history, scientists will be able to systematically remove bias from all data and models, by including all of humanity across nationalities, ethnicities, genders, age groups (etc.) in the training Data Sets.
 
-**Rugpullindex**
-In addition to the criteria above, [rugpullindex.com](rugpullindex.com) can be a useful source of information. The project is aims to rate and index data assets on the Ocean Market. It is open-source and free of charge. It looks at the distribution of liquidity providers' share in the pool (some form of GINI coefficient). The idea is that the more evenly distributed liquidity providers are, the less likely it is for a *rug-pull* to happen. The ranking is updated daily. However, be aware that a top-ranking does not rule out a rug-pull entirely.
+**What next?**
 
-Now you know what to check when assessing datasets on Ocean Market. Ultimately, it boils down to trust in the data provider. So it is recommended to carefully assess the providers reputation, trustworthiness and intent before taking action. The decision depends on your personal willingness to take risks. In any case, you can always start experimenting on Rinkeby for free.
+Unlike scarce material resources, information and knowledge (data) are assets that have increasing returns, i.e. the more people access, use and modify data, the greater its value becomes. Once network effects kick in, the value of data can go exponential.
 
-Thirsty for more? Check out the excellent guide made by fellow community member Agent K <a href="https://agentk.medium.com/ocean-market-staking-guide-5b36294a86c0" target="_blank">Ocean Market Staking Guide</a>.
+Societies as a whole will benefit from the global decentralized data network in ways that could not be imagined before, because people now have ownership over their private data, and can participate and be rewarded in the creation of value.
+
+With more data, investments into the critical parts of the data economy’s infrastructure and education could be allocated in an efficient way, based on empirical evidence obtained from the large quantities of new available data.
