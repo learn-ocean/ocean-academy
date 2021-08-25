@@ -1,61 +1,55 @@
-# Chapter 4: Zooming into Liquidity Pools
+# Chapter 4: Consuming a Data Asset with CtD
 
-#### Difficulty: **5/5** \| Estimated reading time: **10 min**
+#### Difficulty: **2/5** \| Estimated reading time: **5 min**
 
-<dialog character="squid">“Now that you are familiar with the  Ocean market, let us take a closer look at its topography: it is made of abysses and peaks, and there, you can see them, bubbling, the liquidity pools.”</dialog>
+<dialog character="octopus">“In experiments octopuses solved mazes and completed tricky tasks to get food rewards. They're also adept at getting themselves in and out of containers. (source: [NHM](https://www.nhm.ac.uk/discover/octopuses-keep-surprising-us-here-are-eight-examples-how.html)) ... How handy!”</dialog>
 
-Liquidity pools are at the core of the Ocean Market and allow for automated price discovery of datasets and data services. But how do they work? Let’s dive in.
+AI researchers, developers and startups developing AI and data products are dependent on large quantities of data to build new and better models. With CtD, more data is likely to be made available because data Owners can safely earn revenue from it, which may be used to train better models.
 
-**The liquidity challenge.** In traditional financial markets or at your favorite crypto exchange, transactions are based on an order book. To buy a token at a given price, there must be a seller on the other side willing to match that exact same price. While this mechanism works well when token supply and demand are high (liquid market), it shows its limitation when supply and demand are low (illiquid market).
+Algorithm developers may also sell their algorithms on Ocean Protocol, getting paid every time one of their algorithms is used, and their algorithms may be used on data made available via CtD.
 
-**Enter automated market makers (AMMs) and liquidity pools.** AMMs are a key element of DeFi decentralized exchanges and are like robots that are always ready to buy or sell. At their core, AMMs are based on smart contracts where a pair of ERC-20 tokens get locked in a liquidity pool. When a user wants to buy or sell their token, they do not need to wait on a counterparty anymore, the AMM will take their token and swap it for the other token automatically. The price is dynamically calculated based on a pre-defined ratio between token A and B which has to remain constant.
+**Algorithms are an asset type**
 
-**Feeding the liquidity pools.** For AMMs to work, liquidity pools must have some amount of tokens, and that is where liquidity providers (LPs) come into play. LPs are users which provide their tokens in the pool and can be viewed as shareholders or partners that bought shares of your dataset or service. In exchange for providing liquidity, they earn a share of transaction fees when:
+An algorithm in the Ocean Protocol stack is an asset type, just like a Data Asset is.
 
-- traders swap tokens
-- buyers consume the data and pay for this consumption
-- liquidity providers add or remove tokens from the pool
+Algorithms can be public, if the access to the algorithm is sold, or private, if a computation service is sold (the algorithm is only available as part of a Compute job without any way to download it).
 
-**Visual of liquidity pool mechanics**
+An algorithm can be sold for a fixed price or for a variable price through a Datatoken pool, just like any Data Asset.
 
-<img src="/images/defi/chapter_4_0.jpg" />
+**What do CtD algorithms look like? **
 
-(1) **Pool initialization.** A liquidity pool allows users to swap their tokens. At creation, a pool needs to be initialized with the following parameters:
+An algorithm that runs over a Compute-to-Data instance is composed of the following:
 
-- a ratio between token A and B
-- an initial amount of liquidity
-- a transaction fee
+* an algorithm code
+* a Docker image (base image + tag)
+* an entry point
 
-Then, as users (including LPs) interact with the liquidity pool, the AMM will strive to maintain the ratio by making sure that the product of the quantities of the 2 supplied tokens always remains the same.
+The docker image provides the version of the interpreter (e.g. Python 3.9) and the required dependencies (e.g. Numpy, Pandas).
 
-(2) **Token swaps.** When users swap their tokens, they influence the price of the tokens within the pool.For example, swapping token A for token B will reduce token A supply and increase the amount of token B in the pool. This results in an increase of the price of token A and a decrease in the price of token B. In short, the price of token A and token B is automatically re-calculated. In addition, the pool will also charge a small transaction fee to the users and distribute it to LPs.
+Compute-to-Data currently supports python and node.js, but it is language agnostic, and could support any computing platform and environment.
 
-(3) **Swap fees.** To ensure that AMMs liquidity pools have enough tokens to trade with users, LPs are incentivized to lock-in their tokens in the pool by receiving transaction fees in exchange. Typical liquidity pools implementations (Uniswap, Curve), require LP to provide liquidity in two tokens according to the pre-defined ratio.
+An algorithm set to public can be downloaded for its set price, while an algorithm set to private is only available as part of a Compute job without any way to download it. This is set in the algorithm DDO, the Decentralized Document which stores the metadata on the specific asset on Ocean Protocol. Each algorithm has a unique DID (Decentralized ID) in the ecosystem, just like Data Assets.
 
-**Visual of OCEAN<>datatoken AMM pool mechanics**
+Importantly, if a CtD algorithm is set to private, it must be published on the same provider service (e.g. server or cluster) as the Data Asset it should run on.
 
-<img src="/images/defi/chapter_4_1.jpg" />
+**Consuming a dataset with CtD**
 
-The liquidity pools implementation in Ocean Protocol differs slightly from implementations mentioned earlier. Ocean Protocol uses a technology stack (Balancer) which makes it possible to provide liquidity in only one token rather than two. In addition, the OCEAN<>datatoken AMM pool has a fixed ratio of 70% OCEAN and 30% datatoken.
-Let’s use an example to illustrate this new concept.
+To consume a dataset in the context of CtD means to run an algorithm on a specific dataset. Anyone can run algorithms that are made publicly available onto private Data Assets with CtD.
 
-(1) **Publishing a dataset**. A data publisher has chosen dynamic pricing when selling their dataset. They set a transaction fee and provide an initial amount of OCEAN.
+However, the Data Asset Seller may set restrictive authorizations to datasets, and the Data Consumers will have to opt for an algorithm that is approved by a Data Seller.
 
-(2) **Minting datatokens**. Behind the scenes, an OCEAN<>datatoken pool is created with a 70/30 ratio. Because this ratio has to be maintained, the pool will mint datatokens out of the total OCEAN initially provided. At this stage, the data publisher owns all shares in the pool (they own all tokens).
+A Data Consumer may want to run their own algorithm onto the dataset, and may not be able to do so because the Data Seller has restricted access to just a handful of vetted algorithms.
 
-(3) **Consuming data**. A consumer interested in the dataset will pay with their OCEAN. In exchange, they will get a datatoken which they can redeem to get access to the underlying dataset.
+In that case, the Buyer may contact the Data Seller and ask whether the Seller authorizes the algorithm on the Data Asset. The Buyer may get their algorithm audited to demonstrate it will not extract private information and get it authorized by the Data Seller.
 
-(4) **Investing in data**. If a liquidity provider believes that datasets are undervalued, they can decide to invest in the dataset in 2 ways:
-- Staking: This a key benefit of providing liquidity as LPs will have the opportunity to earn fees from pool transactions. LPs provide OCEAN and behind the scenes, the AMM will convert some OCEAN to datatokens and split the total pool shares between the pool owner and the LPs.
+**Legal considerations**
 
-- Swapping: LPs can choose to add OCEAN to the pool while an equivalent amount in datatokens is withdrawn and stored in their Web3 wallet. We will discuss this concept in more detail in later chapters.
+Just like for Data Sellers, Data Buyers face some risks. What if a Data Seller does not provide the required computation accurately? This begs for complementing the approach with legal agreements that go beyond the simple usage of Ocean Protocol or Ocean Market.
 
-**Datatoken price and market operations.** The type of operations performed against the liquidity pool will affect the price of the datatoken as the AMM will automatically adjust the price (up or down) to keep the target ratio of 70/30.
-To recap:
-- staking (adding) OCEAN tokens increases the datatoken price
-- unstaking (removing) OCEAN tokens decreases the datatoken price
-- minting datatokens (adding datatokens) decreases the datatoken price
-- swapping datatokens increases the datatoken price
+**Transacting over the Ocean Market with CtD**
 
-**Liquidity provision for datatokens provides signaling on data quality.** Dynamic pricing serves as a curation signal. LPs are incentivized to stake in pools where they can earn the most transaction fees, earned from any transaction within the pool (e.g.: buying a datatoken, staking/un-staking, swapping OCEAN for datatokens). Knowing this, LPs will direct their liquidity investments towards high quality but undervalued datasets. By locking their OCEAN, LPs are essentially signaling that they believe in the quality of the data. 
-Over time, lower quality datasets will have low liquidity, while datasets of higher quality will have high liquidity, and thus visibility.
+Transactions are straightforward on the Ocean Market, and work pretty much the same as simple Data Asset purchases via direct download. In addition to selecting and paying for the Data Asset, a Buyer has to select and pay for the algorithm to be run on the data, from the set of authorized algorithms for that Data Asset. In the Ocean Market, authorized algorithms are listed next to Data Assets sold with CtD.
+
+This is why it is interesting for Data Buyers to make their algorithms available for use on Ocean Protocol; they can be audited, vetted, and selected in Ocean Market UI.
+
+A Data Consumer may not have any algorithm or data at all; she can simply leverage third party algorithms or ML models available on the market on Data Assets available. Data Consumers can effectively train algorithms using private data and a hosted algorithm, combining them just like legos!
