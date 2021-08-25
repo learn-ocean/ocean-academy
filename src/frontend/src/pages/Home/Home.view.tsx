@@ -31,9 +31,10 @@ export const HomeView = () => {
             <img className={"top-animation"} src="/mantis.svg" alt="ocean_mantis" height="250" />
           </div>
           <div className={"column"}>
-            <p>Our interactive modules cover a range of topics and difficulties. Whether you're a web3 expert or someone completely new to crypto, there is something for you.</p>
-            <p><b>Ocean101</b> provides a 23-module introduction and gives an official completion certificate writable on the blockchain (NFT).</p>
+            <p>Whether you are completely new to Blockchain or a Web3 expert, there is something new for you here.</p>
+            <p><b>Ocean101</b> is a introduction to Ocean Protocol and it gives a completion certificate as a NFT.</p>
             <p><b>Data DeFi</b> is a 6-module overview of Decentralized Finance with tokenized data assets.</p>
+            <p><b>Compute-to-Data</b> is a 7-module introduction to private data and algorithms monetization.</p>
           </div>
         </div>
         <div className={"row"}>
@@ -80,6 +81,15 @@ export const HomeView = () => {
               <CourseBox
                 title={"Intro To Data DeFi"}
                 shortDescription={"Introduction to Decentralized Finance with Data"}
+                noChapters={6}
+                completed={false}
+              />
+            </Link>
+
+            <Link to={'ComputeToData/chapter-1'} >
+              <CourseBox
+                title={"Intro To Compute-to-Data"}
+                shortDescription={"Learn to safely earn from Data and Algorithms with Compute-to-Data"}
                 noChapters={6}
                 completed={false}
               />
