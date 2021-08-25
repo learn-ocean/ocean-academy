@@ -1,36 +1,59 @@
-# Chapter 2: Introduction to Ocean Market
+# Chapter 2: The Ocean Protocol Compute Layer
 
-#### Difficulty: **2/5** \| Estimated reading time: **10 min**
+#### Difficulty: **2/5** \| Estimated reading time: **5 min**
 
-<dialog character="jellyfish">“Learn how to navigate these uncharted waters.”</dialog>
+<dialog character="shell">“Because mating in the dark doesn’t expose nudity, but it bears the same offspring...”</dialog>
 
-A data marketplace can be thought of as a directory of data services, where individuals and corporations alike can buy and sell data assets. Let us explore <a href="https://market.oceanprotocol.com" target="_blank">Ocean Market</a>, **the first implementation of a Web3 data marketplace**.
 
-**The Ocean Market landing page** is your gateway to a world of data. On this page, you can explore the market and search for datasets, access their details, sell your own data or data services, buy someone else’s or even “invest”, more on that last part later.
+**Compute-to-Data. **Compute-to-Data is a technology solution that allows algorithms to work on data while staying in control of data at all times. Figuratively, it forms a protective layer between the data and the person consuming the data. It is a paradigm shift to shift the default towards data sovereignty.
 
-<img src="/images/defi/chapter_2_0.jpg" />
+Data Owners can earn revenue from AI and data scientists use the data without leaking any information on the data itself as the data never leaves its premises; Compute-to-Data enables privacy-preserving data monetization. This encourages greater value creation, and in turn, more data sharing.
 
-**Looking for datasets?** You can identify specific datasets with the search feature by using keywords based on their associated metadata (e.g.: datatoken name, dataset title, publisher name, publisher public ETH address, associated tags, etc). Search results can be further refined with filters.
+On the other side, Data Consumers can run remote Compute jobs on data that historically would not have been previously available due to risks of data breaches.
 
-<img src="/images/defi/chapter_2_1.jpg" />
+<img src="/images/CtD/chapter_2_0.png" />
 
-**Exploring a dataset.** After selecting a dataset, you will be able to view specific details about it. In the top-left part of the page, you can view the data publisher’s name and optionally their 3Box profile which serves as a reputation signal. 3Box provides verification services for data publishers, more on that in later chapters. You can also click on the datatoken’s name (“WHEPEN-58” in the screenshot below) to view its transaction history on a blockchain explorer. This can help assess the popularity of a dataset. There is also a bookmark feature to pin your favorite datasets on the landing page.
-In addition to a description, you can also download a sample if the publisher has provided it.
+Data Owners provide Compute power on their premises and will run algorithms from Data Consumers locally, only returning results, not the data itself.
 
-<img src="/images/defi/chapter_2_2.jpg" />
+Secure algorithms ensure that the computed results returned are sufficiently aggregated and anonymized so that the data is fully obfuscated and the privacy risk is minimized.
 
-**Investing in data**. If you don’t have any data to buy or sell, you can still participate in the data economy. How? By investing in data. We will be exploring this in detail in later chapters.
+This solution is safe, but it does require Data Owners to do two things:
 
-**Consuming a dataset.** First, you need to connect your Web3 Wallet to the Ocean Market, otherwise you won’t be able to interact with the blockchain. Then, simply head over to the dataset you are interested in, and under the “USE” tab, press the buy button (you will be asked to approve and validate the transaction which requires some ETH, and some OCEAN). Congratulations, you can now download the data!
+1. Provide data computing capabilities and access control on the data, and
+2. Carefully select what algorithms to run on the data, based on how safe they are.
 
-<img src="/images/defi/chapter_2_3.jpg" />
+Of course, either point could be delegated to a trusted third party, but this is as safe as the third party is, and it entails risks to be aware of.
 
-**Ready to turn your datasets and services into data assets?** Let us head to the “Publish” section at the top of the landing page (and make sure your web3 wallet is connected to the market!). This is where you’ll be providing details about your dataset.
+The third party could be the single point of failure in this setup, just like privacy-preserving data marketplaces described in chapter 1.
 
-<img src="/images/defi/chapter_2_4.jpg" />
+**Ocean Protocol eliminates the drawbacks of traditional data marketplaces by cutting out the intermediary**.
 
-Be as descriptive as possible, the more information you can provide, the more trust you will build with potential buyers. On this page, you will also be able to define:
+Consensus on access and operations on data is handled in a decentralized and trustless way using smart contracts rather than an intermediary. If you are not yet familiar with Ocean Protocol and blockchain yet, you will get all this context in the [Ocean 101 course](https://oceanacademy.io/ocean101/chapter-1).
 
-- how your dataset will be consumed: direct download vs compute-to-data
-- data access timeout
-- pricing mode (static vs dynamic)
+The private computing layer introduced by CtD offers numerous advantages over legacy data sharing methods, effectively addressing the most common barriers to collaboration on data and AI.
+
+**Benefits of CtD to Data Owners:**
+
+* **Asset safety. **Data Assets cannot be copied and re-used from the approved Compute job.
+* **Privacy.** Data Consumers do not receive a copy of the data. They receive the aggregated and/or anonymized results so they cannot leak personal or sensitive information.
+* **Control.** Data Owners retain full control of their data, as the data is never moved outside of their premises.
+* **Efficiency in data processing**. Data Owners do not need to anonymize their data for it to be used by algorithms externally.
+* **New revenue stream**. CtD enables Data Owners to monetize data that was previously only used internally due to safety concerns.
+
+**Benefits of CtD to Data Consumers:**
+
+* **Extra data.** By incentivizing data sharing, the Compute-to-Data layer will make more data available to data products builders.
+* **No need for computation infrastructure**. Computation is handled by Data Owners, so Data Consumers do not need any equipment.
+* **Data legos**. Data can be safely combined with other data and algorithms, for aggregation or validation.
+
+**Benefits of CtD to both Data Owners and Data Consumers:**
+
+* **Storage capacity.** Data Owners can sell Compute access without having to move any data (e.g. to the Data Consumers), which is ideal for very large datasets that are slow or expensive to move.
+* **Transfer capacity.** In some cases, like in the race to create autonomous driving cars, data gets created faster than bandwidth can move, so the only way to create value from data is on-premise.
+* **Compliance.** Having only one copy of the data and not moving it makes it easier to comply with data protection regulations. For instance, Compute-to-Data follows the European data protection regulation principle of purpose-limitation because the data is never moved anywhere.
+* **No single point of failure. **There does not exist a central entity that can shut your business down. Access control and market functionality is managed by Smart Contracts.
+* **Auditability**. Compute-to-Data gives proof that algorithms were properly executed, on which data they were executed and it enables robust and audit-proof data collection plans. This way anyone can re-use the exact same data and benchmark against other algorithms or data.
+* **Explainability.** Compute-to-Data contributes to AI explainability, because it creates an immutable audit trail of AI training.
+* **Accuracy improvements**. Computation results from different datasets and algorithms can be compared, based on the audit trail they leave on the blockchain. This leads to competition among products, innovation and excellence under free market conditions which benefits everyone.
+
+Yes, just that.
