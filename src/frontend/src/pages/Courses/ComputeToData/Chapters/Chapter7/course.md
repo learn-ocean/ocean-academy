@@ -2,7 +2,7 @@
 
 #### Difficulty: **3/5** \| Estimated reading time: **60+ min**
 
-<dialog character="mantis">“Yes, it is possible to go further down the data well. Enjoy the swim!”</dialog>
+<dialog character="mantaray">“Yes, it is possible to go further down the data well. Enjoy the swim!”</dialog>
 
 **Key Take Away**
 
@@ -12,8 +12,7 @@ Ocean Protocol’s Compute-to-Data feature helps to open up data silos through f
 
 2. **Privacy Technology: **Compute-to-Data orchestrates remote computation and execution on data, while preserving the privacy of the data. It only gives out results / trained models. This reduces the need for anonymization or pseudo-anonymization of personally identifiable information (PII) and adds to the incentives to share data. \
 
-3. **Compliance:** Having only one copy of the data and not moving (making a copy of it) makes it easier to comply with data protection regulations. It further reduces the risk of data spills.  \
-
+3. **Compliance:** Having only one copy of the data and not moving (making a copy of it) makes it easier to comply with data protection regulations. It further reduces the risk of data spills. \
 
 **Terminology**
 
