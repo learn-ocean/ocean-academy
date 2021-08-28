@@ -7,6 +7,7 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { PublicUser } from 'shared/user/PublicUser'
 
+import { chapterData as ComputeToData } from '../Courses/ComputeToData/Chapters/Chapters.data'
 import { chapterData as chapterDataDefi } from '../Courses/introToDataDefi/Chapters/Chapters.data'
 import { chapterData } from '../Courses/ocean101/Chapters/Chapters.data'
 // prettier-ignore
@@ -71,33 +72,33 @@ export const UserView = ({
                   </Link>
                 </UserBadgeButtons>
               ) : (
-                  <UserBadgeInput>
-                    <Input
-                      icon="user"
-                      name="name"
-                      placeholder="Name on certificate"
-                      type="text"
-                      onChange={(e) => {
-                        setName(e.target.value)
-                      }}
-                      value={name}
-                      onBlur={() => { }}
-                      inputStatus={undefined}
-                      errorMessage={undefined}
-                    />
-                    <Button
-                      type="button"
-                      text="Get certificate"
-                      icon="login"
-                      loading={loading}
-                      onClick={() => getCertificateCallback()}
-                    />
-                  </UserBadgeInput>
-                )}
+                <UserBadgeInput>
+                  <Input
+                    icon="user"
+                    name="name"
+                    placeholder="Name on certificate"
+                    type="text"
+                    onChange={(e) => {
+                      setName(e.target.value)
+                    }}
+                    value={name}
+                    onBlur={() => { }}
+                    inputStatus={undefined}
+                    errorMessage={undefined}
+                  />
+                  <Button
+                    type="button"
+                    text="Get certificate"
+                    icon="login"
+                    loading={loading}
+                    onClick={() => getCertificateCallback()}
+                  />
+                </UserBadgeInput>
+              )}
             </>
           ) : (
-              <p>To obtain the completion certificate, you need to complete all chapters.</p>
-            )}
+            <p>To obtain the completion certificate, you need to complete all chapters.</p>
+          )}
         </UserBadge>
       </UserCard>
 
@@ -108,7 +109,7 @@ export const UserView = ({
         <UserProgress>
           {chapterData.map((chapter: ChapterData) => {
             const done = user.progress && (user.progress.indexOf(chapter.pathname) >= 0 || user.progress.indexOf(chapter.pathname.replace("/ocean101", "")) >= 0)
-           
+
             return (
               <Link to={chapter.pathname}>
 
@@ -127,6 +128,24 @@ export const UserView = ({
       <UserCard>
         <UserProgress>
           {chapterDataDefi.map((chapter: ChapterData) => {
+            const done = user.progress && user.progress.indexOf(chapter.pathname) >= 0
+            return (
+              <Link to={chapter.pathname}>
+                <UserChapter key={chapter.pathname} done={done}>
+                  {chapter.name}
+                  {done && <img alt="done" src="/icons/check.svg" />}
+                </UserChapter>
+              </Link>
+            )
+          })}
+        </UserProgress>
+      </UserCard>
+      <UserTitle2>
+        <h1>Your progress for ComputeToData:</h1>
+      </UserTitle2>
+      <UserCard>
+        <UserProgress>
+          {ComputeToData.map((chapter: ChapterData) => {
             const done = user.progress && user.progress.indexOf(chapter.pathname) >= 0
             return (
               <Link to={chapter.pathname}>
