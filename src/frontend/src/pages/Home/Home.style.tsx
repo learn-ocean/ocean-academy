@@ -1,5 +1,4 @@
 import styled from 'styled-components/macro'
-
 import { FullPage } from 'styles'
 
 export const HomeCourse = styled.div`
@@ -39,8 +38,9 @@ export const HomeCourseGridWrapper = styled.div`
 export const HomeCourseGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 100px;
-  margin: 50px;
+  grid-gap: 40px;
+  margin: 40px;
+  margin-top: 80px;
   p {
     font-size: 16px;
   }
