@@ -1,3 +1,6 @@
+import { ChapterData } from 'pages/Chapter/Chapter.controller'
+
+import { course } from '..'
 import { data as data1 } from './Chapter1'
 import { data as data2 } from './Chapter2'
 import { data as data3 } from './Chapter3'
@@ -5,10 +8,8 @@ import { data as data4 } from './Chapter4'
 import { data as data5 } from './Chapter5'
 import { data as data6 } from './Chapter6'
 import { data as data7 } from './Chapter7'
-import { course } from '..'
 
-// To be filled with content
-export const chapterData = [
+export const chapterData: ChapterData[] = [
     {
         pathname: `/${course.path}/chapter-1`,
         name: '1 - Challenges of Collaborating with Data',
