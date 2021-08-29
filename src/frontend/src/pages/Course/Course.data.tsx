@@ -29,7 +29,7 @@ export const courseData: CourseData[] = [
         path: ComputeToData.path,
         pathname: `/${ComputeToData.path}/info`,
         name: 'Intro to ComputeToData',
-        description: 'Introduction to Decentralized Finance with Data.',
+        description: 'Introduction to ComputeToData.',
         noChapters: 7,
         data: ComputeToData,
         title: 'Intro to ComputeToData'
