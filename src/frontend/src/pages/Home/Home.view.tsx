@@ -51,15 +51,6 @@ export const HomeView = () => {
           </div>
         </div>
       </HomeCourse>
-
-      <HomeCourse className={"about"}>
-        <div className={"row"}>
-          <div className={"column"}>
-            <p>Anyone can join the Ocean Academy community, but becoming a contributor to the academy requires slightly more commitment. Ultimately, you control your path to growth in the web3 data economy.</p>
-            <p>An Ocean Academy Sailor is a proactive self-employed team player who is eager to demonstrate their dedication to the project. We will support your growth and development by helping you with the tools and training to succeed.</p>
-          </div>
-        </div>
-      </HomeCourse>
       <HomeStyled className={"modules"}>
         <HomeCourseGridWrapper>
           <h1>Available Modules</h1>
