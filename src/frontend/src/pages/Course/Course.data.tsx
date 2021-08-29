@@ -29,7 +29,7 @@ export const courseData: CourseData[] = [
         path: ComputeToData.path,
         pathname: `/${ComputeToData.path}/info`,
         name: 'Intro to ComputeToData',
-        description: 'Introduction to ComputeToData.',
+        description: 'The first introduction course to use Compute-to-Data on Ocean Protocol.',
         noChapters: 7,
         data: ComputeToData,
         title: 'Intro to ComputeToData'
