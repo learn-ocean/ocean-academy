@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+
 import { FullPage } from 'styles'
 
 export const HomeCourse = styled.div`
@@ -6,7 +7,7 @@ export const HomeCourse = styled.div`
   max-width: 850px;
   margin: auto;
   padding: 50px 130px 50px 130px;
-  text-align: center;
+  text-align: left;
   left: 0;
 
   > h1 {
@@ -63,7 +64,7 @@ export const HomeStyled = styled.div`
   .about {
     background: rgba(255,255,255,0.1);
     padding: 20px;
-    max-width: 540px;
+    max-width: 700px;
     @media (max-width: 600px) {
       padding: 20px 25px;
     }
