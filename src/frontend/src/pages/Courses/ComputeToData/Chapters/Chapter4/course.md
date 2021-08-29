@@ -2,7 +2,7 @@
 
 #### Difficulty: **2/5** \| Estimated reading time: **5 min**
 
-<dialog character="octopus">“In experiments octopuses solved mazes and completed tricky tasks to get food rewards. They're also adept at getting themselves in and out of containers. (source: <a href="https://www.nhm.ac.uk/discover/octopuses-keep-surprising-us-here-are-eight-examples-how.html">NHM</a>... How handy!”</dialog>
+<dialog character="octopus">“In experiments octopuses solved mazes and completed tricky tasks to get food rewards. They're also adept at getting themselves in and out of containers. (source: <a href="https://www.nhm.ac.uk/discover/octopuses-keep-surprising-us-here-are-eight-examples-how.html">NHM</a>)... How handy!”</dialog>
 
 AI researchers, developers and startups developing AI and data products are dependent on large quantities of data to build new and better models. With CtD, more data is likely to be made available because data Owners can safely earn revenue from it, which may be used to train better models.
 
