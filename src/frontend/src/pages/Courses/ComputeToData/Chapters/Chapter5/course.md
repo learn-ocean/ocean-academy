@@ -16,17 +16,17 @@ The Ocean Provider is the service that validates access to the data based on wha
 
 In addition to the Ocean Provider, two components orchestrate the workflow in the backend when a Compute job is sent to some dataset: the Operator Service and the Operator Engine.
 
-* **Operator Service.** The Operator Service manages the Compute-to-Data workflow, communicates with the Data Provider, and manages the computation.
+**The Operator Service** manages the Compute-to-Data workflow, communicates with the Data Provider, and manages the computation.
 
 The operator service is coordinating the entire CtD process in the backend. It:
+* Allows for the execution of data access and Compute endpoints via an API.
+* Interacts with the Data Provider’s infrastructure (on-premise, or cloud).
+* Starts/stops/executes computing instances with the algorithms provided by the Data Consumer.
+* Retrieves the logs generated during executions.
+ 
+**The Operator Engine** represents the computing systems where the computation will be executed.
 
-    * Allows for the execution of data access and Compute endpoints via an API.
-    * Interacts with the Data Provider’s infrastructure (on-premise, or cloud).
-    * Starts/stops/executes computing instances with the algorithms provided by the Data Consumer.
-    * Retrieves the logs generated during executions.
-    * **Operator Engine**. The Operator Engine represents the computing systems where the computation will be executed.
-
-The **Operator Engine** is in charge of orchestrating the Compute environment using Kubernetes as backend where each Compute job runs in an isolated [Kubernetes Pod](https://kubernetes.io/docs/concepts/workloads/pods/). Typically the Operator Engine retrieves the workflows created by the Operator Service in Kubernetes, and manages the containers necessary to complete the execution of the Compute workflows.
+The Operator Engine is in charge of orchestrating the Compute environment using Kubernetes as backend where each Compute job runs in an isolated [Kubernetes Pod](https://kubernetes.io/docs/concepts/workloads/pods/). Typically the Operator Engine retrieves the workflows created by the Operator Service in Kubernetes, and manages the containers necessary to complete the execution of the Compute workflows.
 
 The Operator Engine is in charge of retrieving all the workflows registered in a K8s cluster, allowing to:
 
