@@ -2,7 +2,7 @@
 
 #### Difficulty: **1/5** \| Estimated reading time: **10 min**
 
-<dialog character="turtle">“For some of the deep-sea creatures, there could be only a few dozen potential mates for hundreds of miles around. In the complete void of the deep ocean, how can these rare creatures find each other in order to breed? The most extreme depths of the ocean remain mysterious and largely uncharted, but there are thousands of sea creatures down in the darkness that have found [creative and exceptional ways to thrive](https://www.scienceabc.com/nature/animals/how-do-rare-sea-creatures-find-each-other-to-breed.html)” ... For data, it is via Ocean Protocol.</dialog>
+<dialog character="turtle">“For some of the deep-sea creatures, there could be only a few dozen potential mates for hundreds of miles around. In the complete void of the deep ocean, how can these rare creatures find each other in order to breed? The most extreme depths of the ocean remain mysterious and largely uncharted, but there are thousands of sea creatures down in the darkness that have found <a href="https://www.scienceabc.com/nature/animals/how-do-rare-sea-creatures-find-each-other-to-breed.html">creative and exceptional ways to thrive</a>” ... For data, it is via Ocean Protocol.</dialog>
 
 
 **Organizations have a lot of data, but they don’t use this asset effectively,  if at all. **
