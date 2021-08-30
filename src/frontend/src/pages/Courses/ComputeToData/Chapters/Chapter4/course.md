@@ -2,7 +2,7 @@
 
 #### Difficulty: **2/5** \| Estimated reading time: **5 min**
 
-<dialog character="octopus">“In experiments octopuses solved mazes and completed tricky tasks to get food rewards. They're also adept at getting themselves in and out of containers. (source: <a href="https://www.nhm.ac.uk/discover/octopuses-keep-surprising-us-here-are-eight-examples-how.html">NHM</a>)... How handy!”</dialog>
+<dialog character="octopus">“In experiments octopuses solved mazes and completed tricky tasks to get food rewards. They're also adept at getting themselves in and out of containers... How handy!”</dialog>
 
 AI researchers, developers and startups developing AI and data products are dependent on large quantities of data to build new and better models. With CtD, more data is likely to be made available because data Owners can safely earn revenue from it, which may be used to train better models.
 
@@ -20,9 +20,9 @@ An algorithm can be sold for a fixed price or for a variable price through a Dat
 
 An algorithm that runs over a Compute-to-Data instance is composed of the following:
 
-* an algorithm code
-* a Docker image (base image + tag)
-* an entry point
+- an algorithm code
+- a Docker image (base image + tag)
+- an entry point
 
 The docker image provides the version of the interpreter (e.g. Python 3.9) and the required dependencies (e.g. Numpy, Pandas).
 
