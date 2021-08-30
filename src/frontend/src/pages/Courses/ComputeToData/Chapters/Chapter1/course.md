@@ -4,8 +4,7 @@
 
 <dialog character="turtle">“For some of the deep-sea creatures, there could be only a few dozen potential mates for hundreds of miles around. In the complete void of the deep ocean, how can these rare creatures find each other in order to breed? The most extreme depths of the ocean remain mysterious and largely uncharted, but there are thousands of sea creatures down in the darkness that have found <a href="https://www.scienceabc.com/nature/animals/how-do-rare-sea-creatures-find-each-other-to-breed.html">creative and exceptional ways to thrive</a>” ... For data, it is via Ocean Protocol.</dialog>
 
-
-**Organizations have a lot of data, but they don’t use this asset effectively,  if at all. **
+**Organizations have a lot of data, but they don’t use this asset effectively, if at all.**
 
 Organizations have come a long way to professionalize their data-related activities. Whereas some have already been able to shift their operational model into being more data driven, others are still on the way, and some have yet to begin.
 
@@ -21,7 +20,7 @@ The problem with data is that it can be replicated. Once copied, control, and th
 
 Losses may involve intellectual property, confidential company information, or personal data about customers, and the legal implications of that. As a result, companies are reluctant to share data with service providers and partners, even if that means missed opportunities.
 
-**Collaboration on data suffers organizational barriers**.
+**Collaboration on data suffers organizational barriers.**
 
 Besides the risks associated with data losses, other factors hinder the ability of organizations to share data according to studies and surveys:
 
