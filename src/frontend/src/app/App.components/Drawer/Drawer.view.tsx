@@ -3,11 +3,12 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 // import { PublicUser } from 'pages/Course/Course.data'
 import { PublicUser } from 'shared/user/PublicUser'
+
 import { ChapterData } from '../../../pages/Chapter/Chapter.controller'
 import { chaptersByCourse } from '../../../pages/Course/Course.data'
 // PLACEHOLDER.
 // Use Select menu to choose the  
-// import { chapterData } from '../../../pages/Courses/ocean101/Chapters/Chapters.data'
+// import { Select } from '../../../pages/Courses/ocean101/Chapters/Chapters.data'
 import { Select } from '../Select/Select.controller'
 import { Option } from '../Select/Select.view'
 import { DrawerItem, DrawerMask, DrawerStyled, DrawerStyledLogin } from './Drawer.style'
@@ -46,7 +47,8 @@ export const ChapterDrawerView = ({ showingChapters, hideCallback, pathname, cha
       <Select
         options={[
           { name: "Ocean101", path: "ocean101" },
-          { name: "Intro to Data Defi", path: "introToDataDefi" }
+          { name: "Intro to Data Defi", path: "introToDataDefi" },
+          { name: "Compute-To-Data", path: "ComputeToData" }
         ]}
         defaultOption={activeCourse}
         selectCallback={(e) => changeCourseCallback(e)}

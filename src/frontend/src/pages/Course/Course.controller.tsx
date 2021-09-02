@@ -15,6 +15,7 @@ export type CourseData = {
     description: string;
     noChapters: number;
     data: Course;
+    title: string;
 }
 
 

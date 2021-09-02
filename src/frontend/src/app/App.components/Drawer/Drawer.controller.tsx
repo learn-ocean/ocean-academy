@@ -3,8 +3,8 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import { State } from 'reducers'
-import { Option } from '../Select/Select.view'
 
+import { Option } from '../Select/Select.view'
 import { hideChapterDrawer, hideMenuDrawer } from './Drawer.actions'
 import { ChapterDrawerView, LoginDrawerView } from './Drawer.view'
 
@@ -30,6 +30,14 @@ export const ChapterDrawer = () => {
         path: "introToDataDefi"
       }
       setActiveCourse(introToDataDefi)
+    }
+
+    if (e.path === 'ComputeToData') {
+      const ComputeToData: Option = {
+        name: "ComputeToData",
+        path: "ComputeToData"
+      }
+      setActiveCourse(ComputeToData)
     }
   }
 

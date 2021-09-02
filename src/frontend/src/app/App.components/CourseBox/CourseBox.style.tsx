@@ -7,9 +7,10 @@ export const ChaptersIconStyled = styled.div`
 `
 
 export const CourseBoxStyled = styled.div`
-    margin: 20px;
+    margin: 15px;
     background-color: rgba(196,196,196,.14);
     color: white;
+    min-height: 180px;
     border: 1px solid #c4c4c4;
     h3 {
       text-align: left;

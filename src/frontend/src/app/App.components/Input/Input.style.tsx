@@ -8,6 +8,7 @@ export const InputStyled = styled.div`
 `
 
 export const SearchInputStyled = styled.div`
+  float: right;
   margin: 20px 0px;
   position: relative;
 `

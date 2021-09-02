@@ -21,7 +21,7 @@ export const AboutView = () => {
             Protocol. So was born Ocean Academy.
           </p>
           <ButtonContainer>
-          <a href="https://discord.gg/BPPHQksyPd">
+            <a href="https://discord.gg/BPPHQksyPd">
               <Button text="JOIN US ON DISCORD" color="primary" />
             </a>
             <a href="https://github.com/learn-ocean/ocean-academy" target="_blank" rel="noopener noreferrer">
@@ -41,12 +41,6 @@ export const AboutView = () => {
               dystopias adversarial thinker.
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/albert-peci-65932413b/" target="_blank" rel="noopener noreferrer">
-                Albert Peci
-              </a>
-              . Full Stack Web3 Developer (Rust, Javascript, Solidity), Berlin, Germany. Novel author and lucid dreamer.
-            </li>
-            <li>
               <a href="https://www.linkedin.com/in/laurentrochat/" target="_blank" rel="noopener noreferrer">
                 Laurent Rochat
               </a>
@@ -54,21 +48,9 @@ export const AboutView = () => {
             </li>
             <li>
               <a href="https://www.linkedin.com/in/ludovicgrandclement/" target="_blank" rel="noopener noreferrer">
-              Ludovic Grandclement
+                Ludovic Grandclement
               </a>
               . Data Engineer/Technical Project Manager. Hong Kong. Avid lifelong learner and part-time baker.
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/kaimeinke/" target="_blank" rel="noopener noreferrer">
-               Kai Meinke
-              </a>
-              . Product Owner. Kiel, Germany.
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/frederic-schwill" target="_blank" rel="noopener noreferrer">
-               Frederic Schwill
-              </a>
-              . Security & Privacy Engineer. Freiburg, Germany.
             </li>
           </ul>
         </AboutContainer>
