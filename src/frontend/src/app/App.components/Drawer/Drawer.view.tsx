@@ -48,7 +48,7 @@ export const ChapterDrawerView = ({ showingChapters, hideCallback, pathname, cha
         options={[
           { name: "Ocean101", path: "ocean101" },
           { name: "Intro to Data Defi", path: "introToDataDefi" },
-          { name: "ComputeToData", path: "ComputeToData" }
+          { name: "Compute-To-Data", path: "ComputeToData" }
         ]}
         defaultOption={activeCourse}
         selectCallback={(e) => changeCourseCallback(e)}
