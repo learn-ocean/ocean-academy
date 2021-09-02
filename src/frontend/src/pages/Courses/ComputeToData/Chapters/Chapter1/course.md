@@ -1,4 +1,4 @@
-# Chapter 1: Challenges of Collaborating with Data?
+# Chapter 1: Challenges of Collaborating with Data
 
 #### Difficulty: **1/5** \| Estimated reading time: **10 min**
 
