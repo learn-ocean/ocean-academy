@@ -4,31 +4,35 @@ import * as React from 'react'
 import { PublicUser } from 'shared/user/PublicUser'
 
 // prettier-ignore
-import { TokenButton, TokenNone, TokenStyled } from './Token.style'
+import { TokenButton, TokenNone, TokenStyled, CertificateLink } from './Token.style'
 
 type TokenViewProps = {
   loading: boolean
   user: PublicUser
+  certificate: string
   mintCallback: () => void
 }
 
-export const TokenView = ({ loading, user, mintCallback }: TokenViewProps) => {
+export const TokenView = ({ loading, user, certificate, mintCallback }: TokenViewProps) => {
   let badgeUnlocked = false
   let counter = 0
   user.progress?.forEach(() => {
     counter++
   })
-  if (counter >= 20) badgeUnlocked = true
+  if (counter >= 0) badgeUnlocked = true
 
   return (
     <TokenStyled>
-      {badgeUnlocked ? (
+      {certificate ? 
+      <TokenNone>Congratulations, you already have a certificate! Your completion certificate token id is {user.tokenId} and its metadata is available <CertificateLink href={`${certificate}`}>here</CertificateLink>. </TokenNone>
+      :
+      (badgeUnlocked ? (
         <TokenButton>
           <Button type="button" text="Get token" icon="wallet" loading={loading} onClick={() => mintCallback()} />
         </TokenButton>
       ) : (
         <TokenNone>No active certificate</TokenNone>
-      )}
+      ))}
     </TokenStyled>
   )
 }
@@ -36,6 +40,7 @@ export const TokenView = ({ loading, user, mintCallback }: TokenViewProps) => {
 TokenView.propTypes = {
   loading: PropTypes.bool,
   user: PropTypes.object,
+  certificate: PropTypes.string
 }
 
 TokenView.defaultProps = {
@@ -45,4 +50,5 @@ TokenView.defaultProps = {
     username: 'Not found',
     karmaTotal: 0,
   },
+  certificate: ""
 }

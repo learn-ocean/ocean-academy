@@ -10,6 +10,9 @@ import Web3 from 'web3'
 import Certificate from '../../abis/Certificate.json'
 import { TokenView } from './Token.view'
 
+//Certificate main net contract address
+const MAIN_CERTIF_ADDR = "0xc6bc8053dd92e4814099c7c28c7035aa636d0ba1"
+
 declare global {
   interface Window {
     ethereum: any
@@ -24,6 +27,7 @@ export const Token = () => {
   const [loading, setLoading] = useState(false)
   const [account, setAccount] = useState(undefined)
   const [certificateContract, setCertificateContract] = useState(undefined)
+  const [certificate, setCertificate] = useState(undefined)
 
   useEffect(() => {
     dispatch(getUser({ username }))
@@ -68,20 +72,33 @@ export const Token = () => {
 
     const accounts = await web3.eth.getAccounts()
     setAccount(accounts[0])
+    //Current chain id of provider
+    const chainIdHex = await window.ethereum.request({ method: 'eth_chainId' });
 
-    const networkId = await web3.eth.net.getId()
-
+    //Check if chaind id is ethereum main net
+    if(chainIdHex !== "0x1"){
+      window.alert("Please connect metamask ethereum to main net and reload the page.")
+    }else{
     //@ts-ignore
-    const certificateData = Certificate.networks[networkId]
-    if (certificateData) {
-      const certificateContract = new web3.eth.Contract(Certificate.abi, certificateData.address)
+      const certificateContract = new web3.eth.Contract(Certificate.abi, MAIN_CERTIF_ADDR)
       setCertificateContract(certificateContract)
-    } else {
-      window.alert('Certificate contract not deployed to detected network.')
-    }
+      await checkIfCertificateExists(certificateContract);
+      } 
 
-    setLoading(false)
+      setLoading(false)
   }
 
-  return <TokenView loading={loading} user={user} mintCallback={mintCallback} />
+  const checkIfCertificateExists = async(contract: Object) =>{
+    let certificate = ""
+      try{
+        //@ts-ignore
+        const res = await contract.methods.tokenURI(user?.tokenId).call()
+        setCertificate(res)
+      }catch(error){
+        //Means user has not a certificate yet.
+        console.log("Error while getting certificate: ", error)
+      }
+  }
+
+  return <TokenView loading={loading} user={user} certificate={certificate} mintCallback={mintCallback} />
 }
