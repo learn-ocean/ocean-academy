@@ -20,3 +20,8 @@ export const TokenNone = styled.div`
   text-align: center;
   top: 100px;
 `
+
+export const CertificateLink = styled.a`
+text-decoration: underline !important;
+color: #ff4092 !important;
+`
