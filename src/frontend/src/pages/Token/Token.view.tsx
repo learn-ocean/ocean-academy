@@ -19,7 +19,7 @@ export const TokenView = ({ loading, user, certificate, mintCallback }: TokenVie
   user.progress?.forEach(() => {
     counter++
   })
-  if (counter >= 20) badgeUnlocked = true
+  if (counter >= 23) badgeUnlocked = true
 
   return (
     <TokenStyled>
