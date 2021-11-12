@@ -48,10 +48,10 @@ export const AppRoutes = ({ location }: any) => (
     <Route exact path="/user/:username">
       <User />
     </Route>
-    <Route exact path="/certificate/:username">
+    <Route exact path="/certificates/:username/:course">
       <Certificate />
     </Route>
-    <Route exact path="/token/:username">
+    <Route exact path="/token/:username/:course">
       <Token />
     </Route>
     <Route exact path="/about">
@@ -59,6 +59,9 @@ export const AppRoutes = ({ location }: any) => (
     </Route>
     <Route exact path="/terms">
       <Terms />
+    </Route>
+    <Route exact path="/page-not-found">
+      <Error404 />
     </Route>
     <Route>
       <Error404 />
