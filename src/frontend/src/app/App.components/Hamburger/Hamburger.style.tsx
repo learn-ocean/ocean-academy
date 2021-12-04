@@ -19,7 +19,7 @@ export const HamburgerStyledLeft = styled.div`
 export const HamburgerStyledRight = styled.div`
   position: fixed;
   right: 18px;
-  top: 18px;
+  top: 25px;
   overflow: visible;
   margin: 0;
   height: 14px;
