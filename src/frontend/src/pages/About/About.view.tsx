@@ -2,7 +2,7 @@ import { Button } from 'app/App.components/Button/Button.controller'
 import * as React from 'react'
 
 //prettier-ignore
-import { AboutContainer, AboutPage, AboutStyled, ButtonContainer } from './About.style'
+import { AboutContainer,Section, MemberName,MemberDescription, TeamListContainer,TeamMemberPicture, TeamMemberContainer, AboutPage, AboutStyled, ButtonContainer } from './About.style'
 
 export const AboutView = () => {
   return (
@@ -11,6 +11,7 @@ export const AboutView = () => {
       <AboutPage>
         <AboutContainer>
           <h1>About Ocean Academy</h1>
+          <Section>
           <p>
             Ocean Academy is a community initiative started by Ocean Ambassadors to help with the onboarding of new
             ambassadors. Many people, including data owners and data scientists, are not familiar with blockchain and
@@ -31,28 +32,62 @@ export const AboutView = () => {
               <Button text="READ ABOUT OCEAN PROTOCOL" color="primary" />
             </a>
           </ButtonContainer>
+          </Section>
+          <Section>
           <h1>Who we are</h1>
           <ul>
+            <TeamListContainer>
+              <TeamMemberContainer>
+              <TeamMemberPicture>
+                <img width="165" src="https://media-exp1.licdn.com/dms/image/C5103AQF-J-NXQOuTFw/profile-displayphoto-shrink_800_800/0/1528971762519?e=1643846400&v=beta&t=1OJDkQh_uTLcYJsopOLPyLeYSeP_ch7lGYAJJPnTQ98"/>
+                </TeamMemberPicture>
             <li>
+            <MemberName>
               <a href="https://www.linkedin.com/in/lattagher/" target="_blank" rel="noopener noreferrer">
                 Gherardo Lattanzi
               </a>
-              . AI and Privacy Analyst, China - Italy. By observing how China observed me I learned how to analyse. Tech
+              </MemberName>
+              <MemberDescription>
+              AI and Privacy Analyst, China - Italy. By observing how China observed me I learned how to analyse. Tech
               dystopias adversarial thinker.
+              </MemberDescription>
             </li>
+            </TeamMemberContainer>
+            <TeamMemberContainer>
+            <TeamMemberPicture>
+                <img width="165" src="https://media-exp1.licdn.com/dms/image/C4E03AQF_MoFxuE-d0w/profile-displayphoto-shrink_800_800/0/1516233413839?e=1643846400&v=beta&t=ALAvfq4jlLlgOKK5Lw-sPCRokRjLKrsImRBpQ39oDNo"/>
+                </TeamMemberPicture>
             <li>
+              <MemberName>
               <a href="https://www.linkedin.com/in/laurentrochat/" target="_blank" rel="noopener noreferrer">
                 Laurent Rochat
               </a>
-              . Analytics and Insights Director, Geneva, Switzerland. Off-piste snowboarder and fine wine lover.
+              </MemberName>
+              <MemberDescription>
+              Analytics and Insights Director, Geneva, Switzerland. Off-piste snowboarder and fine wine lover.
+              </MemberDescription>
+
             </li>
+            </TeamMemberContainer>
+            <TeamMemberContainer>
+            <TeamMemberPicture>
+                <img width="165" src="https://media-exp1.licdn.com/dms/image/C5603AQF-0AYH3l6KpA/profile-displayphoto-shrink_800_800/0/1610892210181?e=1643846400&v=beta&t=XChqkle62pikDb3E9wJaUuNV45TemdJT_9ZG3coxbv4"/>
+                </TeamMemberPicture>
             <li>
+            <MemberName>
               <a href="https://www.linkedin.com/in/ludovicgrandclement/" target="_blank" rel="noopener noreferrer">
                 Ludovic Grandclement
               </a>
-              . Data Engineer/Technical Project Manager. Hong Kong. Avid lifelong learner and part-time baker.
+              </MemberName>
+              <MemberDescription>
+              Data Engineer/Technical Project Manager. Hong Kong. Avid lifelong learner and part-time baker.
+              </MemberDescription>
+
             </li>
+            </TeamMemberContainer>
+            </TeamListContainer>
           </ul>
+          </Section>
         </AboutContainer>
       </AboutPage>
     </AboutStyled>

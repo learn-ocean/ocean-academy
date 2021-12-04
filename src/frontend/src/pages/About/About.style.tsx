@@ -18,12 +18,15 @@ export const AboutStyled = styled.div`
 export const AboutPage = styled(FullPage)``
 
 export const AboutContainer = styled.div`
-  width: 590px;
-  margin: calc(30vh - 130px);
+  margin: calc(30vh - 90px);
   
   @media (max-width: 800px) {
     padding: 50px;
     margin: 0;
+  }
+
+  p{
+    margin-top: 10px;
   }
   
   > h1 {
@@ -50,8 +53,64 @@ export const AboutContainer = styled.div`
   }
 `
 
+export const TeamListContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 50px;
+
+  @media only screen and (max-width: 1000px) {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+`
+
+export const TeamMemberContainer = styled.div`
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  justify-content: center;
+  align-items: center;
+
+  @media only screen and (max-width: 1000px) {
+      margin-top: 35px;
+  }
+`
+
+export const TeamMemberPicture = styled.div`
+  margin-bottom: 20px;
+  img{
+    border-radius: 50%;
+  }
+`
+
+export const Section = styled.div`
+  margin-top: 20px;
+`
+
+export const MemberName = styled.div`
+  font-weight: 700;
+  font-size: 32;
+  color: #e000cf;
+
+  a{
+  font-weight: 700;
+  font-size: 24px !important;
+  }
+`
+
+export const MemberDescription = styled.div`
+  margin-top: 15px;
+`
+
 export const ButtonContainer = styled.div`
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 12px;
+  margin-top: 40px;
 `
