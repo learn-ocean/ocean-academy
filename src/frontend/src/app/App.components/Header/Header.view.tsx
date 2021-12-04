@@ -3,25 +3,38 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 
 import { PublicUser } from 'shared/user/PublicUser'
+import { SubMenu } from '../SubMenu/SubMenu.controller'
 
-import { HamburgerLeft } from '../Hamburger/Hamburger.controller'
 // prettier-ignore
-import { HeaderLoggedIn, HeaderLoggedOut, HeaderLogo, HeaderMenuItem, HeaderStyled } from "./Header.style";
+import { HeaderLoggedIn, HeaderContainer, HeaderLoggedOut, HeaderLogo, HeaderMenuItem, HeaderStyled } from "./Header.style";
 
 type HeaderViewProps = {
   user?: PublicUser
   removeAuthUserCallback: () => void
 }
 
+const SubMenuItem = () =>{
+  return (<HeaderMenuItem>
+            <SubMenu options={[
+          { name: "Ocean 101", path: "/ocean101/chapter-1" },
+          { name: "Intro To Data Defi", path: "/introToDataDefi/chapter-1" },
+          { name: "Compute To Data", path: "/ComputeToData/chapter-1" }
+        ]} label={"COURSES"} selectCallback={() => {}} />
+  </HeaderMenuItem>)
+}
+
+
 // Overall Navbar
 export const HeaderView = ({ user, removeAuthUserCallback }: HeaderViewProps) => {
   return (
     <HeaderStyled>
-      <HamburgerLeft />
+
       <Link to="/">
         <HeaderLogo alt="logo" src="/logo.svg" />
       </Link>
+
       {user ? loggedInHeader({ user, removeAuthUserCallback }) : loggedOutHeader()}
+
     </HeaderStyled>
   )
 }
@@ -29,14 +42,12 @@ export const HeaderView = ({ user, removeAuthUserCallback }: HeaderViewProps) =>
 function loggedOutHeader() {
   return (
     <HeaderLoggedOut>
-      <Link to="/about">
-        <HeaderMenuItem>ABOUT US</HeaderMenuItem>
-      </Link>
-      <Link to="/terms">
-        <HeaderMenuItem>TERMS</HeaderMenuItem>
-      </Link>
+      <SubMenuItem />
       <Link to="/sign-up">
         <HeaderMenuItem>SIGN UP</HeaderMenuItem>
+      </Link>
+      <Link to="/about">
+        <HeaderMenuItem>ABOUT</HeaderMenuItem>
       </Link>
       <Link to="/login">
         <HeaderMenuItem>LOGIN</HeaderMenuItem>
@@ -48,14 +59,12 @@ function loggedOutHeader() {
 function loggedInHeader({ user, removeAuthUserCallback }: HeaderViewProps) {
   return (
     <HeaderLoggedIn>
-      <Link to="/about">
-        <HeaderMenuItem>ABOUT US</HeaderMenuItem>
-      </Link>
-      <Link to="/terms">
-        <HeaderMenuItem>TERMS</HeaderMenuItem>
-      </Link>
+      <SubMenuItem />
       <Link to={`/user/${user?.username}`}>
         <HeaderMenuItem>{user?.username}</HeaderMenuItem>
+      </Link>
+      <Link to="/about">
+        <HeaderMenuItem>ABOUT</HeaderMenuItem>
       </Link>
       <Link
         to="/"
