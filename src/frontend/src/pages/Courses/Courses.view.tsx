@@ -42,6 +42,7 @@ export const CoursesView = ({ courses, filterItems, searchFor }: CoursesViewProp
                             return (
                                 <Link key={i} to={`${course.path}/chapter-1`}>
                                     <CourseBox
+                                        completionTime={course.completionTime}
                                         title={course.title}
                                         shortDescription={course.description}
                                         noChapters={course.noChapters}

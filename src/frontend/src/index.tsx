@@ -15,6 +15,8 @@ export const store = configureStore({})
 
 ReactGA.initialize('UA-180076760-1')
 
+document.body.style.overflowX = "hidden";
+
 export const Root = () => {
   return (
     <GoogleReCaptchaProvider reCaptchaKey={process.env.REACT_APP_RECAPTCHA_SITE_KEY} language="en">

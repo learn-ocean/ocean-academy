@@ -19,14 +19,12 @@ export const HomeCourse = styled.div`
 `
 
 export const HomeCourseGridWrapper = styled.div`
-  width: 100%;
   max-width: 850px;
-  margin: auto;
-  // padding: 50px 50px 50px 50px;
+  padding: 15px 0px 20px 0px;
   text-align: center;
 
-  border-top: 1px solid rgb(0, 0, 0);
-  border-bottom: 1px solid rgb(0, 0, 0);
+  //border-top: 1px solid #41474e;
+  //border-bottom: 1px solid #41474e;
 
   > h1 {
     margin-bottom: 0;
@@ -37,23 +35,20 @@ export const HomeCourseGridWrapper = styled.div`
 `
 
 export const HomeCourseGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 40px;
-  margin: 40px;
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-top: 80px;
-  p {
-    font-size: 16px;
+
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top:25px;
   }
-  > div > img {
-    display: block;
-    margin: 30px;
-    margin: 30px auto;
-  }
-  @media (max-width: 600px) {
-    grid-template-columns: auto;
-    grid-gap: 10px;
-  }
+
 `
 
 export const HomeStyled = styled.div`
@@ -116,11 +111,6 @@ export const HomeStyled = styled.div`
     z-index: -1;
   };
 
-  .modules {
-    background-image: url(../../../waves-animated.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
 `
 
 export const HomePage = styled(FullPage)``
@@ -140,9 +130,11 @@ export const HomeContainer = styled.div`
   }
 
   .communityButton {
-    display: flex;
-    gap: 15px;
+    display: inline-flex;
+    flex-direction: row;
     margin-top: 20px;
+    gap: 20px;
+
   }
 
   @media (max-width: 375px) {
@@ -242,6 +234,102 @@ export const HomeDescription = styled.div`
   }
 `
 
+export const CoursesSection = styled.div`
+    position: relative;
+    display:flex;
+    flex-direction: row;
+    margin: 11vw 10vw;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+`
+
+
+export const CoursesContainer = styled.div`
+    text-align: center;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+`
+
+
+export const CommunitySection = styled.div`
+    position: relative;
+    display:flex;
+    height:400px;
+    flex-direction: row;
+    margin: 11vw 10vw;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      margin-bottom: 90px;
+      height:760px;
+
+    }
+`
+
+export const SeaCreatureContainer = styled.div`
+    width: 450px;
+    img{
+      left: -115px;
+      position:relative !important;
+      width: 550px;
+      top: 40px !important;
+      z-index:10;
+      animation: float 6s ease-in-out infinite;
+
+      @media (max-width: 900px) {
+        width: 300px;
+        align-self: center;
+        left: 55px;
+
+      }
+
+
+      @keyframes float {
+        0% {
+          transform: translate(0px, 0px);
+        }
+        50% {
+          transform: translate(10px, -10px);
+        }
+        100% {
+          transform: translate(0px, 0px);
+        }
+      }
+
+    }
+
+
+
+`
+
+export const CommunityContentContainer = styled.div`
+    max-width: 600px;
+
+    .communityCall{
+      width: 200px;
+      margin-top:50px;
+
+      @media (max-width: 900px) {
+        margin:auto;
+        margin-top:50px;
+
+
+      }
+
+    }
+`
 
 export const HomeTestimonials = styled.div`
   margin: 50px 10vw;

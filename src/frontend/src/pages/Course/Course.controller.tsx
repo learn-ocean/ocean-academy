@@ -16,6 +16,7 @@ export type CourseData = {
     noChapters: number;
     data: Course;
     title: string;
+    completionTime: number;
 }
 
 
