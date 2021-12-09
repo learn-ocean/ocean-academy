@@ -271,8 +271,8 @@ export const CommunitySection = styled.div`
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin-top: 20px;
-      margin-bottom: 90px;
+      margin-top: 60px;
+      margin-bottom: 200px;
       height:760px;
 
     }
