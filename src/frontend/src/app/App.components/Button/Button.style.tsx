@@ -12,10 +12,10 @@ export const clickWave = keyframes`
 `
 
 export const ButtonStyled = styled.button`
-  height: 36px;
+  height: 42px;
   border: none;
   font-family: 'Proxima Nova', Helvetica, Arial, sans-serif;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 14px;
   cursor: pointer;
   border-radius: 6px;
