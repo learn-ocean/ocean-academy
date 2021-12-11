@@ -257,6 +257,24 @@ export const CoursesContainer = styled.div`
     flex-direction: column;
 `
 
+export const CoursesDescription = styled.div`
+padding-left: 225px;
+
+padding-right: 225px;
+
+p{
+  font-size: 25px !important;
+}
+
+@media (max-width: 900px) {
+  padding-left: 15px;
+  padding-right: 15px;
+
+  p{
+    font-size: 18px !important;
+  }
+}
+`
 
 export const CommunitySection = styled.div`
     position: relative;

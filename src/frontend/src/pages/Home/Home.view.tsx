@@ -7,7 +7,7 @@ import { CourseBox } from 'app/App.components/CourseBox/CourseBox.controller'
 import { CourseData } from 'pages/Course/Course.controller'
 import { courseData } from 'pages/Course/Course.data'
 
-import { HomeContainer,CoursesSection,CommunityContentContainer, CoursesContainer,CommunitySection, HomeCourseGrid, SeaCreatureContainer, HomeTestimonials, HomeStyled } from './Home.style'
+import { HomeContainer,CoursesSection,CoursesDescription,CommunityContentContainer, CoursesContainer,CommunitySection, HomeCourseGrid, SeaCreatureContainer, HomeTestimonials, HomeStyled } from './Home.style'
 
 export const HomeView = () => {
 
@@ -41,8 +41,10 @@ export const HomeView = () => {
       <CoursesSection>
           <CoursesContainer>
             <h1>Available Courses</h1>
+            <CoursesDescription>
             <p>Our interactive modules cover a range of topics and difficulties. Wheter you're a web3 expert or 
               completely new to crypto, there is something for you.</p>
+              </CoursesDescription>
           
             <HomeCourseGrid>
               {courses.map((course) => {
@@ -70,16 +72,15 @@ export const HomeView = () => {
           </SeaCreatureContainer>
 
           <CommunityContentContainer>
-          <h1>Our community</h1>
-            <p>Anyone can join the Ocean Academy community, but becoming a contributor to the academy requires slightly more commitment. 
-              Ultimately, you control your path to growth in the web3 data economy. </p>
-              <p>An Ocean Academy Sailor is a proactive self-employed team player who is eager to demonstrate their dedication to the project. 
-              We will support your growth and development by helping you with the tools and training to succeed. 
-            </p>
+          <h1>Join as an Ocean Ambassador</h1>
+            <p>Completing Ocean 101 is a prerequisite to becoming an Ambassador for Ocean Protocol. </p>
+            <p>Ocean Ambassadors work at the core of the Ocean Protocol ecosystem to make the vision of an open and fair data economy come true. </p>
+            <p>Ambassadors are talented and passionate individuals who make a difference in this world, and they get rewarded for it!</p>
+            <p>Everyone can contribute: why not you?</p>
 
             <div className="communityCall">
             <a href="https://discord.gg/BPPHQksyPd">
-            <Button text="JOIN NOW" color="primary"  />
+            <Button text="JOIN HERE" color="primary"  />
             </a>
             </div>
 
