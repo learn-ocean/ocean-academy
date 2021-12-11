@@ -51,3 +51,13 @@ export const getCourseByTitle = (courseTitle: string): COURSE_TYPE | undefined =
 
 export const courseTitleExists = (courseTitle: string): boolean => getCourseByTitle(courseTitle) ? true : false
 
+export const getCourseFromIdx = (courseIdx: number): COURSE_TYPE => _courses[courseIdx - 1]
+
+export const toTokenId = (userId: number, course: COURSE_TYPE): string => {
+    const courseIndex = _courses.indexOf(course) + 1;
+    const courseIndexPadded = courseIndex.toString().padStart(3, '0');
+    const userIdPadded = userId.toString().padStart(8, '0');
+   
+    return courseIndexPadded + userIdPadded
+}
+
