@@ -12,6 +12,7 @@ import { router } from './router'
 import { sanitize } from './sanitize'
 
 import 'reflect-metadata'
+import { TokenRobot } from './resolvers/robots/TokenRobot'
 
 const start = async (): Promise<void> => {
   try {
@@ -42,6 +43,9 @@ const start = async (): Promise<void> => {
     app.listen(process.env.PORT, () => {
       console.info(`Server running on port ${process.env.PORT}`)
     })
+    
+    const tokenRobot = new TokenRobot(process.env.TOKEN_ROBOT_INTERVAL_MS ? parseInt(process.env.TOKEN_ROBOT_INTERVAL_MS) : 180000)
+    tokenRobot.run()
   } catch (error) {
     console.error(error)
   }

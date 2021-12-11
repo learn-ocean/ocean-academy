@@ -1,7 +1,7 @@
 import got from 'got';
 import {Token, TokenModel } from '../../shared/tokens/Token';
 import { UserModel, MintedToken } from '../../shared/user/User'
-import { ObjectId } from 'mongodb';
+import { isValidTokenId, fromTokenId } from '../../helpers/tokens';
 
 const Web3 = require('web3')
 
@@ -32,8 +32,8 @@ export class TokenRobot{
     /**
      * Main run loop of the robot.
      * Checks the difference between the blockchain minted tokens 
-     * and the database assigned ones. If it finds a token that has not been
-     * updated on the user database but exists in the chain, performs the necessary action
+     * and the database assigned ones. If it finds a token that has not been added
+     * to the database but exists in the chain, performs the necessary action
      * to update the db.
      */
     run = async() => {
@@ -42,37 +42,33 @@ export class TokenRobot{
         const newTokensMap = await this.getChainTokens()
         const newTokensIds = Array.from(newTokensMap.keys())
            
-        const dbTokens = await TokenModel.find()
-        const dbTokenssNotSet: Map<number, ObjectId> = new Map(dbTokens.filter(x => x.userId && !x.tx).map(x => [x.tokenId, x.userId]))
-        const dbTokensSet: Set<number> = new Set(dbTokens.filter(x => x.userId && x.tx).map(x => x.tokenId))
-        const oddTokens = newTokensIds.filter(x => dbTokenssNotSet.get(x) && !dbTokensSet.has(x))
-    
+        const dbTokensIds = new Set((await TokenModel.find()).map(x => x.tokenId))
+        
+        const oddTokens = newTokensIds.filter(x => !dbTokensIds.has(x) && isValidTokenId(x))
+
         if(oddTokens.length > 0){
             this.robotLog(`New token ids are: ${oddTokens.toString()}`)
-            await this.writeTokensToDb(oddTokens, dbTokenssNotSet, newTokensMap)
+            await this.writeTokensToDb(oddTokens, newTokensMap)
         } else{
-            this.robotLog("No new tokens.")
+          this.robotLog("No new tokens.")
         }
+
     
         //Set next timer.
         setTimeout(this.run, this.interval)
     }
 
     /**
-     * Updates the Token collection with the new mintedAt and tx info 
-     * and update the corresponding User document with the Token info.
-     * @param oddTokens the new tokens that are not set in the db yet.
-     * @param tokensUserMap a map with tokens tokenId as keys and the associated
-     * user object id as value.
-     * @param newTokensMap a map with the tokens tokenId as keys and the token object
-     * as value.
+     * Writes the token minted information to the user model and the token model. 
+     * @param oddtokens: the tokens ids to be written.
+     * @param tokensMap: a map of tokens ids and token content.
      */
-    writeTokensToDb = async(oddTokens: number[], tokensUserMap: Map<number, ObjectId>, newTokensMap: Map<number, Token>) => {
+    writeTokensToDb = async(tokensIds: number[], tokensMap: Map<number, Token>) => {
 
         //Prepare the db token write operations.
-        const bulkWriteToken= await Promise.all(oddTokens.map(async(x) => {
+        const bulkWriteToken = await Promise.all(tokensIds.map(async(x) => {
     
-            const tokenObj = newTokensMap.get(x)
+            const tokenObj = tokensMap.get(x)
 
             return {updateOne: {        
                 filter: { tokenId : x },
@@ -82,18 +78,19 @@ export class TokenRobot{
         }))
 
         //Prepare the db user write operations.
-        const bulkWriteUser= await Promise.all(oddTokens.map(async(x) => {
+        const bulkWriteUser= await Promise.all(tokensIds.map(async(x) => {
 
-            const tokenObj = newTokensMap.get(x)
+            const tokenObj = tokensMap.get(x)
 
             if(tokenObj && tokenObj.tx && tokenObj.mintedAt){
-
+                
+                const {courseObj, userId} = fromTokenId(x);
+                console.log("Token Obj: ", tokenObj)
                 const tokenObjUser = await this.getTxInput(tokenObj.tx, tokenObj.mintedAt)
-                const userId = tokensUserMap.get(x)
     
                 return {updateOne: {        
-                    filter: { _id : tokenObjUser.tokenId > 0 ? userId : "" },
-                    update: { $set: { [`tokens.${tokenObjUser.course}`] : tokenObjUser } } 
+                    filter: { userId : userId },
+                    update: { $set: { [`tokens.${courseObj.title}`] : tokenObjUser } } 
                 }
             }
         }
@@ -102,6 +99,7 @@ export class TokenRobot{
 
         }))
 
+        //Write to the tb.
         await TokenModel.bulkWrite(bulkWriteToken)
         await UserModel.bulkWrite(bulkWriteUser)
     }
