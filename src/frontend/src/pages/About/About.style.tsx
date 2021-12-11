@@ -4,6 +4,8 @@ import { FullPage } from 'styles'
 
 export const AboutStyled = styled.div`
   position: relative;
+  min-height: 60%;
+
 
   > img {
     position: absolute;
