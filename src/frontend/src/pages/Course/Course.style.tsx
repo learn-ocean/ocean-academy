@@ -11,9 +11,11 @@ export const CourseStyled = styled.div`
   margin: 110px 90px 0px 110px;
 
 
+
   @media (max-width: 900px) {
     flex-direction: column;
-    margin: 110px 10px 0px 10px;
+    margin: 90px 10px 0px 10px;
+    align-items:center;
   }
 `
 
@@ -22,6 +24,11 @@ export const LeftBox = styled.div`
   flex-direction: column;
   width: 625px;
   padding: 45px 30px 30px 55px;
+
+  @media (max-width: 900px) {
+    max-width: 400px;
+    padding: 0px 35px 30px 35px;
+  }
 `
 
 export const CourseTitle = styled(FadeInFromTop)`
@@ -29,6 +36,11 @@ export const CourseTitle = styled(FadeInFromTop)`
   font-family: Proxima nova, sans-serif;
   font-weight: 800;
   color: ${roseColor};
+
+  @media (max-width: 900px) {
+    font-size: 50px;
+    text-align: center;
+  }
   
 `
 
@@ -37,7 +49,6 @@ export const Section = styled(AnimatedCard)`
   padding: 30px 30px 30px 30px;
   background-color: black;
   border-radius: 15px;
-
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 `
 
@@ -77,12 +88,24 @@ export const Description = styled.div`
     font-size: 22px;
   }
 
+  @media (max-width: 900px) {
+    font-size: 18px;
+
+    p{
+      font-size: 18px;
+    }
+  }
+
 `
 
 export const SubTitle = styled.div`
 font-weight: 800;
 font-size: 32px;
 color: ${whiteColor};
+
+@media (max-width: 900px) {
+  font-size: 26px;
+}
 `
 
 export const ProgressTitle = styled.div`
