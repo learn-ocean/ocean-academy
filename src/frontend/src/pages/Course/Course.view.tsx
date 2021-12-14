@@ -1,6 +1,6 @@
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
-import { CourseStyled, LeftBox,CompletionPercentage,ResumeCourse, CurrentChapter, CourseTitle, SubTitle, Section, Description, ProgressTitle, PreviousNextChapter, ChapterProgression } from './Course.style'
+import { CourseStyled, LeftBox,CompletionPercentage,ResumeCourse, CreatureWrapper, CurrentChapter, CourseTitle, SubTitle, Section, Description, ProgressTitle, PreviousNextChapter, ChapterProgression } from './Course.style'
 import { CourseViewProps } from './Course.controller'
 import { Link } from 'react-router-dom'
 import { ChapterData } from 'pages/Chapter/Chapter.controller'
@@ -100,7 +100,9 @@ export const CourseView = ({ course, chapterData, description, takeaways, course
                 </Section>
             </LeftBox>
             <LeftBox>
-                {seaCreature}
+                <CreatureWrapper>
+                    {seaCreature}
+                </CreatureWrapper>
                 <Section>
                     <ProgressView 
                     course={course}

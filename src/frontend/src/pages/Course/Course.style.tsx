@@ -41,6 +41,9 @@ export const Section = styled(AnimatedCard)`
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 `
 
+export const CreatureWrapper = styled(FadeInFromTop)`
+`
+
 export const Creature = styled.img`
 animation: float 10s linear infinite;
 
