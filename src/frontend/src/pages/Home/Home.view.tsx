@@ -49,7 +49,7 @@ export const HomeView = () => {
             <HomeCourseGrid>
               {courses.map((course) => {
                 return (
-                  <Link key={course.path} to={`${course.path}/chapter-1`}>
+                  <Link key={course.path} to={`${course.path}`}>
                     <CourseBox
                       title={course.name}
                       shortDescription={course.description}

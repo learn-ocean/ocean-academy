@@ -16,9 +16,9 @@ type HeaderViewProps = {
 const SubMenuItem = () =>{
   return (<HeaderMenuItem>
             <SubMenu options={[
-          { name: "Ocean 101", path: "/ocean101/chapter-1" },
-          { name: "Intro To Data Defi", path: "/introToDataDefi/chapter-1" },
-          { name: "Compute To Data", path: "/ComputeToData/chapter-1" }
+          { name: "Ocean 101", path: "/ocean101" },
+          { name: "Intro To Data Defi", path: "/introToDataDefi" },
+          { name: "Compute To Data", path: "/ComputeToData" }
         ]} label={"COURSES"} selectCallback={() => {}} />
   </HeaderMenuItem>)
 }
