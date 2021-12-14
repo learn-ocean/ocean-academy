@@ -388,6 +388,8 @@ export const HomeTestimonials = styled.div`
   justify-content: center;
   padding: 50px;
   height: 100%;
+  border-radius: 10px;
+
   border: 1px solid rgba(255, 64, 146, 0.2);
 
     background: rgba(255, 64, 146, .02);
