@@ -30,7 +30,7 @@ const TokenCard = ({course, account, tokenUri, mintedAt, tokenId, tx}: TokenCard
   (  
   <TokenCardStyled>
     <TokenContent>
-      <TokenCardTitle>Your <Link to={`/${course.title}/chapter-1`}>{course.name}</Link>'s completion token.</TokenCardTitle>
+      <TokenCardTitle>Your <Link to={`/${course.title}`}>{course.name}</Link>'s completion token.</TokenCardTitle>
         <TokenCardInfo>
         <TokenCardSpan>Token Id <br></br></TokenCardSpan>
         <a href={`https://etherscan.io/token/${MAIN_CERTIF_ADDR}?a=${tokenId}`}>{tokenId}</a>
