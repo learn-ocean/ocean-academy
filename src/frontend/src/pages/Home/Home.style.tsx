@@ -138,6 +138,7 @@ export const HomeContainer = styled.div`
   }
 
   @media (max-width: 375px) {
+    margin: 20vw 10vw 20vw;
     .communityButton {
       flex-direction: column;
     }
@@ -310,6 +311,7 @@ export const SeaCreatureContainer = styled.div`
         width: 300px;
         align-self: center;
         left: 55px;
+        margin-top: 50px;
 
       }
 
