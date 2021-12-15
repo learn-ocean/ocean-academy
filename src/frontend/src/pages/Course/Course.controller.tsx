@@ -78,8 +78,8 @@ const ocean101Description = <div>
 
 const ocean101Takeways = [
 "🤔 What is blockchain and why it is useful in data workflows", 
-"🏄‍♂️ How to interact with the blockchain with Metamask and play money (optional)",
-"🎯 What is Ocean Protocol and how it unlocks data",
+"🐥 How to interact with the blockchain with Metamask and play money (optional)",
+"🐳 What is Ocean Protocol and how it unlocks data",
 "💵 How to safely earn revenue from data and algorithms with Ocean Protocol",
 "🛍 How to effectively use Ocean Protocol to create data products"
 ]
@@ -105,9 +105,9 @@ const introToDataDefiDescription = <div>
 </div>
 
 const introToDatasTakeways = [
-    "🤔 What is data tokenization and how it works", 
+    "🧐 What is data tokenization and how it works", 
     "🏄‍♂️ What are liquidity pools and how they relate to Datatokens",
-    "💵 How to safely earn revenue on Ocean Market",
+    "🍌 How to safely earn revenue on Ocean Market",
     ]
 
 
@@ -127,10 +127,10 @@ const computeToDataDesc = <div>
 </div>
 
 const computeToDataTakeways = [
-    "🤔 Current blockers in sharing data and how Ocean Protocol addresses them", 
-    "🏄‍♂️ How the Compute-to-Data privacy layer works",
+    "🥶 Current blockers in sharing data and how Ocean Protocol addresses them", 
+    "☔️ How the Compute-to-Data privacy layer works",
     "🤑 How to sell private data safely",
-    "💰 How to buy private data compute"
+    "🤓 How to buy private data compute"
     ]
                             
 export const ComputeToDataCourse = () => 
