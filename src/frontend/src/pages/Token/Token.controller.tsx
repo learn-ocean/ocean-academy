@@ -37,8 +37,11 @@ export const Token = () => {
 
   useEffect(() => {
     ;(async function asyncLoadWeb3() {
-      await loadWeb3()
-      await loadContracts()
+      const res = await checkIfCertificateExists();
+      if(!res){
+        await loadWeb3()
+        await loadContracts()
+      }
     })()
   }, [])
 
@@ -90,23 +93,20 @@ export const Token = () => {
     //@ts-ignore
       const certificateContract = new web3.eth.Contract(Certificate.abi, CERTIF_ADDR)
       setCertificateContract(certificateContract)
-      await checkIfCertificateExists(certificateContract);
       } 
 
       setLoading(false)
   }
 
-  const checkIfCertificateExists = async(contract: Object) =>{
+  const checkIfCertificateExists = async() =>{
     let certificate = ""
-      try{
         if(user?.tokens && courseobj?.title! in user.tokens){
           //@ts-ignore
           setCertificate(user?.tokens[courseobj?.title!])
+          setLoading(false)
+          return true
         }
-      }catch(error){
-        //Means user has not a certificate yet.
-        console.log("Error while getting certificate: ", error)
-      }
+        return false
   }
 
   return <TokenView loading={loading} user={user} certificate={certificate} mintCallback={mintCallback} />
