@@ -48,7 +48,7 @@ export const AboutView = () => {
                       </a>
                     </MemberName>
                     <MemberDescription>
-                      Insights & Analytics Director. Advisor to international brands on their marketing and innovation strategies, Lecturer, Trainer. Active in the Web3 space since 2013, Active Ocean Ambassador since 2018, Founder of Ocean Academy. Off-piste snowboarder and fine wine lover.
+                      Insights & Analytics Director. Advisor to international brands on their marketing and innovation strategies. Passionate about people and technology, he is an early-days Ambassador for Ocean Protocol, and a founder of Ocean Academy. Off-piste snowboarder and wine lover.
                     </MemberDescription>
 
                   </li>
