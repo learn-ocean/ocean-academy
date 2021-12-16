@@ -13,13 +13,13 @@ type HeaderViewProps = {
   removeAuthUserCallback: () => void
 }
 
-const SubMenuItem = () =>{
+const SubMenuItem = () => {
   return (<HeaderMenuItem>
-            <SubMenu options={[
-          { name: "Ocean 101", path: "/ocean101" },
-          { name: "Intro To Data Defi", path: "/introToDataDefi" },
-          { name: "Compute To Data", path: "/ComputeToData" }
-        ]} label={"COURSES"} selectCallback={() => {}} />
+    <SubMenu options={[
+      { name: "OCEAN 101", path: "/ocean101" },
+      { name: "INTRO TO DATA DEFI", path: "/introToDataDefi" },
+      { name: "COMPUTE-TO-DATA", path: "/ComputeToData" }
+    ]} label={"COURSES"} selectCallback={() => { }} />
   </HeaderMenuItem>)
 }
 
