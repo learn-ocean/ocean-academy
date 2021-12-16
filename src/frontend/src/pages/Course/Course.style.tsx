@@ -56,6 +56,7 @@ export const CreatureWrapper = styled(FadeInFromTop)`
 `
 
 export const Creature = styled.img`
+width: 400px;
 animation: float 10s linear infinite;
 
 
