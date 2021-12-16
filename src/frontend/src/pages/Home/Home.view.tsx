@@ -7,7 +7,7 @@ import { CourseBox } from 'app/App.components/CourseBox/CourseBox.controller'
 import { CourseData } from 'pages/Course/Course.controller'
 import { courseData } from 'pages/Course/Course.data'
 
-import { HomeContainer,CoursesSection,CoursesDescription,CommunityContentContainer, CoursesContainer,CommunitySection, HomeCourseGrid, SeaCreatureContainer, HomeTestimonials, HomeStyled } from './Home.style'
+import { HomeContainer, CoursesSection, CoursesDescription, CommunityContentContainer, CoursesContainer, CommunitySection, HomeCourseGrid, SeaCreatureContainer, HomeTestimonials, HomeStyled } from './Home.style'
 
 export const HomeView = () => {
 
@@ -22,6 +22,7 @@ export const HomeView = () => {
 
   return (
     <HomeStyled>
+
       <img className={"mantaray"} alt="mantaray-animated" src="/mantaray-full.svg" />
       <HomeContainer>
         {/*Removed "and analytic services", analytics is also data. providing clear and concise header */}
@@ -37,67 +38,57 @@ export const HomeView = () => {
         </div>
       </HomeContainer>
 
-
       <CoursesSection>
-          <CoursesContainer>
-            <h1>Available Courses</h1>
-            <CoursesDescription>
-            <p>Our interactive modules cover a range of topics and difficulties. Wheter you're a web3 expert or 
+        <CoursesContainer>
+          <h1>Available Courses</h1>
+          <CoursesDescription>
+            <p>Our interactive modules cover a range of topics and difficulties. Wheter you're a web3 expert or
               completely new to crypto, there is something for you.</p>
-              </CoursesDescription>
-          
-            <HomeCourseGrid>
-              {courses.map((course) => {
-                return (
-                  <Link key={course.path} to={`${course.path}`}>
-                    <CourseBox
-                      title={course.name}
-                      shortDescription={course.description}
-                      noChapters={course.noChapters}
-                      completed={false}
-                      completionTime={course.completionTime}
-                    />
-                  </Link>
-                )
-              })}
+          </CoursesDescription>
+          <HomeCourseGrid>
+            {courses.map((course) => {
+              return (
+                <Link key={course.path} to={`${course.path}`}>
+                  <CourseBox
+                    title={course.name}
+                    shortDescription={course.description}
+                    noChapters={course.noChapters}
+                    completed={false}
+                    completionTime={course.completionTime}
+                  />
+                </Link>
+              )
+            })}
+          </HomeCourseGrid>
+        </CoursesContainer>
+      </CoursesSection>
 
-            </HomeCourseGrid>
-          </CoursesContainer>
-        </CoursesSection>
-
-        <CommunitySection>
-
-          <SeaCreatureContainer>
-              <img src="creatures/turtle-full.svg" />
-          </SeaCreatureContainer>
-
-          <CommunityContentContainer>
+      <CommunitySection>
+        <SeaCreatureContainer>
+          <img src="creatures/turtle-full.svg" />
+        </SeaCreatureContainer>
+        <CommunityContentContainer>
           <h1>Join as an Ocean Ambassador</h1>
-            <p>Completing Ocean 101 is a prerequisite to becoming an Ambassador for Ocean Protocol. </p>
-            <p>Ocean Ambassadors work at the core of the Ocean Protocol ecosystem to make the vision of an open and fair data economy come true. </p>
-            <p>Ambassadors are talented and passionate individuals who make a difference in this world, and they get rewarded for it!</p>
-            <p>Everyone can contribute: why not you?</p>
-
-            <div className="communityCall">
+          <p>Completing Ocean 101 is a prerequisite to becoming an Ambassador for Ocean Protocol. </p>
+          <p>Ocean Ambassadors work at the core of the Ocean Protocol ecosystem to make the vision of an open and fair data economy come true. </p>
+          <p>Ambassadors are talented and passionate individuals who make a difference in this world, and they get rewarded for it!</p>
+          <p>Everyone can contribute: why not you?</p>
+          <div className="communityCall">
             <a href="https://discord.gg/BPPHQksyPd">
-            <Button text="JOIN HERE" color="primary"  />
+              <Button text="JOIN HERE" color="primary" />
             </a>
-            </div>
-
-
-          </CommunityContentContainer>
-
-
-
-        </CommunitySection>
-
+          </div>
+        </CommunityContentContainer>
+      </CommunitySection>
 
       <HomeTestimonials>
         <h1>Testimonials</h1>
         <div className={"row"}>
           <div className={"column"}>
-            <p className={"quote"}>The Ocean Academy provides participants the foundation to think of data more like an asset, rather than information. Currently, businesses use their data to optimize their operations, but rarely use it to create additional revenue streams. The Ocean Academy is the stepping stone for investors, stakeholders, data-scientists and other stakeholders to learn how to monetize data and take part in a new data economy.
-</p>
+            <p className={"quote"}>The Ocean Academy provides participants the foundation to think of data more like an asset, rather than information.
+              Currently, businesses use their data to optimize their operations, but rarely use it to create additional revenue streams.
+              The Ocean Academy is the stepping stone for investors, stakeholders, data-scientists and other stakeholders to learn how to
+              monetize data and take part in a new data economy.</p>
             <p>Twitter: <a href="https://twitter.com/realdatawhale" target="_blank" rel="noopener noreferrer">@realdatawhale</a></p>
           </div>
           <div className={"column"}>
@@ -106,7 +97,7 @@ export const HomeView = () => {
           </div>
         </div>
       </HomeTestimonials>
-      
+
     </HomeStyled>
   )
 }
