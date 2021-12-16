@@ -84,9 +84,12 @@ export const TeamMemberContainer = styled.div`
 `
 
 export const TeamMemberPicture = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   img{
-    border-radius: 50%;
+    border-radius: 80%;
+    object-fit: cover;
+    width:200px;
+    height:200px;
   }
 `
 
@@ -102,6 +105,7 @@ export const MemberName = styled.div`
   a{
   font-weight: 700;
   font-size: 24px !important;
+  color: #e000cf !important;
   }
 `
 
