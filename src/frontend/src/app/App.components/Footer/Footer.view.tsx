@@ -38,7 +38,7 @@ export const FooterView: any = () => (
         </a>
         </FooterIcon>
         <FooterIcon>
-        <a href="https://www.twitter.com">
+        <a href="oceanacademy@protonmail.com">
             <img src="/icons/envelope.svg"  alt="Logo"/>
         </a>
         </FooterIcon>
