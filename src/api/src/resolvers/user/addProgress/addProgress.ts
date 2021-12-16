@@ -77,7 +77,7 @@ async function addProgressForCourse(id: any, courseTitle: string, chapter: numbe
       }, {new: true} 
       ).exec()
 
-      if(postUser?.get(courseTitle).progress.length === chapters){
+      if(postUser?.get(courseTitle) && postUser?.get(courseTitle).progress.length === chapters){
         console.log("Hello")
         await UserModel.updateOne(
           {_id: id},
