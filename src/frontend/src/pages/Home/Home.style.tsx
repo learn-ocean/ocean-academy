@@ -165,7 +165,6 @@ export const HomeDescription = styled.div`
   flex-wrap: wrap;
   width: 100%;
 
-
   @media (max-width: 700px) {
     flex-direction: column;
   }
@@ -315,7 +314,6 @@ export const SeaCreatureContainer = styled.div`
 
       }
 
-
       @keyframes float {
         0% {
           transform: translate(0px, 0px);
@@ -329,9 +327,6 @@ export const SeaCreatureContainer = styled.div`
       }
 
     }
-
-
-
 `
 
 export const CommunityContentContainer = styled.div`
@@ -344,10 +339,7 @@ export const CommunityContentContainer = styled.div`
       @media (max-width: 900px) {
         margin:auto;
         margin-top:50px;
-
-
       }
-
     }
 `
 
@@ -359,13 +351,11 @@ export const HomeTestimonials = styled.div`
     font-weight: bold;
   }
 
-
  .row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-
 
   @media (max-width: 900px) {
     flex-direction: column;
