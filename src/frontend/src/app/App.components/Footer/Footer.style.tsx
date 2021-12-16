@@ -86,8 +86,10 @@ export const FooterTitle = styled.div`
 export const FooterLink = styled.div`
   margin-top: 10px;
   font-size: 12;
-  color: ${primary};
   font-weight: 500;
+  a{
+    color: ${primary} !important;
+  }
 `
 
 export const FooterSeaCreature = styled.div`
