@@ -1,12 +1,12 @@
 export const questions = [
   {
-    question: 'What are the steps needed to register a data asset with Ocean Protocol',
+    question: 'Which ones of these statements are false?',
     answers: [
-      'Prepare Metdata, Provide URL to get data, Define the attributes of the compute, Register the asset on the Blockchain.',
-      'Define the attributes of the compute, Register the asset on the Blockchain, Prepare Metdata, Provide URL to get data.',
-      'Register the asset on the Blockchain, Prepare Metdata, Define the attributes of the compute, Provide URL to get data',
-      'Provide URL to get data, Define the attributes of the compute, Prepare Meta data, Register the asset on the Blockchain.',
+     'Every asset on Ocean Protocol has its own DID',
+     'A DID is a JSON object with information about the Asset',
+     'A particular DID can only be linked to one particular DDO',
+     'A DDO is a string representing the data attributes'
     ],
-    responses: ['Prepare Metdata, Provide URL to get data, Define the attributes of the compute, Register the asset on the Blockchain.'],
+    responses: ['A DDO is a string representing the data attributes','A DID is a JSON object with information about the Asset'],
   },
 ]

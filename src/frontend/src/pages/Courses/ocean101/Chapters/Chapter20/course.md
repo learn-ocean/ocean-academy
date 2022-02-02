@@ -1,36 +1,21 @@
-# Chapter 20: Access Control Flow
+# Chapter 20: Compute to Data Flow - Train  AI Models Privately & Remotely
+#### Difficulty: **3/5** \| Estimated reading time: **5 min**
 
-#### Difficulty: **3/5** \| Estimated reading time: **10 min**
+<dialog character="mantaray">How does the bottom of the tech stack look like?</dialog>
 
-<dialog character="mantaray">Want to know how you can see in the dark?</dialog>
+**Access control.** Ocean Protocol's first released feature was access control. This is the central piece of data exchanges and orchestration.
 
-We saw in chapter 17 that Ocean Compute-to-Data (C2D) enables training models without actually seeing any data. But what does this mean exactly?
+<img src="/images/chapter19_0.png" />
 
-**Bring Compute-to-data.** Compute Providers can supply or send algorithms and be sure that the computed returned results are sufficiently aggregated or anonymized that the data is fully obfuscated and the privacy risk is minimized.
+Ocean Protocol Smart Contracts orchestrate the flow of access rights between Data Providers who want to monetize their data and Data Consumers who want to use the data to build AI models. This covers the entire set of operations required for a successful data exchange, from publishing data to consuming it.
+There are many possible variants of access. Access could be perpetual (access as many times as you like), time-bound (access for just one day, or within a specific date range), or one-time.
 
-This is not the first attempt done to develop remote execution technologies.
+**In Ocean Protocol, data access is always treated as a data service**. This could be a service to access a static dataset (e.g. a single file), a dynamic dataset (updated over specific time frames), or for a compute service (i.e. Compute-to-Data). When an exchange takes place, it follows a series of steps involving the Ocean Protocol middleware, chronologically.
 
-Federated learning, a distributed ML technique, enables computation of data for training AI models across many data silos. This approach requires centralized orchestration and aggregation, however.
+1. The **Data Provider** provides a dedicated URL address for the compute service. The data can be stored wherever the data provider likes, as long as it is connected to the internet. With Compute-to-Data, the Data Provider provides the URL to Compute-to-Data service rather than a file to download.
 
-The Compute-to-Data functionality provides a means to exchange data while preserving privacy.
+2. The URL is encrypted by Ocean Provider. The Data Provider invokes Ocean Datatoken Factory to deploy a new datatoken to the blockchain.
 
-Before jumping into how you can train AI models in data that you cannot see with Ocean Protocol we have to introduce two new components: the Operator Service and the Operator Engine. The Operator is a backend that orchestrates the workflow when a compute job is sent to some dataset.
+3. When the data Provider registers the URL address with the metadata associated with the dataset, the URL is encrypted and stored on-chain and the Ocean Provider Service holds the key to decrypt that information.
 
-- **Operator Service.** A microservice in charge of managing the workflow and executing requests. It directly communicates and takes orders from the Data Provider (the data provider’s proxy server to be precise) and performs computation on the data provided by the Data Provider.
-
-- **Operator Engine**. A backend service in charge of orchestrating the compute infrastructure using Kubernetes as a backend.
-
-But what happens under the hood when you send an algorithm to be computed on a dataset you can’t, or that you can only partially see? Here is the C2D Workflow.
-
-<img src="/images/chapter20_0.png" />
-
-Let’s say a company uses Ocean Compute-to-Data to set up it's computing infrastructure (including Aquarius, Operator Service, and Operator Engine). Then they publish their data assets onto Ocean and receive a DID for the published data asset.
-
-- **The Data Consumer sends a compute access request to Ocean and publishes the algorithm to be used to compute on the provider’s data.** Why? They believe the data asset could prove useful in their AV development, based on the description. They purchase access to train their AI model on that data via the compute service. The data buyer publishes their algorithm into Ocean and receives a DID (e.g. algoDID) for the algorithm.
-- **The Data Consumer signs the Service Agreement** and pays for access to the compute service. The data buyer signs a Service Agreement and pays the required amount of OCEAN to an escrow smart contract, which will also be used for the payment for the compute service.
-- **The Data Consumer sends a compute service request to provide and instructs the Operator Service to start compute.** Once all actions are validated and completed, Aquarius, the metadata store, gets hold of datasets and algorithms (using dataDID and algorithmDID, respectively) and instructs the Operator Service to initiate the compute job using the given algorithm on given data.
-- **After necessary validations, the Operator Service instructs the Operator Engine to initiate compute on-premise.** In this last step the Operator Service performs checks on all inputs and, once ready, instructs the Operator Engine to start the computing task. It will spin a Kubernetes cluster process within the given parameters of data and algorithm.
-- During data processing, The Data Consumer can inquire about the compute completion status anytime. If the buyer is not satisfied, he can choose to restart compute execution with the same or a different algorithm, until the compute access expires.
-- Once the computing is done, the Data Consumer gets informed. The Data Consumer can choose to download or move those results to their storage. The Compute Service produces two types of results: (1) output and (2) execution logs. Consumers can choose either or both to be delivered to them upon completion. These results are published to AWS S3 storage upon completion, and an AWS S3 URL is shared with the consumer.
-
-Compute-to-Data is language agnostic and supports all types of computing platforms, environments, and programming languages. Since this whole process takes place on the data provider side, data remains private and is not revealed to the consumer. In this setup, **the Data Provider is also the Compute provider.**
+4. The **Data Consumer** sends 1.0 Datatoken to the Data Provider’s wallet and specifies the algorithm to run on the data. The Ocean Provider checks that the payment has been made and proxy to the encrypted URL to enable the requested service (i.e. enable a Compute-to-data job on the algorithm submitted). Ocean Provider relays the output and logs of the compute job to the Data consumer without ever revealing the URL where the service is located.

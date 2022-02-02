@@ -1,39 +1,20 @@
-# Chapter 4: Get Play Money
-#### Difficulty: **3/5** \| Estimated reading time: **3 min**
+# Chapter 4: Data Sovereignty for Individuals
+#### Difficulty: **2/5** \| Estimated reading time: **5 min**
 
-<dialog character="squid">Excellent, you have the first piece of equipment now. If you want to do anything in the blockchain waters rather than watching from the surface, you will need to dive into it, and you will need oxygen for that. ETH provides the gas you need to stay below the surface.</dialog>
+<dialog character="jellyfish">The Web3 space extends the field of possibilities. And by now we start to meet funky new creatures in our diving descent.</dialog>
 
-**Get play money from a faucet.**
-Faucets are places where it’s possible to get tokens for free. Usually, they hand play money, basically tokens that have no market value. Many developers use faucets to start building apps in a safe and free environment before launching them on the main network.
+**Private user data**.The potential of the unstructured and unshared data of individuals is huge. Think about all those mobile phone users who have hundreds of pictures that could be used to train algorithms. Currently, this data is not monetized, but it would have value if it was aggregated.
+Trust in third parties. Selling personal private data nowadays requires to trust third parties to protect the data from abuse. Not all third parties have the will or the skills to effectively secure user data. But even big organizations have a history of data breaches, and cases of mishandling of user data are far too common, even today.
 
-**We will use a faucet from Rinkeby, one of the main test nets for Ethereum.** The entire testnet uses play money, so the fees paid for transacting on the network do not represent any real financial value. Using free tokens in the Ethereum mainnet wouldn’t be smart because transaction fees would still be incurred in ETH, and therefore cost money. And you probably don’t want to pay fees while spending time on Ocean Academy.
+**User data ownership**. In the Web3 model, the control of the data is in the hands of the user. The data itself is not owned by the company providing a service anymore. Individuals control and can provide access to their data without worrying about losing ownership and privacy. Individuals can earn a revenue from their data and decide exactly what data is shared, to whom, and how. It also gives individuals visibility of how their data is accessed and used by apps, services and companies.
 
-Go to MetaMask and select Rinkeby Test Network in the upper central dropdown list. Your wallet address is the same as in the Ethereum Network, but everything is free to play now.
+**Incentivized data sharing**. The Web3 model offers users much greater incentives to share their data because it's safe to do so. It makes it difficult for companies to lock-in their users since the data is in the hands of the user. The user can switch to other service providers without losing any data, which can stir healthy competition and innovation across industries.
 
-<img src="/images/chapter4_0.png" />
+<img src="/images/chapter6_0.png" />
 
-Go to the <a href="https://faucet.rinkeby.io/" target="_blank" > Rikeby faucet </a> and follow the instructions provided.
+**Illustrating how it works with a Web3 chat app**. Suppose you saved your contact information (e.g. email, name, image, address, etc.) on your mobile phone. Now you want to use a chat app to interact with your friends. You download a chat app with the interface that you like the most and it asks to access additional information like your profile image. While these fields may be optional, they help to improve the user experience.
+An app provider would only need to ask for a unique ID and save it into its database. As long as the app follows open standards it is just a User Interface to enable chatting. Chatting can be done in a peer-to-peer way while all data is saved on the user's mobile phone. If you do not like the app you could easily switch to a new app/User Interface while keeping the data (your chats) already collected in the previous app.
 
-You will be asked to post your ETH address on Twitter or Facebook; the faucet providers do this to ensure that people can do this just once and don’t empty the faucet too quickly.
+**Monetizing private data**. Chat users can sell their chat data if they want to. Imagine a company that wants to analyze topics diffusion in private chats over time. Chat users could sell a wordlist and/or word count frequencies from one or more of their conversations and earn money. So it is not the chat app that has a monopoly over this data, it is the user who is in control. This puts the chat app in competition with other analytic service providers. A clever chat app provider would offer their users a payment or other kinds of advantages if users allow them to analyze their chats. The app would move from an ad-based business model to a data-based business model.
 
-Copy your ETH wallet address by clicking on ‘Account 1’, the default account created by Metamask. Clicking will automatically copy your wallet address to the clipboard. You can safely share this address with anyone because it is public and it does not control your funds (with your set-up only your Metamask and your seed phrase can control your funds).
-
-<img src="/images/chapter4_1.png" />
-
-Paste your ETH wallet address into a new tweet and post it publicly.
-Being kind is optional but recommended :)
-
-<img src="/images/chapter4_2.png" />
-
-Paste a link to that post in the faucet and define how much you look to receive.
-3 Ethers is enough for now. It all gets automatically confirmed.
-
-<img src="/images/chapter4_4.png" />
-
-Wait a few seconds, refresh, and there you are: you have 3 ETH in your wallet.
-
-<img src="/images/chapter4_5.png" />
-
-**You can also view the transaction on the blockchain** if you search for your wallet address via a Blockchain explorer like <a href="https://etherscan.io/" target="_blank" >Etherscan</a> .
-Blockchain explorers are public tools (usable by anyone) that allow people to search through the blockchain and check all transactions.
-If you have a spare minute go there and have a look, it’s nice to see ones’ transactions make history!
+Web3 forces companies to offer these kinds of incentives, because there is finally an open market around user generated data where the user is in control.
