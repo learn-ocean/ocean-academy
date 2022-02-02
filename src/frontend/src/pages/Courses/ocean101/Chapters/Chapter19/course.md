@@ -1,22 +1,32 @@
-# Chapter 19: Compute to Data Flow - Train  AI Models Privately & Remotely
-#### Difficulty: **3/5** \| Estimated reading time: **5 min**
+# Chapter 19: Introducing Compute-to-Data
 
-<dialog character="mantaray">How does the bottom of the tech stack look like?</dialog>
+#### Difficulty: **3/5** \| Estimated reading time: **10 min**
 
-**Access control.** Ocean Protocol's first released feature was access control. This is the central piece of data exchanges and orchestration.
+<dialog character="mantaray">We’ve met the data and algorithm fishes. But there is another species that sits in-between them: this fish looks like a black-box, it provides both data and the infrastructure to run algorithms on that data. </dialog>
 
-<img src="/images/chapter19_0.png" />
+**Ocean Compute-to-Data** is the functionality that solves the current tradeoff between the benefits of using private data and the risks of exposing it.
 
-Ocean Protocol smart contracts orchestrate the flows between Data Providers who want to monetize their data and Data Consumers who want to use the data to build AI models. This covers the entire set of operations required for a successful data exchange, from publishing data to consuming it.
+Compute-to-Data allows data buyers to buy the results of some computing (i.e. AI model or other data outputs) rather than the data itself. Data owners can monetize their data without having to actually share it with anyone else, by sharing only computation outputs with data buyers.
 
-It is important to know that there are many possible variants of access. Access could be perpetual (access as many times as you like), time-bound (access for just one day, or within a specific date range), or one-time (after you access, the token is burned).
+**The data owner runs compute jobs on their data to train AI models while the data stays on their premise** (or premises that they control and trust, like by the Ocean Protocol Foundation) at all time.
 
-**In Ocean Protocol, data access is always treated as a data service**. This could be a service to access a static dataset (e.g. a single file), a dynamic dataset (stream), or for a compute service (e.g. “bring compute to the data”). The same requests and process is followed within Ocean Protocol. This is also why compute algorithm assets are handled the same as data assets by Ocean Protocol.
+Overall, the Compute-to-Data functionality provides many benefits:
+- **Privacy**. The data buyer never sees the data, so they cannot get or leak any personal or sensitive information.
+- **Control**. The data owner never puts its data at risk by opening it to a third party; this also ensures the data stays private and secure..
+- **Storage capacity**. Data never moves, so neither the owner nor the buyer of the data compute have to worry about extra storage or bandwidth that could be expensive and slow.
+- **Compliance**. Having only one copy of the data and not moving it makes it easier to comply with data protection regulations like GDPR in Europe.
+- **Auditability**. Compute-to-Data gives proof that algorithms were properly executed so that AI practitioners can be confident in the results.
 
-When an exchange takes place, it follows a series of steps involving the Ocean Protocol middleware, chronologically.
+**Using Compute-to-data**. Using Compute-to-Data is almost as easy as gaining direct access to the data itself for the data buyer. Upon use, the buyer will be redirected to a dedicated page where they can load the code to be run on the dataset.
 
-1. **The Data Provider** provides the URL address of the data or compute service. The data can be stored wherever the data provider likes, as long as it’s connected. It can be stored in Google Drive, Dropbox, AWS S3, on their home server, or even on their smartphone. The publisher can also use <a href="https://ipfs.io/" target="_blank">IPFS</a>, a decentralized file management system popular in the Web3 world.
-2. The dataset must have a dedicated URL. This is how the data will be accessed by the Data Consumers.  Or instead of a file, the publisher may run a Compute-to-Data service. It then invokes **Ocean Datatoken Factory** to deploy a new datatoken to the chain.
-3. When the data Provider registers the URL address with the metadata associated with the dataset, the URL is encrypted and stored in the **Ocean Provider Service**.
-4. **Service Execution Agreements**. For each data set, the network validates who is able to access what. Ocean Protocol implements this with Service Execution Agreements (SEAs). A SEA is a contract-like agreement between a publisher, a consumer, and a verifier. SEAs specify what assets are to be delivered, the conditions that must be met, and the rewards for fulfilling the conditions. SEAs are implemented as part of Ocean Protocol smart contracts.
-5. **The Data Consumer.** Buyers of data send the amount of datatokens required to access the dataset to the Provider wallet. Once this is done, the smart contracts of the Ocean Provider Service load the encrypted URL, decrypt it and enable the requested service (i.e. send static data, or enable a Compute-to-data job).
+<img src="/images/chapter18_2.png" />
+
+There are two fields to fill in order to send the script to be computed on some private data.
+1. First, select the image to run an algorithm, using either Python or Javascript, the first supported environments.You want to choose a python with pandas image if you have a .py script or you can run a nodejs10 image if you are doing analysis in Javascript.
+2. Secondly, drag and drop a script allowed by the data owner. Ocean Protocol will take the algorithm and the data, and it will orchestrate the computation of the output with the Kubernetes clusters of the Compute Provider.
+
+The Compute Provider is the person or institution handling the compute operations onto the data. Compute can be provided by the Ocean Protocol Foundation (OPF) through the Ocean Market for free. This is a solution for rapid prototyping, low risk and low computation assets.
+
+Compute on larger, or more sensitive data assets should be provided by the Data Providers themselves. Although the compute infrastructure may be delegated to a trusted third party, on-premise compute provision is the only way to keep the data 100% unexposed. Data owners who want to take no risk with their data should wrap their data in their own Compute infrastructure to monetize it with Compute-to-Data.
+
+More on this in our [*Introduction to Compute-to-Data* course](https://oceanacademy.io/ComputeToData).

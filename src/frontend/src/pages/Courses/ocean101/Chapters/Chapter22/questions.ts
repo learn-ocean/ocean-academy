@@ -1,13 +1,17 @@
 export const questions = [
   {
-    question: 'What are the key enablers of a New Data Economy?',
+    question: "For which benefit would you see Ocean Protocol applied to your industry? Don't lose sleep over that one, all answers are valid!",
     answers: [
-      'Secure access control and compute-to-data capability',
-      'Blockchain data storage and metadata standards',
-      'Private smart contracts and blockchain data storage',
-      'Metadata standards, compute-to-data and secure access control',
-      'Compute-to-data, private smart contracts and metadata standards'
+      'Standard data communication protocol that can unify data silos among different companies and improve the overall forecasting accuracy.',
+      'Companies can now monetize the data they have and the ones they will collect.',
+      'By connecting data suppliers and consumers in a private way, data suppliers are more willing to share information.',
+      'With compute to data you can send for training an AI model on some data collected by or with your competitors.'
     ],
-    responses: ['Metadata standards, compute-to-data and secure access control'],
+    responses: [
+          'Standard data communication protocol that can unify data silos among different companies and improve the overall forecasting accuracy.',
+          'Companies can now monetize the data they have and the ones they will collect.',
+          'By connecting data suppliers and consumers in a private way, data suppliers are more willing to share information.',
+          'With compute to data you can send for training an AI model on some data collected by or with your competitors.'
+        ],
   },
 ]

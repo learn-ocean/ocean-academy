@@ -1,15 +1,14 @@
 export const questions = [
-    {
-        question: "How can individuals benefit from a Web3 enabled data economy?",
-        answers: [
-            "Data is only accessed but not controlled by service providers",
-            "User data can be used across multiple apps",
-            "The user can use services without sharing any data"
-        ],
-        responses: [
-            "Data is only accessed but not controlled by service providers",
-            "User data can be used across multiple apps",
-            "The user can use services without sharing any data"
-        ],
-    }
+  {
+    question: 'Which listed operation is performed by Ocean Middleware layer?',
+    answers: [
+      'Cache Metadata',
+      'Decrypt the data itself',
+      'Compute on the data',
+      'Provide access control based on payment on the blockchain',
+      'Send algorithm to the database'
+    ],
+    responses: ['Cache Metadata',
+          'Provide access control based on payment on the blockchain'],
+  },
 ]

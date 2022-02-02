@@ -1,16 +1,12 @@
 export const questions = [
   {
-    question: 'How can a Data Scientist exploit optimally Compute-to-Data feature?',
+    question: 'What is the role of the Ocean Provider in a Data transaction? (more than 1 answer possible)',
     answers: [
-    	'By selling and consuming private data',
-    	'By obtaining model predictions trained on private data',
-    	'By modelling an algorithm with some training set only C2D can see',
-      'By transfering private data into their own repositories',
-      'By monetizing pre developed algorithms in the Ocean Market'],
-    responses: [
-    	'By selling and consuming private data',
-    	'By obtaining model predictions trained on private data',
-    	'By modelling an algorithm with some training set only C2D can see',
-      'By monetizing pre developed algorithms in the Ocean Market'],
+      'It holds the key to decrypt the link to downloadable datasets.',
+      'It stores the private key of the Data Provider.',
+      'It checks that payment of 1.0 datatoken has been made to provide proxy service to the data service.',
+      'It stores the data on the blockchain.'
+    ],
+    responses: ['It checks that payment of 1.0 datatoken has been made to provide proxy service to the data service.'],
   },
 ]
