@@ -6,7 +6,7 @@
 
 Ocean Protocol has already been tested and integrated by different companies across industries, from logistics to healthcare.
 
-## Data infrastructure - GAIA-X
+**Data infrastructure - GAIA-X**
 
 <img src="/images/chapter22_0.png" />
 
@@ -19,7 +19,7 @@ As data has the potential to become the single most valuable asset of our time, 
 
 Ocean Protocol provides core functionalities for the Gaia-X federated services. It enables services to interact with each other and be used like lego bricks to build new and more complex products.
 
-## Automotive - Drive & Stake
+**Automotive - Drive & Stake**
 
 <img src="/images/chapter21_0.png" />
 
@@ -32,7 +32,7 @@ RIDDLE&CODE, the leading European blockchain interface company, provides a flexi
 Drive&Stake enables participants in the mobility ecosystem to share, access, and benefit from vehicle-generated data. It supports a variety of use cases, including pay-as-you-drive, networked parking for car-sharing, incentivized mobility patterns, sustainable EV battery, and supply-chain traceability. This is opening up the space for further use cases that haven’t been thought through yet, but that can be developed and implemented in the future.
 
 
-## AI Engineering - DataUnion
+**AI Engineering - DataUnion**
 
 <img src="/images/chapter22_2.png" />
 
