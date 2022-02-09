@@ -6,8 +6,7 @@
 
 Understanding what is a blockchain and a Smart Contracts is helpful to grasp the value that Ocean Protocol can provide.
 
-###A Blockchain
-is simply a ledger that chronologically records the facts that it is programmed to record. This ledger is duplicated across participants, and public, which allows everyone to check that its entries are correct. This removes the need for a central authority to validate transactions: you don’t need to rely on trusted third-parties to be sure about what has happened when you can just see it for yourself on the blockchain. This is the origin of Bitcoin’s moto “Don’t trust, verify”.
+**A Blockchain** is simply a ledger that chronologically records the facts that it is programmed to record. This ledger is duplicated across participants, and public, which allows everyone to check that its entries are correct. This removes the need for a central authority to validate transactions: you don’t need to rely on trusted third-parties to be sure about what has happened when you can just see it for yourself on the blockchain. This is the origin of Bitcoin’s moto “Don’t trust, verify”.
 
 **Blockchains work like enhanced Google sheets**. You can think of a blockchain as a Google sheet with universal read and write access, but that can only accept new inputs if those new inputs are compliant with what the sheet was programmed to accept.
  - Only those with a valid entry can change the document
