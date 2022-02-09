@@ -22,8 +22,8 @@ Overall, the Compute-to-Data functionality provides many benefits:
 <img src="/images/chapter18_2.png" />
 
 There are two fields to fill in order to send the script to be computed on some private data.
-1. First, select the image to run an algorithm, using either Python or Javascript, the first supported environments.You want to choose a python with pandas image if you have a .py script or you can run a nodejs10 image if you are doing analysis in Javascript.
-2. Secondly, drag and drop a script allowed by the data owner. Ocean Protocol will take the algorithm and the data, and it will orchestrate the computation of the output with the Kubernetes clusters of the Compute Provider.
+  1. First, select the image to run an algorithm, using either Python or Javascript, the first supported environments.You want to choose a python with pandas image if you have a .py script or you can run a nodejs10 image if you are doing analysis in Javascript.
+  2. Secondly, drag and drop a script allowed by the data owner. Ocean Protocol will take the algorithm and the data, and it will orchestrate the computation of the output with the Kubernetes clusters of the Compute Provider.
 
 The Compute Provider is the person or institution handling the compute operations onto the data. Compute can be provided by the Ocean Protocol Foundation (OPF) through the Ocean Market for free. This is a solution for rapid prototyping, low risk and low computation assets.
 
