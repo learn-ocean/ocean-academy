@@ -19,6 +19,6 @@ Your certificate can be created and accessed from your profile page after that.
 Clicking ***SUBMIT ANSWER*** also unlocks [Chapter 24](https://oceanacademy.io/ocean101/chapter-24) which provides details on how to join us as an Ocean Ambassador.
 
 **Next Steps**
- - Join Ocean Protocol on <a href="https://discord.com/invite/TnXjkR5" target="_blank">Discord</a>
- - Contribute to <a href="https://github.com/learn-ocean/ocean-academy" target="_blank">Ocean Academy</a>
- - [Become an Ocean Ambassador](https://oceanacademy.io/ocean101/chapter-24)
+ * Join Ocean Protocol on <a href="https://discord.com/invite/TnXjkR5" target="_blank">Discord</a>
+ * Contribute to <a href="https://github.com/learn-ocean/ocean-academy" target="_blank">Ocean Academy</a>
+ * [Become an Ocean Ambassador](https://oceanacademy.io/ocean101/chapter-24)
