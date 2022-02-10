@@ -1,41 +1,28 @@
-# Chapter 14: Ocean Market and Ocean Protocol Infrastructure
-#### Difficulty: **3/5** \| Estimated reading time: **10 min**
+# Chapter 14: Smart Contract for Storing Data
+#### Difficulty: **4/5** \| Estimated reading time: **10 min**
 
-<dialog character="mantaray">In the depths of the ocean, nobody knows you’re a fish. Meet the main characters in the Web3 data ecosystem that Ocean Protocol is buidling.</dialog>
+<dialog character="jellyfish">These new species have absolutely incredible behaviors. They can do so many things, they are moving around graciously, touring completely into the Ether. </dialog>
 
-Now that you are familiar with the Ocean let’s explore the Marketplace from Ocean Protocol.
-As we’ve seen in earlier chapters, the current data marketplaces have three main issues: centralized control which requires the data publisher to trust the marketplace operator, loss of privacy, and difficulty in determining the price.
+**Selling your data**. Let’s walk through an example to explain the problems when we try to provide access to data using a public blockchain like Ethereum. We assume that we have a dataset of 1 GB with images from different fishes in the Antarctic Ocean.
 
-<img src="/images/chapter14_0.png" />
+Let’s say we want to use a set of requirements and restrictions to find a **safe solution for monetizing this data**, which can be summarized as:
+- **No Intermediary**. No third party should have access to our images.
+- **100% Privacy**. We do not want to reveal the data itself to the data consumer.
+- **Lean process**. We want to monetize the data without introducing any administration overhead or any avoidable fees.
+- **Access right control**. We want to be in control of who accesses the data and how.
+- **Wide availability**. The dataset should be available on as many data marketplaces as possible (possibly all).
 
-Ocean Market, the reference marketplace provided by Ocean Protocol, addresses these issues.
+With the requirements in mind, let's design a naive Smart Contract that allows us to get access to this fish dataset that we want to monetize.
 
-It makes it easy to publish data services, provide accurate pricing for the data, discover data, purchase data, and consume data services.
-Ocean Market supports fixed pricing and automatic price discovery for your assets (datasets and algorithms). We’ll see more on that later.
+**Cutting costs and reducing efforts**. Such Smart Contract implementation would provide significant advantages compared to centralized data marketplaces. Unlike a centralized marketplace, an open marketplace built on Ethereum cannot change terms and conditions arbitrarily, nor require to upload data to a server under the control of one single entity and trust that entity, nor impose new restrictions (e.g. no images of faces allowed). They  remove the need to duplicate infrastructure, cut the costs, and they do not lock their users.
 
-It’s a vendor-neutral reference data marketplace for use by the Ocean community. It’s decentralized (no single owner or controller), and non-custodial (only the data owner holds the keys for the datatokens).
-Developers and entrepreneurs are free to fork Ocean Market to build their own data marketplaces.
+**Immutability and accessibility**. If we considered the Ethereum blockchain only as a distributed database, we could think about uploading our dataset directly to the blockchain. We could implement a smart contract with a *store(data)* function which takes an array of bytes to be stored. Next, we would create an array byte representation of the image and send it to the smart contract. We saved our data on the blockchain. And everyone could read this data if they go through the blockchain history. But it would be convenient if the smart contract provided a function to retrieve all data that is stored in it. So we would implement *readStorage()* to return the image representation.
 
-Everyone at Ocean Protocol hopes that there will be thousands of data marketplaces and that Ocean Market will be just one among many. Each Ocean-powered marketplace will have the same features as the reference implementation provided by Ocean Protocol, plus any feature they will want to add.
+This solution would work, and in fact, some <a href="https://boobies.surge.sh/" target="_blank" >projects</a> uploaded whole images to the blockchain. But it would violate key requirements we specified to safely monetize data.
 
-**Let’s explore Ocean Marketplace to understand more in-depth the Ocean Protocol 3 layers stack.**
+Here are the main **issues with storing data directly on the Ethereum blockchain**:
 
-<img src="/images/chapter14_1.png" />
-
-The Buyer interacts with the frontends including Ocean Market, or with any independent third-party markets connected to Ocean Protocol.
-Front-end UIs, usually running in the browser, are connected to the Ocean Protocol backend with Ocean React hooks and Ocean JS library. Think of Ocean React hooks as the glue for your frontend and the backend.
-The Decentralized Backend is Solidity code running on Ethereum mainnet, which includes the libraries and tools we covered before like access smart contracts and the on-chain metadata store.
-
-From an infrastructure standpoint, Ocean marketplaces are what end-users interact with. They are supported by Ocean Protocol libraries and tools and enabled by an array of smart contracts in the Ethereum blockchain.
-
-<img src="/images/chapter14_2.png" />
-
-**Layer 3 — Apps ecosystem (marketplaces, data management platforms)**
-This is effectively the services and the UI that people interact with for their data exchanges. A marketplace/publisher app, typically running in a web browser.
-
-**Layer 2 — Component level (Ocean metadata storage, Ocean proxy, libraries)**
-The Ocean middleware solution sits in between. Datasets and their metadata are registered and validated here. It includes all the high-level libraries to interact with Ocean Protocol, and the components enabling the integration of your data with Ocean Protocol.
-
-**Layer 1 — Network level (EVM nodes and smart contracts)**
-This is the foundational layer. The ledger records data ownership and access rights.
-Ocean Protocol smart contracts on the Ethereum Virtual Machine interact with each other to deal with data properties and rights and facilitate secure data exchange.
+- **Access rights**. Because every Smart Contract is available on the Ethereum network, and because the Ethereum network is public, every Smart Contract is available for everyone. In other words, everyone can access the data, and we have lost the ability to manage data access rights.
+- **Immutability**. Data written on the blockchain is immutable; so we wouldn’t be able to delete the data once it was uploaded. This could create risks of duplication, but also of privacy protection depending on the data that is stored.
+- **User experience**. This implementation also introduces a bad user experience for data providers, because it requires that they save the data in a specific way to enable the upload to the Ethereum blockchain. And the viewer needs to know how the data was encoded to properly decode it. Since there is no rule that forces you to use byte arrays.
+- **Transaction costs**. Last but not least, each action that alters the state of the blockchain involves costs. To store 1 GB of data, one may have to spend well over $500M depending on market conditions… Not practical indeed.

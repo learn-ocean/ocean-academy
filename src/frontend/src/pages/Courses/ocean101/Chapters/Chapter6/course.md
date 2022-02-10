@@ -1,23 +1,37 @@
-# Chapter 6: Data and Web3
-#### Difficulty: **2/5** \| Estimated reading time: **5 min**
+# Chapter 6: Ocean Market and Ocean Protocol Infrastructure
+#### Difficulty: **3/5** \| Estimated reading time: **10 min**
 
-<dialog character="jellyfish">The Web3 space extends the field of possibilities. And by now we start to meet funky new creatures in our diving descent.</dialog>
+<dialog character="mantaray">In the depths of the ocean, nobody knows you’re a fish. Meet the main characters in the Web3 data ecosystem that Ocean Protocol is buidling.</dialog>
 
-**Data value.** Data is often compared to oil, but the metaphor is flawed. Oil is burnt to release energy and can be found in nature. But data is generated and does not get wasted when consumed. The real value is available when analyzed and aggregated with other data.
+Legacy data marketplaces have three main issues: centralized control which requires the data publisher to trust the marketplace operator, loss of privacy, and difficulty in determining the price. Now that you are familiar with the Ocean, let’s explore how Ocean Protocol addresses these issues.
 
-**Private data**. While we often think about data aggregated by big internet companies we forget about the potential of the unstructured and unshared data of individuals. Think about all those mobile phone users who have hundreds of pictures that could be used to train algorithms. Currently, this data cannot be monetized, but it would have value if it would be aggregated.
+<img src="/images/chapter14_0.png" />
 
-**Trust in third parties.** Selling personal private data nowadays requires to trust third parties to protect the data from abuse. Small companies may not have the will or the skills to secure data. But even big organizations have a history of data breaches, and cases of mishandling of user data are far too common, even today.
+**Ocean Market**, the reference marketplace provided by Ocean Protocol, makes it easy to publish data services, provide accurate pricing for the data, discover data, purchase data, and consume data services. Ocean Market supports fixed pricing and automatic price discovery for your assets (datasets and algorithms).
 
-**User data ownership.** In the Web3 model, the control of the data is in the hands of the user. The data itself is not owned by the company providing a service anymore. Users provide access to their data while keeping full ownership. This opens the opportunity for individuals to control and monetize their data without worrying about losing ownership and privacy. Additionally, it gives individuals better visibility of how their data is accessed and used by (web3) apps, services and companies.
+It’s a **vendor-neutral reference data marketplace** for use by the Ocean community. It’s decentralized (no single owner or controller), and non-custodial (only the It’s a vendor-neutral reference data marketplace for use by the Ocean community. It’s open (it is owned by Ocean Protocol Foundation) and non-custodial (only the data owner holds the keys to the data). Developers and entrepreneurs are free to fork Ocean Market to build their own data marketplaces to access Ocean Protocol datasets.
 
-**Incentivized data sharing**. Data control offers users much greater incentives to share their data because it's safe to do so. They can earn a revenue from their data and decide exactly what data is shared, to whom, and how. It makes it difficult for companies to lock-in their users since the data is in the hands of the user. The user can switch to other service providers without losing any data, which can stir healthy competition and innovation across industries.
+Everyone at Ocean Protocol hopes that there will be many data marketplaces in the ecosystem, each targeting a specific industry or vertical, and that Ocean Market will be just one among many. Each Ocean-powered marketplace will have the same features as the reference implementation provided by Ocean Protocol, plus any feature they will want to add.
 
-<img src="/images/chapter6_0.png" />
 
-**Illustrating how it works with a Web3 chat app.** Suppose you saved your contact information (e.g. email, name, image, address, etc.) on your mobile phone. Now you want to use a chat app to interact with your friends. You download a chat app with the interface that you like the most and it asks to access additional information like your profile image. While these fields may be optional, they help to improve the user experience. But an app provider would only need to ask for a unique ID and save it into its database. As long as the app follows open standards it is just a User Interface to enable chatting. Chatting can be done in a peer-to-peer way while all data is saved on the user's mobile phone. If you do not like the app you could easily switch to a new app/User Interface while keeping the data (your chats) already collected in the previous app.
+**Let’s explore Ocean Market to understand more in-depth the Ocean Protocol 3 layers stack.**
 
-**Monetizing your private data**. Chat users can sell their chat data if they want to. Imagine a company that wants to analyze the most used words in private chats over time. Chat users could sell a wordlist and/or occurrences of words and earn money. So it’s not the chat app that has a monopoly over this data but users are in control. This puts the chat app in competition with other analytics service providers.
-A clever chat app provider would offer their users a payment or other kinds of advantages if users allow them to analyze their chats.
+<img src="/images/chapter14_1.png" />
 
-In summary Web3 forces companies to offer these kinds of incentives, because there is finally an open market around user (generated) data.
+The Buyer interacts with the frontends including Ocean Market, or with any independent third-party markets connected to Ocean Protocol. Front-end UIs, usually running in the browser, are connected to the Ocean Protocol backend with Ocean React hooks and Ocean JS library. Think of Ocean React hooks as the glue for the frontend the user sees, and the backend that sits on the blockchain. The Decentralized Backend is Solidity code that includes the libraries and tools needed to provide the service in a decentralzed fashion, like access Smart Contracts and on-chain metadata store.
+
+Ocean Markets can be used on different *anchor* blockchains like Ethereum, the main blockchain for Smart Contracts, BSC, its cheaper equivalent, or Polygon, Ethereum's scaling solution (a so-called *Layer-2* that uses zero-knowledge proof technology to make transactions more efficient).
+
+From an infrastructure standpoint, Ocean marketplaces are what data buyers and data sellers interact with.
+
+**Let’s explore the 3 layers stack behind Ocean Marketplaces.**
+
+<img src="/images/chapter14_2.png" />
+
+**Apps Layer** - This is the ecosystem of marketplaces, data management platforms. This is effectively the services and the UI that people interact with for their data exchanges. It is the marketplace or publisher app that users go to, which may typically be accessed from a web browser.
+
+**Middleware Layer** - This is made of Ocean Metadata cache, Ocean proxy, libraries. Datasets and their metadata are cached in what is called ***Aquarius*** in Ocean, for quick retrieval (rather than having to query the entire blockchain to search for data assets, which may be slow). It includes all the high-level libraries to interact with Ocean Protocol from various interfaces. The Ocean proxy is called the ***Ocean Provider*** and it enables the integration of data access control with Ocean Protocol.
+
+**Smart Contracts Layer** - This is the foundational layer, the open ledger that records data ownership, access rights and metadata. It is made of Ethereum nodes and Smart Contracts (or any other blockchain on which Ocean is available). Ocean Protocol Smart Contracts facilitate the exchange of data access rights via the use of data tokens.
+
+Don’t worry if it’s not all entirely clear; the Ocean Protocol stack is made simple for the end-user anyway as they may only interact with the Marketplace UI.

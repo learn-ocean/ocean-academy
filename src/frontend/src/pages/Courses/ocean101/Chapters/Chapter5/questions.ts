@@ -1,17 +1,12 @@
 export const questions = [
     {
-        question: "What could be programmed using a smart contract?",
+        question: "Which one of the following statements is true",
         answers: [
-            "Getting a soft drink delivered from a vending machine",
-            "Transferring property rights automatically once financing is secured",
-            "Getting paid to provide access to one’s data",
-            "Buying access to a private dataset, instantly, when needed"
+            "Ocean Protocol makes it flexible to save metadata about your data in any way you want to enable data discoverability",
+            "Ocean Protocol uses a single smart contract to register all metadata",
+            "Ocean Protocol is a collection of tools and libraries to enable decentralized data marketplaces",
+            "Ocean Protocol smart contracts can only be used by registered companies"
         ],
-        responses: [
-            "Getting a soft drink delivered from a vending machine",
-            "Transferring property rights automatically once financing is secured",
-            "Getting paid to provide access to one’s data",
-            "Buying access to a private dataset, instantly, when needed"
-        ],
+        responses: ["Ocean Protocol is a collection of tools and libraries to enable decentralized data marketplaces"],
     }
 ]

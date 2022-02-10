@@ -1,6 +1,7 @@
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
 import { Link } from 'react-router-dom'
+import {useState} from  'react';
 // import { PublicUser } from 'pages/Course/Course.data'
 import { PublicUser } from 'shared/user/PublicUser'
 
@@ -11,7 +12,9 @@ import { chaptersByCourse } from '../../../pages/Course/Course.data'
 // import { Select } from '../../../pages/Courses/ocean101/Chapters/Chapters.data'
 import { Select } from '../Select/Select.controller'
 import { Option } from '../Select/Select.view'
-import { DrawerItem, DrawerMask, DrawerStyled, DrawerStyledLogin } from './Drawer.style'
+import { DrawerItem,DrawerItens, DrawerTitle, DrawerSubMenuLabel, DrawerSubMenu, DrawerSubMenuItem,  DrawerMask, DrawerStyled, DrawerStyledLogin } from './Drawer.style'
+import { SubMenu } from '../SubMenu/SubMenu.controller'
+
 
 type ChapterDrawerViewProps = {
   showingChapters: boolean
@@ -65,67 +68,79 @@ export const ChapterDrawerView = ({ showingChapters, hideCallback, pathname, cha
   </>
 )
 
-export const LoginDrawerView = ({ showingMenu, user, hideCallback, removeAuthUserCallback }: LoginDrawerViewProps) => (
-  <>
-    <DrawerMask className={`${showingMenu}`} onClick={() => hideCallback()} />
-    {user ?
-      loggedInDrawer({ showingMenu, user, removeAuthUserCallback }) :
-      loggedOutDrawer({ showingMenu })}
-  </>
-)
+export const LoginDrawerView = ({ showingMenu, user, hideCallback, removeAuthUserCallback }: LoginDrawerViewProps) => {
+  const [isCoursesMenu, setCoursesMenu] = useState<boolean>(false);
 
-function loggedInDrawer({ showingMenu, user, removeAuthUserCallback }: LoggedInDrawerViewProps) {
-  return (
-    <DrawerStyledLogin className={`${showingMenu}`}>
-      <h1>Menu</h1>
-      <DrawerItem>
-        <Link to="/about">ABOUT US</Link>
-      </DrawerItem>
+  const coursesSubMenu = () => (
+    <>
+    <DrawerTitle>
+    <img onClick={() => setCoursesMenu(!isCoursesMenu)} className={"backIcon"} src="/icons/chevron-forward-outline.svg" />
+    </DrawerTitle>
 
-      <DrawerItem>
-        <Link to="/terms">TERMS</Link>
-      </DrawerItem>
+    <DrawerItens>
 
-      <DrawerItem>
-        <Link to={`/user/${user?.username}`}>{user?.username}</Link>
-      </DrawerItem>
-
-      <DrawerItem>
-        <Link
-          to="/"
-          onClick={() => {
-            removeAuthUserCallback()
-          }}
-        >
-          LOGOUT
-        </Link>
-      </DrawerItem>
-    </DrawerStyledLogin>
+          <DrawerItem >
+            <Link to="/ocean101">OCEAN 101</Link>
+          </DrawerItem>
+          <DrawerItem >
+            <Link to="/introToDataDefi">INTRO TO DATA DEFI</Link>
+          </DrawerItem>
+          <DrawerItem >
+            <Link to="/computeToData">COMPUTE TO DATA</Link>
+          </DrawerItem>
+          </DrawerItens>
+          </>
   )
-}
 
-function loggedOutDrawer({ showingMenu }: LoggedOutDrawerViewProps) {
-  return (
-    <DrawerStyledLogin className={`${showingMenu}`}>
-      <h1>Menu</h1>
-      <DrawerItem>
-        <Link to="/about">ABOUT US</Link>
-      </DrawerItem>
-
-      <DrawerItem>
-        <Link to="/terms">TERMS</Link>
-      </DrawerItem>
-
-      <DrawerItem>
+  const mainMenu = () => (
+    <>
+        <DrawerTitle>Menu</DrawerTitle>
+        <DrawerItens>
+        <DrawerSubMenu>
+          <DrawerSubMenuLabel onClick={() => setCoursesMenu(!isCoursesMenu)}> 
+              COURSES<img className={"forwardIcon"} src="/icons/chevron-forward-outline.svg" />
+          </DrawerSubMenuLabel>
+      </DrawerSubMenu>
+      <DrawerItem >
+            <Link to="/about">ABOUT</Link>
+          </DrawerItem>
+          <DrawerItem>
+            <Link to={`/user/${user?.username}`}>{user?.username.toUpperCase()}</Link>
+          </DrawerItem>
+          {!user ?       (<><DrawerItem>
         <Link to="/sign-up">SIGN UP</Link>
       </DrawerItem>
 
       <DrawerItem>
         <Link to="/login">LOGIN</Link>
-      </DrawerItem>
-    </DrawerStyledLogin>
+      </DrawerItem></>) :            (<DrawerItem>
+            <Link
+              to="/"
+              onClick={() => {
+                removeAuthUserCallback()
+              }}
+            >
+              LOGOUT
+            </Link>
+          </DrawerItem>)
+          }
+        </DrawerItens>
+    </>
   )
+
+
+  return(
+    <>
+    <DrawerMask className={`${showingMenu}`} onClick={() => hideCallback()} />
+      <DrawerStyledLogin className={`${showingMenu}`}>
+        {!isCoursesMenu ? mainMenu() : coursesSubMenu()}
+        </DrawerStyledLogin>
+    </>
+  )
+
 }
+    
+
 
 ChapterDrawerView.propTypes = {
   showingChapter: PropTypes.bool,

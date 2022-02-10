@@ -2,6 +2,7 @@ import styled from 'styled-components/macro'
 
 export const TokenStyled = styled.div`
   width: 100vw;
+  min-height: 60%;
   margin-top: 50px;
 `
 

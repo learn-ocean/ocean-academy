@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react'
 import { Route } from 'react-router-dom'
+import {Footer} from "./App.components/Footer/Footer.controller"
 
 import { AppMeta } from './App.meta'
 import { AppRoutes } from './App.routes'
@@ -21,6 +22,7 @@ export const AppView = () => {
               <AppWrapper>
                 <AppTransitions pageKey={location.key} reverse={previousPage > nextPage}>
                   <AppRoutes location={location} />
+                  <Footer />
                 </AppTransitions>
               </AppWrapper>
             )
