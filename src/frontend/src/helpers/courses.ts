@@ -30,9 +30,19 @@ export const coursesTitles = _courses.map(x => x.title)
  * @param progress ["/{courseName}/{chapter}", "/{courseName}/{chapter}", "/{courseName}/{chapter}", "/{courseName}/{chapter}"]
  * @returns number of completed chapters for the input courseName.
  */
-export const getProgressForCourse = (course : COURSE_TYPE, progress: string[]): number => {
-    return progress.filter(chapter => chapter.split("/")[1] === course.title).length
-}
+ export const getNbProgressForCourse = (course : COURSE_TYPE, progress: string[]): number => 
+ getProgressForCourse(course, progress).length
+
+/**
+* Filters the courses among all of the user progress for
+* the given input course.
+* @param course COURSE_TYPE object to filter the chapters progress.
+* @param progress something in the format ["/{courseName}/{chapter}", "/{courseName}/{chapter}"]
+* @returns an array of chapters of the given course.
+*/
+export const getProgressForCourse = (course : COURSE_TYPE, progress: string[]): string[] =>
+      progress.filter(chapter => chapter.split("/")[1] === course.title) 
+
 
 export const isCourseCompletedFromTitle = (courseTitle : string, progress: string[]): boolean =>  {
      const course = getCourseByTitle(courseTitle)
@@ -43,7 +53,7 @@ export const isCourseCompletedFromTitle = (courseTitle : string, progress: strin
 }
 
 export const isCourseCompleted = (course : COURSE_TYPE, progress: string[]): boolean =>  {
-       return getProgressForCourse(course, progress) >= course.chapters
+       return getNbProgressForCourse(course, progress) >= course.chapters
 }
 
 export const getCourseByTitle = (courseTitle: string): COURSE_TYPE | undefined =>
