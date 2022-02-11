@@ -1,7 +1,7 @@
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
 
-import { ChaptersIconStyled, CourseBoxStyled } from './CourseBox.style'
+import { ChaptersIconStyled, CourseBoxStyled, CourseStats, StatItem } from './CourseBox.style'
 
 type ChaptersIconProps = {
     chaptersImage: string
@@ -18,6 +18,7 @@ export type CourseBoxViewProps = {
     shortDescription: string
     noChapters: number
     completed: boolean
+    completionTime: number
 }
 
 
@@ -41,22 +42,25 @@ const CompletedIcon = ({ completedImage, showing }: CompletedIconProps) => {
 }
 
 
-export const CourseBoxView = ({ title, shortDescription, noChapters, completed }: CourseBoxViewProps) => {
+export const CourseBoxView = ({ title, shortDescription, noChapters, completed, completionTime }: CourseBoxViewProps) => {
     return (
         <CourseBoxStyled>
+            <div className={"courseBox"}>
+            <div >
             <h3>{title}</h3>
             <div className={"moduleContent"}>
                 <p>{shortDescription}</p>
-                <div className={"moduleContent-icons"}>
-                    <ChaptersIcon
-                        chaptersImage={"./Chapters.svg"}
-                        noChapters={noChapters}
-                    />
-                    <CompletedIcon
-                        completedImage={"./Checkmark.svg"}
-                        showing={completed}
-                    />
-                </div>
+                
+            </div>
+            </div>
+            <CourseStats>
+                <StatItem>
+                <span className="label">{noChapters} chapters</span>
+                </StatItem>
+                <StatItem>
+                <span className="label">{completionTime} {completionTime == 1 ? "hour" : "hours"} to complete</span>
+                </StatItem>
+            </CourseStats>
             </div>
         </CourseBoxStyled>
     )

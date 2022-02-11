@@ -11,28 +11,31 @@ export const courseData: CourseData[] = [
         path: Ocean101.path,
         pathname: `/${Ocean101.path}/info`,
         name: 'Ocean 101',
-        description: 'Learn the fundamentals of Ocean, get your ETH wallet in 10 minutes!',
+        description: 'A 23-module introduction and gives an official completion certificate writable on the blockchain (NFT).',
         noChapters: 23,
         data: Ocean101,
-        title: 'Ocean 101'
+        title: 'Ocean 101',
+        completionTime: 3
     },
     {
         path: IntroToDataDefi.path,
         pathname: `/${IntroToDataDefi.path}/info`,
         name: 'Intro to Data Defi',
-        description: 'Introduction to Decentralized Finance with Data.',
+        description: 'A 6-module overview of Decentralized Finance with tokenized data assets.',
         noChapters: 6,
         data: IntroToDataDefi,
-        title: 'Intro to Data Defi'
+        title: 'Intro to Data Defi',
+        completionTime: 1
     },
     {
         path: ComputeToData.path,
         pathname: `/${ComputeToData.path}/info`,
-        name: 'Intro to ComputeToData',
+        name: 'ComputeToData',
         description: 'The first introduction course to use Compute-to-Data on Ocean Protocol.',
         noChapters: 7,
         data: ComputeToData,
-        title: 'Intro to ComputeToData'
+        title: 'Intro to ComputeToData',
+        completionTime: 2
     }
 ]
 

@@ -4,20 +4,38 @@ import { bgTextColor, primaryColor, backgroundColorLight, textColor } from 'styl
 export const HeaderStyled = styled.div`
   margin-bottom: 20px;
   position: relative;
-  text-align: center;
-  height: 50px;
+  height: 58px;
   z-index: 1;
+  @media (max-width: 1200px) {
+    position: fixed; 
+    height: 58px;
+    width: 100%;
+    background-color: ${backgroundColorLight};
+  }
   background-color: ${backgroundColorLight};
 `
 
+
+export const HeaderContainer = styled.div`
+background-color: ${backgroundColorLight};
+
+`
+
 export const HeaderLogo = styled.img`
-  padding: 11px;
+  top: 5px;
+  position: absolute;
+  padding: 11px 45px;
   z-index: 1;
-  margin: auto;
+  text-align: left;
+  align-self: left;
+  @media (max-width: 1200px) {
+    padding: 11px 20px;
+  }
 `
 
 export const HeaderLoggedOut = styled.div`
   position: absolute;
+  margin-top: 5px;
   top: 0;
   right: 10px;
   display: grid;
@@ -31,7 +49,8 @@ export const HeaderLoggedOut = styled.div`
 
 export const HeaderLoggedIn = styled.div`
   position: absolute;
-  top: 0;
+  
+  top: 5px;
   right: 0;
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -76,3 +95,12 @@ export const HeaderMenuItem = styled.div`
     padding: 0 10px;
   }
 `
+
+export const HeaderSubMenuItem = styled.div `
+position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  `
+

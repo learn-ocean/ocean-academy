@@ -30,19 +30,31 @@ export const coursesTitles = _courses.map(x => x.title)
  * @param progress ["/{courseName}/{chapter}", "/{courseName}/{chapter}", "/{courseName}/{chapter}", "/{courseName}/{chapter}"]
  * @returns number of completed chapters for the input courseName.
  */
- export const getNbProgressForCourse = (course : COURSE_TYPE, progress: string[]): number => 
- getProgressForCourse(course, progress).length
+export const getNbProgressForCourse = (course : COURSE_TYPE, progress: string[]): number => 
+    getProgressForCourse(course, progress).length
 
 /**
-* Filters the courses among all of the user progress for
-* the given input course.
-* @param course COURSE_TYPE object to filter the chapters progress.
-* @param progress something in the format ["/{courseName}/{chapter}", "/{courseName}/{chapter}"]
-* @returns an array of chapters of the given course.
-*/
+ * Filters the courses among all of the user progress for
+ * the given input course.
+ * @param course COURSE_TYPE object to filter the chapters progress.
+ * @param progress something in the format ["/{courseName}/{chapter}", "/{courseName}/{chapter}"]
+ * @returns an array of chapters of the given course.
+ */
 export const getProgressForCourse = (course : COURSE_TYPE, progress: string[]): string[] =>
-      progress.filter(chapter => chapter.split("/")[1] === course.title) 
+         progress.filter(chapter => chapter.split("/")[1] === course.title) 
 
+/**
+ * 
+ * @param progress 
+ * @param totalChapters total number of chapters for the course
+ * @returns 
+ */
+export const getRemainingChaters = (course: COURSE_TYPE, progress:string[]): number[] =>{
+    const completedChapters = progress.map(x => parseInt(x.split("/")[2].split("-")[1])).sort((a,b) => b-a);
+    const allChapters = [];
+    for(let i = 1; i <= course.chapters; i++){allChapters.push(i)}
+    return allChapters.filter(chapter => !completedChapters.includes(chapter))
+}
 
 export const isCourseCompletedFromTitle = (courseTitle : string, progress: string[]): boolean =>  {
      const course = getCourseByTitle(courseTitle)

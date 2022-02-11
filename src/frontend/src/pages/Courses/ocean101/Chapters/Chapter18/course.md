@@ -1,29 +1,17 @@
-# Chapter 18: Who is Data/Compute Consumer?
+# Chapter 18: Ocean for Algorithm Providers
 
 #### Difficulty: **3/5** \| Estimated reading time: **5 min**
 
-<dialog character="mantaray">We’ve met the data fishes. Now let’s scrutinize the species who look to acquire data to build models: the data consumers.</dialog>
+<dialog character="mantaray">Not all fishes in the Ocean are capable of coding their own algorithms. That’s why they rely on Algorithm Providers.</dialog>
 
-Simply speaking, anyone who purchases priced data, free data, or an algorithm on Ocean Protocol is called a **Data Consumer**. A collection of free data samples to play with is made available in the <a href="http://commons.oceanprotocol.com" target="_blank" >Ocean Commons</a>.
+**Algorithms are considered as data assets, and are exchanged in the exact same way as datasets on Ocean Protocol**. By making their algorithms available, Algorithm Providers are paid every time one of their algorithms is used.
 
-**Finding Data.** When someone is looking to find a specific algorithm or dataset relevant to their needs, they will use any of the market places available. It could be via Ocean Market, for example. The metadata and the quality score of the data (which works the exact same on data as on compute algorithms) will be used to assess if the data is worth purchasing or not.
+Algorithm Providers share their ML scripts with the market. Just like datasets, algorithms can be sold for download, or sold to be used on datasets offering compute power in addition to the data ([chapter 19](https://oceanacademy.io/ocean101/chapter-19) provides an overview, our [*Introduction to Compute-to-Data* course](https://oceanacademy.io/ComputeToData) provides a more in-depth look)
 
-<img src="/images/chapter18_0.png" />
+**Clear use cases**. Let’s say you are a coffee farmer in Nicaragua, and you want to sell roasted beans at the local market. The prices at the market are subject to sharp changes depending on numerous factors. But you need to sell at the best price to pay for expenses and develop your activity. Via Ocean Protocol, you can get the data you need (e.g. historical price data, global meteorological data, etc.) and use it in a pre-trained Deep learning model to get a price forecast for the next 3 months (the same kind used by hedge-funds). You have never seen any data nor any algorithm, but now you know when to sell your beans to maximize your revenue.
 
-**Purchasing Data**. The data buyer will use the DID as a reference to create a service agreement. A service agreement is a contract signed between the buyer and the data provider using their Web3 wallet (Metamask, in our case). This will call a sequence of smart contracts to get the payment done and get data access tokens for the data. OCEAN token is sent to the contract and swapped for the amount of datatokens required (in our previous example, 1.0 datatoken was needed). Now, the buyer has enough datatokens in their wallet to get access to the data.
+There is a clear need for a transparent and unified algorithm market.
 
-**Consuming Data.** At that stage, the datatoken owner can exchange the token for access to the data. An easy way to do that is via Ocean Market. They just connect with Metamask when they are on the Ocean Market webpage. They go to their desired dataset, and only need to click the “use” button on the right to consume the data (either by running a Compute-to-Data operation or by simply downloading a dataset - yes it is still possible to work the good old way).
+**Ocean provides a mechanism for quality signaling for both data and algorithms** thanks to built-in financial incentives. Ocean token holders play the role of curators, as they can earn revenue by locking Ocean tokens into datasets and algorithms. They then earn every time the data or the algorithm is used, proportionally to the amount they lock (or stake, as we say in Web3).
 
-<img src="/images/chapter18_1.png" />
-
-**Consume Datatoken in Compute-to-data.** Using Compute-to-Data is almost as easy. Upon *use*, the buyer will be redirected to a dedicated page where they can load the code to be run on the dataset.
-
-<img src="/images/chapter18_2.png" />
-
-There are two fields to fill in order to send the script to be computed on some private data.
-
-First, select the image to run an algorithm, using either Python or Javascript, the supported environments for now. In the future, it is expected that Data Consumers will be able to browse through different Compute Providers and choose one that supports their algorithm/environment.
-
-You want to choose a python with pandas image if you have a .py script or if you are doing analysis in Javascript you can run a nodejs10 image.
-
-Secondly, drag and drop a script allowed by the data owner. Ocean Protocol will take the algorithm and the data, and it will orchestrate the computation of the output with the Kubernetes clusters of the Data Provider.
+Ocean token holders have a financial incentive to invest in the data sets that they think will be most used, and the total amount invested on a particular data asset provides a signal on its quality. Buyers of data and algorithms benefit from this market dynamic to judge the trustworthiness of an Ocean asset (more on this in our [*Intro to Data DeFi* course](https://oceanacademy.io/introToDataDefi)).

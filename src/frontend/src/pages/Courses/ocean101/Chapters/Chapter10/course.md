@@ -1,23 +1,26 @@
-# Chapter 10: Exploring the OCEAN Token Contract
+# Chapter 10: Intro to Smart Contracts and Web3
+#### Difficulty: **3/5** \| Estimated reading time: **10 min**
 
-#### Difficulty: **3/5** \| Estimated reading time: **5 min**
+<dialog character="jellyfish">Have you heard about Smart Contracts and Web3? You don’t need to know the inner workings of how Smart Contracts work, but having a general idea of what they are and what they do will help. You may see in the water  without a mask, but things are blurry, so here is your next piece of equipment.</dialog>
 
-<dialog character="jellyfish">Let's now use your equipment to observe those beautiful new species we've discovered down here</dialog>
 
-**Web3 tools.** Smart contracts on the blockchain are useful to enable new forms of governance and liberty. But you also need the tools around the blockchain to interact with it. From <a href="https://github.com/ConsenSys/ethereum-developer-tools-list" target="_blank" >developer tools</a> like Remix IDE to write smart contracts, libraries like Web3py to interact with the blockchain to apps like Etherscan to explore the blockchain.
+**A Smart Contract is just a program that runs on a distributed computer.** It may involve one or more people and transactions.
 
-**Exploring the OCEAN Token**. Look for “OCEAN” on <a href="https://etherscan.io" target="_blank" > Etherscan</a> and you will find the smart contract of the token.
+A Smart Contract will automatically perform transactions based on predetermined conditions, exactly as coded. For example, a coin flip can easily be programmed in a Smart Contract: “If heads, you win our 5$ bet, if tails, I win the bet”. The program is run on the blockchain, which makes it a neutral ground for all parties involved, and it cannot be cheated.
 
-<img src="/images/chapter10_0.png" />
+<img src="/images/chapter5_0.png" />
 
-When you open the contract there is a tab to read the actual Solidity code. If you look into the <a href="https://etherscan.io/token/0x967da4048cD07aB37855c090aAF366e4ce1b9F48" target="_blank" >OCEAN token</a> smart contract you can see that **the OCEAN token uses the ERC20 standard**; it is an _ERC20 token_, which is a widely used and secure standard. It imposes a standard set of functions to interact with it as well as standard naming conventions.
+Smart Contracts are especially useful for managing data workflows across people, teams, and companies, because they run in a way that is 100% deterministic. This means that once the Smart Contract is deployed, it will run exactly as agreed when the conditions are triggered.
 
-**In need of standards**. While everyone can write smart contracts in their own style, the community realized that it might be useful for the ecosystem and for security (many smart contracts deal with real monetary value after all) to introduce standards. The Ethereum network does not enforce you to use these standards, but most developers use them as they increase quality and speed up your development.
+**Smart Contracts as virtual vending machines**. A Smart Contract could make some data available under the precondition that a payment is received. Such Smart Contract will always deliver access to the data when it has received the required payment, anytime, to anyone. This can come handy in the case of  late night work on an analysis due in the morning. Just “pay and play”.
 
-**ERC standards. ** <a href="https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/IERC20.sol" target="_blank" >ERC20</a> is just one standard for tokens, but standards are also available for name registries, library/package formats, and more. These standards use _ERC_ as a suffix, as they all started as _Ethereum Request for Comments_. ERCs started as modification proposals by developers asking for feedback, got tested, and later adopted by the community. These standards and libraries are open-source, free to copy/use, and well documented.
+**Verifiability**. The agreement in the Smart Contract, its trigger conditions, and the operations it does are all publicly verifiable on the blockchain. In our previous example, everyone can track if and how the data was accessed and verify that the access condition was met. This is made simple thanks to blockchain technology: the blockchain stores all transaction(s) related to all Smart Contracts, providing cryptographic proof of everything that happened.
 
-**Better user experience**. Because the OCEAN token is an ERC20 token, other apps and smart contracts know how to interact with it, just like they do with other ERC20 tokens. This increases compatibility and enables cross-pollination; the OCEAN Token contributes to the Ethereum ecosystem, and it benefits from the whole Ethereum ecosystem.
+**Web3**. Web3 is a mesh network of blockchains and Smart Contracts that interact with each other, and that form a new network sitting on top of the current internet. Web3 is an awesome new space because it has no central point, no owners, and no borders.
+It’s called Web3 because it’s an evolution of the internet since its beginning. The Web3 internet is built on fundamentally different infrastructure, relying on blockchains and distributed peer-to-peer networks, rather than on server-client relationships.
 
-Since the OCEAN token contract follows the ERC20 standard <a href="https://etherscan.io" target="_blank">Etherscan</a> can be used to find the smart contract by searching for _OCEAN_. The user does not need to know the address.
+<img src="/images/chapter5_1.png" />
 
-**Transparency**. Looking at the OCEAN token contract you can see how many people (addresses) hold the token, and you can inspect every single transaction of the token. You can also view the smart contract code under the _Read Contract_ tab. This information is publicly written on the Ethereum blockchain, Etherscan is only a tool to access that information, and enhanced with additional off-chain information. If you do not like Etherscan you can simply switch to another Explorer or build your own. It's that simple.
+The Web 2.0  introduced the possibility for users to add their own content to blogs, profile pages and then to social networks. Central entities monetize user data to provide ‘free’ accounts and services on their platforms. This has evolved in what leading academics now describe as <a href="https://www.barnesandnoble.com/w/the-age-of-surveillance-capitalism-shoshana-zuboff/1127581387" target="_blank" >surveillance capitalism</a>.
+
+**Web3 allows for full liberalization of networks**, removing the need for central intermediaries. Just like TCP/IP are communication protocols that define how information is sent between clients and servers over the internet, Ocean Protocol is a protocol that defines how data assets are exchanged over the decentralized Web.

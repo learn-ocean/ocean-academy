@@ -1,11 +1,11 @@
 export const questions = [
-  {
-    question: 'Which one of these statements is false?',
-    answers: [
-     'Every asset on Ocean Protocol has its own DID',
-     'A DID is a JSON object with information about the Asset',
-     'A DDO is a string representing the data attributes'
-    ],
-    responses: ['A DDO is a string representing the data attributes','A DID is a JSON object with information about the Asset'],
-  },
+    {
+        question: "What is the main advantage of Ocean Protocol?",
+        answers: [
+            "It is a central database that collects all data sets in the world",
+            "It provides a standard way to access, buy and sell data",
+            "It introduces new algorithms to compress data to save bandwidth and storage",
+        ],
+        responses: ["It provides a standard way to access, buy and sell data"],
+    }
 ]

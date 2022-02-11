@@ -1,12 +1,13 @@
 export const questions = [
-    {
-        question: "What specificities make a public blockchain different from a public (editable) Google sheet?",
-        answers: [
-            "Anyone can make modifications to it",
-            "Anyone can see what is written on it",
-            "It can only accept pre-authorized types of modifications",
-            "It is not possible to erase content already written on it",
-        ],
-        responses: ["It can only accept pre-authorized types of modifications","It is not possible to erase content already written on it"],
-    }
+  {
+    question: 'What are the key enablers of a New Data Economy?',
+    answers: [
+      'Protection of private data',
+      'Blockchain data storage',
+      'Exclusive data ownership by tech monoliths',
+      'Liquid markets for data',
+      'Unintelligible smart contracts'
+    ],
+    responses: ['Protection of private data','Liquid markets for data'],
+  },
 ]

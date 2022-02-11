@@ -14,7 +14,7 @@ import { addProgress } from './Chapter.actions'
 import { PENDING, RIGHT, WRONG } from './Chapter.constants'
 import { ChapterLocked } from './Chapter.style'
 import { ChapterView } from './Chapter.view'
-import { Footer } from './Footer/Footer.controller'
+import { ChapterFooter } from './Footer/ChapterFooter.controller'
 
 export interface ChapterData {
   pathname: string
@@ -153,7 +153,7 @@ export const Chapter = () => {
           proposedQuestionAnswerCallback={proposedQuestionAnswerCallback}
         />
       )}
-      <Footer />
+      <ChapterFooter />
     </>
   )
 }

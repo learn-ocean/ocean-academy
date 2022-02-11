@@ -2,7 +2,6 @@ import { About } from 'pages/About/About.controller'
 import { Certificate } from 'pages/Certificate/Certificate.controller'
 import { ChangePassword } from 'pages/ChangePassword/ChangePassword.controller'
 import { Chapter } from 'pages/Chapter/Chapter.controller'
-import { Course } from 'pages/Course/Course.controller'
 import { Courses } from 'pages/Courses/Courses.controller'
 import { Error404 } from 'pages/Error404/Error404.controller'
 import { ForgotPassword } from 'pages/ForgotPassword/ForgotPassword.controller'
@@ -15,6 +14,7 @@ import { Token } from 'pages/Token/Token.controller'
 import { User } from 'pages/User/User.controller'
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
+import { Ocean101Course, IntroToDataDefiCourse, ComputeToDataCourse } from 'pages/Course/Course.controller'
 
 export const AppRoutes = ({ location }: any) => (
   <Switch location={location}>
@@ -36,11 +36,17 @@ export const AppRoutes = ({ location }: any) => (
     <Route exact path="/change-password">
       <ChangePassword />
     </Route>
-    <Route path="/*/info">
-      <Course />
-    </Route>
     <Route path="/browse-courses">
       <Courses />
+    </Route>
+    <Route exact path="/ocean101">
+      <Ocean101Course />
+    </Route>
+    <Route exact path="/introToDataDefi">
+      <IntroToDataDefiCourse />
+    </Route>
+    <Route exact path="/ComputeToData">
+      <ComputeToDataCourse />
     </Route>
     <Route path="/*/chapter-*">
       <Chapter />
