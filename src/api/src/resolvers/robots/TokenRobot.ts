@@ -39,21 +39,24 @@ export class TokenRobot{
     run = async() => {
         this.robotLog("Firing up.")
 
-        const newTokensMap = await this.getChainTokens()
-        const newTokensIds = Array.from(newTokensMap.keys())
-           
-        const dbTokensIds = new Set((await TokenModel.find()).map(x => x.tokenId))
-        
-        const oddTokens = newTokensIds.filter(x => !dbTokensIds.has(x) && isValidTokenId(x))
-
-        if(oddTokens.length > 0){
-            this.robotLog(`New token ids are: ${oddTokens.toString()}`)
-            await this.writeTokensToDb(oddTokens, newTokensMap)
-        } else{
-          this.robotLog("No new tokens.")
-        }
-
+            const newTokensMap = await this.getChainTokens()
+            const newTokensIds = Array.from(newTokensMap.keys())
+               
+            const dbTokensIds = new Set((await TokenModel.find()).map(x => x.tokenId))
+            
+            const oddTokens = newTokensIds.filter(x => !dbTokensIds.has(x) && isValidTokenId(x))
     
+            if(oddTokens.length > 0){
+                this.robotLog(`New token ids are: ${oddTokens.toString()}`)
+                try{
+                    await this.writeTokensToDb(oddTokens, newTokensMap)
+                }catch(e){
+                    this.robotLog("The following error occurred while writing to db: " + e)
+                }
+            } else{
+              this.robotLog("No new tokens.")
+            }
+
         //Set next timer.
         setTimeout(this.run, this.interval)
     }
@@ -87,17 +90,17 @@ export class TokenRobot{
                 const {courseObj, userId} = fromTokenId(x);
                 console.log("Token Obj: ", tokenObj)
                 const tokenObjUser = await this.getTxInput(tokenObj.tx, tokenObj.mintedAt)
-    
-                return {updateOne: {        
-                    filter: { userId : userId },
-                    update: { $set: { [`tokens.${courseObj.title}`] : tokenObjUser } } 
+                
+                if(tokenObjUser.tokenId >= 0){
+                    return {updateOne: {        
+                        filter: { userId : userId },
+                        update: { $set: { [`tokens.${courseObj.title}`] : tokenObjUser } } 
+                    }}
                 }
             }
+        return {}
         }
-           
-            return {}
-
-        }))
+        ))
 
         //Write to the tb.
         await TokenModel.bulkWrite(bulkWriteToken)
@@ -111,7 +114,6 @@ export class TokenRobot{
      * @returns 
      */
     getTxInput = async(tx: string, mintedAt: Date): Promise<MintedToken> => {
-        try{
             const transaction = await this.web3.eth.getTransaction(tx)
     
             //@ts-ignore
@@ -128,12 +130,7 @@ export class TokenRobot{
             const tokenId = params._tokenId
             const course = splittedURI[splittedURI.length - 1]
         
-            return {course:course, account: account, tokenUri: tokenUri, tx: tx, mintedAt: mintedAt, tokenId: tokenId}
-        }catch(error){
-            console.log(`The error: ${error} ocurred while dealing with ${tx} and transaction:`)
-            return {course:"", account: "", tokenUri: "", tx: "", mintedAt: mintedAt, tokenId: -1}
-        }
-    
+            return {course:course, account: account, tokenUri: tokenUri, tx: tx, mintedAt: mintedAt, tokenId: tokenId}    
     }
 
     /**

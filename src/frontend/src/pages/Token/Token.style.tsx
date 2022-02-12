@@ -4,6 +4,7 @@ import { AnimatedCard, primaryColor, textColor } from 'styles'
 export const TokenStyled = styled.div`
   margin: 100px auto 20px auto;
   width: 800px;
+  height: 80vh
 `
 
 export const TokenButton = styled.div`
