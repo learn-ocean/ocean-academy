@@ -3,7 +3,6 @@ import { MintedToken } from './User'
 import { ObjectId } from 'mongodb'
 import { Property } from '../../helpers/typegoose'
 
-
 export class PublicUser {
   @IsMongoId()
   readonly _id!: ObjectId

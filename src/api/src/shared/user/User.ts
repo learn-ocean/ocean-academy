@@ -4,7 +4,6 @@ import { ObjectId } from 'mongodb'
 
 import { getModel, Property } from '../../helpers/typegoose'
 
-
 export interface MintedToken{
   course: string;
   account: string;
@@ -60,7 +59,6 @@ export class User {
 
   @Property()
   tokens ?: Map<string, MintedToken>
-
 }
 
 export const UserModel = getModel(User, { schemaOptions: { timestamps: true } })
