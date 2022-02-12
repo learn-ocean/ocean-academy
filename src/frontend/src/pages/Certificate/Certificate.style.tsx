@@ -19,7 +19,7 @@ export const CertificateItself = styled.div`
     color: #282640;
     position: absolute;
     text-align: center;
-    top: 32vw;
+    top: 34vw;
   }
 `
 

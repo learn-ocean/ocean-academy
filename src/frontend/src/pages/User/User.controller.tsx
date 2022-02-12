@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { State } from 'reducers'
 import { PublicUser } from 'shared/user/PublicUser'
-
 import { getUser, sendName } from './User.actions'
 import { UserView } from './User.view'
 
@@ -19,15 +18,15 @@ export const User = () => {
   const authUser = useSelector((state: State) => state.auth.user)
   const [name, setName] = useState<string>('')
 
-  const downloadCallback = () => {
+  const downloadCallback = (courseTitle: string) => {
     const doc = new jsPDF({
       orientation: 'landscape',
       unit: 'px',
       format: [1100, 800],
     })
-    doc.addImage('/certificate.jpg', 'JPEG', 0, 0, 1100, 800)
-    doc.setFontSize(50)
-    doc.text(authUser?.name || '', 550, 400, { align: 'center' })
+    doc.addImage(`/certificates/${courseTitle}.jpg`, 'JPEG', 0, 0, 1100, 800)
+    doc.setFontSize(35)
+    doc.text(authUser?.name || '', 550, 405, { align: 'center' })
     doc.save('a4.pdf')
   }
 

@@ -20,7 +20,6 @@ export const signUp = async (ctx: Context, next: Next): Promise<void> => {
 
   username = username.toLowerCase()
   email = email.toLowerCase()
-
   await verifyRecaptchaToken(recaptchaToken)
 
   const emailAlreadyTaken: User | null = await UserModel.findOne({ email }).lean()
@@ -30,7 +29,10 @@ export const signUp = async (ctx: Context, next: Next): Promise<void> => {
   if (usernameAlreadyTaken) throw new ResponseError(400, 'Username is already taken')
 
   const hashedPassword = await hash(password, 12)
-  const user: User = await UserModel.create({ email, username, hashedPassword } as User)
+  //Add userId to new user
+  const userId = await UserModel.countDocuments() + 1;
+  
+  const user: User = await UserModel.create({ email, username, hashedPassword,  userId} as User)
   const publicUser: PublicUser = toPublicUser(user)
 
   const jwt: Jwt = getSignedJwt(user._id.toHexString(), user.username)

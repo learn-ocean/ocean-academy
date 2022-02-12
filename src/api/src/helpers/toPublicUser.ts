@@ -9,5 +9,7 @@ export const toPublicUser = (user: User): PublicUser => {
     emailVerified: user.emailVerified,
     progress: user.progress,
     createdAt: user.createdAt,
+    userId: user.userId,
+    tokens: user.tokens
   }
 }

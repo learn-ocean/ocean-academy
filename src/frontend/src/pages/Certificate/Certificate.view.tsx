@@ -8,21 +8,17 @@ import { CertificateItself, CertificateNone, CertificateStyled } from './Certifi
 type CertificateViewProps = {
   loading: boolean
   user: PublicUser
+  unlocked: boolean
+  courseTitle: string
 }
 
-export const CertificateView = ({ loading, user }: CertificateViewProps) => {
-  let badgeUnlocked = false
-  let counter = 0
-  user.progress?.forEach(() => {
-    counter++
-  })
-  if (counter >= 20) badgeUnlocked = true
+export const CertificateView = ({ loading, user, unlocked, courseTitle}: CertificateViewProps) => {
 
   return (
     <CertificateStyled>
-      {badgeUnlocked ? (
+      {unlocked ? (
         <CertificateItself>
-          <img alt="certificate" src="/certificate.jpg" />
+          <img alt="certificate" src={`/certificates/${courseTitle}.jpg`} />
           <div>{user.name}</div>
         </CertificateItself>
       ) : (
@@ -35,6 +31,8 @@ export const CertificateView = ({ loading, user }: CertificateViewProps) => {
 CertificateView.propTypes = {
   loading: PropTypes.bool,
   user: PropTypes.object,
+  unlocked: PropTypes.bool,
+  courseTitle: PropTypes.string
 }
 
 CertificateView.defaultProps = {
@@ -44,4 +42,7 @@ CertificateView.defaultProps = {
     username: 'Not found',
     karmaTotal: 0,
   },
+  unlocked: false,
+  courseTitle: ""
+
 }

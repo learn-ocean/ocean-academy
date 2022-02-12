@@ -37,6 +37,7 @@ export const logger = (): any => {
 
     const msg = `${ctx.method} ${ctx.originalUrl} ${ctx.status} ${ms}ms`
 
+    //@ts-ignore
     winston.log(logLevel, msg)
   }
 }

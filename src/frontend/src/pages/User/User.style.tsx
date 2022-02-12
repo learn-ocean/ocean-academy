@@ -49,3 +49,7 @@ export const UserBadgeButtons = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
 `
+
+export const CertificateContainer = styled.div`
+  margin-bottom: 15px;
+`

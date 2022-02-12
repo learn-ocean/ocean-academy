@@ -4,6 +4,15 @@ import { ObjectId } from 'mongodb'
 
 import { getModel, Property } from '../../helpers/typegoose'
 
+export interface MintedToken{
+  course: string;
+  account: string;
+  tokenUri: string;
+  tx: string;
+  mintedAt: Date;
+  tokenId: number;
+}
+
 export class User {
   @IsMongoId()
   readonly _id!: ObjectId
@@ -42,6 +51,14 @@ export class User {
 
   @IsDate()
   updatedAt!: Date
+
+  @Property({index: true, unique: true})
+  @IsNumber()
+  @Min(0)
+  userId!: number;
+
+  @Property()
+  tokens ?: Map<string, MintedToken>
 }
 
 export const UserModel = getModel(User, { schemaOptions: { timestamps: true } })
