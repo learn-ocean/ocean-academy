@@ -1,13 +1,16 @@
 export const questions = [
-  {
-    question: 'Which listed operation is not performed by the Ocean Proxy (layer 2)?',
-    answers: [
-      'Encrypt the URL',
-      'Decrypt URL',
-      'Compute on the data',
-      'Check On chain conditions for payment',
-      'Send algorithm to the database'
-    ],
-    responses: ['Send algorithm to the database'],
-  },
+    {
+        question: "Why is it impractical to store and share data directly on the Ethereum blockchain?",
+        answers: [
+            "Smart contracts do not support storage of large datasets",
+            "The Ethereum blockchain is reserved for monetary transactions",
+            "Everything that interacts with a blockchain becomes pseudo-anonymous, and is therefore not private",
+            "Usage costs"
+        ],
+        responses: [
+            "Smart contracts do not support storage of large datasets",
+            "Everything that interacts with a blockchain becomes pseudo-anonymous, and is therefore not private",
+            "Usage costs"
+        ],
+    }
 ]

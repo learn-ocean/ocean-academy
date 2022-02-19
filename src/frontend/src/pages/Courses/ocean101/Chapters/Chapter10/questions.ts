@@ -1,13 +1,16 @@
 export const questions = [
     {
-        question: "Open etherescan.io, search for the OCEAN token and see how many accounts are holding the OCEAN token currently.",
+        question: "What could be programmed using a Smart Contract?",
         answers: [
-            "< 4'500 accounts",
-            "Between 4'501 and 10'000 accounts",
-            "Between 10'001 and 20'000 accounts",
-            "Between 20'001 and 50'000 accounts",
-            "> 50'000 accounts"
+            "Harvesting users data from a vending machine for free",
+            "Transferring property rights automatically once financing is secured",
+            "Getting paid to provide access to one’s data",
+            "Buying access to a private dataset, instantly, when needed"
         ],
-        responses: ["Between 20'001 and 50'000 accounts"],
+        responses: [
+            "Transferring property rights automatically once financing is secured",
+            "Getting paid to provide access to one’s data",
+            "Buying access to a private dataset, instantly, when needed"
+        ],
     }
 ]

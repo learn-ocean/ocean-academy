@@ -14,5 +14,6 @@ export const AppWrapper = styled.div`
   position: absolute;
   width: 100vw;
   top: 0;
+  height:90%;
   will-change: transform, opacity;
 `

@@ -2,7 +2,10 @@ import styled from 'styled-components/macro'
 
 import { Card, CardPage, FadeInFromTop, primaryColor } from '../../styles'
 
-export const LoginStyled = styled(CardPage)``
+export const LoginStyled = styled(CardPage)`
+min-height: 60%;
+
+`
 
 export const LoginCard = styled(Card)`
   padding: 20px;

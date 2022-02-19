@@ -52,7 +52,7 @@ export const DrawerStyled = styled.div`
 `
 
 export const DrawerItem = styled.div`
-  margin-top: 10px;
+  margin-top: 20px;
 
   > a {
     display: inline-block;
@@ -101,9 +101,11 @@ export const DrawerStyledLogin = styled.div`
   transition: 0.2s ease-in-out;
   will-change: transform;
   overflow: scroll;
+  font-size: 22px;
+
 
   h1 {
-    color: ${textColor};
+    color: #41474e;
   }
 
   &.true {
@@ -117,4 +119,79 @@ export const DrawerStyledLogin = styled.div`
   a {
     color: ${textColor};
   }
+
+  .inactiveBelow{
+    transition:all 0.2s ease-in;
+
+    transform: translateY(-100px);
+
+  }
+
+  .activeBelow{
+    transition:all 0.2s ease-in;
+
+    transform: translateY(10px);
+  }
 `
+
+export const DrawerSubMenuLabel = styled.div`
+
+  width: 100%;
+
+  .forwardIcon{
+    width: 26px;
+    color: ${textColor};
+    position: relative;
+    left: 95px;
+    top: 4px;
+  }
+    
+`
+
+export const DrawerSubMenuItem = styled.div`
+margin-top: 10px;
+color: #7b1173 !important;
+
+
+`
+
+export const DrawerTitle = styled.div`
+font-size: 42px;
+
+.backIcon{
+  width: 34px;
+  color: ${textColor};
+  position: relative;
+  transform: rotate(180deg);
+  cursor: pointer;
+}
+
+`
+
+export const DrawerItens = styled.div`
+margin-top: 25px;
+`
+
+export const DrawerSubMenu = styled.div`
+
+  &:hover{
+    cursor: pointer;
+  }
+
+  .activeSubMenu{
+    margin-left: 30px;
+    opacity:1;
+
+  transition:all 0.2s ease-in;
+  }
+
+  .inactiveSubMenu{
+    transition:all 0.2s ease-in;
+    opacity:0;
+  }
+
+
+  font-weight: bold;
+
+`
+

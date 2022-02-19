@@ -1,34 +1,43 @@
-# Chapter 17: Who is an Algorithm Provider?
+# Chapter 16: Ocean for Data Providers
 
 #### Difficulty: **3/5** \| Estimated reading time: **5 min**
 
-<dialog character="mantaray">Not all fishes in the Ocean are capable of coding their own algorithms. That’s why they rely on Algorithm Providers.</dialog>
+<dialog character="mantaray">In the depths of the ocean, nobody knows you’re a fish. Meet the main characters in the Web3 data ecosystem that Ocean Protocol is buidling. First, data owners who look to monetize their data.</dialog>
 
-Algorithm Providers are called Compute Providers in Ocean. They sell algorithms, instead of data itself. By making their algorithms available, the Compute providers are paid every time one of their algorithms is used.
+Now you know how smart contracts and blockchain can be beneficial for the transparency and privacy of a data marketplace. But who operates in this kind of market?
 
-**Algorithm Providers share their ML scripts with the market**. Data providers approve AI algorithms to run on their data and then Compute-to-Data orchestrates remote computation and execution on data to train AI models while preserving the privacy of the data. Smart contracts ensure that every data provider/AI practitioner can verify proper execution of their algorithm. In chapter 20 there is more about Compute-to-Data.
+Let’s look at the different actors providing data and services on the network. First, the Data Providers.
 
-**More accurate AI models.** AI practitioners and data scientists not only can access valuable, private data that was previously unavailable, but they can also leverage third party ML models available on the market. Data consumers can effectively train their algorithms using private data and a hosted model.
+A data provider is an organization or individual that *owns* data and makes it available to others, either for a fee or for free. There are 4 main considerations that data providers’ could have:
+1. Control. What control do they exert on their data? How it is used, and what is their ability to share different data depending on who buys it, and for what purpose?
+2. Traceability. How can they trace where their data flows, who uses it, and what it is used for?
+3. Compliance. How is the data used vs. local and international data regulations?
+4. Revenue. How can they be paid a fair price for the data, regardless of their licensing model?
 
-Let’s say you are a coffee farmer in Nicaragua, and you want to sell roasted beans at the local market. The prices at the market are subject to sharp changes depending on numerous factors. But you need to sell at the best price to pay for expenses and develop your activity. Via Ocean Protocol, you can get the data you need (e.g. historical price data, global meteorological data, etc.) and use it in a pre trained Deep learning model to get a price forecast for the next 3 months (the same kind used by hedge-funds). You have never seen any data nor any algorithm, but now you know when to sell your beans to maximize your revenue.
+Ocean Protocol provides a strong protection layer for all considerations:
+1. The Data provider can choose what algorithms can be run on their data using Compute-to-data, the privacy-preserving technology of Ocean Protocol. More importantly, it can earn revenue from data without ever sharing that data with anyone.
+2. Traceability is ensured via transactions logged into the blockchain as well as computation logs in the context of Compute-to-data.
+3. Compliance enforcement is helped with the extra control and traceability offered by Ocean Protocol. The protocol may not replace legal arbitration, but such cases will not be for data abuses or misuses, as only the model/outputs can be misused as the data is not directly accessed.
+4. Ocean Market provides an interesting price discovery mechanism for data sets with its unique data curation mechanism.
 
-<img src="/images/chapter17_0.png" />
+**How to Publish data**. As a data provider publishing a data asset, you define the terms and conditions under which the data can be accessed or consumed. Conditions can be combined in more complex logic to express payment conditions, access control, and compute operations.
 
-The **Ocean Compute-to-Data** is the functionality that solves the current tradeoff between the benefits of using private data and the risks of exposing it. It allows data consumers to **run compute jobs on data to train AI models while the data stays on-premise with the data provider.**
+The flow to publish data can be summarized in four steps:
+1. **Prepare the metadata of the asset**. Not all of it is mandatory, but the more information on the data one provides, the higher the chances for the data to be found and bought. A proper description is required so that data consumers can find your data and decide if it’s what they are looking for.
+2. **Provide a URL to get the data** that can be used to identify the data files when demanded for download or compute jobs. This URL is encrypted before saving.
 
-Overall, a Compute Provider using the Compute-to-Data functionality enjoys many benefits:
+<img src="/images/chapter16_0.png" />
 
-- **Privacy.** Compute Providers never see the data, so they cannot leak personal or sensitive information to the algorithm consumer.
-- **Control.** Compute owners retain control of their algorithms since the algorithm is never fully shown to the algo consumer.
-- **Storage capacity.** Algorithm owners can share or sell their script without having to import any data, which is ideal for very large datasets that are slow or expensive to move.
-- **Compliance.** Having only one copy of the data and not moving it makes it easier to comply with data protection regulations like GDPR.
-- **Auditability.** Compute-to-Data gives proof that algorithms were properly executed so that AI practitioners can be confident in the results.
+3. **Define the attributes of the compute service** if the option to compute the data on-premise is selected. Select compute frameworks such as python or nodejs and service endpoints for the compute requests.
+4. **Register the asset into the Blockchain**. The DDO and DID of the asset are saved on the blockchain.
 
-Once an algorithm is sold, that algorithm is sent to train or query some dataset in a Virtual Machine. The algorithm and the data are both protected and cannot be seen by the algorithm consumer.
+Data *access* will follow the ERC20 token standard; ***access to a dataset can be granted to anybody who paid 1 datatoken***.
+- Anyone who owns 1.00 of these datatokens has the ability to access the data under the terms specified in the datatoken contract (e.g. access for 1 day, 1 week, 1 month, 1 year or forever).
+- Accessing the dataset is as simple as sending 1.00 datatoken to the data provider.
+- Access right to the dataset can be transferred to someone else simply by sending 1.00 datatoken to their account.
 
-Wait, but how can you trust an algorithm supplied by another data scientist?
-Ocean Protocol has built-in financial incentives for curators to signal the quality of algorithms and datasets via a Quality Scoring Mechanism.
+When the dataset is registered, the publisher invokes the Ocean Datatoken Factory Smart Contract to deploy a new datatoken to the chain.
 
-The Compute Quality Scoring Mechanism in Ocean Protocol is designed in such a way that Compute Providers lock OCEAN tokens into their algorithm as a guarantee. They then earn a cut of the transaction fees every time the algorithm is used, proportional to their share of the total amount of OCEAN tokens locked on the algorithm. And anyone can lock OCEAN tokens into any asset to get a cut of the transaction fees of that asset.
+<img src="/images/chapter16_1.png" />
 
-This incentivizes participants in Ocean Protocol to invest in the data sets that they think will provide the most fee, and the total amount invested provides a signal on algorithm quality. Data Buyers benefit from this market dynamic to judge the trustworthiness of an Ocean asset taking liquidity as reference (how much are participants betting on this particular algorithm or dataset).
+**Anyone is free to register their data onto Ocean Protocol and earn revenue from their data**. Data providers sitting on large sets of latent data have the tools to publish data now.

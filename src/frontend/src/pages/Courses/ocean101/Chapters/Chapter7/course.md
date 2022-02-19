@@ -1,20 +1,20 @@
-# Chapter 7: New Data Workflows for Enterprises
-#### Difficulty: **2/5** \| Estimated reading time: **5 min**
+# Chapter 7: Key Concepts of Blockchain
 
-<dialog character="squid">Why are we doing all this, you may ask. Traditional data science workflows have been working fine for data scientists after all. Why transition to a new model?
-Let’s explore the benefits of a diverse and flourishing data underworld.
-</dialog>
+#### Difficulty: **2/5** \| Estimated reading time: **3 min**
 
-**Data as a liability.** Most companies consider data as an asset. But regulation is increasing the burden for companies to keep their data compliant. Processes, organization charts, and IT infrastructure are affected. For this reason, some companies try to avoid any ‘personally identifiable’ data given the legal risk such data may represent. Sometimes, data cannot be shared even within the same company between teams because of regulations like GDPR.
+<dialog character="jellyfish">You are now below water. This is a new environment. It feels like flying, it’s awesome. Most divers will tell you that they got hooked by the experience of moving freely in 3D from their very first dive. It's the same here. You will get a taste of a new universe enabled by collaborative technologies, in uncharted territories.</dialog>
 
-**Data as a locked good.** In the legacy data economy, there is no easy way to give an algorithm access to one’s data without revealing the data itself. This creates loopholes in control and security (the same problem of third party trust as for individuals). This explains why, despite many companies claim that data represents a competitive advantage, they prefer to keep it locked and unused. “Better safe than sorry”. Providing a way to share access to data easily and securely within and across organizations represents a major opportunity to create value from that data.
+Understanding what is a blockchain and a Smart Contracts is helpful to grasp the value that Ocean Protocol can provide.
 
-**Efficiency opportunity.** Transacting on data and analytics has a cost, which can be reduced by using a unified technology stack. This results in better quality tools, service availability, and an increased number of experts.
+**A Blockchain** is simply a ledger that chronologically records the facts that it is programmed to record. This ledger is duplicated across participants, and public, which allows everyone to check that its entries are correct. This removes the need for a central authority to validate transactions: you don’t need to rely on trusted third-parties to be sure about what has happened when you can just see it for yourself on the blockchain. This is the origin of Bitcoin’s moto “Don’t trust, verify”.
 
-**Unlocking data with open infrastructure**. Ocean Protocol provides Web3 infrastructure dedicated to data management, which can be used by anyone - people and organizations - with full freedom. A common open infrastructure to safely and easily share data is a requirement to break data silos and create value. It makes new forms of collaborations possible, increases data sharing and data monetization while cutting transaction costs down. Network effects of a liberalized data platform are expected to be huge.
+**Blockchains work like enhanced Google sheets**. You can think of a blockchain as a Google sheet with universal read and write access, but that can only accept new inputs if those new inputs are compliant with what the sheet was programmed to accept.
+ - Only those with a valid entry can change the document
+ - Old entries cannot be altered or deleted
+ - Anyone can check that all entries are compliant because the blockchain is public
 
-**Monetizing Enterprise Data**. Enterprises can utilize this infrastructure to reorganize their data flows, start to safely monetize unused data, and find new monetization strategies. The first ones that will transition to this new model might have a decisive advantage over others in their respective markets.
+**Bitcoin** was the first use case for blockchain technology. Bitcoin’s blockchain is used to record monetary transactions in a verifiable and trustable way. On that blockchain, only those accounts that have enough Bitcoin can send them to someone else. This is trivial, but this was never solved in a decentralized fashion prior to Bitcoin, and this is the most important rule that was programmed in this blockchain.
 
-**Collaboration.** But it’s not just about trading data. The infrastructure enables collaboration on data creation, aggregation, and governance. All of which without giving up control and ownership over company data. The potential for new insights, data products, workflows, and business models is quite significant.
+**Ethereum** was the first ledger to allow the recording of not just transactions, but any kind of operation, making it essentially a distributed computer. This greatly extended the foundation that Bitcoin had established and propelled blockchain technology to all sorts of applications beyond just a digital currency.
 
-**Community data.** Companies that heavily rely on the input of their users can further increase engagement with their community and provide them access to the data pool that was produced by them. This might lead to new forms of collectively owned datasets.
+The Bitcoin and Ethereum blockchains are permissionless: anyone can operate or transact on these blockchains. Private blockchains exist, but they are limited in scope. And they wouldn’t be well suited to create an inclusive data economy: **Ocean Protocol** wants to be accessible to anyone who has data or expertise, not just a select few.

@@ -12,12 +12,13 @@ import { router } from './router'
 import { sanitize } from './sanitize'
 
 import 'reflect-metadata'
+import { TokenRobot } from './resolvers/robots/TokenRobot'
 
 const start = async (): Promise<void> => {
   try {
     // if (process.env.NODE_ENV === DEVELOPMENT)
     dotenv.config()
-    if (!process.env.JWT_PRIVATE_KEY) throw new Error('Env variables not set')
+    if (!process.env.JWT_PRIVATE_KEY || !process.env.WEB3_WSS_NODE || !process.env.ETHERSCAN_API_KEY) throw new Error('Env variables not set')
 
     await mongoose.connect(process.env.MONGO_URL as string, {
       useCreateIndex: true,
@@ -42,6 +43,9 @@ const start = async (): Promise<void> => {
     app.listen(process.env.PORT, () => {
       console.info(`Server running on port ${process.env.PORT}`)
     })
+    
+    const tokenRobot = new TokenRobot(process.env.TOKEN_ROBOT_INTERVAL_MS ? parseInt(process.env.TOKEN_ROBOT_INTERVAL_MS) : 180000)
+    tokenRobot.run()
   } catch (error) {
     console.error(error)
   }

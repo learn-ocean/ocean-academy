@@ -1,5 +1,7 @@
 import { IsArray, IsDate, IsEmail, IsMongoId, IsNumber, Length, Matches, Min } from 'class-validator'
+import { MintedToken } from './User'
 import { ObjectId } from 'mongodb'
+import { Property } from '../../helpers/typegoose'
 
 export class PublicUser {
   @IsMongoId()
@@ -13,6 +15,10 @@ export class PublicUser {
   @Min(0)
   tokenId?: number
 
+  @IsNumber()
+  @Min(0)
+  userId!: number
+
   @Length(2, 40)
   name!: string
 
@@ -24,4 +30,7 @@ export class PublicUser {
 
   @IsDate()
   createdAt!: Date
+
+  @Property()
+  tokens?: Map<string, MintedToken>
 }
