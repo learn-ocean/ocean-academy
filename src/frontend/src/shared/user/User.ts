@@ -13,9 +13,29 @@ export interface MintedToken{
   tokenId: number;
 }
 
+class ProgressUnit{
+    @Property({required: true})
+    @IsDate()
+    chapter!: number
+
+    @Property({required: true})
+    @IsDate()
+    completedAt!: Date;
+}
+
+class CourseProgress{
+
+    @Property({required: true})
+    progress!: ProgressUnit[]
+
+    @Property()
+    @IsDate()
+    completedAt?: Date;
+}
+
 export class User {
   @IsMongoId()
-  readonly _id!: ObjectId
+  readonly _id!: ObjectId 
 
   @Property({ required: true, unique: true, index: true })
   @Length(2, 20)
@@ -59,6 +79,15 @@ export class User {
 
   @Property()
   tokens ?: Map<string, MintedToken>
+
+  @Property({optional: true, _id: false})
+  ocean101?: CourseProgress
+
+  @Property({optional: true, _id: false})
+  introToDataDefi?: CourseProgress
+
+  @Property({optional: true, _id: false})
+  ComputeToData?: CourseProgress
 }
 
 export const UserModel = getModel(User, { schemaOptions: { timestamps: true } })

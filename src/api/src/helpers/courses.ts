@@ -60,4 +60,3 @@ export const toTokenId = (userId: number, course: COURSE_TYPE): string => {
    
     return courseIndexPadded + userIdPadded
 }
-
