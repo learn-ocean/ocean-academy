@@ -1,7 +1,6 @@
 import { plainToClass } from 'class-transformer'
 import { validateOrReject } from 'class-validator'
 import { Context, Next } from 'koa'
-
 import { firstError } from '../../../helpers/firstError'
 import { toPublicUser } from '../../../helpers/toPublicUser'
 import { AddProgressInputs, AddProgressOutputs } from '../../../shared/user/AddProgress'
@@ -9,7 +8,6 @@ import { PublicUser } from '../../../shared/user/PublicUser'
 import { User, UserModel } from '../../../shared/user/User'
 import { rateLimit } from '../../quota/rateLimit/rateLimit'
 import { authenticate } from '../helpers/authenticate'
-
 import { COURSES } from '../../../helpers/courses'
 
 
