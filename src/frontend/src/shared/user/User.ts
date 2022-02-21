@@ -12,7 +12,6 @@ export interface MintedToken{
   mintedAt: Date;
   tokenId: number;
 }
-
 class ProgressUnit{
     @Property({required: true})
     @IsDate()
@@ -24,7 +23,6 @@ class ProgressUnit{
 }
 
 class CourseProgress{
-
     @Property({required: true})
     progress!: ProgressUnit[]
 

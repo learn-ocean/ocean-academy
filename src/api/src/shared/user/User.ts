@@ -23,7 +23,6 @@ class ProgressUnit{
 }
 
 class CourseProgress{
-
     @Property({required: true})
     progress!: ProgressUnit[]
 

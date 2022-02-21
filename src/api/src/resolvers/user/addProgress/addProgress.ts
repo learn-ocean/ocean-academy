@@ -24,8 +24,6 @@ export const addProgress = async (ctx: Context, next: Next): Promise<void> => {
 
   await rateLimit(user._id)
 
-  console.log("Chapter Done:  ", chapterDone)
-
   //Deprecated user progress: will be replaced soon.
   await UserModel.updateOne(
     { _id: user._id },
@@ -37,7 +35,6 @@ export const addProgress = async (ctx: Context, next: Next): Promise<void> => {
   
   //New user progress
   await addProgressForCourse(user._id, courseTitle, parseInt(chapter))
-
 
   const updatedUser: User = await UserModel.findOne(
     { _id: user._id },
@@ -62,11 +59,11 @@ export const addProgress = async (ctx: Context, next: Next): Promise<void> => {
  */
 async function addProgressForCourse(id: any, courseTitle: string, chapter: number){
 
-
   const handleProgress = async(courseTitle: string, chapters: number) =>{
 
       const now = new Date(Date.now())
 
+      //Add to the user profile the progress.
       const postUser = await UserModel.findOneAndUpdate(
         //$ne prevents from adding two objects with the same chapter value: mimics $addToSet
         { _id: id,  [`${courseTitle}.progress.chapter`]: {$ne: chapter}},
@@ -77,6 +74,7 @@ async function addProgressForCourse(id: any, courseTitle: string, chapter: numbe
       }, {new: true} 
       ).exec()
 
+      //Check if the course is completed, and so add completedAt
       if(postUser?.get(courseTitle) && postUser?.get(courseTitle).progress.length === chapters){
         console.log("Hello")
         await UserModel.updateOne(
@@ -100,7 +98,6 @@ async function addProgressForCourse(id: any, courseTitle: string, chapter: numbe
     case COURSES.COMPUTE_TO_DATA.title:
       handleProgress(COURSES.COMPUTE_TO_DATA.title, COURSES.COMPUTE_TO_DATA.chapters)
       break
-
   }  
 
 }
