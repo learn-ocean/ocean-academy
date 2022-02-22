@@ -25,8 +25,8 @@ export class TokenRobot{
      */
     constructor(interval: number){
        this.interval = interval;
-       this.api_url = process.env.NODE_ENV  === 'production' ? "https://api.etherscan.io" : "https://api-rinkeby.etherscan.io"
-       this.contract_addr =  process.env.NODE_ENV  === 'production' ? mainnet_addr : rinkeby_adrr
+       this.api_url = process.env.CHAIN  === 'mainnet' ? "https://api.etherscan.io" : "https://api-rinkeby.etherscan.io"
+       this.contract_addr =  process.env.CHAIN  === 'mainnet' ? mainnet_addr : rinkeby_adrr
        this.web3 = new Web3( process.env.WEB3_WSS_NODE as String);
        console.info("Token robot set up with interval: ", interval)
     }
@@ -151,7 +151,7 @@ export class TokenRobot{
         ).json();
 
         if(req.result){
-            const data: ApiTokenResult[] = process.env.NODE_ENV  == 'production' ? req.result : req.result.slice(0,100)
+            const data: ApiTokenResult[] = process.env.CHAIN  == 'mainnet' ? req.result : req.result.slice(0,100)
             
             return new Map(
                 data.map(x => [parseInt(x.tokenID), {tokenId: parseInt(x.tokenID), tx: x.hash, mintedAt: new Date(parseInt(x.timeStamp) * 1000)}])

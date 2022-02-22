@@ -13,7 +13,7 @@ import { TokenView } from './Token.view'
 const mainnet_addr = "0xc6bc8053dD92E4814099C7C28c7035Aa636d0Ba1"
 const rinkeby_adrr = "0x2cD36057B261b2d625999D7118b5477D39Da842a"
 //Certificate main net contract address
-const CERTIF_ADDR = process.env.NODE_ENV == "development" || "test" ? rinkeby_adrr : mainnet_addr
+const CERTIF_ADDR = process.env.REACT_APP_CHAIN == "mainnet" ? mainnet_addr : rinkeby_adrr
 
 declare global {
   interface Window {
@@ -83,9 +83,11 @@ export const Token = () => {
     setAccount(accounts[0])
     //Current chain id of provider
     const chainIdHex = await window.ethereum.request({ method: 'eth_chainId' });
+    console.log("Env is", process.env)
     //Rinkeby chain id if testing env.
-    const expectedChainId = process.env.NODE_ENV == "development" || "test" ? "0x4" : "0x1";
-    console.log("Env is", process.env.NODE_ENV)
+    const expectedChainId = process.env.REACT_APP_CHAIN == "mainnet" ? "0x1" : "0x4";
+    console.log("Contract network is", process.env.REACT_APP_CHAIN)
+    console.log("Expected chain id:", expectedChainId)
 
     //Check if chaind id is ethereum main net
     if (chainIdHex !== expectedChainId) {
