@@ -83,7 +83,6 @@ export const Token = () => {
     setAccount(accounts[0])
     //Current chain id of provider
     const chainIdHex = await window.ethereum.request({ method: 'eth_chainId' });
-    console.log("Env is", process.env)
     //Rinkeby chain id if testing env.
     const expectedChainId = process.env.REACT_APP_CHAIN == "mainnet" ? "0x1" : "0x4";
     console.log("Contract network is", process.env.REACT_APP_CHAIN)
