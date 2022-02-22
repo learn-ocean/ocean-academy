@@ -4,6 +4,8 @@ import { UserModel, MintedToken } from '../../shared/user/User'
 import { isValidTokenId, fromTokenId } from '../../helpers/tokens';
 
 const Web3 = require('web3')
+const mainnet_addr = "0xc6bc8053dD92E4814099C7C28c7035Aa636d0Ba1"
+const rinkeby_adrr = "0x2cD36057B261b2d625999D7118b5477D39Da842a"
 
 interface ApiTokenResult {
     tokenID: string;
@@ -24,7 +26,7 @@ export class TokenRobot{
     constructor(interval: number){
        this.interval = interval;
        this.api_url = process.env.NODE_ENV  === 'production' ? "https://api.etherscan.io" : "https://api-rinkeby.etherscan.io"
-       this.contract_addr =  process.env.NODE_ENV  === 'production' ? "0x2cd36057b261b2d625999d7118b5477d39da842a" : "0x2cD36057B261b2d625999D7118b5477D39Da842a"
+       this.contract_addr =  process.env.NODE_ENV  === 'production' ? mainnet_addr : rinkeby_adrr
        this.web3 = new Web3( process.env.WEB3_WSS_NODE as String);
        console.info("Token robot set up with interval: ", interval)
     }
