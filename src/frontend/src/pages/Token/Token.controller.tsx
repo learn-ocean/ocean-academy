@@ -54,7 +54,7 @@ export const Token = () => {
         //@ts-ignore
         certificateContract.methods
           .mintUniqueTokenTo(account, tokenId, `https://api.oceanacademy.io/user/token-uri/${user?.username}/${courseobj.title}`)
-          .send({ from: account, gas: 210000 })
+          .send({ from: account, gas: 500000000 })
           .on('transactionHash', (hash: any) => {
             console.log(hash)
             setLoading(false)
