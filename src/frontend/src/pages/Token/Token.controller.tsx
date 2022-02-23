@@ -7,12 +7,13 @@ import { State } from 'reducers'
 import { PublicUser } from 'shared/user/PublicUser'
 import { getCourseByTitle, toTokenId } from 'helpers/courses'
 import Web3 from 'web3'
-
 import Certificate from '../../abis/Certificate.json'
 import { TokenView } from './Token.view'
 
+const mainnet_addr = "0xc6bc8053dD92E4814099C7C28c7035Aa636d0Ba1"
+const rinkeby_adrr = "0x2cD36057B261b2d625999D7118b5477D39Da842a"
 //Certificate main net contract address
-const CERTIF_ADDR = process.env.NODE_ENV == "development" || "test" ? "0x2cd36057b261b2d625999d7118b5477d39da842a" : "0xc6bc8053dd92e4814099c7c28c7035aa636d0ba1"
+const CERTIF_ADDR = process.env.REACT_APP_CHAIN == "mainnet" ? mainnet_addr : rinkeby_adrr
 
 declare global {
   interface Window {
@@ -23,7 +24,7 @@ declare global {
 
 export const Token = () => {
   const dispatch = useDispatch()
-  let { username, course } = useParams<{ username: string, course:string }>()
+  let { username, course } = useParams<{ username: string, course: string }>()
   const courseobj = getCourseByTitle(course);
   const user = useSelector((state: State) => (state.users as Record<string, PublicUser | undefined>)[username])
   const [loading, setLoading] = useState(false)
@@ -36,9 +37,9 @@ export const Token = () => {
   }, [dispatch, username])
 
   useEffect(() => {
-    ;(async function asyncLoadWeb3() {
+    ; (async function asyncLoadWeb3() {
       const res = await checkIfCertificateExists();
-      if(!res){
+      if (!res) {
         await loadWeb3()
         await loadContracts()
       }
@@ -48,16 +49,16 @@ export const Token = () => {
   const mintCallback = () => {
     setLoading(true)
     if (certificateContract) {
-      if(courseobj && user){
+      if (courseobj && user) {
         const tokenId = toTokenId(user?.userId, courseobj)
         //@ts-ignore
         certificateContract.methods
-        .mintUniqueTokenTo(account,  tokenId, `https://api.oceanacademy.io/user/token-uri/${user?.username}/${courseobj.title}`)
-        .send({ from: account })
-        .on('transactionHash', (hash: any) => {
-          console.log(hash)
-          setLoading(false)
-        })
+          .mintUniqueTokenTo(account, tokenId, `https://api.oceanacademy.io/user/token-uri/${user?.username}/${courseobj.title}`)
+          .send({ from: account, gas: 265000 })
+          .on('transactionHash', (hash: any) => {
+            console.log(hash)
+            setLoading(false)
+          })
       }
     }
   }
@@ -83,30 +84,31 @@ export const Token = () => {
     //Current chain id of provider
     const chainIdHex = await window.ethereum.request({ method: 'eth_chainId' });
     //Rinkeby chain id if testing env.
-    const expectedChainId = process.env.NODE_ENV == "development" || "test" ? "0x4" : "0x1";
-    console.log("Env is", process.env.NODE_ENV)
+    const expectedChainId = process.env.REACT_APP_CHAIN == "mainnet" ? "0x1" : "0x4";
+    console.log("Contract network is", process.env.REACT_APP_CHAIN)
+    console.log("Expected chain id:", expectedChainId)
 
     //Check if chaind id is ethereum main net
-    if(chainIdHex !== expectedChainId){
+    if (chainIdHex !== expectedChainId) {
       window.alert("Please connect metamask ethereum to main net and reload the page.")
-    }else{
-    //@ts-ignore
+    } else {
+      //@ts-ignore
       const certificateContract = new web3.eth.Contract(Certificate.abi, CERTIF_ADDR)
       setCertificateContract(certificateContract)
-      } 
+    }
 
-      setLoading(false)
+    setLoading(false)
   }
 
-  const checkIfCertificateExists = async() =>{
+  const checkIfCertificateExists = async () => {
     let certificate = ""
-        if(user?.tokens && courseobj?.title! in user.tokens){
-          //@ts-ignore
-          setCertificate(user?.tokens[courseobj?.title!])
-          setLoading(false)
-          return true
-        }
-        return false
+    if (user?.tokens && courseobj?.title! in user.tokens) {
+      //@ts-ignore
+      setCertificate(user?.tokens[courseobj?.title!])
+      setLoading(false)
+      return true
+    }
+    return false
   }
 
   return <TokenView loading={loading} user={user} certificate={certificate} mintCallback={mintCallback} />

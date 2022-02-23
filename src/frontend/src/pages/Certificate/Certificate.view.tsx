@@ -12,13 +12,13 @@ type CertificateViewProps = {
   courseTitle: string
 }
 
-export const CertificateView = ({ loading, user, unlocked, courseTitle}: CertificateViewProps) => {
+export const CertificateView = ({ loading, user, unlocked, courseTitle }: CertificateViewProps) => {
 
   return (
     <CertificateStyled>
       {unlocked ? (
         <CertificateItself>
-          <img alt="certificate" src={`/certificates/${courseTitle}.jpg`} />
+          <img alt="certificate" src={`/certificates/cert-${courseTitle}.jpg`} />
           <div>{user.name}</div>
         </CertificateItself>
       ) : (

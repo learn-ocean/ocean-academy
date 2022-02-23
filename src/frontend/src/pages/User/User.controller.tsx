@@ -24,7 +24,7 @@ export const User = () => {
       unit: 'px',
       format: [1100, 800],
     })
-    doc.addImage(`/certificates/${courseTitle}.jpg`, 'JPEG', 0, 0, 1100, 800)
+    doc.addImage(`/certificates/cert-${courseTitle}.jpg`, 'JPEG', 0, 0, 1100, 800)
     doc.setFontSize(35)
     doc.text(authUser?.name || '', 550, 405, { align: 'center' })
     doc.save('a4.pdf')

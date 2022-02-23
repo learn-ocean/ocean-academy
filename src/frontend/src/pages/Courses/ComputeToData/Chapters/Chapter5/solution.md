@@ -1,5 +1,5 @@
 // Head over to https://market.oceanprotocol.com and connect your Metamask (Rinkeby).
-// -- If you need some test ETH, get them there: https://faucet.rinkeby.io
+// -- If you need some test ETH, get them there: https://faucets.chain.link/rinkeby
 // -- If you need some test OCEAN, get them there: https://faucet.rinkeby.oceanprotocol.com
 // We will count the lines of the dataset called Test Compute, which can be found here:
 // https://market.oceanprotocol.com/asset/did:op:1cF5c46AA2a310CBC29E8298F4D637AC18891493
