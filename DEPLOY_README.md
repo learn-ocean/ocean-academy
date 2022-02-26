@@ -39,10 +39,12 @@ Please set up right the environment variables for the front-end on the vercel se
 ## Back-End
 
 In order to deploy the backend you may just to do git push to the heroku repository. Please check how deployment to heroku
-works on [existing apps](!https://devcenter.heroku.com/articles/git). Please work inside the folder src/api (do not push all of the repo) and replace the package.json with heroku-package.json included in the repo.
+works on [existing apps](!https://devcenter.heroku.com/articles/git). Please push only the folder src/api (do not push all of the repo).
+
+```
+git subtree push --prefix src/api ocean-dev master
+```
 
 Please set-up accordingly the environment variables on the heroku config vars for the project. (Don't forget to remove the \n from the JWT keys strings.)
-
-
 
 
