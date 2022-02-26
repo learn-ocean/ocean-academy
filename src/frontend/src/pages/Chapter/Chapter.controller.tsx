@@ -1,5 +1,6 @@
 import { showToaster } from 'app/App.components/Toaster/Toaster.actions'
 import { SUCCESS } from 'app/App.components/Toaster/Toaster.constants'
+import { isCourseCompletedFromTitle } from 'helpers/courses'
 import { getUser } from 'pages/User/User.actions'
 import * as React from 'react'
 import { useEffect } from 'react'
@@ -56,7 +57,7 @@ export const Chapter = () => {
   user?.progress?.forEach((chapter) => {
     counter++
   })
-  if (counter >= 20) badgeUnlocked = true
+  if (isCourseCompletedFromTitle("ocean101", user?.progress!)) badgeUnlocked = true
 
   useEffect(() => {
     if (user) dispatch(getUser({ username: user.username }))

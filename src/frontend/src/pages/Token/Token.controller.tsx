@@ -26,6 +26,7 @@ export const Token = () => {
   const dispatch = useDispatch()
   let { username, course } = useParams<{ username: string, course: string }>()
   const courseobj = getCourseByTitle(course);
+  if (!courseobj) throw Error("Course not found")
   const user = useSelector((state: State) => (state.users as Record<string, PublicUser | undefined>)[username])
   const [loading, setLoading] = useState(false)
   const [account, setAccount] = useState(undefined)
@@ -111,5 +112,5 @@ export const Token = () => {
     return false
   }
 
-  return <TokenView loading={loading} user={user} certificate={certificate} mintCallback={mintCallback} />
+  return <TokenView loading={loading} user={user} course={courseobj} certificate={certificate} mintCallback={mintCallback} />
 }

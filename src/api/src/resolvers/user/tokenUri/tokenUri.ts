@@ -1,6 +1,7 @@
 import { plainToClass } from 'class-transformer'
 import { validateOrReject } from 'class-validator'
 import { Context, Next } from 'koa'
+import { isCourseCompletedFromTitle } from '../../../helpers/courses'
 
 import { firstError } from '../../../helpers/firstError'
 import { ResponseError } from '../../../shared/mongo/ResponseError'
@@ -23,7 +24,7 @@ export const tokenUri = async (ctx: Context, next: Next): Promise<void> => {
   const user = await UserModel.findOne({ username: { $regex: new RegExp("^" + username, "i") } }).lean()
 
   if (!user) throw new ResponseError(401, 'User not found')
-  if (!(user?.progress?.length && user?.progress?.length >= 20)) throw new ResponseError(401, 'User not certified')
+  if (!(user?.progress?.length && isCourseCompletedFromTitle(course, user?.progress))) throw new ResponseError(401, 'User not certified')
 
   const response: TokenUriOutputs = { 
     name: `${username}'s certificate for ${course}`,
