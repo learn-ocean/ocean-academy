@@ -40,8 +40,13 @@ export const getNbProgressForCourse = (course : COURSE_TYPE, progress: string[])
  * @param progress something in the format ["/{courseName}/{chapter}", "/{courseName}/{chapter}"]
  * @returns an array of chapters of the given course.
  */
-export const getProgressForCourse = (course : COURSE_TYPE, progress: string[]): string[] =>
-         progress.filter(chapter => chapter.split("/")[1] === course.title) 
+export const getProgressForCourse = (course : COURSE_TYPE, progress: string[]): string[] =>{
+    if (progress === undefined) {
+        return progress = []
+    }
+    return progress.filter(chapter => chapter.split("/")[1] === course.title)
+}
+            
 
 /**
  * 
