@@ -57,7 +57,7 @@ export const Chapter = () => {
   user?.progress?.forEach((chapter) => {
     counter++
   })
-  if (isCourseCompletedFromTitle("ocean101", user?.progress!)) badgeUnlocked = true
+  if (user && isCourseCompletedFromTitle("ocean101", user?.progress!)) badgeUnlocked = true
 
   useEffect(() => {
     if (user) dispatch(getUser({ username: user.username }))
