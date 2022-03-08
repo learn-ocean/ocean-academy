@@ -1,6 +1,6 @@
 import { showToaster } from 'app/App.components/Toaster/Toaster.actions'
 import { SUCCESS } from 'app/App.components/Toaster/Toaster.constants'
-import { isCourseCompletedFromTitle } from 'helpers/courses'
+import { COURSES, getNbProgressForCourse, isCourseCompletedFromTitle } from 'helpers/courses'
 import { getUser } from 'pages/User/User.actions'
 import * as React from 'react'
 import { useEffect } from 'react'
@@ -138,7 +138,7 @@ export const Chapter = () => {
 
   return (
     <>
-      {pathname === '/ocean101/chapter-24' && !badgeUnlocked ? (
+      {pathname === '/ocean101/chapter-24' && user?.progress && getNbProgressForCourse(COURSES.OCEAN_101, user?.progress) != 23 ? (
         <ChapterLocked>Chapter locked. Please complete all previous chapters to see this chapter.</ChapterLocked>
       ) : (
         <ChapterView
