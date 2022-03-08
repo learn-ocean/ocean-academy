@@ -138,7 +138,7 @@ export const Chapter = () => {
 
   return (
     <>
-      {pathname === '/ocean101/chapter-24' && user?.progress && getNbProgressForCourse(COURSES.OCEAN_101, user?.progress) != 23 ? (
+      {pathname === '/ocean101/chapter-24' && user?.progress && getNbProgressForCourse(COURSES.OCEAN_101, user?.progress) < 23 ? (
         <ChapterLocked>Chapter locked. Please complete all previous chapters to see this chapter.</ChapterLocked>
       ) : (
         <ChapterView
