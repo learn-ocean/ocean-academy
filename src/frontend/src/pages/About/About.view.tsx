@@ -22,7 +22,7 @@ export const AboutView = () => {
               Protocol. So was born Ocean Academy.
             </p>
             <ButtonContainer>
-              <a href="https://discord.gg/BPPHQksyPd">
+              <a href="https://discord.gg/SDebzUpYbP">
                 <Button text="JOIN US ON DISCORD" color="primary" />
               </a>
               <a href="https://github.com/learn-ocean/ocean-academy" target="_blank" rel="noopener noreferrer">
@@ -59,7 +59,7 @@ export const AboutView = () => {
                   </TeamMemberPicture>
                   <li>
                     <MemberName>
-                      <a href="https://www.linkedin.com/in/lattagher/" target="_blank" rel="noopener noreferrer">
+                      <a href="https://www.linkedin.com/in/frederik-kinner-261190/" target="_blank" rel="noopener noreferrer">
                         Fred Martin
                       </a>
                     </MemberName>
@@ -75,7 +75,7 @@ export const AboutView = () => {
                   </TeamMemberPicture>
                   <li>
                     <MemberName>
-                      <a href="https://www.linkedin.com/in/ludovicgrandclement/" target="_blank" rel="noopener noreferrer">
+                      <a href="https://www.linkedin.com/in/benjamin-scotti-a46521152/" target="_blank" rel="noopener noreferrer">
                         Benjamin Scotti
                       </a>
                     </MemberName>

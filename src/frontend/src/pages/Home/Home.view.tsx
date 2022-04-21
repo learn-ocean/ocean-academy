@@ -74,7 +74,7 @@ export const HomeView = () => {
           <p>Ambassadors are talented and passionate individuals who make a difference in this world, and they get rewarded for it!</p>
           <p>Everyone can contribute: why not you?</p>
           <div className="communityCall">
-            <a href="https://discord.gg/BPPHQksyPd">
+            <a href="https://discord.gg/SDebzUpYbP">
               <Button text="JOIN HERE" color="primary" />
             </a>
           </div>

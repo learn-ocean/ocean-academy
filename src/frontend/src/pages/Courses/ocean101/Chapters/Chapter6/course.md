@@ -9,7 +9,7 @@ Legacy data marketplaces have three main issues: centralized control which requi
 
 **Ocean Market**, the reference marketplace provided by Ocean Protocol, makes it easy to publish data services, provide accurate pricing for the data, discover data, purchase data, and consume data services. Ocean Market supports fixed pricing and automatic price discovery for your assets (datasets and algorithms).
 
-It’s a **vendor-neutral reference data marketplace** for use by the Ocean community. It’s decentralized (no single owner or controller), and non-custodial (only the It’s a vendor-neutral reference data marketplace for use by the Ocean community. It’s open (it is owned by Ocean Protocol Foundation) and non-custodial (only the data owner holds the keys to the data). Developers and entrepreneurs are free to fork Ocean Market to build their own data marketplaces to access Ocean Protocol datasets.
+It’s a **vendor-neutral reference data marketplace** for use by the Ocean community. It is open (it is owned by Ocean Protocol Foundation) and non-custodial (only the data owner holds the keys to the data). Developers and entrepreneurs are free to fork Ocean Market to build their own data marketplaces to access Ocean Protocol datasets.
 
 Everyone at Ocean Protocol hopes that there will be many data marketplaces in the ecosystem, each targeting a specific industry or vertical, and that Ocean Market will be just one among many. Each Ocean-powered marketplace will have the same features as the reference implementation provided by Ocean Protocol, plus any feature they will want to add.
 

@@ -20,4 +20,4 @@ Ambassadors contribute through engaging in various outreach, adoption and onboar
 # How do you become an Ocean Ambassador ?
 
 ## -> [Register here](https://forms.gle/rYZ2AQUdHZUrqzPEA)
-## -> Join us on our [Discord Channel](https://discord.gg/RcMf7tD2dc) and introduce yourself
+## -> Join us on our [Discord Channel](https://discord.gg/SDebzUpYbP) and introduce yourself

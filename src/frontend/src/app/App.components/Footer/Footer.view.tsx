@@ -29,7 +29,7 @@ export const FooterView: any = () => (
     </FooterSection>
     <FooterSection>
       <FooterTitle>
-        GET IN TOUCH 
+        GET IN TOUCH
       </FooterTitle>
       <FooterIconSection>
         <FooterIcon>
@@ -50,7 +50,7 @@ export const FooterView: any = () => (
       </FooterTitle>
       <FooterIconSection>
         <FooterIcon>
-        <a href="https://discord.gg/BPPHQksyPd">
+        <a href="https://discord.gg/SDebzUpYbP">
           <img src="/brands/discord.svg" className="discord"  alt="Logo"/>
         </a>
         </FooterIcon>

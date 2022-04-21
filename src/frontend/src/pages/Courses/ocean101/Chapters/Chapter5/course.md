@@ -15,8 +15,6 @@ Ocean Protocol provides a complete toolbox for data owners, data scientists and 
 
 <img src="/images/chapter13_0.png" />
 
-The Ocean Protocol toolbox offers:
-
 
 The Ocean Protocol toolbox offers:
  1. **Tools and libraries**. Smart Contracts, libraries, and software components to publish and consume data services, build marketplaces, and develop other apps to privately and securely publish, exchange, and consume data. The Compute-to-Data feature is a core component of secure data exchanges.
