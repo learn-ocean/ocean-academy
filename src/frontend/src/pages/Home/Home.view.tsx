@@ -42,7 +42,7 @@ export const HomeView = () => {
         <CoursesContainer>
           <h1>Available Courses</h1>
           <CoursesDescription>
-            <p>Our interactive modules cover a range of topics and difficulties. Wheter you're a web3 expert or
+            <p>Our interactive modules cover a range of topics and difficulties. Whether you're a web3 expert or
               completely new to crypto, there is something for you.</p>
           </CoursesDescription>
           <HomeCourseGrid>
