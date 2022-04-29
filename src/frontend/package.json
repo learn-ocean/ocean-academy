@@ -40,6 +40,7 @@
     "markdown-to-jsx": "^6.11.4",
     "rc-slider": "9.2.4",
     "react": "^16.13.1",
+    "react-code-input": "3.10.1",
     "react-dom": "^16.13.1",
     "react-ga": "3.1.2",
     "react-google-recaptcha-v3": "^1.5.2",

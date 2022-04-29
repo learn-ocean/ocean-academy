@@ -15,6 +15,7 @@ import { User } from 'pages/User/User.controller'
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { Ocean101Course, IntroToDataDefiCourse, ComputeToDataCourse } from 'pages/Course/Course.controller'
+import { EmailVerification } from 'pages/EmailVerification/EmailVerification.controller'
 
 export const AppRoutes = ({ location }: any) => (
   <Switch location={location}>
@@ -26,6 +27,9 @@ export const AppRoutes = ({ location }: any) => (
     </Route>
     <Route exact path="/login">
       <Login />
+    </Route>
+    <Route exact path="/verify-email">
+      <EmailVerification />
     </Route>
     <Route exact path="/forgot-password">
       <ForgotPassword />
