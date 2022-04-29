@@ -5,6 +5,8 @@ import { authenticate } from '../helpers/authenticate'
 import { User } from '../../../shared/user/User'
 import { EmailVerificationModel, EmailVerification } from '../../../shared/user/EmailVerificationToken'
 import { sendVerificationEmail } from '../helpers/sendVerificationEmail'
+import { rateLimit } from '../../quota/rateLimit/rateLimit';
+import { QuotaType } from '../../../shared/quota/QuotaType';
 
 export const requestEmailVerification = async(ctx: Context, next: Next): Promise<void> => {
     //const requestEmailVerifArgs = plainToClass(RequestEmailVerificationInputs, ctx.request.body, { excludeExtraneousValues: true })
@@ -13,6 +15,8 @@ export const requestEmailVerification = async(ctx: Context, next: Next): Promise
 
     if(user.emailVerified)
         throw new ResponseError(404, "User email already verified.")
+
+    await rateLimit(user._id, QuotaType.EMAIL_VERIFICATION)
 
     //Send verification email
     const verificationToken = randomBytes(3).toString("hex");

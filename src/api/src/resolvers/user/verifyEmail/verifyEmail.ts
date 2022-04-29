@@ -7,14 +7,17 @@ import { User, UserModel } from '../../../shared/user/User'
 import { authenticate } from '../helpers/authenticate'
 import { EmailVerificationModel } from '../../../shared/user/EmailVerificationToken'
 import { ResponseError } from '../../../shared/mongo/ResponseError'
+import { verifyRecaptchaToken } from '../helpers/verifyRecaptchaToken'
 
 export const verifyEmail = async (ctx: Context, next: Next): Promise<void> => {
     const verifyEmailArgs = plainToClass(EmailVerificationInputs, ctx.request.body, { excludeExtraneousValues: true })
     await validateOrReject(verifyEmailArgs, { forbidUnknownValues: true }).catch(firstError)
-    let {token} = verifyEmailArgs
+    let {token, recaptchaToken} = verifyEmailArgs
 
     const user: User = await authenticate(ctx)
-    
+
+    await verifyRecaptchaToken(recaptchaToken)
+
     const emailVerification = await EmailVerificationModel.findOne({userId: user._id})
 
     if (!emailVerification) 

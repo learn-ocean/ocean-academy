@@ -38,7 +38,7 @@ export const requestEmailVerification = (codeSentCallback: any) => (dispatch: an
     })
 }
 
-export const verifyCode = ({ token }: EmailVerificationInputs) => (dispatch: any) => {
+export const verifyCode = ({ token, recaptchaToken }: EmailVerificationInputs) => (dispatch: any) => {
     dispatch({
         type: CODE_VERIFICATION_REQUEST,
         payload: {},
@@ -48,13 +48,13 @@ export const verifyCode = ({ token }: EmailVerificationInputs) => (dispatch: any
                     url: `${process.env.REACT_APP_BACKEND_URL}/user/verify-email`,
                     headers: { Authorization: `Bearer ${store.getState().auth.jwt}` },
                     method: 'POST',
-                    json: { token }
+                    json: { token, recaptchaToken }
                 },
                 commit: {
                     type: CODE_VERIFICATION_COMMIT,
                     meta: {
                         thunks: [
-                            showToaster(SUCCESS, 'Verification code sent.', 'Check your email for the code.'),
+                            showToaster(SUCCESS, 'Email verified.', 'Congratulations! Your email was verified.'),
                             redirect('/'),
                         ],
                     },

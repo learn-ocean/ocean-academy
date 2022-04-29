@@ -29,9 +29,9 @@ export const EmailVerification = () => {
             dispatch(showToaster(ERROR, 'Recaptcha not ready', 'Please try again'))
             return
         }
-        const recaptchaToken = await executeRecaptcha('signup')
+        const recaptchaToken = await executeRecaptcha('emailVerification')
 
-        dispatch(verifyCode({ token }))
+        dispatch(verifyCode({ token, recaptchaToken }))
     }
 
     return <EmailVerificationView verifyCodeCallback={verifyCodeCallback} emailVerificationCallback={emailVerificationCallback} codeSent={codeSent} loading={loading} />

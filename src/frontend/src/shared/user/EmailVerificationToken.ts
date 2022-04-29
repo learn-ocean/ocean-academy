@@ -8,6 +8,10 @@ export class EmailVerificationInputs{
   @Expose()
   @Length(6)
   token!: string
+
+  @Expose()
+  @Length(100, 1000)
+  recaptchaToken!: string
 }
 
 @Index({ expiresAt: 1 }, { expireAfterSeconds: 0 })
