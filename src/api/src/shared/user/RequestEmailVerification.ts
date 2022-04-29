@@ -1,0 +1,2 @@
+export class RequestEmailVerificationInputs{}
+export class RequestEmailVerificationOutputs{}
