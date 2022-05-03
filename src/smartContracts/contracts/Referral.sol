@@ -3,6 +3,10 @@ pragma solidity 0.8.4;
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
+/**
+ * @title Ocean Academy Referral contract.
+ * @author Ocean Academy contributors.
+ */
 contract OceanAcademyReferral {
     using SafeERC20 for IERC20;
     bool public isActive = false;
@@ -28,10 +32,6 @@ contract OceanAcademyReferral {
         _;
     }
 
-    function getOceanBalance() public view returns (uint256) {
-        return IERC20(oceanAddress).balanceOf(address(this));
-    }
-
     function setActive(bool _isActive) public onlyOwner {
         isActive = _isActive;
     }
@@ -40,6 +40,20 @@ contract OceanAcademyReferral {
         admin = _newAdmin;
     }
 
+    /**
+     * @dev Public function for getting the contract's balance
+     * on ocean token.
+     */
+    function getOceanBalance() public view returns (uint256) {
+        return IERC20(oceanAddress).balanceOf(address(this));
+    }
+
+    /**
+     * @dev Sends the reward to the awarded referrer.
+     * @param _referrer referrer's identification.
+     * @param _referrerWallet referer's wallet address.
+     * @param _reward reward value of mOcean.
+     */
     function sendReward(
         uint256 _referrer,
         address payable _referrerWallet,
@@ -60,6 +74,15 @@ contract OceanAcademyReferral {
 
         hasReceived[_referrer] = true;
         hasReceivedAddress[_referrerWallet] = true;
+    }
+
+    /**
+     * @dev Withdraws ocean tokens from the smart contract to the
+     * given _to address. ONLY OWNER.
+     */
+    function withdraw(address _to) public onlyOwner {
+        uint256 balance = getOceanBalance();
+        IERC20(oceanAddress).transfer(_to, balance);
     }
 
     /**
