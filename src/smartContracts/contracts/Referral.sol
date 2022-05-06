@@ -23,12 +23,12 @@ contract OceanAcademyReferral {
     }
 
     modifier onlyOwner() {
-        require(msg.sender == owner);
+        require(msg.sender == owner, "Sender must be the owner");
         _;
     }
 
     modifier onlyAdmin() {
-        require(msg.sender == admin);
+        require(msg.sender == admin, "Sender must be the admin");
         _;
     }
 
@@ -66,7 +66,7 @@ contract OceanAcademyReferral {
             "Referrer has already been rewarded."
         );
         require(
-            getOceanBalance() > _reward,
+            getOceanBalance() >= _reward,
             "Not enough ocean balance to send to the referrer."
         );
 
