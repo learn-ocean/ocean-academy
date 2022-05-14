@@ -16,6 +16,12 @@ contract OceanAcademyReferral {
     address public admin;
     address public oceanAddress;
 
+    event Rewarded(
+        uint256 indexed _referrer,
+        address indexed _referrerWallet,
+        uint256 _reward
+    );
+
     constructor(address payable _owner, address _oceanAddress) {
         owner = _owner;
         admin = _owner;
@@ -74,6 +80,8 @@ contract OceanAcademyReferral {
 
         hasReceived[_referrer] = true;
         hasReceivedAddress[_referrerWallet] = true;
+
+        emit Rewarded(_referrer, _referrerWallet, _reward);
     }
 
     /**
