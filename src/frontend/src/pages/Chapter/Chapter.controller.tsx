@@ -8,7 +8,6 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import { State } from 'reducers'
-
 import { CourseData } from '../Course/Course.controller'
 import { chaptersByCourse, courseData } from '../Course/Course.data'
 import { addProgress } from './Chapter.actions'
@@ -54,7 +53,7 @@ export const Chapter = () => {
 
   let badgeUnlocked = false
   let counter = 0
-  user?.progress?.forEach((chapter) => {
+  user?.progress?.forEach((chapter: string) => {
     counter++
   })
   if (user && isCourseCompletedFromTitle("ocean101", user?.progress!)) badgeUnlocked = true
