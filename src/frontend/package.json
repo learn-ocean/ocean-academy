@@ -39,6 +39,7 @@
     "jspdf": "^2.1.1",
     "jwt-decode": "^2.2.0",
     "markdown-to-jsx": "^6.11.4",
+    "qrcode.react": "3.0.2",
     "rc-slider": "9.2.4",
     "react": "^16.13.1",
     "react-circular-progressbar": "2.0.4",
