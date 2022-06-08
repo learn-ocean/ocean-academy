@@ -4,6 +4,11 @@ import { Card, AnimatedCard, FadeInFromTop, FullPage } from '../../styles'
 
 export const ReferralPage = styled(FullPage)`
 height: 90vh;
+
+@media (max-width: 760px) {
+  height: 170vh;
+
+}
 `
 
 export const ReferralContainer = styled(FadeInFromTop)`
@@ -43,7 +48,7 @@ span {
   display: block;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 760px) {
   width: 82vw;
 }
 `
@@ -54,6 +59,12 @@ flex-direction: row;
 margin: auto;
 justify-content: space-between;
 width: 1350px;
+
+@media (max-width: 760px) {
+  flex-direction: column;
+  align-items:center;
+  width: 100%;
+}
 `
 
 export const ReferralCardsRow = styled.div`
@@ -62,6 +73,16 @@ flex-direction: row;
 justify-content: space-around;
 margin-top: 75px;
 margin-bottom: 75px;
+
+@media (max-width: 760px) {
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 500px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
 `
 
 export const ReferralCard  = styled(AnimatedCard)`
@@ -72,6 +93,8 @@ border-radius: 15px;
 box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 display: flex;
 align-items: center;
+
+
 > p {
   color: ${activePink};
   font-size: 16px;
@@ -82,7 +105,20 @@ align-items: center;
 export const ReferralLeftContent = styled.div`
 display: flex;
 flex-direction: column;
-width: 700px;
+width: 760px;
+
+@media (max-width: 760px) {
+    width: 350px;
+
+    >h1{
+      font-size: 32px;
+    }
+
+    >h2{
+      font-size: 22px !important;
+    }
+}
+
 `
 
 export const ReferralRightContent = styled.div`
@@ -98,9 +134,10 @@ export const ButtonsRow = styled.div`
     flex-direction: row;
 
 
-  @media (max-width: 900px) {
+  @media (max-width: 760px) {
     height: 125px;
-    align-self: center;
+    align-items: center;
+    width: 100%;
     flex-direction: column;
     margin-top: 50px;
   }
@@ -129,7 +166,7 @@ animation: float 10s linear infinite;
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 760px) {
   display: none;
 }
 
