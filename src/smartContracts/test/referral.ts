@@ -100,6 +100,34 @@ describe("Referral", function () {
 
   });
 
+
+  describe("Has received functions", function () {
+
+    beforeEach(async function () {
+      await oceanToken.connect(addr2).mint(addr2.address, 10);
+      await expect( await oceanToken.balanceOf(addr2.address)).to.be.equal(10);
+      await oceanToken.connect(addr2).transfer(referral.address, 10)
+      await expect(await oceanToken.balanceOf(referral.address)).to.be.equal(10);
+      //Set addr1 as admin 
+      await referral.connect(owner).setAdmin(addr1.address);
+      await referral.connect(owner).setActive(true);
+    });
+
+    it("Has received is true after rewarded address", async function () {
+      const id = 1;
+      const sendReward = referral.connect(addr1).sendReward(id, addr3.address, 5)
+      await expect(sendReward).to.not.be.reverted;
+      await expect(await oceanToken.balanceOf(addr3.address)).to.be.equal(5);
+      await expect(await referral.hasReceivedAddress(addr3.address)).to.be.equal(true);
+      await expect(await referral.hasReceived(id)).to.be.equal(true);
+
+      await expect(await referral.hasReceivedAddress(addr1.address)).to.be.equal(false);
+      await expect(await referral.hasReceived(0)).to.be.equal(false);
+
+    });
+
+  });
+
   describe("Withdraw tokens", function () {
 
     beforeEach(async function () {

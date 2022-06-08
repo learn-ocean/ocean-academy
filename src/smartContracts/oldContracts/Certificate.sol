@@ -1,9 +1,9 @@
-pragma solidity ^0.6.0;
+pragma solidity 0.6.2;
 
-import '@openzeppelin/contracts/token/ERC721/ERC721.sol';
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract Certificate is ERC721 {
-    constructor() public ERC721('Ocean Certificate', 'OC') {}
+    constructor() public ERC721("Ocean Certificate", "OC") {}
 
     function mintUniqueTokenTo(
         address _to,
