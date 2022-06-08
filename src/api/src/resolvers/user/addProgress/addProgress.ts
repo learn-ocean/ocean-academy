@@ -2,16 +2,13 @@ import { plainToClass } from 'class-transformer'
 import { validateOrReject } from 'class-validator'
 import { Context, Next } from 'koa'
 import { firstError } from '../../../helpers/firstError'
-import { toPublicUser } from '../../../helpers/toPublicUser'
+import { toPrivateUser } from '../../../helpers/toPublicUser'
 import { AddProgressInputs, AddProgressOutputs } from '../../../shared/user/AddProgress'
 import { PublicUser } from '../../../shared/user/PublicUser'
 import { User, UserModel } from '../../../shared/user/User'
 import { rateLimit } from '../../quota/rateLimit/rateLimit'
 import { authenticate } from '../helpers/authenticate'
 import { COURSES } from '../../../helpers/courses'
-
-
-export const PUBLIC_USER_MONGO_SELECTOR = '_id username emailVerified createdAt'
 
 export const addProgress = async (ctx: Context, next: Next): Promise<void> => {
   const addProgressArgs = plainToClass(AddProgressInputs, ctx.request.body, { excludeExtraneousValues: true })
@@ -38,7 +35,7 @@ export const addProgress = async (ctx: Context, next: Next): Promise<void> => {
     { _id: user._id },
   ).lean()  as User
 
-  const publicUser: PublicUser = toPublicUser(updatedUser)
+  const publicUser: PublicUser = toPrivateUser(updatedUser)
   
   const response: AddProgressOutputs = { user: publicUser }
 
