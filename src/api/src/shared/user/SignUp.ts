@@ -1,6 +1,5 @@
 import { Expose } from 'class-transformer'
-import { IsEmail, IsJWT, Length, Matches } from 'class-validator'
-
+import { IsEmail, IsJWT, Length, Matches, IsOptional } from 'class-validator'
 import { IsEqualTo } from './IsEqualTo'
 import { Jwt } from './Jwt'
 import { PublicUser } from './PublicUser'
@@ -28,6 +27,11 @@ export class SignUpInputs {
   @Expose()
   @Length(100, 1000)
   recaptchaToken!: string
+
+  @Expose()
+  @IsOptional()
+  @Length(6, 24)
+  referralCode?: string
 }
 
 export class SignUpOutputs {

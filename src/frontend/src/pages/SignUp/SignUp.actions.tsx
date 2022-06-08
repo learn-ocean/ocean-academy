@@ -6,9 +6,10 @@ import { SignUpInputs } from 'shared/user/SignUp'
 export const SIGN_UP_REQUEST = 'SIGN_UP_REQUEST'
 export const SIGN_UP_COMMIT = 'SIGN_UP_COMMIT'
 export const SIGN_UP_ROLLBACK = 'SIGN_UP_ROLLBACK'
-export const signUp = ({ email, password, confirmPassword, username, recaptchaToken }: SignUpInputs) => (
+export const signUp = ({ email, password, confirmPassword, username, recaptchaToken, referralCode }: SignUpInputs) => (
   dispatch: any,
 ) => {
+  referralCode = referralCode || undefined
   dispatch({
     type: SIGN_UP_REQUEST,
     payload: {},
@@ -17,7 +18,7 @@ export const signUp = ({ email, password, confirmPassword, username, recaptchaTo
         effect: {
           url: `${process.env.REACT_APP_BACKEND_URL}/user/sign-up`,
           method: 'POST',
-          json: { email, password, confirmPassword, username, recaptchaToken },
+          json: { email, password, confirmPassword, username, recaptchaToken, referralCode},
         },
         commit: {
           type: SIGN_UP_COMMIT,
