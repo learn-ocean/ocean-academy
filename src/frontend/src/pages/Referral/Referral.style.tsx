@@ -70,7 +70,7 @@ width: 1350px;
 export const ReferralCardsRow = styled.div`
 display: flex;
 flex-direction: row;
-justify-content: space-around;
+justify-content: space-between;
 margin-top: 75px;
 margin-bottom: 75px;
 

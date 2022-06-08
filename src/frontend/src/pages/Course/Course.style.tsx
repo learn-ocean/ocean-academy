@@ -50,10 +50,13 @@ export const Section = styled(AnimatedCard)`
 `
 
 export const CreatureWrapper = styled(FadeInFromTop)`
+height: 450px;
 `
 
 export const Creature = styled.img`
 width: 400px;
+height: 400px;
+
 animation: float 10s linear infinite;
 
 
