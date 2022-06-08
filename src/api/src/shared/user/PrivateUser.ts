@@ -1,7 +1,8 @@
-import { IsArray, IsBoolean, IsDate, IsMongoId, IsNumber, Length, Matches, Min } from 'class-validator'
+import { IsArray, IsBoolean, IsDate, IsEmail, IsMongoId, IsNumber, Length, Matches, Min } from 'class-validator'
+import { MintedToken } from './User'
 import { ObjectId } from 'mongodb'
 
-export class PublicUser {
+export class PrivateUser {
   @IsMongoId()
   readonly _id!: ObjectId
 
@@ -12,6 +13,9 @@ export class PublicUser {
   @IsNumber()
   @Min(0)
   tokenId?: number
+
+  @IsEmail()
+  email!: string
 
   @IsNumber()
   @Min(0)
@@ -28,4 +32,6 @@ export class PublicUser {
 
   @IsDate()
   createdAt!: Date
+
+  tokens?: Map<string, MintedToken>
 }
