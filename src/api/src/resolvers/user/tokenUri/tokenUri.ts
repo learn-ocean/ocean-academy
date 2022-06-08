@@ -11,10 +11,6 @@ import { UserModel } from '../../../shared/user/User'
 export const PUBLIC_USER_MONGO_SELECTOR = '_id username emailVerified createdAt'
 
 export const tokenUri = async (ctx: Context, next: Next): Promise<void> => {
-  console.log(ctx.params.username)
-  console.log(ctx.params.course)
-
-  
   const tokenUriArgs = plainToClass(TokenUriInputs, ctx.params, { excludeExtraneousValues: true })
   await validateOrReject(tokenUriArgs, { forbidUnknownValues: true }).catch(firstError)
   let { username, course } = tokenUriArgs

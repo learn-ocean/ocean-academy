@@ -1,7 +1,6 @@
 import { plainToClass } from 'class-transformer'
 import { validateOrReject } from 'class-validator'
 import { Context, Next } from 'koa'
-
 import { firstError } from '../../../helpers/firstError'
 import { toPublicUser } from '../../../helpers/toPublicUser'
 import { SetNameInputs, SetNameOutputs } from '../../../shared/page/SetName'
