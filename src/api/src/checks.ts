@@ -8,7 +8,7 @@ export const checkSecureWallet = async() => {
 
     try{
     const response = await axios.get(process.env.SECURE_WALLET_ADDR,{timeout: 4000})
-    console.log("Got response for secure wallet: ", response)
+    console.log("Got response for secure wallet: ", response.data)
     }
     catch(e){
         console.log(`Error: Secure wallet test api call at address ${process.env.SECURE_WALLET_ADDR} did not work.`)
