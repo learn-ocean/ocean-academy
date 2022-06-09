@@ -27,7 +27,7 @@ export const verifyNonce = async(publicAddress: string, signedNonce: string, non
         const from = publicAddress;
         const recoveredAddr = ethers.utils.verifyMessage(nonce.toString(), signedNonce);
         if (recoveredAddr.toLowerCase() === from.toLowerCase()) {
-            console.log(`Successfully ecRecovered signer as ${recoveredAddr}`);
+            console.log(`Successfully Recovered signer as ${recoveredAddr}`);
         } else {
             console.log(
                 `Failed to verify signer when comparing ${recoveredAddr} to ${from}`,

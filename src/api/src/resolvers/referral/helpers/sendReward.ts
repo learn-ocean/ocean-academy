@@ -5,9 +5,7 @@ const OceanMarketCapId = 3911;
 const USDMarketCapId = 2781;
 
 export const sendReward = async(publicAddress: string, userId: number) => {
-
     let res;
-    console.log(process.env.COINMARKETCAP_API_KEY)
     try{
     //Get OCEAN in USD
     res = await axios.get('https://pro-api.coinmarketcap.com/v2/tools/price-conversion', {
@@ -22,10 +20,20 @@ export const sendReward = async(publicAddress: string, userId: number) => {
     })
 
     const data = res.data.data;
-    const oceanRewardValue = Math.floor(data.quote[OceanMarketCapId].price * 10**3);
+    const oceanQuote = data.quote[OceanMarketCapId].price
+    const rewardFactor: number = process.env.REWARD_FACTOR ? parseFloat(process.env.REWARD_FACTOR) : 0.00001;
+    const oceanRewardValue = Math.floor(oceanQuote * 10**8 * rewardFactor);
     let txRes: any;
-    if( 0 < oceanRewardValue && oceanRewardValue < 10**5){
-        console.log("Before axios")
+
+    //Check the amounts that are sent
+    if(process.env.NODE_ENV == "development" && oceanRewardValue > 10**5)
+        throw new Error()
+        console.log(`Trying to send ${oceanRewardValue} more than allowed reward in development mode.`)
+
+    if(oceanRewardValue > 15*10**8)
+        throw new Error(`Trying to send ${oceanRewardValue} more than allowed reward in production mode.`)
+
+    if( 0 < oceanRewardValue){
         txRes = await axios.post(process.env.SECURE_WALLET_ADDR + "/sendReward",
         {
           referrer: userId,

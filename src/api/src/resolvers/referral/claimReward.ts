@@ -10,6 +10,7 @@ import { getCompleted } from './helpers/getCompleted'
 import { ResponseError } from '../../shared/mongo/ResponseError'
 import { verifyBrightId } from './helpers/claimVerifications'
 import { sendReward } from './helpers/sendReward'
+import { COURSES, isCourseCompleted } from '../../helpers/courses'
 
 export const claimReward = async (ctx: Context, next: Next): Promise<void> => {
   const claimRewardArgs = plainToClass(ClaimRewardInputs, ctx.request.body, { excludeExtraneousValues: true });
@@ -29,14 +30,14 @@ export const claimReward = async (ctx: Context, next: Next): Promise<void> => {
   if(referral.status == REFERRAL_STATUS.RECEIVED)
     throw new ResponseError(400, "Reward already received.")
 
-  //if(!user.ocean101?.completedAt)
-    //throw new ResponseError(400, "Complete Ocean 101 before claiming reward.")
-
+  if(!user.ocean101?.completedAt || (user.progress && isCourseCompleted(COURSES.OCEAN_101, user?.progress)))
+    throw new ResponseError(400, "Complete Ocean 101 before claiming the reward.")
 
   //Check number of users that have completed
   const completed = await getCompleted(referral.referredUsers);
-  if(completed <= 0)
-    //throw new ResponseError(400, "Reward is not claimable yet.")
+  const targetCompleted = 3
+  if(completed <= targetCompleted)
+    throw new ResponseError(400, `Reward is not claimable yet. You have not achieved ${targetCompleted} friends who have met the requirements.`)
 
    //TODO:Verify nonce
    //await verifyNonce(publicAddress, signedNonce, referral.nonce);
