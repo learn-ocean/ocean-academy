@@ -19,7 +19,9 @@ export const startReferral = ({}: StartReferralInputs) => (dispatch: any) => {
           headers: { Authorization: `Bearer ${store.getState().auth.jwt}` },
         },
         json: {},
-        commit: { type: START_REFERRAL_COMMIT, meta: {} },
+        commit: { type: START_REFERRAL_COMMIT, meta: {
+          thunks: [ showToaster(SUCCESS, 'Referral succesfully started', 'You may already start sharing your referral link.')],
+        }},
         rollback: { type: START_REFERRAL_ROLLBACK, meta: {} },
       },
     },

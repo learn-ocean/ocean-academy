@@ -4,8 +4,7 @@ import { State } from "reducers";
 import { ReferralView } from "./Referral.view";
 import { PrivateUser } from "shared/user/PrivateUser";
 import { startReferral, getReferralInfo, claimReward } from "./Referral.actions";
-import { ReferralInfoOutputs } from "shared/referral/ReferralInfo";
-import { ReferralState } from "reducers/referral";
+
 
 export type ReferralProps = {
     user : PrivateUser
@@ -16,6 +15,8 @@ export const Referral = ({user}: ReferralProps) => {
     const loading = useSelector((state: State) => state.loading)
     const started = useSelector((state: State) => state.referral.started)
     const data = useSelector((state: State) => state.referral.data)
+    const referralCode = useSelector((state: State) => state.referral.referralCode)
+
 
 
     const startReferralCallback = () => {
@@ -28,14 +29,14 @@ export const Referral = ({user}: ReferralProps) => {
 
     useEffect(() => {
         dispatch(getReferralInfo({}))
-      }, [dispatch])
+      }, [dispatch, referralCode])
 
     return <ReferralView 
     invited={data?.invited ? data?.invited : 0}
     completed={data?.completed ? data?.completed : 0}
+    referralCode={referralCode ? referralCode : ""}
     //@ts-ignore
     started={started}
-    referralCode={data?.referralCode ? data?.referralCode : ''}
     loading={loading}
     startReferralCallback={startReferralCallback}
     claimRewardCallback={claimRewardCallback}
