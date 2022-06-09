@@ -15,9 +15,9 @@ export const Referral = ({user}: ReferralProps) => {
     const loading = useSelector((state: State) => state.loading)
     const started = useSelector((state: State) => state.referral.started)
     const data = useSelector((state: State) => state.referral.data)
-    const referralCode = useSelector((state: State) => state.referral.referralCode)
-
-
+    let referralCode = useSelector((state: State) => state.referral.referralCode)
+    if(!referralCode && data)
+      referralCode = data.referralCode
 
     const startReferralCallback = () => {
         dispatch(startReferral({}))

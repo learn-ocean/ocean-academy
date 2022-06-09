@@ -41,10 +41,10 @@ export const ReferralView = ({}: ReferralViewProps) => {
                     </p>
                     <ButtonsRow>
                     <Link to="/referral-program" style={{width: "200px"}}>
-                    <Button text="Find Out More" color="primary" />
+                    <Button text="Copy invitation" color="primary" />
                     </Link>
                     <a href="https://github.com/oceanprotocol/oceandao/wiki/BrightID-Verification-Guide" style={{width: "200px"}}>
-                    <Button text="BrightID Setup" color="primary" />
+                    <Button text="Claim reward" color="primary" />
                     </a>   
                     </ButtonsRow>
                     </ReferralLeftContent>
