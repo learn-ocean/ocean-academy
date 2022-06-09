@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { State } from 'reducers'
-import { PublicUser } from 'shared/user/PublicUser'
+import { PrivateUser } from 'shared/user/PrivateUser'
 import { getCourseByTitle, toTokenId } from 'helpers/courses'
 import Web3 from 'web3'
 import Certificate from '../../abis/Certificate.json'
@@ -27,7 +27,7 @@ export const Token = () => {
   let { username, course } = useParams<{ username: string, course: string }>()
   const courseobj = getCourseByTitle(course);
   if (!courseobj) throw Error("Course not found")
-  const user = useSelector((state: State) => (state.users as Record<string, PublicUser | undefined>)[username])
+  const user = useSelector((state: State) => (state.users as Record<string, PrivateUser | undefined>)[username])
   const [loading, setLoading] = useState(false)
   const [account, setAccount] = useState(undefined)
   const [certificateContract, setCertificateContract] = useState(undefined)

@@ -1,3 +1,5 @@
+import React from 'react'
+import { Route, Switch, Redirect , useParams} from 'react-router-dom'
 import { About } from 'pages/About/About.controller'
 import { Certificate } from 'pages/Certificate/Certificate.controller'
 import { ChangePassword } from 'pages/ChangePassword/ChangePassword.controller'
@@ -12,10 +14,10 @@ import { SignUp } from 'pages/SignUp/SignUp.controller'
 import { Terms } from 'pages/Terms/Terms.controller'
 import { Token } from 'pages/Token/Token.controller'
 import { User } from 'pages/User/User.controller'
-import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Referral } from "pages/Referral/Referral.controller"
+import { EmailVerification } from 'pages/EmailVerification/EmailVerification.controller'
 import { Ocean101Course, IntroToDataDefiCourse, ComputeToDataCourse } from 'pages/Course/Course.controller'
-
+ 
 export const AppRoutes = ({ location }: any) => (
   <Switch location={location}>
     <Route exact path="/">
@@ -24,8 +26,17 @@ export const AppRoutes = ({ location }: any) => (
     <Route exact path="/sign-up">
       <SignUp />
     </Route>
+    <Route exact path="/referral/:referral?">
+      <SignUp />
+    </Route>
     <Route exact path="/login">
       <Login />
+    </Route>
+    <Route exact path="/referral-program">
+      <Referral />
+    </Route>
+    <Route exact path="/verify-email">
+      <EmailVerification />
     </Route>
     <Route exact path="/forgot-password">
       <ForgotPassword />

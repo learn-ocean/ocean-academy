@@ -4,11 +4,11 @@ import { LOGIN_COMMIT, LOGIN_ROLLBACK, LOGOUT } from 'pages/Login/Login.actions'
 import { SIGN_UP_COMMIT, SIGN_UP_ROLLBACK } from 'pages/SignUp/SignUp.actions'
 import { GET_USER_COMMIT, SET_NAME_COMMIT } from 'pages/User/User.actions'
 import { Jwt } from 'shared/user/Jwt'
-import { PublicUser } from 'shared/user/PublicUser'
+import { PrivateUser } from 'shared/user/PrivateUser'
 
 export interface AuthState {
   jwt?: Jwt
-  user?: PublicUser
+  user?: PrivateUser
   resetPasswordToken?:string
 }
 
@@ -76,12 +76,10 @@ export function auth(state = authDefaultState, action: any): AuthState {
       }
     }
     case GET_USER_COMMIT: {
-      if(state.user?.username === action.payload.user?.username)
       return {
         ...state,
         user: action.payload.user,
       }
-      else return state
     }
     default:
       return state

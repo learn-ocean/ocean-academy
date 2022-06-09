@@ -1,31 +1,36 @@
 import { Button } from 'app/App.components/Button/Button.controller'
 import { Input } from 'app/App.components/Input/Input.controller'
 import { ChapterData } from 'pages/Chapter/Chapter.controller'
-// import { courseData } from 'pages/Course/Course.data'
+import { CircularProgress } from 'app/App.components/CircularProgress/CircularProgress.controller'
+import { ProfileSettings } from './ProfileSettings/ProfileSettings.controller'
+import { Referral } from './Referral/Referral.controller'
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import { PublicUser } from 'shared/user/PublicUser'
+import { PrivateUser } from 'shared/user/PrivateUser'
 //Helpers
-import { isCourseCompleted } from 'helpers/courses'
+import { getCompletionPercentage, getNbProgressForCourse, isCourseCompleted } from 'helpers/courses'
 import {COURSES} from 'helpers/courses'
 //Chapters
 import { chapterData as ComputeToData } from '../Courses/ComputeToData/Chapters/Chapters.data'
 import { chapterData as chapterDataDefi } from '../Courses/introToDataDefi/Chapters/Chapters.data'
 import { chapterData } from '../Courses/ocean101/Chapters/Chapters.data'
+import 'react-circular-progressbar/dist/styles.css';
 // prettier-ignore
 import { 
   UserBadge, UserBadgeButtons, UserBadgeInput, UserCard, UserChapter, 
-  UserProgress, UserStyled, UserTitle, UserTitle2,CertificateContainer 
+  UserProgress, UserStyled, Highlight, UserTitle2,CertificateContainer,
+  ProgressStatsContainer, ProfileCard
 } from './User.style'
+import { activePink } from 'styles'
 
 type UserViewProps = {
   loading: boolean
-  user: PublicUser
-  authUser?: PublicUser
+  user: PrivateUser
+  authUser?: PrivateUser
+  name: string
   downloadCallback: (courseTitle: string) => void
   getCertificateCallback: () => void
-  name: string
   setName: (e: string) => void
 }
 
@@ -38,14 +43,55 @@ export const UserView = ({
   setName,
   getCertificateCallback,
 }: UserViewProps) => {
+
+  const ocean101Completed = user.progress ? getNbProgressForCourse(COURSES.OCEAN_101, user.progress) : 0
+  const ocean101Percentage = user.progress ? getCompletionPercentage(COURSES.OCEAN_101, user.progress) : 0.0
+  const dataDefiCompleted = user.progress ? getNbProgressForCourse(COURSES.INTRO_TO_DATA_DEFI, user.progress) : 0
+  const dataDefiPercentage = user.progress ? getCompletionPercentage(COURSES.INTRO_TO_DATA_DEFI, user.progress) : 0.0
+  const computeToDataCompleted = user.progress ? getNbProgressForCourse(COURSES.COMPUTE_TO_DATA, user.progress) : 0
+  const computeToDataPercentage = user.progress ? getCompletionPercentage(COURSES.COMPUTE_TO_DATA, user.progress) : 0.0
   const ocean101Unlocked =  user.progress ? isCourseCompleted(COURSES.OCEAN_101, user.progress) : false
   const dataDefiUnlocked =  user.progress ? isCourseCompleted(COURSES.INTRO_TO_DATA_DEFI, user.progress) : false
   const computeToDataUnlocked =  user.progress ? isCourseCompleted(COURSES.COMPUTE_TO_DATA, user.progress) : false
 
-
   return (
     <UserStyled>
-     
+        <h1>Your profile, <Highlight>{user.name ? user.name : user.username}</Highlight></h1>
+      <UserTitle2>
+        <h1>Overall Progress:</h1>
+      </UserTitle2>
+      <ProfileCard>
+        <ProgressStatsContainer>
+            <CircularProgress 
+            title={"Ocean 101"}
+            percentage={ocean101Percentage}
+            text={`${ocean101Completed}/${COURSES.OCEAN_101.chapters}`}
+            />
+            <CircularProgress 
+            title={"Data Defi"}
+            percentage={dataDefiPercentage}
+            text={`${dataDefiCompleted}/${COURSES.INTRO_TO_DATA_DEFI.chapters}`}
+            />
+            <CircularProgress 
+            title={"Compute to Data"}
+            percentage={computeToDataPercentage}
+            text={`${computeToDataCompleted}/${COURSES.COMPUTE_TO_DATA.chapters}`}
+            />
+        </ProgressStatsContainer>
+      </ProfileCard>
+      <UserTitle2>
+        <h1>Referral:</h1>
+      </UserTitle2>
+      <Referral user={user} />
+
+      {authUser &&
+      <>
+      <UserTitle2>
+        <h1>Profile settings:</h1>
+      </UserTitle2>
+        <ProfileSettings user={authUser}/>
+      </>
+      }
       <UserTitle2>
         <h1>Your progress for Ocean101:</h1>
       </UserTitle2>
@@ -73,7 +119,7 @@ export const UserView = ({
 
                 <UserChapter key={chapter.pathname} done={done}>
                   {chapter.name}
-                  {done && <img alt="done" src="/icons/check.svg" />}
+                  {done && <img alt="done" src="/icons/check.svg" style={{color: activePink}} />}
                 </UserChapter>
               </Link>
             )
@@ -163,8 +209,8 @@ UserView.defaultProps = {
 interface CertificateViewProps {
   badgeUnlocked: boolean
   loading: boolean
-  user: PublicUser
-  authUser?: PublicUser
+  user: PrivateUser
+  authUser?: PrivateUser
   downloadCallback: (courseTitle: string) => void
   getCertificateCallback: () => void
   name: string
@@ -178,7 +224,7 @@ const CertificateView = (props: CertificateViewProps) => {
 <UserBadge badgeUnlocked={props.badgeUnlocked}>
   {props.badgeUnlocked ? (
     <>
-      <h2>Congrats! You have finished the course. Enter your name below in order to get your certificate!</h2>
+      <p>Congrats! You have finished the course. Enter your name below in order to get your certificate!</p>
       {props.authUser?.name ? (
         <UserBadgeButtons>
           <Button

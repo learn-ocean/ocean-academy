@@ -1,7 +1,5 @@
-import { IsArray, IsDate, IsEmail, IsMongoId, IsNumber, Length, Matches, Min } from 'class-validator'
-import { MintedToken } from './User'
+import { IsArray, IsBoolean, IsDate, IsMongoId, IsNumber, Length, Matches, Min } from 'class-validator'
 import { ObjectId } from 'mongodb'
-import { Property } from '../../helpers/typegoose'
 
 export class PublicUser {
   @IsMongoId()
@@ -22,7 +20,7 @@ export class PublicUser {
   @Length(2, 40)
   name!: string
 
-  @IsEmail()
+  @IsBoolean()
   emailVerified?: boolean
 
   @IsArray()
@@ -30,7 +28,4 @@ export class PublicUser {
 
   @IsDate()
   createdAt!: Date
-
-  @Property()
-  tokens?: Map<string, MintedToken>
 }

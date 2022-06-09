@@ -20,3 +20,16 @@ export const SignUpLogin = styled.div`
     color: ${primaryColor} !important;
   }
 `
+
+export const ReferredText = styled.div`
+  padding: 5px;
+  > p{
+    font-size: 14px;
+    color: grey
+  }
+
+  > p:hover{
+    opacity: 0.7;
+    cursor: pointer;
+  }
+`

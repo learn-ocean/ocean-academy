@@ -1,9 +1,8 @@
 import { plainToClass } from 'class-transformer'
 import { validateOrReject } from 'class-validator'
 import { Context, Next } from 'koa'
-
 import { firstError } from '../../../helpers/firstError'
-import { toPublicUser } from '../../../helpers/toPublicUser'
+import { toPrivateUser } from '../../../helpers/toPublicUser'
 import { ResponseError } from '../../../shared/mongo/ResponseError'
 import { Jwt } from '../../../shared/user/Jwt'
 import { LoginInputs, LoginOutputs } from '../../../shared/user/Login'
@@ -30,7 +29,7 @@ export const login = async (ctx: Context, next: Next): Promise<void> => {
   }
   if (!user) throw new ResponseError(401, 'Wrong username or password')
 
-  const publicUser: PublicUser = toPublicUser(user)
+  const publicUser: PublicUser = toPrivateUser(user)
 
   await rateLimit(user._id, QuotaType.LOGIN)
 

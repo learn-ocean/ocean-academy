@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { State } from 'reducers'
-import { PublicUser } from 'shared/user/PublicUser'
+import { PrivateUser } from 'shared/user/PrivateUser'
 import { getUser, sendName } from './User.actions'
 import { UserView } from './User.view'
 
@@ -14,8 +14,9 @@ export const User = () => {
   const dispatch = useDispatch()
   const loading = useSelector((state: State) => state.loading)
   let { username } = useParams<{ username: string }>()
-  const user = useSelector((state: State) => (state.users as Record<string, PublicUser | undefined>)[username])
+  const user = useSelector((state: State) => (state.users as Record<string, PrivateUser | undefined>)[username])
   const authUser = useSelector((state: State) => state.auth.user)
+
   const [name, setName] = useState<string>('')
 
   const downloadCallback = (courseTitle: string) => {

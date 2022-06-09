@@ -68,6 +68,12 @@ export const isCourseCompleted = (course : COURSE_TYPE, progress: string[]): boo
        return getNbProgressForCourse(course, progress) >= course.chapters
 }
 
+export const getCompletionPercentage = (course: COURSE_TYPE, progress: string[]): number => {
+    const courseProgress = getProgressForCourse(course, progress);
+    const nbChapters = course.chapters;
+    return Math.trunc((courseProgress.length / nbChapters) * 100)
+}  
+
 export const getCourseByTitle = (courseTitle: string): COURSE_TYPE | undefined =>
     _courses.find(course => course.title === courseTitle)
 
@@ -82,4 +88,5 @@ export const toTokenId = (userId: number, course: COURSE_TYPE): string => {
    
     return courseIndexPadded + userIdPadded
 }
+
 

@@ -53,7 +53,7 @@ export class User {
   @IsEmail()
   email!: string
 
-  @Property({ nullable: true, optional: true })
+  @Property({ default: false })
   @IsOptional()
   @IsBoolean()
   emailVerified?: boolean

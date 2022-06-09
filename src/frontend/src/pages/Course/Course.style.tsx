@@ -9,9 +9,6 @@ export const CourseStyled = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   margin: 110px 90px 0px 110px;
-
-
-
   @media (max-width: 900px) {
     flex-direction: column;
     margin: 90px 10px 0px 10px;
@@ -53,10 +50,13 @@ export const Section = styled(AnimatedCard)`
 `
 
 export const CreatureWrapper = styled(FadeInFromTop)`
+height: 450px;
 `
 
 export const Creature = styled.img`
 width: 400px;
+height: 400px;
+
 animation: float 10s linear infinite;
 
 

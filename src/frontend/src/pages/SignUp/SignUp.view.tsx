@@ -9,20 +9,24 @@ import { ChangeEvent, SyntheticEvent, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { SignUpInputs } from 'shared/user/SignUp'
 
-import { SignUpCard, SignUpLogin, SignUpStyled, SignUpTitle } from './SignUp.style'
+import { SignUpCard, SignUpLogin, SignUpStyled, SignUpTitle, ReferredText } from './SignUp.style'
 
 type SignUpViewProps = {
   signUpCallback: (values: any) => void
   loading: boolean
+  referral: string
 }
 
-export const SignUpView = ({ signUpCallback, loading }: SignUpViewProps) => {
+export const SignUpView = ({ signUpCallback, referral, loading }: SignUpViewProps) => {
   const [form, setForm] = useState<FormInputs>({
     username: { value: '' },
     email: { value: '' },
     password: { value: '' },
     confirmPassword: { value: '' },
+    referralCode: {value: referral ? referral : ''}
   })
+
+  const [showReferralInput,setShowReferralInput] = useState<boolean>(referral ? true : false);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const updatedForm = updateFormFromChange(e, form, SignUpInputs)
@@ -37,18 +41,22 @@ export const SignUpView = ({ signUpCallback, loading }: SignUpViewProps) => {
   const handleSubmit = (event: SyntheticEvent) => {
     const updatedForm = updateFormFromSubmit(event, form, SignUpInputs)
 
+
     if (
       !updatedForm.username.error &&
       !updatedForm.email.error &&
       !updatedForm.password.error &&
-      !updatedForm.confirmPassword.error
-    )
+      !updatedForm.confirmPassword.error &&
+      (updatedForm.referralCode.value.length == 0 || !updatedForm.referralCode.error)
+    ){
       signUpCallback({
         username: updatedForm.username.value,
         email: updatedForm.email.value,
         password: updatedForm.password.value,
         confirmPassword: updatedForm.confirmPassword.value,
+        referralCode: updatedForm.referralCode.value
       })
+    }
     else setForm(updatedForm)
   }
 
@@ -103,6 +111,24 @@ export const SignUpView = ({ signUpCallback, loading }: SignUpViewProps) => {
             inputStatus={getInputStatus(form.confirmPassword)}
             errorMessage={getErrorMessage(form.confirmPassword)}
           />
+          {showReferralInput ? (
+              <Input
+              icon="referral"
+              name="referralCode"
+              placeholder="Referral code"
+              type="text"
+              onChange={referral ? () => {} : handleChange}
+              value={form.referralCode.value}
+              onBlur={handleBlur}
+              inputStatus={getInputStatus(form.referralCode)}
+              errorMessage={getErrorMessage(form.referralCode)}
+            />
+          ) : (
+          <ReferredText>
+            <p onClick={() => setShowReferralInput(true)}>Referred? Enter a referral code.</p>
+          </ReferredText>
+          )}
+
           <InputSpacer />
           <Button type="submit" text="Sign Up" icon="sign-up" loading={loading} />
         </form>

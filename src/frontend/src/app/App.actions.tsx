@@ -2,6 +2,10 @@ import { State } from 'reducers'
 
 import { history } from './App.store'
 
+export const refresh = () => (dispatch: any) =>{
+  dispatch(history.go(0))
+}
+
 export const redirect = (path: string) => (dispatch: any, getState: any) => {
   if (path.indexOf('$resetPasswordToken') >= 0) {
     const state: State = getState()

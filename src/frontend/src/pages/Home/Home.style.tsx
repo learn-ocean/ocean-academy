@@ -296,6 +296,74 @@ export const CommunitySection = styled.div`
     }
 `
 
+export const ReferralSection = styled.div`
+    position: relative;
+    display:flex;
+    height:400px;
+    flex-direction: row;
+    margin: 11vw 10vw;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 60px;
+      margin-bottom: 200px;
+      height:760px;
+
+    }
+`
+
+export const ReferralButtonsContainer = styled.div`
+    width: 350px;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+
+  @media (max-width: 900px) {
+    height: 125px;
+    align-self: center;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+`
+
+export const ReferralSeaCreatureContainer = styled.div`
+width: 450px;
+img{
+  left: 0px;
+  position:relative !important;
+  width: 550px;
+  top: 40px !important;
+  z-index:10;
+  animation: float 8s ease-in-out infinite;
+
+  @media (max-width: 900px) {
+    width: 300px;
+    align-self: center;
+    left: 55px;
+    margin-top: 50px;
+
+  }
+
+  @keyframes float {
+    0% {
+      transform: translate(16px, -25px);
+    }
+    50% {
+      transform: translate(0px, 0px);
+    }
+    100% {
+      transform: translate(16px, -25px);
+    }
+  }
+
+}
+`
+
 export const SeaCreatureContainer = styled.div`
     width: 450px;
     img{

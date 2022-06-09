@@ -7,7 +7,7 @@ import { CourseBox } from 'app/App.components/CourseBox/CourseBox.controller'
 import { CourseData } from 'pages/Course/Course.controller'
 import { courseData } from 'pages/Course/Course.data'
 
-import { HomeContainer, CoursesSection, CoursesDescription, CommunityContentContainer, CoursesContainer, CommunitySection, HomeCourseGrid, SeaCreatureContainer, HomeTestimonials, HomeStyled } from './Home.style'
+import { HomeContainer,ReferralSeaCreatureContainer, ReferralButtonsContainer, CoursesSection, CoursesDescription, CommunityContentContainer, CoursesContainer, CommunitySection, HomeCourseGrid, SeaCreatureContainer, HomeTestimonials, HomeStyled, ReferralSection } from './Home.style'
 
 export const HomeView = () => {
 
@@ -80,6 +80,28 @@ export const HomeView = () => {
           </div>
         </CommunityContentContainer>
       </CommunitySection>
+
+      <ReferralSection>
+        <CommunityContentContainer>
+          <h1>Earn with our referral program</h1>
+          <p>Get 15 USD by completing Ocean101 and referring Ocean Academy to your friends.</p>
+          <p>Simply register with your BrightID profile and claim your reward once you and 3 of your friends have completed Ocean101.</p>
+          <p>The program will run as long as funding is available. Rewards are paid in mOcean.</p>
+          <div className="communityCall">
+          <ReferralButtonsContainer>
+            <Link to="/referral-program" style={{width: "150px"}}>
+              <Button text="Find Out More" color="primary" />
+            </Link>
+            <a href="https://github.com/oceanprotocol/oceandao/wiki/BrightID-Verification-Guide" style={{width: "150px"}}>
+              <Button text="BrightID Setup" color="primary" />
+            </a>
+            </ReferralButtonsContainer>
+          </div>
+          </CommunityContentContainer>
+        <ReferralSeaCreatureContainer>
+          <img src="creatures/dolphin-full-compressed.svg" />
+        </ReferralSeaCreatureContainer>
+      </ReferralSection>
 
       <HomeTestimonials>
         <h1>Testimonials</h1>

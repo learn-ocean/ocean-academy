@@ -13,6 +13,7 @@ import { progressBar, ProgressBarState } from './progressBar'
 import { serviceWorker, ServiceWorkerState } from './serviceWorker'
 import { toaster, ToasterState } from './toaster'
 import { users, UsersState } from './users'
+import { referral, ReferralState } from './referral'
 
 export const reducers = (history: any) =>
   combineReducers({
@@ -20,6 +21,7 @@ export const reducers = (history: any) =>
     auth,
     loading,
     users,
+    referral, 
     toaster,
     chapterDrawer,
     loginDrawer,
@@ -38,4 +40,5 @@ export interface State {
   progressBar: ProgressBarState
   serviceWorker: ServiceWorkerState
   gdpr: GdprState
+  referral: ReferralState
 }
