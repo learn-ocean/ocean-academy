@@ -13,6 +13,7 @@ import { sanitize } from './sanitize'
 
 import 'reflect-metadata'
 import { TokenRobot } from './resolvers/robots/TokenRobot'
+import { checkSecureWallet } from './checks'
 
 const start = async (): Promise<void> => {
   try {
@@ -23,6 +24,8 @@ const start = async (): Promise<void> => {
         !process.env.ETHERSCAN_API_KEY  ||
         !process.env.CHAIN
         ) throw new Error('Env variables not set')
+    
+    await checkSecureWallet();
 
     await mongoose.connect(process.env.MONGO_URL as string, {
       useCreateIndex: true,
