@@ -10,9 +10,10 @@ type ReferralData = {
 export type ReferralState = {
     started?: boolean
     data?: ReferralData
+    referralCode?: string
 }
 
-const initReferralState: ReferralState = {started: undefined}
+const initReferralState: ReferralState = {started: undefined, referralCode: undefined}
 
 export function referral(state = initReferralState, action: any): ReferralState {
   switch (action.type) {
@@ -25,7 +26,7 @@ export function referral(state = initReferralState, action: any): ReferralState 
     case START_REFERRAL_COMMIT: {
       return{
         ...state,
-        [action.payload.referralCode]: action.payload.referralCode
+        referralCode: action.payload.referralCode
       }
     }
     case REFFERRAL_INFO_COMMIT: {
