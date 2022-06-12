@@ -4,17 +4,16 @@ import { Context, Next } from 'koa'
 import { firstError } from '../../../helpers/firstError'
 import { toPrivateUser } from '../../../helpers/toPublicUser'
 import { AddProgressInputs, AddProgressOutputs } from '../../../shared/user/AddProgress'
-import { PublicUser } from '../../../shared/user/PublicUser'
 import { User, UserModel } from '../../../shared/user/User'
 import { rateLimit } from '../../quota/rateLimit/rateLimit'
 import { authenticate } from '../helpers/authenticate'
 import { COURSES } from '../../../helpers/courses'
+import { PrivateUser } from '../../../shared/user/PrivateUser'
 
 export const addProgress = async (ctx: Context, next: Next): Promise<void> => {
   const addProgressArgs = plainToClass(AddProgressInputs, ctx.request.body, { excludeExtraneousValues: true })
   await validateOrReject(addProgressArgs, { forbidUnknownValues: true }).catch(firstError)
   const { chapterDone } = addProgressArgs
-
   const user: User = await authenticate(ctx)
 
   await rateLimit(user._id)
@@ -34,10 +33,10 @@ export const addProgress = async (ctx: Context, next: Next): Promise<void> => {
   const updatedUser: User = await UserModel.findOne(
     { _id: user._id },
   ).lean()  as User
-
-  const publicUser: PublicUser = toPrivateUser(updatedUser)
+ 
+  const privateUser: PrivateUser = toPrivateUser(updatedUser)
   
-  const response: AddProgressOutputs = { user: publicUser }
+  const response: AddProgressOutputs = { user: privateUser }
 
   ctx.status = 200
   ctx.body = response
@@ -55,7 +54,6 @@ export const addProgress = async (ctx: Context, next: Next): Promise<void> => {
 async function addProgressForCourse(id: any, courseTitle: string, chapter: number){
 
   const handleProgress = async(courseTitle: string, chapters: number) =>{
-
       const now = new Date(Date.now())
 
       //Add to the user profile the progress.
@@ -71,7 +69,6 @@ async function addProgressForCourse(id: any, courseTitle: string, chapter: numbe
 
       //Check if the course is completed, and so add completedAt
       if(postUser?.get(courseTitle) && postUser?.get(courseTitle).progress.length === chapters){
-        console.log("Hello")
         await UserModel.updateOne(
           {_id: id},
           {$set: { [`${courseTitle}.completedAt`]: now}}

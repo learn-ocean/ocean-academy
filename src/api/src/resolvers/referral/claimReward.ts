@@ -35,8 +35,8 @@ export const claimReward = async (ctx: Context, next: Next): Promise<void> => {
 
   //Check number of users that have completed
   const completed = await getCompleted(referral.referredUsers);
-  const targetCompleted = 3
-  if(completed <= targetCompleted)
+  const targetCompleted = process.env.NODE_ENV == 'development' ? 1 : 3;
+  if(completed < targetCompleted)
     throw new ResponseError(400, `Reward is not claimable yet. You have not achieved ${targetCompleted} friends who have met the requirements.`)
 
    //TODO:Verify nonce

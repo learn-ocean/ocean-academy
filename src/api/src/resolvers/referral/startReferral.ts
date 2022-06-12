@@ -18,9 +18,7 @@ export const startReferral = async (ctx: Context, next: Next): Promise<void> => 
   const referralQuery = await ReferralModel.findOne({referrerId: user._id}).lean()
   if(referralQuery)
     throw new ResponseError(400, "Referral has already started for this user.")
-
-  user.progress && console.log(isCourseCompleted(COURSES.OCEAN_101, user?.progress))
-
+    
   if(!user.ocean101?.completedAt && user.progress && !isCourseCompleted(COURSES.OCEAN_101, user?.progress) || !user.progress)
     throw new ResponseError(400, "Complete Ocean 101 before starting the referral.")
   

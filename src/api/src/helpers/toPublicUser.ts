@@ -24,6 +24,9 @@ export const toPrivateUser = (user: User): PrivateUser => {
     progress: user.progress,
     createdAt: user.createdAt,
     userId: user.userId,
-    tokens: user.tokens
+    tokens: user.tokens,
+    ocean101: user.ocean101,
+    introToDataDefi: user.introToDataDefi,
+    ComputeToData: user.ComputeToData
   }
 }

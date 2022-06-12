@@ -95,7 +95,7 @@ describe('User', () => {
         request: {
           headers: {
             authorization:
-              'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWQxMDIwYjk3Y2ViNzI0MmM0OTU5MTgiLCJ1c2VybmFtZSI6ImJvYjIiLCJleHBpcmVzQXQiOiIyMDIwLTA2LTI4VDEyOjM3OjMxLjM4N1oiLCJpYXQiOjE1OTA3NTU4NTEsImV4cCI6MTU5MzM0Nzg1MSwiYXVkIjoiaHR0cHM6Ly9jcmFja3dhdGNoLmNvbSIsImlzcyI6IkNyYWNrd2F0Y2giLCJzdWIiOiJib2IyIn0.GpB9OWlbN8jbcIGahCSqGisqjpyo8vzYvdCYN5KACBp9dZ0IzCeupKy2o7t0k06Fg94WByhVgTuvGH-tnj8TqQ',
+              'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmE1Zjk4ZDhiYjU5ZTBmZmNjOGZhN2UiLCJ1c2VybmFtZSI6ImJvYiIsImV4cGlyZXNBdCI6IjIwMjItMDctMTJUMTQ6MzQ6NTMuMTA3WiIsImlhdCI6MTY1NTA0NDQ5MywiZXhwIjoxNjU3NjM2NDkzLCJhdWQiOiJodHRwczovL29jZWFuYWNhZGVteS5pbyIsImlzcyI6Ik9jZWFuQWNhZGVteSIsInN1YiI6ImJvYiJ9.N8fxFU_9PtSMSED8TDuMl3NAL9LMXQgDY-de0Y8M_qw9E7rSiZbNDV5292iwUuPrVwc9ldnzWLmRPOiZAimj2A',
           },
           body: {},
         },

@@ -20,22 +20,74 @@ describe('User', () => {
     next = created.next
   })
 
-  it('can add progress', async (done) => {
+  it('can add progress Ocean101', async (done) => {
     const ctx: Context = {
       request: {
         headers: {
           authorization: 'Bearer ' + jwt,
         },
         body: {
-          chapterDone: '/chapter-1',
+          chapterDone: '/ocean101/chapter-1',
         },
       },
     } as Context
 
     await addProgress(ctx, next)
-
     expect(ctx.body.user).toBeDefined()
-    expect(ctx.body.user.progress).toContain('/chapter-1')
+    expect(ctx.body.user.progress).toContain('/ocean101/chapter-1')
+    expect(ctx.body.user.ocean101).toBeDefined()
+    expect(ctx.body.user.ocean101.progress).toBeDefined()
+    expect(ctx.body.user.ocean101.progress[0]).toBeDefined()
+    expect(ctx.body.user.ocean101.progress[0].completedAt).toBeDefined()
+    expect(ctx.body.user.ocean101.progress[0].chapter).toBe(1)
+
+    done()
+  })
+
+  it('can add progress Intro To Data Defi', async (done) => {
+    const ctx: Context = {
+      request: {
+        headers: {
+          authorization: 'Bearer ' + jwt,
+        },
+        body: {
+          chapterDone: '/introToDataDefi/chapter-1',
+        },
+      },
+    } as Context
+
+    await addProgress(ctx, next)
+    expect(ctx.body.user).toBeDefined()
+    expect(ctx.body.user.progress).toContain('/introToDataDefi/chapter-1')
+    expect(ctx.body.user.introToDataDefi).toBeDefined()
+    expect(ctx.body.user.introToDataDefi.progress).toBeDefined()
+    expect(ctx.body.user.introToDataDefi.progress[0]).toBeDefined()
+    expect(ctx.body.user.introToDataDefi.progress[0].completedAt).toBeDefined()
+    expect(ctx.body.user.introToDataDefi.progress[0].chapter).toBe(1)
+
+    done()
+  })
+
+  it('can add progress Compute To Data', async (done) => {
+    const ctx: Context = {
+      request: {
+        headers: {
+          authorization: 'Bearer ' + jwt,
+        },
+        body: {
+          chapterDone: '/computeToData/chapter-1',
+        },
+      },
+    } as Context
+
+    await addProgress(ctx, next)
+    expect(ctx.body.user).toBeDefined()
+    expect(ctx.body.user.progress).toContain('/computeToData/chapter-1')
+    expect(ctx.body.user.ComputeToData).toBeDefined()
+    expect(ctx.body.user.ComputeToData.progress).toBeDefined()
+    expect(ctx.body.user.ComputeToData.progress[0]).toBeDefined()
+    expect(ctx.body.user.ComputeToData.progress[0].completedAt).toBeDefined()
+    expect(ctx.body.user.ComputeToData.progress[0].chapter).toBe(1)
 
     done()
   })
