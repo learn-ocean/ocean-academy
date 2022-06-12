@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { State } from "reducers";
 import { PrivateUser } from "shared/user/PrivateUser";
@@ -15,12 +15,14 @@ export const ProfileSettings = ({user}: ProfileSettingsProps) => {
     const [name, setName] = useState<string>(user.name)
     const [email, setEmail] = useState<string>(user.email)
 
-    const changeNameCallback = () => {
-        dispatch(sendName({name}))
+    const changeNameCallback = async(closeNameInput: any) => {
+        await dispatch(sendName({name}))
+        closeNameInput()
     }
 
-    const changeEmailCallback = () => {
+    const changeEmailCallback = async(closeEmailInput: any) => {
         dispatch(changeEmail({email}))
+        closeEmailInput();
     }
 
     return <ProfileSettingsView 

@@ -13,8 +13,8 @@ export type ProfileSettingsViewProps = {
     loading: boolean
     name: string
     email: string
-    changeNameCallback: () => void
-    changeEmailCallback: () => void
+    changeNameCallback: (closeNameInput: any) => void
+    changeEmailCallback: (closeEmailInput: any) => void
     setName: (e:string) => void
     setEmail: (e:string) => void
 }
@@ -28,7 +28,7 @@ export const ProfileSettingsView = ({user, loading, email, name, setName, setEma
             <ProfileSettings>
                 {user.name && !changeName ? 
                 <p><Highlight>Name: </Highlight> <ProfileValue>{user.name}</ProfileValue>
-                <EditIcon onClick={() => setChangeName(true)}>
+                <EditIcon onClick={() => {setChangeName(true); setChangeEmail(false)}}>
                     <use xlinkHref={`/icons/sprites.svg#edit`} />
                 </EditIcon>
                 </p>  
@@ -52,18 +52,20 @@ export const ProfileSettingsView = ({user, loading, email, name, setName, setEma
                   text="Edit"
                   icon="login"
                   loading={loading}
-                  onClick={changeNameCallback}
+                  onClick={()=>changeNameCallback(() => setChangeName(false))}
                 />
               </UserBadgeInput>
                 }
             {!changeEmail ? 
             <p><Highlight>Email:</Highlight> <ProfileValue>{user.email}</ProfileValue>
-            <EditIcon onClick={() => setChangeEmail(true)}>
+            <EditIcon onClick={
+              () => {setChangeEmail(true); setChangeName(false);}
+              }>
                     <use xlinkHref={`/icons/sprites.svg#edit`} />
             </EditIcon>
                 {!user.emailVerified && 
                 <EmailAddressNotVerified>
-                    <Link to="/verify-email">Email address not verified. Click to verify your email.</Link>
+                    <Link to="/verify-email">Unverified email. Click to verify.</Link>
                 </EmailAddressNotVerified>
                 }
             </p>
@@ -87,7 +89,7 @@ export const ProfileSettingsView = ({user, loading, email, name, setName, setEma
               text="Edit"
               icon="login"
               loading={loading}
-              onClick={changeEmailCallback}
+              onClick={() => changeEmailCallback(() => setChangeEmail(false))}
             />
           </UserBadgeInput>
         }

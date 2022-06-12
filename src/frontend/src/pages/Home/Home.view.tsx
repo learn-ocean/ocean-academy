@@ -75,7 +75,7 @@ export const HomeView = () => {
           <p>Everyone can contribute: why not you?</p>
           <div className="communityCall">
             <a href="https://discord.gg/SDebzUpYbP">
-              <Button text="JOIN HERE" color="primary" />
+              <Button text="JOIN NOW" color="primary" />
             </a>
           </div>
         </CommunityContentContainer>
@@ -90,16 +90,16 @@ export const HomeView = () => {
           <div className="communityCall">
           <ReferralButtonsContainer>
             <Link to="/referral-program" style={{width: "150px"}}>
-              <Button text="Find Out More" color="primary" />
+              <Button text="JOIN NOW" color="primary" />
             </Link>
-            <a href="https://github.com/oceanprotocol/oceandao/wiki/BrightID-Verification-Guide" style={{width: "150px"}}>
-              <Button text="BrightID Setup" color="primary" />
+            <a target="_blank" href="https://github.com/oceanprotocol/oceandao/wiki/BrightID-Verification-Guide" style={{width: "150px"}}>
+              <Button text="BrightID SETUP" color="primary" />
             </a>
             </ReferralButtonsContainer>
           </div>
           </CommunityContentContainer>
         <ReferralSeaCreatureContainer>
-          <img src="creatures/dolphin-full-compressed.svg" />
+          <img src="creatures/whale-full-compressed.svg" />
         </ReferralSeaCreatureContainer>
       </ReferralSection>
 

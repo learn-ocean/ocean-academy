@@ -37,7 +37,7 @@ export const User = () => {
 
   useEffect(() => {
     dispatch(getUser({ username }))
-  }, [dispatch, username])
+  }, [dispatch, username, authUser?.email, authUser?.name])
 
   return (
     <UserView

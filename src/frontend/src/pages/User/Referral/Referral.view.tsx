@@ -21,6 +21,7 @@ export const ReferralView = ({started, invited, completed, referralCode, startRe
     const [brightIdError, setBrightIdError] = useState(false);
     const [step1Completed, setStep1] = useState(false);
     const referralLink = `oceanacademy.io/referral/${referralCode}`;
+    const completedThresh = process.env.NODE_ENV == "development" ? 1 : 3;
 
     const copyLinkToClipboard = async() => {
         if ('clipboard' in navigator) {
@@ -93,7 +94,7 @@ export const ReferralView = ({started, invited, completed, referralCode, startRe
                         <use xlinkHref={`/icons/sprites.svg#checkmark-circle`} />
                         </PeopleIcon>{completed} completed Ocean101</FriendStat>
                         <div style={{padding: "15px 0 0 0"}}>
-                    {completed >= 3 ?
+                    {completed >= completedThresh ?
                     <RewardAvailableView 
                         resp={resp} 
                         brightIdError={brightIdError}
@@ -149,7 +150,13 @@ const RewardAvailableView = ({resp,brightIdError, step1Completed,verifyBrightIdC
         {resp && 
         <ClaimStep>
             <ClaimMessage style={{color: "grey", fontSize: "14px"}}>
-            {resp}
+            {brightIdError ? <>
+            <span>
+                {resp}
+            </span>
+            <a href="https://github.com/oceanprotocol/oceandao/wiki/BrightID-Verification-Guide" style={{color: "blue"}}> Please follow the verification setup here.</a></>
+            : <span>{resp}</span>
+            }
             </ClaimMessage>
         </ClaimStep>
         }
