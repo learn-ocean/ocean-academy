@@ -30,9 +30,7 @@ export const claimReward = async (ctx: Context, next: Next): Promise<void> => {
   if(referral.status == REFERRAL_STATUS.RECEIVED)
     throw new ResponseError(400, "Reward already received.")
 
-  if(!user.ocean101?.completedAt || (user.progress && isCourseCompleted(COURSES.OCEAN_101, user?.progress)))
-    throw new ResponseError(400, "Complete Ocean 101 before claiming the reward.")
-
+  if(user.ocean101?.completedAt || (user.progress && isCourseCompleted(COURSES.OCEAN_101, user?.progress))){
   //Check number of users that have completed
   const completed = await getCompleted(referral.referredUsers);
   const targetCompleted = process.env.NODE_ENV == 'development' ? 1 : 3;
@@ -51,4 +49,7 @@ export const claimReward = async (ctx: Context, next: Next): Promise<void> => {
    ctx.status = 200
    ctx.body = response
    await next()
+  }else{
+    throw new ResponseError(400, "Complete Ocean 101 before claiming the reward.")
+  }
 }
