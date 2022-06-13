@@ -21,8 +21,9 @@ export const ReferralView = ({started, invited, completed, referralCode, startRe
     const [brightIdError, setBrightIdError] = useState(false);
     const [step1Completed, setStep1] = useState(false);
     const referralLink = `oceanacademy.io/referral/${referralCode}`;
-    const completedThresh = process.env.COMPLETED_THRESH ? process.env.COMPLETED_THRESH : 3;
-
+    const completedThresh = process.env.COMPLETED_THRESH ? process.env.COMPLETED_THRESH : 1;
+    console.log(completedThresh)
+    
     const copyLinkToClipboard = async() => {
         if ('clipboard' in navigator) {
           return await navigator.clipboard.writeText(referralLink);
