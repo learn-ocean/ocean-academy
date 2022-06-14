@@ -22,7 +22,7 @@ class ProgressUnit{
     completedAt!: Date;
 }
 
-class CourseProgress{
+export class CourseProgress{
     @Property({required: true})
     progress!: ProgressUnit[]
 

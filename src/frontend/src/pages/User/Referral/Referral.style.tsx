@@ -166,6 +166,15 @@ color: grey;
 font-size: 14px;
 `
 
+export const SuccessClaimed = styled.div`
+color: grey;
+font-size: 16px;
+font-weight: bold;
+color: ${textColor};
+margin-top: 15px;
+opacity: 0.6;
+`
+
 export const ClaimStepTitle = styled.div`
 font-size: 16px;
 font-weight: bold;

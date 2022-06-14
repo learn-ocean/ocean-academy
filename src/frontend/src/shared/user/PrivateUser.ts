@@ -1,5 +1,5 @@
 import { IsArray, IsBoolean, IsDate, IsEmail, IsMongoId, IsNumber, Length, Matches, Min } from 'class-validator'
-import { MintedToken } from './User'
+import { MintedToken, CourseProgress } from './User'
 import { ObjectId } from 'mongodb'
 
 export class PrivateUser {
@@ -32,6 +32,12 @@ export class PrivateUser {
 
   @IsDate()
   createdAt!: Date
+
+  ocean101?: CourseProgress
+
+  introToDataDefi?: CourseProgress
+
+  ComputeToData?: CourseProgress
 
   tokens?: Map<string, MintedToken>
 }

@@ -1,5 +1,5 @@
 import { RESET, RESTORE } from 'app/App.actions'
-import { START_REFERRAL_COMMIT, REFFERRAL_INFO_COMMIT } from 'pages/User/Referral/Referral.actions'
+import { START_REFERRAL_COMMIT, REFFERRAL_INFO_COMMIT, CLAIM_REWARD_COMMIT } from 'pages/User/Referral/Referral.actions'
 
 type ReferralData = {
     completed: number
@@ -11,6 +11,7 @@ export type ReferralState = {
     started?: boolean
     data?: ReferralData
     referralCode?: string
+    tx?: string
 }
 
 const initReferralState: ReferralState = {started: undefined, referralCode: undefined}
@@ -34,6 +35,12 @@ export function referral(state = initReferralState, action: any): ReferralState 
         ...state,
         started: action.payload.started,
         data: action.payload.data
+      }
+    }
+    case CLAIM_REWARD_COMMIT: {
+      return{
+        ...state,
+        tx: action.payload.tx
       }
     }
     default:

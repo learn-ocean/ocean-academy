@@ -37,13 +37,11 @@ export const claimReward = async (ctx: Context, next: Next): Promise<void> => {
   if(completed < targetCompleted)
     throw new ResponseError(400, `Reward is not claimable yet. You have not achieved ${targetCompleted} friends who have met the requirements.`)
 
-   //TODO:Verify nonce
-   //await verifyNonce(publicAddress, signedNonce, referral.nonce);
    await verifyBrightId(user._id, publicAddress);
 
    const tx = await sendReward(publicAddress, user.userId);
-   await ReferralModel.updateOne({referrerId: user._id}, {publicAddress: publicAddress, status: REFERRAL_STATUS.CLAIMED});
-
+   await ReferralModel.updateOne({referrerId: user._id}, {publicAddress: publicAddress, status: REFERRAL_STATUS.CLAIMED, tx: tx});
+   
    const response: ClaimRewardOutputs = {tx: tx}
 
    ctx.status = 200

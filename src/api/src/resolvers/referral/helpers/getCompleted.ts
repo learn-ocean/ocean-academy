@@ -7,7 +7,7 @@ export const getCompleted = async(referredUsers: ObjectId[]): Promise<number> =>
       const referred = referredUsers[i];
       const user = await UserModel.findOne({_id: referred}).lean()
       //TODO: Add completion time minimum
-      if(user && user.emailVerified && user.ocean101?.completedAt){
+      if(user && user.ocean101?.completedAt){
         completed += 1;
       }
     }

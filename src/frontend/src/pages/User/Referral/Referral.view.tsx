@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import { ProfileCard, Highlight } from "../User.style"
-import { CopyIcon, Referral, ReferralNotStarted,ClaimStep,RewardAvailableSubtitle, FriendStat, PeopleIcon, FriendStats, ShareLink, CopyLink, CopyButton, ClaimStepTitle, RewardAvailableTitle, ClaimMessage } from "./Referral.style"
+import { CopyIcon, Referral, ReferralNotStarted,ClaimStep,RewardAvailableSubtitle, FriendStat, PeopleIcon, FriendStats, ShareLink, CopyLink, CopyButton, ClaimStepTitle, RewardAvailableTitle, ClaimMessage, SuccessClaimed } from "./Referral.style"
 import { Button } from "app/App.components/Button/Button.controller"
 import { verifyContextId } from "brightid_sdk"
 import Web3 from "web3"
@@ -11,18 +11,18 @@ export type ReferralViewProps = {
     completed: number
     referralCode: string
     started: boolean
+    tx: string
     startReferralCallback: () => void
     claimRewardCallback: (publicAddress: string) => void
 }
 
-export const ReferralView = ({started, invited, completed, referralCode, startReferralCallback, claimRewardCallback}: ReferralViewProps) => {
+export const ReferralView = ({started, invited, completed, referralCode, tx, startReferralCallback, claimRewardCallback}: ReferralViewProps) => {
     const [account, setAccount] = useState("");
     const [resp, setResp] = useState("");
     const [brightIdError, setBrightIdError] = useState(false);
     const [step1Completed, setStep1] = useState(false);
     const referralLink = `oceanacademy.io/referral/${referralCode}`;
-    const completedThresh = process.env.COMPLETED_THRESH ? process.env.COMPLETED_THRESH : 0;
-    console.log(completedThresh)
+    const completedThresh = process.env.COMPLETED_THRESH ? process.env.COMPLETED_THRESH : 3;
 
     const copyLinkToClipboard = async() => {
         if ('clipboard' in navigator) {
@@ -71,6 +71,27 @@ export const ReferralView = ({started, invited, completed, referralCode, startRe
             }
       }
 
+    const inviteMoreFriendsComp = <p style={{fontSize: "20px"}}><Highlight>Invite {3 - completed} more friends</Highlight> and earn 15 USD in mOCEAN</p>
+    const rewardAvailableComp =<RewardAvailableView 
+                            resp={resp} 
+                            tx={tx}
+                            brightIdError={brightIdError}
+                            step1Completed={step1Completed} 
+                            claimRewardCallback={claimReward} 
+                            verifyBrightIdCallback={verifyBrightIdCallback} 
+                        />
+    const rewardClaimedComp = <RewardClaimedView tx={tx} />
+    let renderView = <></>
+    if(tx){
+        renderView = rewardClaimedComp;
+    }
+    else if(completed >= completedThresh){
+        renderView = rewardAvailableComp
+    }
+    else{
+        renderView = inviteMoreFriendsComp
+    }
+    
     return(
         <ProfileCard>
                 {started ? 
@@ -95,18 +116,8 @@ export const ReferralView = ({started, invited, completed, referralCode, startRe
                         <use xlinkHref={`/icons/sprites.svg#checkmark-circle`} />
                         </PeopleIcon>{completed} completed Ocean101</FriendStat>
                         <div style={{padding: "15px 0 0 0"}}>
-                    {completed >= completedThresh ?
-                    <RewardAvailableView 
-                        resp={resp} 
-                        brightIdError={brightIdError}
-                        step1Completed={step1Completed} 
-                        claimRewardCallback={claimReward} 
-                        verifyBrightIdCallback={verifyBrightIdCallback} 
-                    />
-                    :
-                    <p style={{fontSize: "20px"}}><Highlight>Invite {3 - completed} more friends</Highlight> and earn 15 USD in mOCEAN</p>
-                    }
-                    </div>
+                        {renderView}
+                        </div>
                     </FriendStats>
                 </Referral>
                             :
@@ -129,11 +140,12 @@ type RewardAvailableViewProps = {
     resp: string
     brightIdError: boolean
     step1Completed: boolean
+    tx: string
     verifyBrightIdCallback: () => void
     claimRewardCallback: () => void
 }
 
-const RewardAvailableView = ({resp,brightIdError, step1Completed,verifyBrightIdCallback,claimRewardCallback}: RewardAvailableViewProps) => (
+const RewardAvailableView = ({resp,brightIdError, step1Completed,tx,verifyBrightIdCallback,claimRewardCallback}: RewardAvailableViewProps) => (
     <>
         <RewardAvailableTitle>Congratulations! Your reward is available.</RewardAvailableTitle>
         <RewardAvailableSubtitle>Please follow the following steps to claim your reward.</RewardAvailableSubtitle>
@@ -162,6 +174,7 @@ const RewardAvailableView = ({resp,brightIdError, step1Completed,verifyBrightIdC
         </ClaimStep>
         }
         {step1Completed && 
+        <>
         <ClaimStep>
         <ClaimStepTitle>Step 2: Claim your reward</ClaimStepTitle>
         <div style={{width: "150px"}}>
@@ -172,7 +185,19 @@ const RewardAvailableView = ({resp,brightIdError, step1Completed,verifyBrightIdC
             onClick={claimRewardCallback}
             />
         </div>
-    </ClaimStep>                            
+        </ClaimStep>
+        </>                            
     }
+    </>
+)
+
+type RewardClaimedProps = {
+    tx: string
+}
+
+const RewardClaimedView = ({tx}: RewardClaimedProps) => (
+    <>
+        <RewardAvailableTitle><Highlight>Congratulations!</Highlight> Your reward was successfully claimed.</RewardAvailableTitle>
+        <SuccessClaimed><a href={`https://polygonscan.com/tx/${tx}`} target={"blank"}>Click here to follow the transaction</a></SuccessClaimed>
     </>
 )

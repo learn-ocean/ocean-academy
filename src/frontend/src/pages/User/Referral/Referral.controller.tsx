@@ -15,6 +15,8 @@ export const Referral = ({user}: ReferralProps) => {
     const loading = useSelector((state: State) => state.loading)
     const started = useSelector((state: State) => state.referral.started)
     const data = useSelector((state: State) => state.referral.data)
+    const tx = useSelector((state: State) => state.referral.tx)
+
     let referralCode = useSelector((state: State) => state.referral.referralCode)
     if(!referralCode && data)
       referralCode = data.referralCode
@@ -40,5 +42,6 @@ export const Referral = ({user}: ReferralProps) => {
     loading={loading}
     startReferralCallback={startReferralCallback}
     claimRewardCallback={claimRewardCallback}
+    tx={tx ? tx : ""}
     />
 }

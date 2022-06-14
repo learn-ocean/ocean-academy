@@ -31,7 +31,8 @@ export const referralInfo = async (ctx: Context, next: Next): Promise<void> => {
     invited: referredUsers.length,
     referralCode: referral.referralCode,
     completed: completed,
-    nonce: referral.nonce
+    nonce: referral.nonce,
+    tx: referral.tx ? referral.tx : undefined
   }
   
   const response: ReferralInfoOutputs = {data ,started}

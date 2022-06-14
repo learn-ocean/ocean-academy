@@ -34,6 +34,10 @@ export class Referral{
     @Matches(/^0x[a-fA-F0-9]{40}$/, { message: 'Not a valid address hash' })
     publicAddress?: string
 
+    @Property({optional: true})
+    @Matches(/^0x([A-Fa-f0-9]{64})$/, { message: 'Not a valid address hash' })
+    tx?: string
+
     @Property({required: true, default: REFERRAL_STATUS.STARTED})
     @IsIn([REFERRAL_STATUS.STARTED, REFERRAL_STATUS.CLAIMED, REFERRAL_STATUS.RECEIVED])
     status!: string

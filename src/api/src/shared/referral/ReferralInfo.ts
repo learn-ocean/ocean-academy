@@ -25,4 +25,7 @@ class ReferralInfoData{
 
     @Expose()
     nonce!: number
+
+    @Expose()
+    tx?: string
 }
