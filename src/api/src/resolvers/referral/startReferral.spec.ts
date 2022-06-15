@@ -12,7 +12,7 @@ let user: User
 let next: Next
 let jwt: Jwt
 
-const addProgressHelper = async(next:Next, chapterDone: string) => {
+export const addProgressHelper = async(next:Next, jwt:Jwt, chapterDone: string) => {
     const ctx: Context = {request: {
         headers: {
           authorization: 'Bearer ' + jwt,
@@ -75,7 +75,7 @@ describe('Start Referral', () => {
 
    it('cannot start referral if ocean101 almost completed', async (done) => {
     for(let i = 1; i<24; i++){
-        await addProgressHelper(next, `/ocean101/chapter-${i}`);
+        await addProgressHelper(next,jwt, `/ocean101/chapter-${i}`);
     }
     try{
      const ctx: Context = {
@@ -95,7 +95,7 @@ describe('Start Referral', () => {
     }})
 
     it('can start referral if ocean101 was completed', async (done) => {
-        await addProgressHelper(next, `/ocean101/chapter-24`);
+        await addProgressHelper(next,jwt, `/ocean101/chapter-24`);
         const ctx: Context = {
            request: {
              headers: {
