@@ -1,4 +1,5 @@
 import { Context, Next } from 'koa'
+import { ReferralModel } from '../../shared/referral/Referral'
 import { Jwt } from '../../shared/user/Jwt'
 import { User, UserModel } from '../../shared/user/User'
 import { createTestUser } from '../../test/createTestUser'
@@ -27,6 +28,7 @@ export const addProgressHelper = async(next:Next, jwt:Jwt, chapterDone: string) 
 describe('Start Referral', () => {
   beforeAll(async () => {
     await mockConnect()
+    await ReferralModel.deleteMany({},{})
     const created = await createTestUser('bob@test.com', 'bob', 'Bob1234#')
     user = created.user
     jwt = created.jwt

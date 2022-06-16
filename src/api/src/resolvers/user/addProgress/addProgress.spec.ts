@@ -75,14 +75,14 @@ describe('User', () => {
           authorization: 'Bearer ' + jwt,
         },
         body: {
-          chapterDone: '/computeToData/chapter-1',
+          chapterDone: '/ComputeToData/chapter-1',
         },
       },
     } as Context
 
     await addProgress(ctx, next)
     expect(ctx.body.user).toBeDefined()
-    expect(ctx.body.user.progress).toContain('/computeToData/chapter-1')
+    expect(ctx.body.user.progress).toContain('/ComputeToData/chapter-1')
     expect(ctx.body.user.ComputeToData).toBeDefined()
     expect(ctx.body.user.ComputeToData.progress).toBeDefined()
     expect(ctx.body.user.ComputeToData.progress[0]).toBeDefined()

@@ -19,7 +19,7 @@ let next: Next
 let jwt: Jwt
 let jwtReferred1: Jwt
 let jwtReferred2: Jwt
-let jwtReferred3: Jwt
+//let jwtReferred3: Jwt
 
 const linkedAddress = "0xC6DE6C8Fb1Df511DB82800980E8a2d3E724287Af"
 //const notLinkedAddress = "0x49A4F74A39D6fBD70470c5CA6d21D129D3aC2F53"
@@ -43,7 +43,7 @@ describe('Claim Reward', () => {
     jwtReferred2 = created3.jwt
 
     referred3 = created4.user
-    jwtReferred3 = created4.jwt
+    //jwtReferred3 = created4.jwt
     process.env.COINMARKETCAP_API_KEY="sandbox-api.coinmarketcap.com"
   })
 
@@ -153,28 +153,7 @@ describe('Claim Reward', () => {
         done()
     }
   })
-  
-  it('Can claim reward if 3 users have completed ocean101.', async (done) => {
-    console.log(await ReferralModel.find())
-    //Complete Ocean 101
-    for(let i = 1; i<25; i++){
-        await addProgressHelper(next, jwtReferred3, `/ocean101/chapter-${i}`);
-    }
-
-    const ctx: Context = {request: {
-        headers: {
-            authorization: 'Bearer ' + jwt,
-        },
-        body: {
-            publicAddress: linkedAddress,
-            nonce: 100000000
-        },
-        }} as Context
-        
-    await claimReward(ctx, next)
-    done()
-  })  
-    
+      
   afterAll(async () => {
     await deleteTestUser(user._id)
     await deleteTestUser(referred1._id)
