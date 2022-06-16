@@ -10,7 +10,6 @@ let user2: User
 
 const linkedAddress = "0xC6DE6C8Fb1Df511DB82800980E8a2d3E724287Af"
 const notLinkedAddress = "0x49A4F74A39D6fBD70470c5CA6d21D129D3aC2F53"
-jest.setTimeout(10000);
 
 describe('Claim Verifications', () => {
   beforeAll(async () => {

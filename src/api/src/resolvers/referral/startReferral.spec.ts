@@ -1,8 +1,8 @@
 import { Context, Next } from 'koa'
-
 import { Jwt } from '../../shared/user/Jwt'
 import { User, UserModel } from '../../shared/user/User'
 import { createTestUser } from '../../test/createTestUser'
+import { deleteTestReferral } from '../../test/deleteTestReferral'
 import { deleteTestUser } from '../../test/deleteTestUser'
 import { mockConnect } from '../../test/mockConnect'
 import { addProgress } from '../user/addProgress/addProgress'
@@ -108,9 +108,30 @@ describe('Start Referral', () => {
         await startReferral(ctx, next)  
         expect(ctx.body.referralCode).toBeDefined()
         done()
+    })
+    
+    
+    it('cannot start referral if already started', async (done) => {
+    try{
+        const ctx: Context = {
+           request: {
+             headers: {
+               authorization: 'Bearer ' + jwt,
+             },
+             body: {
+             },
+           },
+         } as Context
+        await startReferral(ctx, next)  
+    }catch(e){
+        expect(e).toBeDefined()
+        expect(e.message).toBe("Referral already started.")
+        done()
+    }
     })   
     
   afterAll(async () => {
     await deleteTestUser(user._id)
+    await deleteTestReferral(user._id)
   })
 })

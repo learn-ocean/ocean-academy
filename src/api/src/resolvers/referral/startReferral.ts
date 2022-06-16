@@ -17,7 +17,7 @@ export const startReferral = async (ctx: Context, next: Next): Promise<void> => 
   //Verify that the program has not already started
   const referralQuery = await ReferralModel.findOne({referrerId: user._id}).lean()
   if(referralQuery)
-    throw new ResponseError(400, "Referral has already started for this user.")
+    throw new ResponseError(400, "Referral already started.")
     
   if(!user.ocean101?.completedAt && user.progress && !isCourseCompleted(COURSES.OCEAN_101, user?.progress) || !user.progress)
     throw new ResponseError(400, "Complete Ocean 101 before starting the referral.")
@@ -25,7 +25,7 @@ export const startReferral = async (ctx: Context, next: Next): Promise<void> => 
   const nonce = randomInt(1000000000, 10000000000);
   const code = randomBytes(2).toString("hex").toUpperCase();
   const referralCode = `${user.username}-${code}`
-  
+
   const referral = await ReferralModel.create({
         referrerId: user._id,
         referralCode: referralCode,
