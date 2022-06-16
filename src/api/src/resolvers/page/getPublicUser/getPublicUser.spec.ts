@@ -4,6 +4,7 @@ import { User } from '../../../shared/user/User'
 import { createTestUser } from '../../../test/createTestUser'
 import { deleteTestUser } from '../../../test/deleteTestUser'
 import { mockConnect } from '../../../test/mockConnect'
+import { mockDisconnect } from '../../../test/mockDisconnect'
 import { getPublicUser } from './getPublicUser'
 
 let user: User
@@ -55,5 +56,6 @@ describe('User', () => {
 
   afterAll(async () => {
     await deleteTestUser(user._id)
+    await mockDisconnect()
   })
 })

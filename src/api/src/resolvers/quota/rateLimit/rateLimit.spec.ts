@@ -5,6 +5,7 @@ import { deleteTestUser } from '../../../test/deleteTestUser'
 import { Quota, QuotaModel } from '../../../shared/quota/Quota'
 import { QuotaType } from '../../../shared/quota/QuotaType'
 import { rateLimit } from './rateLimit'
+import { mockDisconnect } from '../../../test/mockDisconnect'
 
 let user: User
 
@@ -47,6 +48,7 @@ describe('User', () => {
 
   afterAll(async () => {
     await deleteTestUser(user._id)
+    await mockDisconnect()
     process.env.NODE_ENV = TEST
   })
 })
