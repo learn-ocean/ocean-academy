@@ -19,7 +19,7 @@
     "docker-update": "yarn run docker-build && yarn run docker-push && yarn run docker-restart",
     "docker-install": "yarn run docker-build && yarn run docker-push && yarn run docker-patch && yarn run docker-deploy && yarn run docker-serve",
     "test": "jest --runInBand --verbose",
-    "coverage": "jest --runInBand --collectCoverage"
+    "coverage": "jest --runInBand --collectCoverage --silent"
   },
   "dependencies": {
     "@koa/cors": "^3.1.0",

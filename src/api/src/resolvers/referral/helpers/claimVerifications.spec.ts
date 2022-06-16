@@ -3,7 +3,8 @@ import { User } from '../../../shared/user/User'
 import { createTestUser } from '../../../test/createTestUser'
 import { deleteTestUser } from '../../../test/deleteTestUser'
 import { mockConnect } from '../../../test/mockConnect'
-import {verifyBrightId} from './claimVerifications'
+import { mockDisconnect } from '../../../test/mockDisconnect'
+import { verifyBrightId } from './claimVerifications'
 
 let user: User
 let user2: User
@@ -58,5 +59,6 @@ describe('Claim Verifications', () => {
   afterAll(async () => {
     await deleteTestUser(user._id)
     await deleteTestUser(user2._id)
+    await mockDisconnect()
   })
 })

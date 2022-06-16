@@ -4,6 +4,7 @@ import { Jwt } from '../../shared/user/Jwt'
 import { createTestUser } from '../../test/createTestUser'
 import { deleteTestUser } from '../../test/deleteTestUser'
 import { mockConnect } from '../../test/mockConnect'
+import { mockDisconnect } from '../../test/mockDisconnect'
 import { claimReward } from './claimReward'
 import { startReferral } from './startReferral'
 import { addProgressHelper } from './startReferral.spec'
@@ -160,5 +161,6 @@ describe('Claim Reward', () => {
     await deleteTestUser(referred2._id)
     await deleteTestUser(referred3._id)
     await deleteTestReferral(user._id)
+    await mockDisconnect()
   })
 })

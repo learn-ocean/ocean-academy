@@ -6,6 +6,7 @@ import { createTestUser } from '../../test/createTestUser'
 import { deleteTestReferral } from '../../test/deleteTestReferral'
 import { deleteTestUser } from '../../test/deleteTestUser'
 import { mockConnect } from '../../test/mockConnect'
+import { mockDisconnect } from '../../test/mockDisconnect'
 import { addProgress } from '../user/addProgress/addProgress'
 import { startReferral } from './startReferral'
 
@@ -135,5 +136,6 @@ describe('Start Referral', () => {
   afterAll(async () => {
     await deleteTestUser(user._id)
     await deleteTestReferral(user._id)
+    await mockDisconnect()
   })
 })

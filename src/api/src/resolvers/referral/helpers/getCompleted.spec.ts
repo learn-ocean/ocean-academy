@@ -4,6 +4,7 @@ import { Jwt } from '../../../shared/user/Jwt'
 import { createTestUser } from '../../../test/createTestUser'
 import { deleteTestUser } from '../../../test/deleteTestUser'
 import { mockConnect } from '../../../test/mockConnect'
+import { mockDisconnect } from '../../../test/mockDisconnect'
 import { getCompleted } from './getCompleted'
 import {addProgressHelper} from '../startReferral.spec';
 
@@ -68,5 +69,6 @@ describe('Get Completed', () => {
     await deleteTestUser(user._id)
     await deleteTestUser(user2._id)
     await deleteTestUser(user3._id)
+    await mockDisconnect()
   })
 })
