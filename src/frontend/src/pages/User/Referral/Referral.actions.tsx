@@ -4,6 +4,7 @@ import { ReferralInfoInputs } from "shared/referral/ReferralInfo"
 import { StartReferralInputs } from "shared/referral/StartReferral"
 import { showToaster } from "app/App.components/Toaster/Toaster.actions"
 import { SUCCESS } from "app/App.components/Toaster/Toaster.constants"
+
 export const START_REFERRAL_REQUEST = 'START_REFERRAL_REQUEST'
 export const START_REFERRAL_COMMIT = 'START_REFERRAL_COMMIT'
 export const START_REFERRAL_ROLLBACK = 'START_REFERRAL_ROLLBACK'

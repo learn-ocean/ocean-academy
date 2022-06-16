@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-
 import { Button } from 'app/App.components/Button/Button.controller'
 import { CourseBox } from 'app/App.components/CourseBox/CourseBox.controller'
 import { CourseData } from 'pages/Course/Course.controller'
@@ -12,13 +11,6 @@ import { HomeContainer,ReferralSeaCreatureContainer, ReferralButtonsContainer, C
 export const HomeView = () => {
 
   const [courses, setCourses] = useState<CourseData[]>(courseData)
-
-  const filterItems = (
-    filter: string,
-  ) => {
-    const courses = courseData.filter(item => item.name.toLocaleLowerCase().includes(filter.toLocaleLowerCase()) || item.description.toLocaleLowerCase().includes(filter.toLocaleLowerCase()))
-    setCourses(courses)
-  }
 
   return (
     <HomeStyled>
@@ -65,7 +57,7 @@ export const HomeView = () => {
 
       <CommunitySection>
         <SeaCreatureContainer>
-          <img src="creatures/turtle-full.svg" />
+          <img alt="Ocean Turtle Drawing" src="creatures/turtle-full.svg" />
         </SeaCreatureContainer>
         <CommunityContentContainer>
           <h1>Join as an Ocean Ambassador</h1>
@@ -92,14 +84,14 @@ export const HomeView = () => {
             <Link to="/referral-program" style={{width: "150px"}}>
               <Button text="JOIN NOW" color="primary" />
             </Link>
-            <a target="_blank" href="https://github.com/oceanprotocol/oceandao/wiki/BrightID-Verification-Guide" style={{width: "150px"}}>
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/oceanprotocol/oceandao/wiki/BrightID-Verification-Guide" style={{width: "150px"}}>
               <Button text="BrightID SETUP" color="primary" />
             </a>
             </ReferralButtonsContainer>
           </div>
           </CommunityContentContainer>
         <ReferralSeaCreatureContainer>
-          <img src="creatures/whale-full-compressed.svg" />
+          <img alt="Ocean whale image" src="creatures/whale-full-compressed.svg" />
         </ReferralSeaCreatureContainer>
       </ReferralSection>
 

@@ -61,6 +61,7 @@
     "redux-thunk": "^2.3.0",
     "reflect-metadata": "^0.1.13",
     "styled-components": "^5.1.1",
+    "web3": "1.7.3",
     "webpack": "4.42.0"
   },
   "devDependencies": {

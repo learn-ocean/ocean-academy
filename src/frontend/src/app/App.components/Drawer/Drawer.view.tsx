@@ -2,19 +2,12 @@ import * as PropTypes from 'prop-types'
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 import {useState} from  'react';
-// import { PublicUser } from 'pages/Course/Course.data'
 import { PublicUser } from 'shared/user/PublicUser'
-
 import { ChapterData } from '../../../pages/Chapter/Chapter.controller'
 import { chaptersByCourse } from '../../../pages/Course/Course.data'
-// PLACEHOLDER.
-// Use Select menu to choose the  
-// import { Select } from '../../../pages/Courses/ocean101/Chapters/Chapters.data'
 import { Select } from '../Select/Select.controller'
 import { Option } from '../Select/Select.view'
 import { DrawerItem,DrawerItens, DrawerTitle, DrawerSubMenuLabel, DrawerSubMenu, DrawerSubMenuItem,  DrawerMask, DrawerStyled, DrawerStyledLogin } from './Drawer.style'
-import { SubMenu } from '../SubMenu/SubMenu.controller'
-
 
 type ChapterDrawerViewProps = {
   showingChapters: boolean
@@ -74,7 +67,7 @@ export const LoginDrawerView = ({ showingMenu, user, hideCallback, removeAuthUse
   const coursesSubMenu = () => (
     <>
     <DrawerTitle>
-    <img onClick={() => setCoursesMenu(!isCoursesMenu)} className={"backIcon"} src="/icons/chevron-forward-outline.svg" />
+    <img alt="Courses Menu" onClick={() => setCoursesMenu(!isCoursesMenu)} className={"backIcon"} src="/icons/chevron-forward-outline.svg" />
     </DrawerTitle>
 
     <DrawerItens>
@@ -98,7 +91,7 @@ export const LoginDrawerView = ({ showingMenu, user, hideCallback, removeAuthUse
         <DrawerItens>
         <DrawerSubMenu>
           <DrawerSubMenuLabel onClick={() => setCoursesMenu(!isCoursesMenu)}> 
-              COURSES<img className={"forwardIcon"} src="/icons/chevron-forward-outline.svg" />
+              COURSES<img alt="Forward Icon" className={"forwardIcon"} src="/icons/chevron-forward-outline.svg" />
           </DrawerSubMenuLabel>
       </DrawerSubMenu>
       <DrawerItem >

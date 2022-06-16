@@ -13,7 +13,7 @@ import { TokenView } from './Token.view'
 const mainnet_addr = "0xc6bc8053dD92E4814099C7C28c7035Aa636d0Ba1"
 const rinkeby_adrr = "0x2cD36057B261b2d625999D7118b5477D39Da842a"
 //Certificate main net contract address
-const CERTIF_ADDR = process.env.REACT_APP_CHAIN == "mainnet" ? mainnet_addr : rinkeby_adrr
+const CERTIF_ADDR = process.env.REACT_APP_CHAIN === "mainnet" ? mainnet_addr : rinkeby_adrr
 
 declare global {
   interface Window {
@@ -85,7 +85,7 @@ export const Token = () => {
     //Current chain id of provider
     const chainIdHex = await window.ethereum.request({ method: 'eth_chainId' });
     //Rinkeby chain id if testing env.
-    const expectedChainId = process.env.REACT_APP_CHAIN == "mainnet" ? "0x1" : "0x4";
+    const expectedChainId = process.env.REACT_APP_CHAIN === "mainnet" ? "0x1" : "0x4";
     console.log("Contract network is", process.env.REACT_APP_CHAIN)
     console.log("Expected chain id:", expectedChainId)
 
@@ -102,7 +102,6 @@ export const Token = () => {
   }
 
   const checkIfCertificateExists = async () => {
-    let certificate = ""
     if (user?.tokens && courseobj?.title! in user.tokens) {
       //@ts-ignore
       setCertificate(user?.tokens[courseobj?.title!])
