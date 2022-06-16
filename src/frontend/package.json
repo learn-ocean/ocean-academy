@@ -17,7 +17,7 @@
     "docker-logs": "kubectl --context do-fra1-oceanacademy-frontend logs --timestamps -l app=oceanacademy-frontend",
     "docker-update": "yarn run docker-build && yarn run docker-push && yarn run docker-restart",
     "docker-install": "yarn run docker-build && yarn run docker-push && yarn run docker-patch && yarn run docker-deploy && yarn run docker-serve",
-    "test": "react-scripts test",
+    "test": "react-scripts test --passWithNoTests",
     "analyze": "react-scripts build && source-map-explorer 'build/static/js/*.js'",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
