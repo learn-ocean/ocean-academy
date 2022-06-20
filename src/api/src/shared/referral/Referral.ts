@@ -8,7 +8,6 @@ export const REFERRAL_STATUS = {
     RECEIVED: "RECEIVED"
 }
 
-@Index({ userId: 1 }, { unique: true })
 export class Referral{
     @IsMongoId()
     readonly _id!: ObjectId 
