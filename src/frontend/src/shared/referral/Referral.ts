@@ -1,13 +1,12 @@
 import { ObjectId } from 'mongodb'
 import {IsMongoId, Length, IsHexadecimal, Matches, IsIn } from 'class-validator'
-import { getModel,Index, Property } from '../../helpers/typegoose'
+import { getModel, Property } from '../../helpers/typegoose'
 
 export const REFERRAL_STATUS = {
     STARTED: "STARTED",
     CLAIMED: "CLAIMED",
     RECEIVED: "RECEIVED"
 }
-
 export class Referral{
     @IsMongoId()
     readonly _id!: ObjectId 
