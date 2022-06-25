@@ -9,14 +9,31 @@ import { rateLimit } from '../../quota/rateLimit/rateLimit'
 import { authenticate } from '../helpers/authenticate'
 import { COURSES } from '../../../helpers/courses'
 import { PrivateUser } from '../../../shared/user/PrivateUser'
+import { ResponseError } from '../../../shared/mongo/ResponseError'
+import { verifyRecaptchaToken } from '../helpers/verifyRecaptchaToken'
 
 export const addProgress = async (ctx: Context, next: Next): Promise<void> => {
   const addProgressArgs = plainToClass(AddProgressInputs, ctx.request.body, { excludeExtraneousValues: true })
   await validateOrReject(addProgressArgs, { forbidUnknownValues: true }).catch(firstError)
-  const { chapterDone } = addProgressArgs
+  const { chapterDone, recaptchaToken } = addProgressArgs
+  await verifyRecaptchaToken(recaptchaToken);
   const user: User = await authenticate(ctx)
 
   await rateLimit(user._id)
+  const courseTitle = chapterDone.split("/")[1]
+  const chapter = chapterDone.split("/")[2].split("-")[1]
+  
+ //Check the time for the user to complete Ocean 101.
+  if(courseTitle === COURSES.OCEAN_101.title && parseInt(chapter) === COURSES.OCEAN_101.chapters){
+    const firstChapterCompletion = user.ocean101?.progress[0].completedAt;
+    const now =  Date.now()
+    //@ts-ignore
+    const diffMs = now - firstChapterCompletion?.getTime();
+    const diffMin = diffMs / (60 * 1000) 
+    if(diffMin < 30){
+      throw new ResponseError(400, "Unauthorized to complete Ocean 101.")
+    }
+  }
 
   //Deprecated user progress: will be replaced soon.
   await UserModel.updateOne(
@@ -24,8 +41,6 @@ export const addProgress = async (ctx: Context, next: Next): Promise<void> => {
     { $addToSet: { progress: chapterDone } },
   ).exec()
 
-  const courseTitle = chapterDone.split("/")[1]
-  const chapter = chapterDone.split("/")[2].split("-")[1]
   
   //New user progress
   await addProgressForCourse(user._id, courseTitle, parseInt(chapter))
@@ -65,7 +80,7 @@ async function addProgressForCourse(id: any, courseTitle: string, chapter: numbe
           {chapter: chapter, completedAt: now}
         }  
       }, {new: true} 
-      ).exec()
+      )
 
       //Check if the course is completed, and so add completedAt
       if(postUser?.get(courseTitle) && postUser?.get(courseTitle).progress.length === chapters){
@@ -76,8 +91,7 @@ async function addProgressForCourse(id: any, courseTitle: string, chapter: numbe
       }
     
   }
-  
-
+try{
   switch(courseTitle){
     case COURSES.OCEAN_101.title:
       handleProgress(COURSES.OCEAN_101.title, COURSES.OCEAN_101.chapters)
@@ -91,5 +105,8 @@ async function addProgressForCourse(id: any, courseTitle: string, chapter: numbe
       handleProgress(COURSES.COMPUTE_TO_DATA.title, COURSES.COMPUTE_TO_DATA.chapters)
       break
   }  
+}catch(e){
+  throw new ResponseError(400, e.message === "Unauthorized to complete Ocean 101." ? e.message : "An error ocurred")
+}
 
 }

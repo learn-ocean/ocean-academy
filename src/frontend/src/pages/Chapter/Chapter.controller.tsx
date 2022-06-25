@@ -1,5 +1,7 @@
 import { showToaster } from 'app/App.components/Toaster/Toaster.actions'
-import { SUCCESS } from 'app/App.components/Toaster/Toaster.constants'
+import { SUCCESS, ERROR } from 'app/App.components/Toaster/Toaster.constants'
+import { recaptchaRequest } from 'app/App.actions'
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
 import { COURSES, getNbProgressForCourse, isCourseCompletedFromTitle } from 'helpers/courses'
 import { getUser } from 'pages/User/User.actions'
 import * as React from 'react'
@@ -48,6 +50,7 @@ export const Chapter = () => {
     supports: {},
     questions: [],
   })
+  const { executeRecaptcha } = useGoogleReCaptcha()
   const dispatch = useDispatch()
   const user = useSelector((state: State) => state.auth.user)
 
@@ -78,6 +81,19 @@ export const Chapter = () => {
     })
   }, [pathname])
 
+
+  const addProgressWithRecaptcha = async() => {
+    dispatch(recaptchaRequest())
+
+    if (!executeRecaptcha) {
+      dispatch(showToaster(ERROR, 'Recaptcha not ready', 'Please try again'))
+      return
+    }
+    const recaptchaToken = await executeRecaptcha('signup')
+
+    await dispatch(addProgress({ chapterDone: pathname, recaptchaToken: recaptchaToken }))
+  }
+
   const validateCallback = () => {
     if (data.questions.length > 0) {
       let ok = true
@@ -95,7 +111,7 @@ export const Chapter = () => {
       })
       if (ok) {
         setValidatorState(RIGHT)
-        if (user) dispatch(addProgress({ chapterDone: pathname }))
+        if (user) addProgressWithRecaptcha()
         else dispatch(showToaster(SUCCESS, 'Register to save progress', 'and get your completion certificate'))
       } else setValidatorState(WRONG)
     } else {
@@ -112,12 +128,12 @@ export const Chapter = () => {
             data.solution.replace(/\s+|\/\/ Type your solution below/g, '')
           ) {
             setValidatorState(RIGHT)
-            if (user) dispatch(addProgress({ chapterDone: pathname }))
+            if (user) addProgressWithRecaptcha()
             else dispatch(showToaster(SUCCESS, 'Register to save progress', 'and get your completion certificate'))
           } else if (data.exercise.indexOf('0x') > 0) {
             setShowDiff(false)
             setValidatorState(RIGHT)
-            if (user) dispatch(addProgress({ chapterDone: pathname }))
+            if (user) addProgressWithRecaptcha()
             else dispatch(showToaster(SUCCESS, 'Register to save progress', 'and get your completion certificate'))
           } else setValidatorState(WRONG)
         } else setValidatorState(WRONG)
