@@ -49,6 +49,8 @@ describe('Get Completed', () => {
   })
 
   it('Completed should be equal to 1 when 1 user has completed all chapters', async (done) => {
+    const now = Date.now()
+    jest.spyOn(global.Date, 'now').mockReturnValue(now + 45 * 60000);
     await addProgressHelper(next1, jwt1, `/ocean101/chapter-${24}`);
     const completed = await getCompleted([user._id, user2._id, user3._id])
     expect(completed).toBe(1)
@@ -56,9 +58,12 @@ describe('Get Completed', () => {
   })
 
   it('Completed should be equal to 2 when 2 uses have completed all chapters', async (done) => {
-    for(let i = 1; i < 25; i++){
+    for(let i = 1; i < 24; i++){
         await addProgressHelper(next2, jwt2, `/ocean101/chapter-${i}`);
     }
+    const now = Date.now()
+    jest.spyOn(global.Date, 'now').mockReturnValue(now + 45 * 60000);
+    await addProgressHelper(next2, jwt2, `/ocean101/chapter-${24}`);
     const completed = await getCompleted([user._id, user2._id, user3._id])
     expect(completed).toBe(2)
     done()

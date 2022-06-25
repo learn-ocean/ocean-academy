@@ -7,6 +7,7 @@ import { deleteTestReferral } from '../../test/deleteTestReferral'
 import { deleteTestUser } from '../../test/deleteTestUser'
 import { mockConnect } from '../../test/mockConnect'
 import { mockDisconnect } from '../../test/mockDisconnect'
+import { MOCK_RECAPTCHA } from '../../test/mockRecaptcha'
 import { addProgress } from '../user/addProgress/addProgress'
 import { startReferral } from './startReferral'
 
@@ -21,6 +22,7 @@ export const addProgressHelper = async(next:Next, jwt:Jwt, chapterDone: string) 
         },
         body: {
           chapterDone: chapterDone,
+          recaptchaToken: MOCK_RECAPTCHA
         },
       }} as Context
     await addProgress(ctx,next);
@@ -98,6 +100,8 @@ describe('Start Referral', () => {
     }})
 
     it('can start referral if ocean101 was completed', async (done) => {
+        const now = Date.now()
+        jest.spyOn(global.Date, 'now').mockReturnValue(now + 45 * 60000);
         await addProgressHelper(next,jwt, `/ocean101/chapter-24`);
         const ctx: Context = {
            request: {

@@ -101,9 +101,12 @@ describe('Claim Reward', () => {
       }} as Context
 
     //Complete Ocean 101
-    for(let i = 1; i<25; i++){
+    for(let i = 1; i<24; i++){
         await addProgressHelper(next,jwt, `/ocean101/chapter-${i}`);
     }
+    const now = Date.now()
+    jest.spyOn(global.Date, 'now').mockReturnValue(now + 45 * 60000);
+    await addProgressHelper(next,jwt, `/ocean101/chapter-${24}`);
     await startReferral(ctx, next);
 
     try{
@@ -131,10 +134,15 @@ describe('Claim Reward', () => {
     await referral?.save()
 
     //Complete Ocean 101
-    for(let i = 1; i<25; i++){
+    for(let i = 1; i<24; i++){
         await addProgressHelper(next,jwtReferred1, `/ocean101/chapter-${i}`);
         await addProgressHelper(next,jwtReferred2, `/ocean101/chapter-${i}`);
     }
+    const now = Date.now()
+    jest.spyOn(global.Date, 'now').mockReturnValue(now + 45 * 60000);
+    await addProgressHelper(next,jwtReferred1, `/ocean101/chapter-${24}`);
+    await addProgressHelper(next,jwtReferred2, `/ocean101/chapter-${24}`);
+
 
     try{
         const ctx: Context = {request: {

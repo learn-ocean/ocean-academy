@@ -1,5 +1,4 @@
 import axios from 'axios'
-
 import { DEVELOPMENT, TEST } from '../../../constants'
 import { ResponseError } from '../../../shared/mongo/ResponseError'
 
@@ -9,7 +8,6 @@ interface VerifyRecaptchaToken {
 
 export const verifyRecaptchaToken: VerifyRecaptchaToken = async (recaptchaToken) => {
   if (process.env.NODE_ENV === DEVELOPMENT || process.env.NODE_ENV === TEST) return
-
   const response = await axios({
     method: 'post',
     url: 'https://www.google.com/recaptcha/api/siteverify',
@@ -19,6 +17,8 @@ export const verifyRecaptchaToken: VerifyRecaptchaToken = async (recaptchaToken)
       // TODO: Add remoteip
     },
   })
-
   if (!(response && response.data && response.data.success)) throw new ResponseError(401, 'Wrong re-captcha token')
+
+  const score = response.data.score;
+  if(score < 0.5) throw new ResponseError(401, 'Not authorized')
 }
