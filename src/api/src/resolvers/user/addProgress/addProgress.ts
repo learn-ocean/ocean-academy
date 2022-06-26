@@ -30,7 +30,7 @@ export const addProgress = async (ctx: Context, next: Next): Promise<void> => {
     //@ts-ignore
     const diffMs = now - firstChapterCompletion?.getTime();
     const diffMin = diffMs / (60 * 1000) 
-    if(diffMin < 30){
+    if(diffMin < 20){
       throw new ResponseError(400, "Unauthorized to complete Ocean 101.")
     }
   }
