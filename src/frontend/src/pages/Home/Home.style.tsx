@@ -283,7 +283,7 @@ export const CommunitySection = styled.div`
     flex-direction: row;
     margin: 11vw 10vw;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 
     @media (max-width: 900px) {
       flex-direction: column;
@@ -303,7 +303,7 @@ export const ReferralSection = styled.div`
     flex-direction: row;
     margin: 11vw 10vw;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 
     @media (max-width: 900px) {
       flex-direction: column;
@@ -334,7 +334,7 @@ export const ReferralButtonsContainer = styled.div`
 export const ReferralSeaCreatureContainer = styled.div`
 width: 450px;
 img{
-  left: 0px;
+  left: -110px;
   position:relative !important;
   width: 550px;
   top: 40px !important;
@@ -367,7 +367,7 @@ img{
 export const SeaCreatureContainer = styled.div`
     width: 450px;
     img{
-      left: -115px;
+      left: -50px;
       position:relative !important;
       width: 550px;
       top: 40px !important;

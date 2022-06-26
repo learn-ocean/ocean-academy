@@ -5,7 +5,10 @@ import { ReferralView } from './Referral.view'
 
 export const Referral = () => {
     const dispatch = useDispatch()
+    const authUser = useSelector((state: State) => state.auth.user)
     const loading = useSelector((state: State) => state.loading)
 
-    return <ReferralView />
+    return <ReferralView 
+    authUser={authUser}
+    />
 }

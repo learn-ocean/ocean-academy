@@ -82,7 +82,7 @@ export const HomeView = () => {
           <div className="communityCall">
           <ReferralButtonsContainer>
             <Link to="/referral-program" style={{width: "150px"}}>
-              <Button text="JOIN NOW" color="primary" />
+              <Button text="LEARN MORE" color="primary" />
             </Link>
             <a target="_blank" rel="noopener noreferrer" href="https://github.com/oceanprotocol/oceandao/wiki/BrightID-Verification-Guide" style={{width: "150px"}}>
               <Button text="BrightID SETUP" color="primary" />

@@ -1,7 +1,6 @@
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
-import { useState, useEffect } from 'react'
-import Web3 from 'web3';
+import { PrivateUser } from 'shared/user/PrivateUser';
 import { Link } from 'react-router-dom';
 import { Button } from 'app/App.components/Button/Button.controller';
 //prettier-ignore
@@ -9,12 +8,10 @@ import { ReferralPage, ReferralContainer, ReferralLeftContent, ReferralRow, Crea
 import { activePink, textColor } from 'styles';
 
 type ReferralViewProps = {
+    authUser?: PrivateUser
 }
 
-export const ReferralView = ({}: ReferralViewProps) => {
-    const [resp, setResp] = useState("");
-    const [account, setAccount] = useState("");
-
+export const ReferralView = ({authUser}: ReferralViewProps) => {
     return (
         <ReferralPage>
             <ReferralContainer>
@@ -34,18 +31,27 @@ export const ReferralView = ({}: ReferralViewProps) => {
                         </ReferralCard>
                     </ReferralCardsRow>
                     <p style={{fontSize: "18px"}}>
-                    If you don't yet have a BrightID verified-profile, head to OceanDAO and follow the process to get verified. This verification also multiplies by 4 your voting weight in OceanDAO.
+                    If you don't yet have a BrightID verified-profile, head to <a style={{color: "cyan"}}href={"https://github.com/oceanprotocol/oceandao/wiki/BrightID-Verification-Guide"} target={"_blank"}>OceanDAO</a> and follow the process to get verified. This verification also multiplies by 4 your voting weight in OceanDAO.
                     </p>
                     <p style={{fontSize: "18px"}}>
                     Reward claims are checked and processed automatically via smart contracts on the Polygon L2 chain (make sure to adjust the network in your Metamask).
                     </p>
                     <ButtonsRow>
-                    <Link to="/referral-program" style={{width: "200px"}}>
+                    {authUser ? 
+                    <>
+                    <Link to={`/user/${authUser.username}`} style={{width: "200px"}}>
                     <Button text="Copy invitation" color="primary" />
                     </Link>
-                    <a href="https://github.com/oceanprotocol/oceandao/wiki/BrightID-Verification-Guide" style={{width: "200px"}}>
+                    <Link to={`/user/${authUser.username}`} style={{width: "200px"}}>
                     <Button text="Claim reward" color="primary" />
-                    </a>   
+                    </Link>  
+                    </>
+                    :
+                    <Link to="/ocean101/chapter-1" style={{width: "200px"}}>
+                    <Button text="Start Ocean 101" color="primary" />
+                    </Link>
+                    }
+
                     </ButtonsRow>
                     </ReferralLeftContent>
                     <CreatureWrapper>
