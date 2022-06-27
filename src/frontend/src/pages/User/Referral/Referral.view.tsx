@@ -13,24 +13,17 @@ export type ReferralViewProps = {
     started: boolean
     tx: string
     startReferralCallback: () => void
+    copyLinkToClipboard: (referralLink: string) => void
     claimRewardCallback: (publicAddress: string) => void
 }
 
-export const ReferralView = ({started, invited, completed, referralCode, tx, startReferralCallback, claimRewardCallback}: ReferralViewProps) => {
+export const ReferralView = ({started, invited, completed, referralCode, tx, startReferralCallback, claimRewardCallback, copyLinkToClipboard}: ReferralViewProps) => {
     const [account, setAccount] = useState("");
     const [resp, setResp] = useState("");
     const [brightIdError, setBrightIdError] = useState(false);
     const [step1Completed, setStep1] = useState(false);
     const referralLink = `oceanacademy.io/referral/${referralCode}`;
     const completedThresh = process.env.COMPLETED_THRESH ? process.env.COMPLETED_THRESH : 3;
-
-    const copyLinkToClipboard = async() => {
-        if ('clipboard' in navigator) {
-          return await navigator.clipboard.writeText(referralLink);
-        } else {
-          return document.execCommand('copy', true, referralLink);
-        }
-      }
 
       const checkBrightIdStatus = async(account: string) =>
       { 
@@ -57,7 +50,7 @@ export const ReferralView = ({started, invited, completed, referralCode, tx, sta
                 window.location.reload();
               });
               const chainId = await window.ethereum.request({ method: 'eth_chainId' });
-              if(chainId != 137)
+              if(chainId !== 137)
                 throw alert("Please connect to Polygon Network.")
               window.web3 = new Web3(window.ethereum)
               await window.ethereum.enable()
@@ -98,7 +91,7 @@ export const ReferralView = ({started, invited, completed, referralCode, tx, sta
                 <Referral>
                     <ShareLink>
                     <h1>Share your referral link:</h1>
-                    <CopyLink className="copyLink" onClick={copyLinkToClipboard}>
+                    <CopyLink className="copyLink" onClick={()=>copyLinkToClipboard(referralLink)}>
                     {`oceanacademy.io/referral/${referralCode}`}
                     <CopyButton>
                         Copy
@@ -111,7 +104,7 @@ export const ReferralView = ({started, invited, completed, referralCode, tx, sta
                     <FriendStats>
                         <FriendStat><PeopleIcon>
                         <use xlinkHref={`/icons/sprites.svg#people`} />
-                        </PeopleIcon> {invited} {invited == 1 ? 'person' : 'people'} joined</FriendStat>
+                        </PeopleIcon> {invited} {invited === 1 ? 'person' : 'people'} joined</FriendStat>
                         <FriendStat>    <PeopleIcon>
                         <use xlinkHref={`/icons/sprites.svg#checkmark-circle`} />
                         </PeopleIcon>{completed} completed Ocean101</FriendStat>
