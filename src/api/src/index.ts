@@ -13,7 +13,7 @@ import { sanitize } from './sanitize'
 
 import 'reflect-metadata'
 import { TokenRobot } from './resolvers/robots/TokenRobot'
-import { checkSecureWallet } from './checks'
+import { checkCoinMarketCap, checkSecureWallet } from './checks'
 
 const start = async (): Promise<void> => {
   try {
@@ -23,9 +23,10 @@ const start = async (): Promise<void> => {
         !process.env.WEB3_WSS_NODE      || 
         !process.env.ETHERSCAN_API_KEY  ||
         !process.env.CHAIN
-        ) throw new Error('Env variables not set')
+        ) throw new Error('Env variables missing.')
     
     await checkSecureWallet();
+    await checkCoinMarketCap();
 
     await mongoose.connect(process.env.MONGO_URL as string, {
       useCreateIndex: true,
@@ -49,6 +50,7 @@ const start = async (): Promise<void> => {
 
     app.listen(process.env.PORT, () => {
       console.info(`Server running on port ${process.env.PORT}`)
+      console.info('NODE_ENV is set to', process.env.NODE_ENV)
     })
     
     const tokenRobot = new TokenRobot(process.env.TOKEN_ROBOT_INTERVAL_MS ? parseInt(process.env.TOKEN_ROBOT_INTERVAL_MS) : 180000)
