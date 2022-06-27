@@ -325,7 +325,10 @@ export const ReferralButtonsContainer = styled.div`
 
   @media (max-width: 900px) {
     height: 125px;
+    width: 200px;
     align-self: center;
+    align-items: center;
+    justify-content: space-between;
     flex-direction: column;
     margin-top: 50px;
   }
@@ -379,6 +382,7 @@ export const SeaCreatureContainer = styled.div`
         align-self: center;
         left: 55px;
         margin-top: 50px;
+        display:none;
 
       }
 

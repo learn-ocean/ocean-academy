@@ -13,6 +13,7 @@ export const FooterStyled = styled.footer`
 
   @media only screen and (max-width: 1000px) {
     height: 100%;
+    height: 550px;
   }
 `
 
