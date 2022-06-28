@@ -14,7 +14,7 @@ export const sendReward = async(publicAddress: string, userId: number) => {
         throw new Error(`Trying to send ${oceanRewardValue} more than allowed reward in development mode.`)
     }
 
-    if(oceanRewardValue > 10**10){
+    if(oceanRewardValue > 10**21){
         throw new Error(`Trying to send ${oceanRewardValue} more than allowed reward in production mode.`)
     }
 
