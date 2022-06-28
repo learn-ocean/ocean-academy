@@ -50,8 +50,10 @@ export const ReferralView = ({started, invited, completed, referralCode, tx, sta
                 window.location.reload();
               });
               const chainId = await window.ethereum.request({ method: 'eth_chainId' });
-              if(chainId !== 137)
-                throw alert("Please connect to Polygon Network.")
+              if(chainId !== "0x89"){
+                window.alert("Please connect to Polygon Network.")
+                return
+              }
               window.web3 = new Web3(window.ethereum)
               await window.ethereum.enable()
               window.web3 = new Web3(window.web3.currentProvider)
@@ -160,7 +162,7 @@ const RewardAvailableView = ({resp,brightIdError, step1Completed,tx,verifyBright
             <span>
                 {resp}
             </span>
-            <a href="https://github.com/oceanprotocol/oceandao/wiki/BrightID-Verification-Guide" style={{color: "cyan"}}> Please follow the verification setup here.</a></>
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/oceanprotocol/oceandao/wiki/BrightID-Verification-Guide" style={{color: "cyan"}}> Please follow the verification setup here.</a></>
             : <span>{resp}</span>
             }
             </ClaimMessage>
