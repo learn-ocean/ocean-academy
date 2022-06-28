@@ -37,21 +37,9 @@ export const ReferralView = ({authUser}: ReferralViewProps) => {
                     Reward claims are checked and processed automatically via smart contracts on the Polygon L2 chain (make sure to adjust the network in your Metamask).
                     </p>
                     <ButtonsRow>
-                    {authUser ? 
-                    <>
-                    <Link to={`/user/${authUser.username}`} style={{width: "200px"}}>
-                    <Button text="Copy invitation" color="primary" />
+                    <Link to={authUser ? `/user/${authUser.username}` : '/ocean101'} style={{width: "200px"}}>
+                    <Button text="GET STARTED" color="primary" />
                     </Link>
-                    <Link to={`/user/${authUser.username}`} style={{width: "200px"}}>
-                    <Button text="Claim reward" color="primary" />
-                    </Link>  
-                    </>
-                    :
-                    <Link to="/ocean101/chapter-1" style={{width: "200px"}}>
-                    <Button text="Start Ocean 101" color="primary" />
-                    </Link>
-                    }
-
                     </ButtonsRow>
                     </ReferralLeftContent>
                     <CreatureWrapper>
