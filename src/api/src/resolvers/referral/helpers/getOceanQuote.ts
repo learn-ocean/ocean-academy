@@ -20,6 +20,6 @@ export const getOceanUSDQuotation = async(): Promise<number> => {
     const data = res.data.data;
     const oceanQuote = data.quote[OceanMarketCapId].price
     const rewardFactor: number = process.env.REWARD_FACTOR ? parseFloat(process.env.REWARD_FACTOR) : 0.00001;
-    const oceanRewardValue = Math.floor(oceanQuote * 10**8 * rewardFactor);
+    const oceanRewardValue = Math.floor(oceanQuote * 10**18 * rewardFactor);
     return oceanRewardValue;
 }

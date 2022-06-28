@@ -36,7 +36,7 @@ export const checkCoinMarketCap = async() => {
     try{
     console.log("Getting current ocean quotation.")
     const oceanQuotation = await getOceanUSDQuotation();
-    console.log(`Got response by coin market cap api. Reward is ${oceanQuotation} or around ${oceanQuotation / 10**8} mOCEAN.`)
+    console.log(`Got response by coin market cap api. Reward is ${oceanQuotation} or around ${oceanQuotation / 10**18} mOCEAN.`)
     }
     catch(e){
         console.error(`Check error: coin market cap did not work.`)
