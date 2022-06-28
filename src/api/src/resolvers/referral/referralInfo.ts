@@ -1,8 +1,9 @@
 import { Context, Next } from 'koa'
-import { User, UserModel } from '../../shared/user/User'
+import { User } from '../../shared/user/User'
 import { authenticate } from '../user/helpers/authenticate'
 import { ReferralModel } from '../../shared/referral/Referral'
 import { ReferralInfoOutputs } from '../../shared/referral/ReferralInfo'
+import { getCompleted } from './helpers/getCompleted'
 
 export const referralInfo = async (ctx: Context, next: Next): Promise<void> => {
   const user: User = await authenticate(ctx)
@@ -17,14 +18,7 @@ export const referralInfo = async (ctx: Context, next: Next): Promise<void> => {
   }
     
   const referredUsers = referral.referredUsers;
-  let completed = 0;
-  for(let i = 0; i < referredUsers.length; i++){
-    const referred = referredUsers[i];
-    const user = await UserModel.findOne({_id: referred}).lean()
-    if(user && user.emailVerified && user.ocean101?.completedAt){
-      completed += 1;
-    }
-  }
+  const completed = await getCompleted(referral.referredUsers)
 
   const started = true
   const data = {
