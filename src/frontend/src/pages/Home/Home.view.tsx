@@ -79,16 +79,13 @@ export const HomeView = () => {
           <p>Get 15 USD by completing Ocean101 and referring Ocean Academy to your friends.</p>
           <p>Simply register with your BrightID profile and claim your reward once you and 3 of your friends have completed Ocean101.</p>
           <p>The program will run as long as funding is available. Rewards are paid in mOcean.</p>
-          <div className="communityCall">
           <ReferralButtonsContainer>
+            <div className="communityCall">
             <Link to="/referral-program" style={{width: "150px"}}>
               <Button text="LEARN MORE" color="primary" />
             </Link>
-            <a target="_blank" rel="noopener noreferrer" href="https://github.com/oceanprotocol/oceandao/wiki/BrightID-Verification-Guide" style={{width: "150px"}}>
-              <Button text="BrightID SETUP" color="primary" />
-            </a>
+            </div>
             </ReferralButtonsContainer>
-          </div>
           </CommunityContentContainer>
         <ReferralSeaCreatureContainer>
           <img alt="Ocean whale image" src="creatures/whale-full-compressed.svg" />
