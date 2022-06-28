@@ -21,13 +21,13 @@ export const ReferralView = ({authUser}: ReferralViewProps) => {
                     <h2 style={{color: textColor, fontSize: "26px", fontWeight: "bold"}}>Get 15 USD by completing Ocean101 and referring Ocean Academy to your friends.</h2>
                     <ReferralCardsRow>
                         <ReferralCard>
-                            <p>1. Unlock your personal invitation link by graduating from Ocean 101</p>
+                            <p>Unlock your invitation link by graduating from Ocean101</p>
                         </ReferralCard>
                         <ReferralCard>
-                            <p>2. Verify that you are a person with BrightID</p>
+                            <p>Verify your email & BrightID profile</p>
                         </ReferralCard>
                         <ReferralCard>
-                            <p>3. Get your friends to complete Ocean 101</p>
+                            <p>Get your friends to complete Ocean101</p>
                         </ReferralCard>
                     </ReferralCardsRow>
                     <p style={{fontSize: "18px"}}>
