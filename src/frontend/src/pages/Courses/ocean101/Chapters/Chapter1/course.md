@@ -14,6 +14,6 @@ Modern society runs on data. More and more services rely on AI, and AI is only a
 
 **Pushing the Frontier**. Ocean Protocol is already being integrated by enterprises across verticals, from packaged goods, freight and logistics, science, biotech, to the automotive industry.
 
-**A New Data Economy with Ocean Protocol**. Ocean Protocol is set to bridge the gap between data supply and demand to make data available for data for scientists so they can create breakthrough data and AI products, and grant data owners a revenue for safely letting their data flow. Better AI will better serve society as a whole.
+**A New Data Economy with Ocean Protocol**. Ocean Protocol is set to bridge the gap between data supply and demand to make data available for data scientists so they can create breakthrough data and AI products, and grant data owners a revenue for safely letting their data flow. Better AI will better serve society as a whole.
 
 **Don’t worry about the blockchain stuff, it’s much easier than you think!**
