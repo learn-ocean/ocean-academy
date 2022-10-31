@@ -10,7 +10,7 @@ Go to MetaMask and select Goerli Test Network in the upper central dropdown list
 
 <img src="/images/chapter4_0.png" />
 
-On Goerli, **<a href="https://faucets.chain.link/" target="_blank" > the LINK faucet on the Goerli testnet </a>** is the suggested faucet as you will get some play LINK on top of play ETH.  LINK currently requires a Twitter account to verify you are a human.  Alternatively you may use the <a href="https://goerlifaucet.com/" target="_blank" > official Goerli faucet </a> which currently requires you to setup an account with Alchemy.io using sign-up with Google or Email/Password.
+On Goerli, **<a href="https://faucets.chain.link/" target="_blank" > the LINK faucet on the Goerli testnet </a>** is the suggested faucet as you will get some play LINK on top of play ETH.  LINK currently requires a Twitter account to verify you are a human.  Alternatively you may use the <a href="https://goerlifaucet.com/" target="_blank" > official Goerli faucet </a> which currently requires you to setup an account with Alchemy.com using sign-up with Google or Email/Password.
 
 Copy your ETH wallet address by clicking on ‘Account 1’, the default account created by Metamask. Clicking will automatically copy your wallet address to the clipboard. You can safely share this address with anyone because it is public and it does not control your funds (with your set-up only your Metamask and your seed phrase can control your funds).
 
