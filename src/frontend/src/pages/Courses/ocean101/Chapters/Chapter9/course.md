@@ -6,11 +6,11 @@
 **Get play money from a faucet.**
 Faucets are places where it’s possible to get tokens for free. Usually, they hand play money, basically tokens that have no market value. Many developers use faucets to start building apps in a safe and free environment before launching them on the main network.
 
-Go to MetaMask and select Rinkeby Test Network in the upper central dropdown list. Your wallet address is the same as in the Ethereum Network, but everything is free to play now. You may later use the same dropdown menu to switch to the BSC or Polygon network, which Ocean Protocol is also connected to.
+Go to MetaMask and select Goerli Test Network in the upper central dropdown list. Your wallet address is the same as in the Ethereum Network, but everything is free to play now. You may later use the same dropdown menu to switch to the BSC or Polygon network, which Ocean Protocol is also connected to.
 
 <img src="/images/chapter4_0.png" />
 
-On Rinkeby, **<a href="https://faucets.chain.link/rinkeby" target="_blank" > the LINK faucet on the Rinkeby testnet </a>** is the best faucet as the <a href="https://faucet.rinkeby.io/" target="_blank" > official Rinkeby faucet </a> is at times unusable. You will even get some play LINK on top of play ETH.
+On Goerli, **<a href="https://faucets.chain.link/" target="_blank" > the LINK faucet on the Goerli testnet </a>** is the suggested faucet as you will get some play LINK on top of play ETH.  LINK currently requires a Twitter account to verify you are a human.  Alternatively you may use the <a href="https://goerlifaucet.com/" target="_blank" > official Goerli faucet </a> which currently requires you to setup an account with Alchemy.com using sign-up with Google or Email/Password.
 
 Copy your ETH wallet address by clicking on ‘Account 1’, the default account created by Metamask. Clicking will automatically copy your wallet address to the clipboard. You can safely share this address with anyone because it is public and it does not control your funds (with your set-up only your Metamask and your seed phrase can control your funds).
 

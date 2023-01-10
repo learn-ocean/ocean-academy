@@ -12,7 +12,7 @@ How should we think about data for the next decade?
 
 **Data as a locked good**. In the legacy data economy, there is no easy way to give an algorithm access to one’s data without revealing the data itself. So, companies prefer to keep their data locked and unused, rather than risk losing exclusive and safe ownership; they would “better be safe than sorry”. Providing a way to share access to data easily and securely within and across organizations represents a major opportunity to create value from that data.
 
-**Unlocking data with open infrastructure**. Ocean Protocol provides  open and safe infrastructure dedicated to data exchanges which breaks silos and allows value creation. It makes new collaborations possible, increases data sharing while cutting transaction costs down. Network effects of a liberalized data platform are expected to be huge.
+**Unlocking data with open infrastructure**. Ocean Protocol provides open and safe infrastructure dedicated to data exchanges which breaks silos and allows value creation. It makes new collaborations possible, increases data sharing while cutting transaction costs down. Network effects of a liberalized data platform are expected to be huge.
 
 **Dealing with Enterprise Data**. Enterprises can use this infrastructure to reorganize their internal data flows, start to safely monetize unused data, and craft new value creation strategies. The first ones that will transition to this new operating model might have a decisive advantage in their respective vertical(s).
 
