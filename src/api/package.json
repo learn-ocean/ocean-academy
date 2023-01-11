@@ -32,7 +32,7 @@
     "brightid_sdk": "1.0.1",
     "chalk": "^4.0.0",
     "class-transformer": "^0.2.3",
-    "class-validator": "^0.12.2",
+    "class-validator": "^0.14.0",
     "dayjs": "^1.8.28",
     "dotenv": "^8.2.0",
     "ethers": "5.6.8",
