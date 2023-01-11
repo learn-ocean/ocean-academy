@@ -31,7 +31,7 @@
     "babel-loader": "8.1.0",
     "brightid_sdk": "1.0.1",
     "class-transformer": "^0.2.3",
-    "class-validator": "^0.12.2",
+    "class-validator": "^0.14.0",
     "connected-react-router": "^6.8.0",
     "cra-append-sw": "^2.7.0",
     "dayjs": "^1.8.28",
